@@ -1,0 +1,8 @@
+---
+import Base from './Base.astro';
+
+const { title, current } = Astro.props;
+---
+<Base title={`${title} — Reprise`} current={current}>
+  <main class="wrap doc"><slot /></main>
+</Base>

@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+
+const storeUrl = 'https://apps.apple.com/jp/app/id6825080777';
+
+// 波形の高さ（%）。文ごとのまとまりで持ち、デモで区間を強調する。
+const sentences = [
+  { text: 'Could you say that one more time?', bars: [28, 52, 74, 46, 88, 60, 34, 66, 42] },
+  { text: 'I missed the last part of the sentence.', bars: [36, 70, 96, 58, 82, 44, 92, 64, 30, 54] },
+  { text: "Let's go back and listen again.", bars: [40, 62, 84, 50, 72, 38, 58, 26] },
+];
+---
+<Base title="Reprise — 聞き取れなかった一文に、すぐ戻れる語学プレーヤー">
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">iPhone の語学オーディオプレーヤー</p>
+          <h1>聞き取れなかった一文に、<wbr />タップひとつで戻れる。</h1>
+          <p class="lead">取り込んだ音声を、端末内で文やフレーズに自動分割。聞き直したい一文だけを、何度でも繰り返せます。</p>
+          <a class="cta" href={storeUrl}>App Store で見る</a>
+          <p class="note">iOS 26 以降の iPhone に対応。アカウント登録は不要です。</p>
+        </div>
+
+        <div class="demo" data-demo>
+          <div class="wave" aria-hidden="true">
+            {sentences.map((s, i) => (
+              <div class="seg" data-seg={i} data-active={i === 1 ? '' : undefined}>
+                {s.bars.map((h) => <span style={`height:${h}%`}></span>)}
+              </div>
+            ))}
+          </div>
+          <ol class="lines">
+            {sentences.map((s, i) => (
+              <li>
+                <button type="button" data-line={i} aria-pressed={i === 1 ? 'true' : 'false'}>
+                  <span class="num">{i + 1}</span>{s.text}
+                </button>
+              </li>
+            ))}
+          </ol>
+          <p class="demo-note">文をタップしてみてください（音は出ません）</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap steps" aria-labelledby="steps-title">
+      <h2 id="steps-title">手持ちの音声が、一文ずつの教材に</h2>
+      <ol>
+        <li>
+          <h3>取り込む</h3>
+          <p>ファイル、ミュージック、Podcast、録音から。文章を貼り付けて、読み上げ音声を作ることもできます。</p>
+        </li>
+        <li>
+          <h3>自動で分かれる</h3>
+          <p>端末内の音声認識で文字起こしし、文・フレーズ・チャンクの単位に区切ります。</p>
+        </li>
+        <li>
+          <h3>一文を繰り返す</h3>
+          <p>文をタップしてループ。倍速やポーズを組み合わせて、シャドーイングまで進められます。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="wrap feature">
+      <div>
+        <h2>区切りがずれても、その場で直せる</h2>
+        <p>自動の分割が合わないときは、文の長押しから結合や分け直しができます。チャンク、フレーズ、文と、練習に合う細かさを選べます。</p>
+        <ul>
+          <li>0.5〜2.0 倍速（音程はそのまま）</li>
+          <li>聞いたフレーズと同じ長さのポーズを挟める</li>
+          <li>本文を伏せて、長押しで答え合わせ</li>
+        </ul>
+      </div>
+      <img src="/images/screen-1.jpg" alt="文を長押しして、分け直しや結合を選ぶ画面" width="800" height="1734" loading="lazy" />
+    </section>
+
+    <section class="wrap feature flip">
+      <div>
+        <h2>続けた分が、記録に残る</h2>
+        <p>1 日ごとの学習時間、再生した文の数、習得した文を記録します。目標時間と連続学習日数で、毎日の練習を続けやすくします。</p>
+      </div>
+      <img src="/images/screen-3.jpg" alt="今日の学習時間、連続学習日数、直近 14 日のグラフを表示した学習記録の画面" width="800" height="1734" loading="lazy" />
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2>音声も記録も、端末の中に</h2>
+        <p>音声・文字起こし・学習記録をサーバーへ送信することはありません。詳しくは<a href="/privacy">プライバシーポリシー</a>をご覧ください。</p>
+        <a class="cta light" href={storeUrl}>App Store で見る</a>
+      </div>
+    </section>
+  </main>
+</Base>
+
+<script>
+  const demo = document.querySelector('[data-demo]');
+  demo?.querySelectorAll<HTMLButtonElement>('[data-line]').forEach((button) => {
+    button.addEventListener('click', () => {
+      demo.querySelectorAll('[data-line]').forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+      demo.querySelectorAll<HTMLElement>('[data-seg]').forEach((seg) => {
+        seg.toggleAttribute('data-active', seg.dataset.seg === button.dataset.line);
+      });
+    });
+  });
+</script>

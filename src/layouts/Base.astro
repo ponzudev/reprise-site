@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+
+const { title, description = '取り込んだ音声を端末内で文やフレーズに自動分割し、一文ずつ聞き直せる語学プレーヤー。', current } = Astro.props;
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="apple-itunes-app" content="app-id=6825080777" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/images/icon-1024.png" />
+    <link rel="apple-touch-icon" href="/images/icon-1024.png" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="brand" href="/">
+          <img src="/images/icon-1024.png" alt="" width="32" height="32" />
+          <span>Reprise</span>
+        </a>
+        <nav aria-label="サイト内">
+          <a href="/support" aria-current={current === 'support' ? 'page' : undefined}>サポート</a>
+          <a href="/privacy" aria-current={current === 'privacy' ? 'page' : undefined}>プライバシー</a>
+        </nav>
+      </div>
+    </header>
+    <slot />
+    <footer class="site">
+      <div class="wrap">
+        <p>Reprise（リプライズ）— 文ごとに区切れる語学プレーヤー</p>
+        <p><a href="mailto:reprise.app.support@gmail.com">reprise.app.support@gmail.com</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
