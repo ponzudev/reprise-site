@@ -34,7 +34,7 @@ Reprise（リプライズ）は、利用者が自分で送るフィードバッ�
 
 - 取り込んだ音声ファイル（Podcast からダウンロードしたエピソード、アプリで録音した音声、文章から読み上げて作った音声を含む）
 - 文章から読み上げて作った教材の本文
-- お手本と聴き比べるために録音した自分の声（文ごとに最新の 1 回）
+- お手本と聴き比べるために録音した自分の声と、その書き起こし（文ごとに最新の 1 回）
 - 音声認識で得られた文字起こしと、文ごとの時刻
 - 学習記録（学習時間、再生した文の数、習得済みにした文）
 - 再生設定（速度、リピートの方法、ポーズの長さなど）
@@ -71,10 +71,10 @@ Podcast から作った教材については、番組の RSS フィードの URL
 
 | 機能 | 用途 |
 |---|---|
-| 音声認識 | 取り込んだ音声を文単位に分割するため |
+| 音声認識 | 取り込んだ音声を文単位に分割するため、および録音した自分の声を書き起こしてお手本と比べるため（端末内で処理） |
 | ミュージックライブラリ | 利用者のライブラリにある DRM のない曲を教材として取り込むため |
 | ファイル | 利用者が選んだ、または他のアプリから共有された音声・動画ファイルを取り込むため（動画は音声だけを取り出して保存します） |
-| マイク | 利用者が「録音する」で録音した音声を教材として保存するため。録音は利用者がボタンを押している間だけ行います |
+| マイク | 利用者が「録音する」で録音した音声を教材として保存するため、および「声を録音して聴き比べる」で自分の声を録音してお手本と聴き比べるため。録音は利用者が始めたときだけ行い、端末内に保存します |
 | ネットワーク | Podcast の番組を検索し、RSS フィードとエピソードをダウンロードするため（上記「Podcast 機能の通信」） |
 
 いずれも、取り込みと解析のためにのみ使用します。端末から読み取った内容を外部へ送信することはありません。
@@ -136,7 +136,7 @@ The following is stored only on your device and never leaves it:
 
 - Audio files you import (including podcast episodes you download, audio you record in the app, and audio created by reading text aloud)
 - The text of study material created by reading text aloud
-- Your own voice recorded to compare with the model audio (the latest take for each sentence)
+- Your own voice recorded to compare with the model audio, and its transcription (the latest take for each sentence)
 - Transcripts and per-sentence timings produced by speech recognition
 - Study records (listening time, sentences played, sentences marked as learned)
 - Playback settings
@@ -173,10 +173,10 @@ Only when you use "Add from Podcast", or open study material created from a podc
 
 | Capability | Purpose |
 |---|---|
-| Speech recognition | To split imported audio into sentences |
+| Speech recognition | To split imported audio into sentences, and to transcribe your own recorded voice to compare it with the original (processed on the device) |
 | Music library | To import DRM-free songs from your library as study material |
 | Files | To import audio or video files you select or share from other apps (only the audio of a video is kept) |
-| Microphone | To save audio you record with "Record" as study material. Recording happens only while you have started it |
+| Microphone | To save audio you record with "Record" as study material, and to record your own voice with "Record your voice and compare" so you can compare it with the original. Recording happens only when you start it, and recordings stay on the device |
 | Network | To search for podcasts and download their RSS feeds and episodes (see "Network use by the podcast feature") |
 
 Used only for importing and analysis. Nothing read from your device is transmitted anywhere.

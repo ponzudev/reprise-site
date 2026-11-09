@@ -51,10 +51,10 @@ reprise.app.support@gmail.com
 文を長押しすると、その場で手直しできます。
 
 - **分け直す** — チャンクごと／フレーズごと／文ごとの 3 段階で、その文だけを分け直します
-- **文の調整** — 書き起こしの誤りを直したり、波形を見ながら文の頭と終わりを指で動かしたりします。試聴して確かめられます。本文を直しても音声はそのままです（「文章から作る」の教材だけは、直した本文で音声を作り直します）
+- **この文を調整** — 書き起こしの誤りを直したり、波形を見ながら文の頭と終わりを指で動かしたりします。試聴して確かめられます。本文を直しても音声はそのままです（「文章から作る」の教材だけは、直した本文で音声を作り直します）
 - **前の文と結合／次の文と結合** — 隣の文とつなげます。「結合を元に戻す」で戻せます
 
-トラック全体の細かさを変えるには、「⋯」→「文分割をやり直す」で文ごと／フレーズごと／チャンクごとを選びます。結合や分け直しは元に戻りますが、「文の調整」で直した区切りは引き継ぎます。
+トラック全体の細かさを変えるには、「⋯」→「文分割をやり直す」で文ごと／フレーズごと／チャンクごとを選びます。結合や分け直しは元に戻りますが、「この文を調整」で直した区切りは引き継ぎます。
 
 ### 「フレーズと同じ長さ」のポーズとは何ですか
 
@@ -72,9 +72,11 @@ reprise.app.support@gmail.com
 
 再生画面で文を長押しし、「声を録音して聴き比べる」を選びます（Reprise Premium）。「お手本を聞いてから録音する」でお手本のあとにそのまま録音し、「お手本 → 自分の声で聴き比べる」で続けて聞けます。録音は端末内に、文ごとに最新の 1 回だけ残ります。
 
+録り終えると、自分の声を端末内の音声認識で書き起こし、お手本の本文のすぐ下の「録音した文」に、お手本との違いを色で出します。緑はお手本どおりに聞き取られた語、赤は別の語に聞き取られた語（かっこの中が聞き取られた語）、灰の取り消し線は聞き取られなかった語、橙の「＋」はお手本に無いのに聞き取られた語です。発音の採点ではなく、意図した言葉として伝わったかの目安です。短い文や固有名詞、数字（「10」と「ten」など）、日本語のかなと漢字の違いは、正しく言えていても違う語として出ることがあります。言語が違うときは「認識する言語」から選び直してください。
+
 ### Reprise Premium の購読・解約・復元
 
-- **購読**: 「設定」→「Reprise Premium を見る」から、月額（600 円）か年額（6,000 円）を選びます。どちらも 7 日間の無料体験があり、そのあいだに解約すれば料金はかかりません
+- **購読**: 「設定」→「Reprise Premium を見る」から、月額（600 円）か年額（6,000 円）を選びます。初めての方は、どちらも 7 日間の無料体験があり（1 つの Apple アカウントにつき 1 回）、そのあいだに解約すれば料金はかかりません
 - **解約**: 「設定」→「購読を管理」、または iPhone の「設定」→ 自分の名前 →「サブスクリプション」から解約します。期間の終わりまでは使えます
 - **復元**: 機種変更や再インストールのあとは、「設定」→「購入を復元」（または購入画面の「購入を復元」）を押してください
 - 無料のままでも、教材 5 冊（チュートリアルは除く。いまの冊数は教材の一覧の見出しに出ます）・直近 7 日の学習記録・「文章から作る」月 3 本まで使えます。購読が切れても、作った教材はすべて再生できます
@@ -117,7 +119,7 @@ Speech recognition runs on the device and takes seconds to minutes depending on 
 Check that Speech Recognition is allowed for Reprise in Settings, and that "認識する言語" (recognition language) matches the audio. Music-heavy or noisy audio may not be recognized; in that case the app splits at silences and plays without text.
 
 **The boundaries are wrong.**
-Long-press a sentence to re-split it (chunk / phrase / sentence) or merge it with the previous or next sentence. Merges can be undone. You can also choose "文の調整" (Adjust sentence) to fix the transcribed text or drag the start and end of the sentence on a waveform; the audio is not changed (except for material created from text, whose audio is regenerated). To re-split the whole track, use "⋯" → "文分割をやり直す" (Split again) and pick a granularity; merges and re-splits are reset, but boundaries you adjusted on the waveform are kept.
+Long-press a sentence to re-split it (chunk / phrase / sentence) or merge it with the previous or next sentence. Merges can be undone. You can also choose "この文を調整" (Adjust this sentence) to fix the transcribed text or drag the start and end of the sentence on a waveform; the audio is not changed (except for material created from text, whose audio is regenerated). To re-split the whole track, use "⋯" → "文分割をやり直す" (Split again) and pick a granularity; merges and re-splits are reset, but boundaries you adjusted on the waveform are kept.
 
 **What is the "same length as the phrase" pause?**
 After a phrase ends, a cue tone plays and the app pauses for as long as the phrase lasted, so you can repeat it aloud. Adjust the extra reaction margin in playback settings.
