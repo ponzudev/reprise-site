@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: ../layouts/DocLayout.astro
 title: サポート
 ---
 
@@ -89,7 +89,7 @@ reprise.app.support@gmail.com
 
 取り込んだ音声、文字起こし、学習記録、設定は、**すべて iPhone の中にだけ**保存されます。サーバーには送信されません。アプリを削除すると、これらもすべて削除されます。iCloud バックアップを有効にしている場合は、iPhone のバックアップに含まれます。
 
-詳しくは[プライバシーポリシー](./)をご覧ください。
+詳しくは[プライバシーポリシー](/privacy)をご覧ください。
 
 ---
 
@@ -125,4 +125,4 @@ Long-press a sentence to re-split it (chunk / phrase / sentence) or merge it wit
 After a phrase ends, a cue tone plays and the app pauses for as long as the phrase lasted, so you can repeat it aloud. Adjust the extra reaction margin in playback settings.
 
 **Where is my data stored?**
-Audio, transcripts, study records, and settings stay on your iPhone only. Deleting the app removes them. See the [privacy policy](./) for details.
+Audio, transcripts, study records, and settings stay on your iPhone only. Deleting the app removes them. See the [privacy policy](/privacy) for details.
