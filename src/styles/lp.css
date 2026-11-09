@@ -2206,3 +2206,51 @@ img {
     width: 252px;
   }
 }
+
+/* App Store と同じ紹介画像を 3 枚並べる。スマホでは横に送って見る。 */
+.problems-section {
+  padding-bottom: 64px;
+}
+.gallery-section {
+  padding-bottom: 110px;
+}
+.gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: min(980px, calc(100% - 64px));
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 26px;
+  box-shadow: 0 20px 44px #164f951f;
+}
+@media (max-width: 700px) {
+  .problems-section {
+    padding-bottom: 44px;
+  }
+  .gallery-section {
+    padding-bottom: 70px;
+  }
+  .gallery {
+    width: 100%;
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 20px 26px;
+    scroll-padding-inline: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gallery li {
+    flex: 0 0 72%;
+    scroll-snap-align: start;
+  }
+  .gallery img {
+    border-radius: 20px;
+    box-shadow: 0 12px 24px #164f951f;
+  }
+}

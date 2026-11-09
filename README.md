@@ -42,4 +42,7 @@ python3 scripts/frame.py scripts/iphone-frame.png public/assets/04-player-playin
 | `public/assets/phone-13-podcast-picker.webp` | 「使える教材」 |
 | `public/assets/phone-07-study-log.webp` | 学習記録 |
 
+App Store と同じ紹介画像（文字入り）は `public/assets/store-1-split.webp`・`store-2-podcast.webp`・`store-3-check.webp`（幅 660 × 高さ 1434）。
+ストアの画像を変えたら、同じ名前で置き換える。`src/pages/index.astro` の `gallery` に、画像の中の文字を代替テキストとして書いている。
+
 最初の画面の画像を変えたら、SNS 共有用の画像（`public/assets/og.png`）も作り直す。

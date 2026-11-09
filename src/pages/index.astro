@@ -70,6 +70,21 @@ const problems = [
   },
 ];
 
+const gallery = [
+  {
+    src: '/assets/store-1-split.webp',
+    alt: '外国語を、文ごとに自動で分割。英語の物語が 1 文ずつに分かれて並び、再生中の文が明るく表示されている画面',
+  },
+  {
+    src: '/assets/store-2-podcast.webp',
+    alt: 'Podcast が、そのまま教材に。動画ファイル、レッスン録音、会議音声、音楽ファイルも。取り込んだ Podcast が教材として並ぶ画面',
+  },
+  {
+    src: '/assets/store-3-check.webp',
+    alt: '自分の発音を、お手本と聴き比べ。録音した文が語ごとに色分けされ、お手本と自分の声を続けて聞ける画面',
+  },
+];
+
 const steps = [
   {
     title: '音声を取り込む',
@@ -206,6 +221,14 @@ const compare = [
     Reprise は、どんな音声も<strong>文ごとに区切って</strong>、<br class="desktop-break">
     「聞く → 声に出す → もう一度」を、操作なしで続けられるようにします。
   </p>
+</section>
+
+<section class="gallery-section" aria-label="Reprise の画面">
+  <ul class="gallery">
+    {gallery.map((item) => (
+      <li><img src={item.src} alt={item.alt} width="660" height="1434" loading="lazy"></li>
+    ))}
+  </ul>
 </section>
 
 <section class="section demo-section" id="demo">
