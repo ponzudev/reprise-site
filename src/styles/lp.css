@@ -2173,3 +2173,36 @@ img {
     font-size: 13px;
   }
 }
+
+/* iPhone の枠つきの画像（scripts/frame.py で作る）。枠は画像に入っているので、CSS の縁取りは外す。 */
+.phone.framed {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+  filter: drop-shadow(0 26px 34px #1759a52e);
+}
+.hero-phone.framed {
+  width: 300px;
+}
+.material-phone.framed,
+.study-phone.framed {
+  width: 280px;
+}
+@media (max-width: 1000px) {
+  .hero-phone.framed {
+    width: 265px;
+  }
+}
+@media (max-width: 700px) {
+  .hero-phone.framed {
+    width: 228px;
+  }
+  .material-phone.framed {
+    width: 245px;
+  }
+  .study-phone.framed {
+    width: 252px;
+  }
+}

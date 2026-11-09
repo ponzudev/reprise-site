@@ -28,43 +28,18 @@ Reprise（リプライズ）のサイト。Astro でビルドし、Cloudflare Wo
 
 ## スクリーンショットを差し替えるとき
 
-トップで使っている画面は次の 3 枚（幅 660 × 高さ 1434 の WebP）。同じファイル名で置き換えれば、そのまま反映される。
-縦横比を変えるときは、`src/pages/index.astro` の `width`・`height` も直す。
-
-| ファイル | 使っている場所 |
-|---|---|
-| `public/assets/04-player-playing.webp` | 最初の画面、SNS 共有用の画像 |
-| `public/assets/13-podcast-picker.webp` | 「使える教材」 |
-| `public/assets/07-study-log.webp` | 学習記録 |
-
-## 手元で動かす
+トップの画面は、スクリーンショットを iPhone の枠（`scripts/iphone-frame.png`）にはめ込んだ画像を使っている。
+元のスクリーンショット（`public/assets/04-player-playing.webp` など）を置き換えたら、次で枠つきの画像を作り直す
+（Python に Pillow と NumPy が要る）。
 
 ```sh
-npm install
-npm run dev       # http://localhost:4321 で編集しながら確認
-npm run preview   # ビルドして、本番と同じ Cloudflare の配信方法（wrangler dev）で確認
+python3 scripts/frame.py scripts/iphone-frame.png public/assets/04-player-playing.webp public/assets/phone-04-player-playing.webp
 ```
 
-## デプロイ
-
-`main` に push すると、Cloudflare の Workers Builds が自動でビルド・デプロイする。
-PR ごとにプレビュー用の URL も出る。
-
-初回だけ、Cloudflare のダッシュボードで次を設定する。
-
-1. **Workers & Pages** → **Create** → **Import a repository** で GitHub を連携し、`ponzudev/reprise-site` を選ぶ
-2. プロジェクト名は `reprise-site`（`wrangler.jsonc` の `name` と同じにする）
-3. Build command: `npm run build` / Deploy command: `npx wrangler deploy`
-4. デプロイが終わると、`wrangler.jsonc` の `routes` によって `reprise.ponzudev.app` の DNS と証明書が自動で作られる
-
-## 旧 URL（GitHub Pages）
-
-以前は `https://ponzudev.github.io/reprise-site/` で公開していた。アプリの古いバージョンと
-App Store Connect にこの URL が残っているので、GitHub Pages は止めずに、新しい URL へ転送するページだけを置く。
-転送用のページは `legacy-redirects` ブランチにある。
-
-| 旧 URL | 転送先 |
+| 枠つきの画像 | 使っている場所 |
 |---|---|
-| `/reprise-site/` | `/privacy` |
-| `/reprise-site/support` | `/support` |
-| `/reprise-site/lp/` | `/` |
+| `public/assets/phone-04-player-playing.webp` | 最初の画面、SNS 共有用の画像 |
+| `public/assets/phone-13-podcast-picker.webp` | 「使える教材」 |
+| `public/assets/phone-07-study-log.webp` | 学習記録 |
+
+最初の画面の画像を変えたら、SNS 共有用の画像（`public/assets/og.png`）も作り直す。
