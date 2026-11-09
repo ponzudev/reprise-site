@@ -1,6 +1,11 @@
-# reprise-site
+# reprise-site（legacy-redirects ブランチ）
 
-Reprise（リプライズ）のプライバシーポリシーとサポートページ。GitHub Pages で公開する。
+旧 URL `https://ponzudev.github.io/reprise-site/` を新しいサイト `https://reprise.ponzudev.app` へ転送するためだけのブランチ。
+GitHub Pages の公開元をこのブランチにする。サイト本体は `main` ブランチにある。
 
-- `index.md` — プライバシーポリシー
-- `support.md` — サポート
+| 旧 URL | 転送先 |
+|---|---|
+| `/reprise-site/` | `/privacy` |
+| `/reprise-site/support` | `/support` |
+| `/reprise-site/lp/` | `/` |
+| それ以外 | `/` |
