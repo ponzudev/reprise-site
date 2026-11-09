@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "reprise-site",
+  "compatibility_date": "2026-11-01",
+  // 静的サイトなので Worker のコードは持たず、Astro のビルド結果（dist）をそのまま配信する。
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  // デプロイ時に reprise.ponzudev.app の DNS レコードと証明書が自動で作られる。
+  "routes": [
+    { "pattern": "reprise.ponzudev.app", "custom_domain": true }
+  ]
+}
