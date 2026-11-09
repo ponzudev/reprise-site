@@ -1,22 +1,26 @@
 ---
-// プライバシーポリシー・サポートなど、Markdown で書く文書ページの共通レイアウト。
-// GitHub Pages 時代の _layouts/default.html と同じ見た目にしている。
-const { frontmatter = {}, title: titleProp } = Astro.props;
+// プライバシーポリシー・サポート・練習ガイドなど、Markdown で書く文書ページの共通レイアウト。
+import Head from '../components/Head.astro';
+import { site } from '../data/site';
+
+const { frontmatter = {}, title: titleProp, description: descriptionProp, fullTitle, ogType, noindex, jsonLd } = Astro.props;
 const title = titleProp ?? frontmatter.title;
+const description =
+  descriptionProp ??
+  frontmatter.description ??
+  'Reprise（リプライズ）は、音声を文ごとに区切って繰り返し聞ける、シャドーイング・リピーティング用の語学プレーヤーです。';
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '');
 const nav = [
-  { href: '/privacy', label: 'プライバシー' },
+  { href: '/guides', label: '練習ガイド' },
   { href: '/support', label: 'サポート' },
+  { href: '/privacy', label: 'プライバシー' },
 ];
+const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
 ---
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title} — Reprise</title>
-  <link rel="icon" type="image/png" href="/assets/app-icon.png">
-  <link rel="apple-touch-icon" href="/assets/app-icon.png">
+  <Head title={fullTitle ?? `${title}｜Reprise（リプライズ）`} description={description} ogType={ogType} noindex={noindex} jsonLd={jsonLd} />
   <style is:global>
     :root {
       --bg: #f7f7f9;
@@ -74,8 +78,9 @@ const nav = [
     }
     header.site .brand:hover { text-decoration: none; }
     header.site .brand, header.site nav a { white-space: nowrap; }
-    @media (max-width: 420px) {
+    @media (max-width: 520px) {
       header.site .brand small { display: none; }
+      header.site nav a { padding: 6px 9px; font-size: 13px; }
     }
     header.site .brand small {
       font-weight: 500; color: var(--muted); margin-left: 6px; font-size: 13px;
@@ -127,18 +132,45 @@ const nav = [
     }
 
     footer.site {
-      color: var(--muted); font-size: 13px;
-      padding: 8px 0 48px; text-align: center;
+      color: var(--muted); font-size: 13px; line-height: 2;
+      padding: 8px 20px 48px; text-align: center;
     }
+
+    .breadcrumb { font-size: 13px; color: var(--muted); margin: 0 0 1.2em; }
+    .breadcrumb a { color: var(--muted); }
+    main .lead { color: var(--muted); font-size: 1rem; }
+    .app-card {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      background: var(--accent-soft); border-radius: 16px;
+      padding: 20px 22px; margin: 2.6em 0 0;
+    }
+    .app-card img { width: 56px; height: 56px; border-radius: 13px; }
+    .app-card div { flex: 1 1 240px; }
+    .app-card strong { display: block; font-size: 1rem; }
+    .app-card span { display: block; font-size: .88rem; color: var(--muted); line-height: 1.6; }
+    .app-card a.store {
+      background: #0966d3; color: #fff; font-weight: 700; font-size: .95rem;
+      padding: 11px 20px; border-radius: 10px; white-space: nowrap;
+    }
+    .app-card a.store:hover { text-decoration: none; background: #0754b5; }
+    .guide-list { list-style: none; padding: 0; margin: 1.4em 0 0; }
+    .guide-list li { border-top: 1px solid var(--line); margin: 0; }
+    .guide-list a { display: block; padding: 16px 2px; color: var(--text); }
+    .guide-list a:hover { text-decoration: none; }
+    .guide-list a:hover strong { color: var(--accent); }
+    .guide-list strong { display: block; }
+    .guide-list span { display: block; font-size: .9rem; color: var(--muted); line-height: 1.7; }
+
+    footer.site a { margin: 0 6px; }
   </style>
 </head>
 <body>
   <header class="site">
     <div class="wrap">
-      <a class="brand" href="/"><img src="/assets/app-icon.png" alt=""><span>Reprise<small>リプライズ</small></span></a>
-      <nav>
+      <a class="brand" href="/"><img src="/assets/app-icon-120.png" width="32" height="32" alt=""><span>Reprise<small>リプライズ</small></span></a>
+      <nav aria-label="メインナビゲーション">
         {nav.map((item) => (
-          <a href={item.href} class={path === item.href ? 'current' : undefined}>{item.label}</a>
+          <a href={item.href} class={isCurrent(item.href) ? 'current' : undefined} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a>
         ))}
       </nav>
     </div>
@@ -146,13 +178,16 @@ const nav = [
 
   <div class="wrap">
     <main class="page">
+      <slot name="before" />
       <slot />
+      <slot name="after" />
     </main>
   </div>
 
   <footer class="site">
-    Reprise — 文ごとに区切れる語学プレーヤー ·
-    <a href="mailto:reprise.app.support@gmail.com">reprise.app.support@gmail.com</a>
+    Reprise — 文ごとに区切れる語学プレーヤー<br>
+    <a href="/">トップ</a><a href="/guides">練習ガイド</a><a href="/support">サポート</a><a href="/privacy">プライバシーポリシー</a><a href={site.appStoreUrl}>App Store</a><br>
+    <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>
   </footer>
 </body>
 </html>

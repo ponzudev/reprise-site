@@ -1,0 +1,48 @@
+---
+// 練習ガイド（src/pages/guides/*.md）のレイアウト。パンくず・記事の構造化データ・アプリの案内・ほかのガイドを足す。
+import DocLayout from './DocLayout.astro';
+import AppCard from '../components/AppCard.astro';
+import { site, canonical } from '../data/site';
+import { getGuides } from '../data/guides';
+
+const { frontmatter } = Astro.props;
+const url = canonical(Astro.url.pathname);
+const others = (await getGuides()).filter((guide) => canonical(guide.href) !== url);
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: frontmatter.title,
+    description: frontmatter.description,
+    inLanguage: 'ja',
+    mainEntityOfPage: url,
+    image: site.url + site.ogImage,
+    datePublished: frontmatter.published,
+    dateModified: frontmatter.updated ?? frontmatter.published,
+    author: { '@type': 'Organization', name: 'Reprise', url: site.url + '/' },
+    publisher: { '@type': 'Organization', name: 'Reprise', url: site.url + '/' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Reprise', item: site.url + '/' },
+      { '@type': 'ListItem', position: 2, name: '練習ガイド', item: site.url + '/guides' },
+      { '@type': 'ListItem', position: 3, name: frontmatter.title, item: url },
+    ],
+  },
+];
+---
+<DocLayout title={frontmatter.title} description={frontmatter.description} ogType="article" jsonLd={jsonLd}>
+  <p class="breadcrumb" slot="before"><a href="/">Reprise</a> › <a href="/guides">練習ガイド</a></p>
+  <slot />
+  <Fragment slot="after">
+    <AppCard />
+    <h2>ほかの練習ガイド</h2>
+    <ul class="guide-list">
+      {others.map((guide) => (
+        <li><a href={guide.href}><strong>{guide.title}</strong><span>{guide.description}</span></a></li>
+      ))}
+    </ul>
+  </Fragment>
+</DocLayout>
