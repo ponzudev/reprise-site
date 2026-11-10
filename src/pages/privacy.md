@@ -137,7 +137,7 @@ The following is stored only on your device and never leaves it:
 
 - Audio files you import (including podcast episodes you download, audio you record in the app, and audio created by reading text aloud)
 - The text of study material created by reading text aloud
-- Your own voice recorded to compare with the model audio, and its transcription (the latest take for each sentence)
+- Your own voice recorded in the Speech Check (the latest take for each sentence) and its transcriptions (one for each take)
 - Transcripts and per-sentence timings produced by speech recognition
 - Study records (listening time, sentences played, sentences marked as learned)
 - Playback settings
