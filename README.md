@@ -29,7 +29,7 @@ Reprise（リプライズ）のサイト。Astro でビルドし、Cloudflare Wo
 ## スクリーンショットを差し替えるとき
 
 トップの画面は、スクリーンショットを iPhone の枠（`scripts/iphone-frame.png`）にはめ込んだ画像を使っている。
-元のスクリーンショット（`public/assets/04-player-playing.webp` など）を置き換えたら、次で枠つきの画像を作り直す
+元のスクリーンショット（原寸の PNG がいちばんきれいに仕上がる。`public/assets/04-player-playing.webp` などの縮小版でもよい）から、次で枠つきの画像を作り直す
 （Python に Pillow と NumPy が要る）。
 
 ```sh
@@ -41,6 +41,7 @@ python3 scripts/frame.py scripts/iphone-frame.png public/assets/04-player-playin
 | `public/assets/phone-04-player-playing.webp` | 最初の画面、SNS 共有用の画像 |
 | `public/assets/phone-13-podcast-picker.webp` | 「使える教材」 |
 | `public/assets/phone-07-study-log.webp` | 学習記録 |
+| `public/assets/phone-11-player-text-hidden.webp`・`phone-06-sentence-editor.webp`・`phone-14-podcast-episodes.webp`・`phone-08-study-log-graph.webp` | 「特徴」の下に並べた 4 枚（`src/pages/index.astro` の `screens`） |
 
 App Store と同じ紹介画像（文字入り）は `public/assets/store-1-split.webp`・`store-2-podcast.webp`・`store-3-check.webp`（幅 660 × 高さ 1434）。
 ストアの画像を変えたら、同じ名前で置き換える。`src/pages/index.astro` の `gallery` に、画像の中の文字を代替テキストとして書いている。

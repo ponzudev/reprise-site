@@ -2254,3 +2254,74 @@ img {
     box-shadow: 0 12px 24px #164f951f;
   }
 }
+
+/* 機能ごとの画面（枠つき）を 4 枚並べる。スマホでは横に送って見る。 */
+.features-section {
+  padding-bottom: 70px;
+}
+.screens-section {
+  padding-bottom: 110px;
+}
+.screens {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: min(1120px, calc(100% - 64px));
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+.screens img {
+  width: min(100%, 230px);
+  margin: 0 auto 22px;
+  filter: drop-shadow(0 18px 24px #1759a524);
+}
+.screens h3 {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 6px;
+}
+.screens p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0;
+}
+@media (max-width: 1000px) {
+  .screens {
+    gap: 18px;
+  }
+  .screens h3 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 700px) {
+  .features-section {
+    padding-bottom: 44px;
+  }
+  .screens-section {
+    padding-bottom: 70px;
+  }
+  .screens {
+    width: 100%;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 20px 12px;
+    scroll-padding-inline: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .screens li {
+    flex: 0 0 64%;
+    scroll-snap-align: start;
+    padding: 0 8px;
+  }
+  .screens img {
+    width: 88%;
+  }
+  .screens h3 {
+    font-size: 15px;
+  }
+}
