@@ -2584,3 +2584,61 @@ img {
   .story-copy { padding-left: 20px; }
   .story-copy p { font-size: 15px; line-height: 2; }
 }
+
+/* ---------- 画像と文字の重なり、白い要素どうしの同化を直す ---------- */
+
+/* 「使える教材」: 説明文の下にスマホが収まるよう、スマホを小さくする。 */
+.material-phone.framed {
+  width: 232px;
+}
+/* 白い画面の上に載る要素は、濃い色にして境目が分かるようにする。 */
+.material-sticker {
+  background: #0966d3;
+  color: #fff;
+  box-shadow: 0 10px 24px #0966d340;
+}
+.float-card {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+  box-shadow: 0 14px 34px #16294455;
+}
+.float-card small {
+  color: #c4d8f2;
+}
+.float-card .mini-wave i {
+  background: #7db9ff;
+}
+.float-card .loop-symbol {
+  color: #7db9ff;
+}
+/* 最初の画面のラベルは、スマホの上端より上に置いて画面に重ねない。 */
+.hero-visual {
+  min-height: 690px;
+  padding-top: 46px;
+}
+.label-top {
+  top: 0;
+  right: 24px;
+  background: var(--ink);
+  color: #fff;
+  transform: rotate(4deg);
+}
+@media (max-width: 1000px) {
+  .hero-visual {
+    min-height: 620px;
+  }
+}
+@media (max-width: 700px) {
+  .material-phone.framed {
+    width: 190px;
+  }
+  .hero-visual {
+    min-height: 548px;
+    padding-top: 46px;
+  }
+  .label-top {
+    top: 0;
+    right: 8px;
+  }
+}
