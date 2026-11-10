@@ -170,7 +170,7 @@ const compare = [
 <head>
 <Head title={title} description={description} ogTitle="Reprise（リプライズ）— 聞いて、声に出して、身につける" jsonLd={jsonLd} />
 <meta name="theme-color" content="#ffffff">
-<link rel="preload" as="image" href="/assets/phone-04-player-playing.webp" imagesrcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" imagesizes="(max-width: 700px) 228px, 300px" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/phone-04-player-playing.webp" imagesrcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" imagesizes="(max-width: 700px) 300px, 420px" fetchpriority="high">
 </head>
 <body>
 <a class="skip" href="#main">本文へスキップ</a>
@@ -221,7 +221,7 @@ const compare = [
     <div class="orbit orbit-two"></div>
     <span class="visual-label label-top">好きな一文を、何度でも。</span>
     <div class="phone framed hero-phone">
-      <img src="/assets/phone-04-player-playing.webp" srcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" sizes="(max-width: 700px) 228px, 300px" width="720" height="1472" alt="英会話の音声が 1 文ずつに分かれて並ぶ、Reprise の再生画面" fetchpriority="high">
+      <img src="/assets/phone-04-player-playing.webp" srcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" sizes="(max-width: 700px) 300px, 420px" width="720" height="1472" alt="英会話の音声が 1 文ずつに分かれて並ぶ、Reprise の再生画面" fetchpriority="high">
     </div>
     <div class="float-card">
       <span class="mini-wave"><i></i><i></i><i></i><i></i><i></i></span>
@@ -390,7 +390,7 @@ const compare = [
   <ul class="screens">
     {screens.map((item) => (
       <li>
-        <img src={item.src} srcset={`${item.src} 720w, ${hi(item.src)} 1260w`} sizes="(max-width: 700px) 56vw, 230px" alt={item.alt} width="720" height="1472" loading="lazy">
+        <div class="phone framed screen-phone"><img src={item.src} srcset={`${item.src} 720w, ${hi(item.src)} 1260w`} sizes="(max-width: 700px) 75vw, 330px" alt={item.alt} width="720" height="1472" loading="lazy"></div>
         <h3>{item.title}</h3>
         <p>{item.text}</p>
       </li>
@@ -408,7 +408,7 @@ const compare = [
     <div class="materials-layout">
       <div class="materials-photo">
         <span class="image-caption">お気に入りの番組で、毎日少しずつ。</span>
-        <div class="phone framed material-phone"><img src="/assets/phone-13-podcast-picker.webp" srcset="/assets/phone-13-podcast-picker.webp 720w, /assets/phone-13-podcast-picker@2x.webp 1260w" sizes="(max-width: 700px) 245px, 280px" alt="Podcast の番組を探して教材に取り込む画面" loading="lazy" width="720" height="1472"></div>
+        <div class="phone framed material-phone"><img src="/assets/phone-13-podcast-picker.webp" srcset="/assets/phone-13-podcast-picker.webp 720w, /assets/phone-13-podcast-picker@2x.webp 1260w" sizes="(max-width: 700px) 300px, 420px" alt="Podcast の番組を探して教材に取り込む画面" loading="lazy" width="720" height="1472"></div>
         <span class="material-sticker">いつもの「好き」を<br>学びに変えよう。</span>
       </div>
       <div class="material-list">
@@ -453,7 +453,7 @@ const compare = [
     <div class="habit"><span>♫</span><div><h3>自分の声が、伝わるか確かめる。</h3><p>文を読んで録音すると、端末内の音声認識にどう聞き取られたかを語ごとに表示。お手本と自分の声の聴き比べもできます。</p><small>Premium</small></div></div>
   </div>
   <div class="habits-visual">
-    <div class="phone framed study-phone"><img src="/assets/phone-07-study-log.webp" srcset="/assets/phone-07-study-log.webp 720w, /assets/phone-07-study-log@2x.webp 1260w" sizes="(max-width: 700px) 252px, 280px" loading="lazy" alt="学習した日と学習時間を確認できるカレンダー画面" width="720" height="1472"></div>
+    <div class="phone framed study-phone"><img src="/assets/phone-07-study-log.webp" srcset="/assets/phone-07-study-log.webp 720w, /assets/phone-07-study-log@2x.webp 1260w" sizes="(max-width: 700px) 300px, 420px" loading="lazy" alt="学習した日と学習時間を確認できるカレンダー画面" width="720" height="1472"></div>
     <div class="habit-label">続けた分だけ、<br><strong>自分の言葉に。</strong><span><Arrow /></span></div>
   </div>
 </section>

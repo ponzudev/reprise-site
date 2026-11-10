@@ -2181,7 +2181,20 @@ img {
   background: none;
   box-shadow: none;
   overflow: visible;
-  filter: drop-shadow(0 26px 34px #1759a52e);
+  position: relative;
+}
+/* 影は画像に filter をかけず、後ろに置いた角丸の箱に付ける。
+   filter と回転が重なると、Safari が画像を低い解像度で描き直してぼやけるため。 */
+.phone.framed::before {
+  content: "";
+  position: absolute;
+  inset: 3% 5% 2%;
+  border-radius: 15% / 7.5%;
+  box-shadow: 0 26px 44px #1759a540;
+  z-index: -1;
+}
+.phone.framed img {
+  position: relative;
 }
 .hero-phone.framed {
   width: 300px;
@@ -2272,10 +2285,13 @@ img {
   gap: 30px;
   text-align: center;
 }
-.screens img {
+.screen-phone {
   width: min(100%, 230px);
   margin: 0 auto 22px;
-  filter: drop-shadow(0 18px 24px #1759a524);
+  isolation: isolate;
+}
+.screen-phone::before {
+  box-shadow: 0 18px 30px #1759a530;
 }
 .screens h3 {
   font-size: 16px;
@@ -2318,7 +2334,7 @@ img {
     scroll-snap-align: start;
     padding: 0 8px;
   }
-  .screens img {
+  .screen-phone {
     width: 88%;
   }
   .screens h3 {
