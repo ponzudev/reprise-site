@@ -85,6 +85,33 @@ const gallery = [
   },
 ];
 
+const screens = [
+  {
+    src: '/assets/phone-11-player-text-hidden.webp',
+    alt: '本文をぼかして伏せた再生画面。文の番号と長さだけが見えている',
+    title: '本文を伏せて、耳だけで',
+    text: 'ボタンを押さえている間だけ本文が出ます。',
+  },
+  {
+    src: '/assets/phone-06-sentence-editor.webp',
+    alt: '波形を見ながら文の頭と終わりを動かす「文の調整」の画面',
+    title: '区切りも本文も、手直しできる',
+    text: '波形を見ながら、文の頭と終わりを指で動かせます。',
+  },
+  {
+    src: '/assets/phone-14-podcast-episodes.webp',
+    alt: 'Podcast のエピソード一覧から、取り込む回を選んでいる画面',
+    title: '聞きたい回だけ、選んで取り込む',
+    text: '番組ごとに 1 冊の教材にまとまります。',
+  },
+  {
+    src: '/assets/phone-08-study-log-graph.webp',
+    alt: '日ごとの学習時間の棒グラフと、教材ごとの学習時間が並ぶ画面',
+    title: '続けた時間が、グラフで見える',
+    text: '日ごと・教材ごとの学習時間を振り返れます。',
+  },
+];
+
 const steps = [
   {
     title: '音声を取り込む',
@@ -354,6 +381,18 @@ const compare = [
     <span>◈</span>
     <p><strong>あなたの教材は、あなたの端末に。</strong>文字起こしも文の分割も iPhone の中で行います。音声と学習記録をサーバーへ送ることはなく、アカウント登録もいりません。</p>
   </div>
+</section>
+
+<section class="screens-section" aria-label="アプリの画面">
+  <ul class="screens">
+    {screens.map((item) => (
+      <li>
+        <img src={item.src} alt={item.alt} width="720" height="1472" loading="lazy">
+        <h3>{item.title}</h3>
+        <p>{item.text}</p>
+      </li>
+    ))}
+  </ul>
 </section>
 
 <section class="section materials-section" id="materials">
