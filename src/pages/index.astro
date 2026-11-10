@@ -137,11 +137,11 @@ const steps = [
 
 <aside class="specs-strip" aria-label="Reprise の基本仕様">
   <dl class="wrap specs-grid">
-    <div><dt>再生速度</dt><dd><strong>0.5〜2.0</strong> 倍<small>音程を保って調整</small></dd></div>
-    <div><dt>声に出すポーズ</dt><dd><strong>文の長さに連動</strong><small>合図音で、自分の番へ</small></dd></div>
-    <div><dt>無料で保存</dt><dd><strong>教材 5 冊</strong>まで<small>文ごとの練習も無料</small></dd></div>
-    <div><dt>文字起こし</dt><dd><strong>{site.languages.length} 言語</strong><small>英語は米・英・豪に対応</small></dd></div>
-    <div><dt>取り込み元</dt><dd class="spec-sources">Podcast／ファイル<br>録音／文章<small>いつもの素材で練習</small></dd></div>
+    <div><dt>再生速度</dt><dd><strong>0.5〜2.0</strong> 倍</dd><dd class="spec-note">音程を保って調整</dd></div>
+    <div><dt>声に出すポーズ</dt><dd><strong>文の長さに連動</strong></dd><dd class="spec-note">合図音で、自分の番へ</dd></div>
+    <div><dt>無料で保存</dt><dd><strong>教材 5 冊</strong>まで</dd><dd class="spec-note">文ごとの練習も無料</dd></div>
+    <div><dt>文字起こし</dt><dd><strong>{site.languages.length} 言語</strong></dd><dd class="spec-note">英語は米・英・豪に対応</dd></div>
+    <div><dt>取り込み元</dt><dd class="spec-sources"><span>Podcast／ファイル／</span><span>録音／文章</span></dd><dd class="spec-note">いつもの素材で練習</dd></div>
   </dl>
 </aside>
 
@@ -246,13 +246,13 @@ const steps = [
   </div>
   <div class="feature-grid">
     <article class="feature">
-      <span class="feature-icon">↻</span><span class="card-index">01</span>
+      <span class="feature-icon" aria-hidden="true">↻</span>
       <h3>合図が鳴ったら、<br>声に出す。</h3>
-      <p>一文のあとに「ピッ」と合図。聞いた文に合わせた間にまねるだけ。画面を見続けなくても、話し始めるタイミングが分かります。</p>
+      <p>一文のあとに「ピッ」と合図。聞いた文と同じ長さの間が入るので、そのあいだにまねるだけ。間は秒数の指定にも変えられます。</p>
       <div class="cue-flow"><span>聞く</span><b>ピッ</b><span>声に出す</span></div>
     </article>
     <article class="feature">
-      <span class="feature-icon">≋</span><span class="card-index">02</span>
+      <span class="feature-icon" aria-hidden="true">≋</span>
       <h3>長い音声も、<br>一文ずつ。</h3>
       <p>端末内の音声認識で文字起こしをし、句読点などから「意味の切れ目」を見つけて分割します。</p>
       <div class="split-example" aria-label="区切り方の比較例">
@@ -262,7 +262,7 @@ const steps = [
       </div>
     </article>
     <article class="feature">
-      <span class="feature-icon">Aa</span><span class="card-index">03</span>
+      <span class="feature-icon" aria-hidden="true">Aa</span>
       <h3>文字を離れて、<br>耳と口で。</h3>
       <p>本文を隠して、音だけを頼りに練習。長押しで本文を表示して、すぐ答え合わせ。</p>
       <div class="blur-sample"><span>I'll keep that in mind.</span><small>文字を隠してリスニング</small></div>
@@ -327,10 +327,10 @@ const steps = [
         <span class="material-sticker">いつもの「好き」を<br>学びに変えよう。</span>
       </div>
       <div class="material-list">
-        <article><span>01 / PODCAST</span><h3>いつも聞いている、あの番組。</h3><p>番組を検索して、気になるエピソードを取り込み。生きた言葉を一文ずつ聞き直せます。<a href="/guides/podcast">Podcast で練習する方法</a></p></article>
-        <article><span>02 / RECORDING</span><h3>レッスンの録音を、復習に。</h3><p>先生の言い回しや、会話のフレーズ。その場で録音するか、ボイスメモから送って、繰り返し練習。<a href="/guides/lesson-recording">レッスンの録音を復習する方法</a></p></article>
-        <article><span>03 / TEXT</span><h3>読みかけの記事も、耳から。</h3><p>練習したい文章を貼り付けて音声に。好きな言語と声を選んで、自分だけの教材を作れます。</p></article>
-        <article><span>04 / FILES</span><h3>手持ちの教材を、そのまま。</h3><p>教材に付いてきた音声や、動画ファイル、DRM のない音楽も。使い慣れた教材を、練習しやすい形に。</p></article>
+        <article><span>PODCAST</span><h3>いつも聞いている、あの番組。</h3><p>番組を検索して、気になるエピソードを取り込み。生きた言葉を一文ずつ聞き直せます。<a href="/guides/podcast">Podcast で練習する方法</a></p></article>
+        <article><span>RECORDING</span><h3>レッスンの録音を、復習に。</h3><p>先生の言い回しや、会話のフレーズ。その場で録音するか、ボイスメモから送って、繰り返し練習。<a href="/guides/lesson-recording">レッスンの録音を復習する方法</a></p></article>
+        <article><span>TEXT</span><h3>読みかけの記事も、耳から。</h3><p>練習したい文章を貼り付けて音声に。好きな言語と声を選んで、自分だけの教材を作れます。</p></article>
+        <article><span>FILES</span><h3>手持ちの教材を、そのまま。</h3><p>教材に付いてきた音声や、動画ファイル、DRM のない音楽も。使い慣れた教材を、練習しやすい形に。</p></article>
       </div>
     </div>
     <div class="language-note">

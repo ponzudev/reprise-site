@@ -2512,8 +2512,10 @@ img {
 .specs-grid dt { color: #52647a; font-size: 12px; margin-bottom: 8px; }
 .specs-grid dd { margin: 0; font-size: 13px; color: #27496e; }
 .specs-grid strong { font-size: 20px; font-weight: 750; letter-spacing: -.03em; }
-.specs-grid small { display: block; font-size: 11px; color: #52647a; margin-top: 7px; }
+.specs-grid .spec-note { font-size: 11px; color: #52647a; margin-top: 7px; font-weight: 400; }
 .specs-grid .spec-sources { font-size: 14px; font-weight: 600; }
+/* 語の途中で折り返さないよう、まとまりごとに折り返す。 */
+.specs-grid .spec-sources span { display: inline-block; }
 .split-example { margin-top: 24px; }
 .split-example p { margin: 0 0 14px; padding: 12px; background: #fff; border-radius: 12px; }
 .split-example strong { display: block; font-size: 12px; }
@@ -2558,7 +2560,6 @@ img {
 @media (max-width: 700px) {
   .specs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding-block: 24px; }
   .specs-grid > div:last-child { grid-column: 1 / -1; }
-  .specs-grid .spec-sources br { display: none; }
   .specs-grid strong { font-size: 18px; }
   .feature-detail { grid-template-columns: 1fr; gap: 28px; padding: 26px 20px; border-radius: 22px; }
   .detail-copy h3 { font-size: 27px; }
