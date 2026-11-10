@@ -11,7 +11,7 @@ import '../styles/lp.css';
 
 const title = 'Reprise（リプライズ）｜好きな音声でリピーティング。一文ごとに聞いて、声に出す語学プレーヤー';
 const description =
-  'Podcast やレッスンの録音を一文ずつに自動分割。聞いた文のあとに声に出す間が入る、リピーティング用の語学プレーヤーです。毎回停止ボタンを押さずに、聞いて、まねる練習を続けられます。基本機能は無料、アカウント登録は不要。';
+  '文脈のある英語を聞き、一文ずつ声に出す。教材や Podcast の音声を自動で分割し、話すための間まで用意するリピーティング用の語学プレーヤーです。気に入った表現を何度も練習できます。基本機能は無料、アカウント登録は不要。';
 const store = site.appStoreUrl;
 
 const jsonLd = [
@@ -77,7 +77,7 @@ const steps = [
 <!doctype html>
 <html lang="ja">
 <head>
-<Head title={title} description={description} ogTitle="Reprise（リプライズ）— 一文聞いて、声に出す。" jsonLd={jsonLd} />
+<Head title={title} description={description} ogTitle="Reprise（リプライズ）— 聞いた英語を、自分の言葉に。" jsonLd={jsonLd} />
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" as="image" href="/assets/phone-04-player-playing.webp" imagesrcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" imagesizes="(max-width: 700px) 228px, 300px" fetchpriority="high">
 </head>
@@ -89,7 +89,7 @@ const steps = [
     <span class="brand-icon"><img src="/assets/app-icon-120.png" width="36" height="36" alt=""></span>Reprise<span class="brand-ja">リプライズ</span>
   </a>
   <nav aria-label="メインナビゲーション">
-    <a href="#how">使い方</a>
+    <a href="#story">作った理由</a>
     <a href="#materials">使える教材</a>
     <a href="#pricing">料金</a>
     <a href="#demo">体験する</a>
@@ -102,11 +102,11 @@ const steps = [
 <section class="hero wrap">
   <div class="hero-copy">
     <h1>
-      <span class="hero-kicker"><span class="dot"></span>好きな音声で、リピーティング。</span>
-      一文聞いて、<br><span class="mark">声に出す。</span>
+      <span class="hero-kicker"><span class="dot"></span>文脈のある音声で、リピーティング。</span>
+      聞いた英語を、<br><span class="mark">自分の言葉に。</span>
     </h1>
     <p class="hero-description">
-      一文を聞いて、同じ文をまねる「リピーティング」に。<br>Podcast や録音を自動で区切り、<strong>声に出す間まで用意。</strong>毎回、停止ボタンを押す必要はありません。
+      まとまった会話を聞き、一文ずつ声に出す。<br>教材や Podcast の音声を<strong>自動で分割し、話す間まで用意。</strong>気に入った表現を何度も口にできる、リピーティング用のアプリです。
     </p>
     <div class="hero-actions">
       <AppStoreBadge />
@@ -148,6 +148,20 @@ const steps = [
 
 
 
+
+<section class="section wrap origin-story" id="story" aria-labelledby="story-title">
+  <div class="story-heading">
+    <p class="eyebrow">WHY I MADE REPRISE</p>
+    <h2 id="story-title">いい英語に出会った。<br>自分でも、<br>そう話したかった。</h2>
+    <p class="story-byline">Reprise を作った理由</p>
+  </div>
+  <div class="story-copy">
+    <p>きっかけは、NHK出版の英語教材でした。質の高い英語や豊かな表現に触れる一方で、それを自分の気持ちや、伝えたいことを表す言葉にする難しさを感じていました。</p>
+    <p>会話の流れや、話し手が伝えようとしていること。<strong>その文脈の中で、一つの表現を自分に取り込みたい。</strong>そのために、一文を何度も口に出して練習したいと思ったのです。</p>
+    <p>そこで、まとまった音声を iPhone の音声認識で文ごとに分け、一つずつ練習できるアプリを作りました。<strong>文脈ごと聞いて、一文ずつ自分の言葉にしていく。</strong>それが、Reprise の出発点です。</p>
+    <a class="detail-link" href="#demo">その練習の流れを、音なしで見る <Arrow /></a>
+  </div>
+</section>
 
 <section class="section demo-section" id="demo">
   <div class="wrap">
@@ -437,7 +451,7 @@ const steps = [
 <section class="closing wrap">
   <span class="brand-icon large"><img src="/assets/app-icon-120.png" width="58" height="58" alt="Reprise のアプリアイコン"></span>
   <p class="eyebrow">今日の一文から。</p>
-  <h2>好きな音声で、<br>リピーティングを。</h2>
+  <h2>使ってみたい表現を、<br>自分の言葉に。</h2>
   <AppStoreBadge />
   <p class="micro">{site.requirement} · アカウント登録なし</p>
   <div class="qr">

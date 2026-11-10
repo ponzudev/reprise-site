@@ -2566,3 +2566,20 @@ img {
   .log-screens { grid-template-columns: 1fr; max-width: 280px; gap: 36px; }
   .check-steps strong { font-size: 15px; }
 }
+
+/* A personal origin story connects the product's purpose to its workflow. */
+.origin-story { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); gap: 72px; align-items: start; }
+.story-heading .eyebrow { color: #0759c6; }
+.story-heading h2 { font-size: clamp(26px, 3vw, 38px); line-height: 1.65; margin: 0; }
+.story-byline { margin: 24px 0 0; color: #607089; font-size: 13px; }
+.story-copy { border-left: 2px solid #d4e5f8; padding-left: 36px; }
+.story-copy p { margin: 0 0 22px; font-size: 16px; line-height: 2.1; color: #52647a; }
+.story-copy strong { color: #162944; font-weight: 650; }
+.story-copy .detail-link { margin-top: 0; }
+@media (max-width: 700px) {
+  .origin-story { grid-template-columns: 1fr; gap: 28px; }
+  .story-heading h2 { font-size: 28px; }
+  .story-byline { margin-top: 16px; }
+  .story-copy { padding-left: 20px; }
+  .story-copy p { font-size: 15px; line-height: 2; }
+}
