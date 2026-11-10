@@ -131,7 +131,6 @@ const steps = [
       <span>聞く。まねる。もう一度。<small>聞いた文に合わせて、間が入る。</small></span>
       <span class="loop-symbol">↻</span>
     </div>
-    <span class="visual-label label-bottom">聞く → 間にまねる → 次の一文へ</span>
   </div>
 </section>
 
@@ -172,15 +171,14 @@ const steps = [
     </div>
     <div class="demo-layout">
       <div class="demo-guide">
-        <span class="section-number">SILENT DEMO · 音は出ません</span>
         <h3>話し始めるタイミングに、<br>もう迷わない。</h3>
-        <p>画面を見続けなくても、合図音で自分の番が分かります。<br>停止ボタンの操作は、アプリにおまかせ。</p>
+        <p>お手本が読まれたあと合図音で自分の番が分かります。</p>
         <ol class="demo-stages" aria-label="練習の流れを選ぶ">
           <li><button type="button" data-stage="listen" aria-pressed="true"><span>1</span><span><strong>一文、お手本を聞く</strong><small>音声を文の区切りまで再生。</small></span></button></li>
           <li><button type="button" data-stage="cue" aria-pressed="false"><span>2</span><span><strong>「ピッ」と、話す合図</strong><small>短いビープ音が、聞くから話すへの切り替えを知らせます。</small></span></button></li>
           <li><button type="button" data-stage="speak" aria-pressed="false"><span>3</span><span><strong>空いた間に、声に出す</strong><small>聞いた文の長さに合わせた間のあと、次の文へ。</small></span></button></li>
         </ol>
-        <p class="demo-note">音の出ない説明用モックです。合図音は「ピッ」の文字で表現しています。実際のアプリでは合図音をオフにすることもできます。</p>
+        <p class="demo-note">説明用のモック画面です。実際のアプリの画面とは異なります。実際のアプリでは合図音をオフにすることもできます。</p>
         <noscript><p class="demo-note">一文を聞く → 合図音 → まねる時間 → 次の一文。この流れがアプリで自動で続きます。</p></noscript>
       </div>
       <div class="demo-device" data-phase="listen">
@@ -228,7 +226,6 @@ const steps = [
       </div>
           <div class="device-home" aria-hidden="true"></div>
         </div>
-        <p class="device-caption">音なしで分かる、リピーティングの流れ</p>
       </div>
     </div>
   </div>
