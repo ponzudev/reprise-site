@@ -35,7 +35,7 @@ Reprise（リプライズ）は、利用者が自分で送るフィードバッ�
 
 - 取り込んだ音声ファイル（Podcast からダウンロードしたエピソード、アプリで録音した音声、文章から読み上げて作った音声を含む）
 - 文章から読み上げて作った教材の本文
-- 「伝わるかチェック」で録音した自分の声と、その書き起こし（文ごとに最新の 1 回）
+- 「伝わるかチェック」で録音した自分の声（文ごとに最新の 1 回）と、その書き起こし（回ごと）
 - 音声認識で得られた文字起こしと、文ごとの時刻
 - 学習記録（学習時間、再生した文の数、習得済みにした文）
 - 再生設定（速度、リピートの方法、ポーズの長さなど）
@@ -137,7 +137,7 @@ The following is stored only on your device and never leaves it:
 
 - Audio files you import (including podcast episodes you download, audio you record in the app, and audio created by reading text aloud)
 - The text of study material created by reading text aloud
-- Your own voice recorded to compare with the model audio, and its transcription (the latest take for each sentence)
+- Your own voice recorded in the Speech Check (the latest take for each sentence) and its transcriptions (one for each take)
 - Transcripts and per-sentence timings produced by speech recognition
 - Study records (listening time, sentences played, sentences marked as learned)
 - Playback settings

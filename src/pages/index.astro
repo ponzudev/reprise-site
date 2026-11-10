@@ -285,11 +285,11 @@ const steps = [
         <h3 id="check-title">その発音、伝わった？</h3>
         <p class="detail-lead">自分では言えたつもりの一文。<br>音声認識にどう聞こえたか、語ごとに確かめられます。</p>
         <ol class="check-steps">
-          <li><span>01</span><div><strong>文を長押しして、録音する</strong><p>「伝わるかチェック」を開き、お手本の文を自分の声で。</p></div></li>
+          <li><span>01</span><div><strong>文を長押しして、録音する</strong><p>「伝わるかチェック」を開き、お手本のあとに自分の声で。言い終えると自動で止まり、くり返し練習できます。</p></div></li>
           <li><span>02</span><div><strong>端末内で、書き起こす</strong><p>録音を iPhone の中で音声認識。音声は端末の外へ送りません。</p></div></li>
           <li><span>03</span><div><strong>お手本と、単語ごとに照合</strong><p>同じ語として聞き取られた箇所、別の語になった箇所、聞き取られなかった箇所を色などで表示します。</p></div></li>
         </ol>
-        <p class="detail-note"><strong>発音の採点ではありません。</strong>お手本の語が音声認識にどう聞き取られたかを示します。お手本と自分の声を聴き比べることもできます。</p>
+        <p class="detail-note"><strong>発音の採点ではありません。</strong>お手本の語が音声認識にどう聞き取られたかを示します。無料ユーザーは各トラックの3文まで行えます。</p>
       </div>
       <FeatureScreenshot screen={featureScreens.check} />
     </section>
@@ -406,6 +406,7 @@ const steps = [
           <li>文章から音声作成：月3本まで</li>
           <li>直近7日間の学習記録</li>
           <li>Podcast の手動取り込み</li>
+          <li>伝わるかチェック：各トラックの3文まで</li>
         </ul>
         <AppStoreBadge />
       </article>
@@ -418,7 +419,7 @@ const steps = [
           <li>Free のすべての基本機能</li>
           <li>教材数・文章からの音声作成の上限を解除</li>
           <li>長期間の学習記録を振り返り</li>
-          <li>ブックマークした文の復習・伝わるかチェック</li>
+          <li>ブックマークした文の復習・伝わるかチェック（すべての文）</li>
           <li>Podcast の新着を自動で取り込み</li>
         </ul>
         <AppStoreBadge />
