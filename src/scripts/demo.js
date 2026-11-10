@@ -1,147 +1,122 @@
-// トップページの体験版プレーヤーと、スマホ用の固定ボタンの出し入れ。
-const audio = document.querySelector("#audio");
-const ranges = [
-  [0.15, 2.352],
-  [2.402, 8.467],
-  [8.517, 14.006],
-];
+// 無音の説明用モック。音声・マイクは使わず、3 段階を視覚化する。
+const device = document.querySelector(".demo-device");
 const sentences = [...document.querySelectorAll(".sentence")];
-const play = document.querySelector("#play"),
-  status = document.querySelector("#status");
-let current = 0,
-  playing = false,
-  loop = false,
-  gapTimer = null,
-  request = 0;
-function display() {
-  sentences.forEach((b, i) => {
-    b.classList.toggle("active", i === current);
-    b.setAttribute("aria-current", String(i === current));
+const stageButtons = [...document.querySelectorAll("[data-stage]")];
+const play = document.querySelector("#play");
+const status = document.querySelector("#status");
+const progress = document.querySelector("#progress");
+const progressBar = document.querySelector(".progress-track");
+const stages = [
+  { id: "listen", title: "お手本を聞く", symbol: "♪", description: "まずは、一文を最後まで。", duration: 3000 },
+  { id: "cue", title: "ここから、あなたの番", symbol: "ピッ", description: "アプリでは短い合図音が鳴ります。", duration: 1400 },
+  { id: "speak", title: "聞いた文を、声に出す", symbol: "あなたの番", description: "まねる時間のあと、次の一文へ。", duration: 3600 },
+];
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+let current = 0;
+let stageIndex = 0;
+let elapsed = 0;
+let playing = false;
+let finished = false;
+let visible = false;
+let hasStarted = false;
+let frame = null;
+let lastTime = null;
+
+function render() {
+  const stage = stages[stageIndex];
+  device.dataset.phase = stage.id;
+  device.dataset.playing = String(playing);
+  sentences.forEach((button, index) => {
+    button.classList.toggle("active", index === current);
+    button.setAttribute("aria-current", String(index === current));
   });
-  play.innerHTML = playing
-    ? '<svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z" fill="currentColor"/></svg>'
-    : '<svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7z" fill="currentColor"/></svg>';
-  play.setAttribute("aria-label", playing ? "一時停止" : "再生");
+  stageButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.stage === stage.id)));
+  document.querySelector("#phase-symbol").textContent = stage.symbol;
+  document.querySelector("#phase-title").textContent = stage.title;
+  document.querySelector("#phase-description").textContent = stage.description;
+  play.textContent = finished ? "もう一度" : playing ? "一時停止" : "流れを見る";
+  play.setAttribute("aria-label", finished ? "デモをもう一度見る" : playing ? "デモを一時停止" : "デモを開始");
+  status.textContent = finished ? "練習の流れを見終わりました · 音は出ません" : `${current + 1} 文目 · ${stage.title}${playing ? "" : "（停止中）"}`;
+  updateProgress();
 }
-function stop() {
-  request++;
-  playing = false;
-  clearTimeout(gapTimer);
-  gapTimer = null;
-  audio.pause();
-  display();
+function updateProgress() {
+  const percent = Math.min(100, elapsed / stages[stageIndex].duration * 100);
+  progress.style.width = `${percent}%`;
+  progressBar.setAttribute("aria-valuenow", String(Math.round(percent)));
+  progressBar.setAttribute("aria-valuetext", `${stages[stageIndex].title} ${Math.round(percent)}%`);
 }
-async function start(index, fromStart = true) {
-  stop();
-  const id = request;
-  current = index;
-  playing = true;
-  display();
-  if (
-    fromStart ||
-    audio.currentTime < ranges[index][0] ||
-    audio.currentTime >= ranges[index][1]
-  )
-    audio.currentTime = ranges[index][0];
-  status.textContent = `${index + 1}文目を再生中${loop ? " · リピート ON" : ""}`;
-  try {
-    await audio.play();
-    if (id !== request && !playing) audio.pause();
-  } catch (error) {
-    if (id !== request) return;
-    stop();
-    status.textContent =
-      "再生できませんでした。もう一度、再生をタップしてください。";
-  }
+function syncFrames() {
+  if (frame !== null) cancelAnimationFrame(frame);
+  frame = null;
+  lastTime = null;
+  if (playing && visible && !document.hidden) frame = requestAnimationFrame(tick);
 }
-sentences.forEach((button, i) =>
-  button.addEventListener("click", () => start(i)),
-);
-play.addEventListener("click", () => {
-  if (playing) {
-    stop();
-    status.textContent = "一時停止中";
-  } else start(current, false);
-});
-document
-  .querySelector("#previous")
-  .addEventListener("click", () => start((current + 2) % 3));
-document
-  .querySelector("#next")
-  .addEventListener("click", () => start((current + 1) % 3));
-document.querySelector("#loop").addEventListener("click", (event) => {
-  loop = !loop;
-  event.currentTarget.setAttribute("aria-pressed", String(loop));
-  event.currentTarget.querySelector("span").textContent =
-    `リピート ${loop ? "ON" : "OFF"}`;
-  if (!loop && gapTimer) {
-    stop();
-    status.textContent = "リピートを停止しました";
-  } else
-    status.textContent = loop
-      ? "一文のあと、2秒の間を挟んで繰り返します"
-      : "リピートをオフにしました";
-});
-const speeds = [1, 0.8, 1.2];
-let speedIndex = 0;
-document.querySelector("#speed").addEventListener("click", (event) => {
-  speedIndex = (speedIndex + 1) % speeds.length;
-  audio.playbackRate = speeds[speedIndex];
-  event.currentTarget.textContent = speeds[speedIndex].toFixed(1) + "×";
-  event.currentTarget.setAttribute(
-    "aria-label",
-    `再生速度 ${speeds[speedIndex]}倍`,
-  );
-});
-document.querySelector("#hide-text").addEventListener("click", (event) => {
-  const hidden = document
-    .querySelector("#sentences")
-    .classList.toggle("hidden-text");
-  event.currentTarget.setAttribute("aria-pressed", String(hidden));
-  event.currentTarget.textContent = hidden ? "本文を表示" : "本文を隠す";
-});
-function tick() {
-  const [startTime, endTime] = ranges[current];
-  const percent = Math.max(
-    0,
-    Math.min(
-      100,
-      ((audio.currentTime - startTime) / (endTime - startTime)) * 100,
-    ),
-  );
-  document.querySelector("#progress").style.width = percent + "%";
-  document
-    .querySelector(".progress-track")
-    .setAttribute("aria-valuenow", String(Math.round(percent)));
-  if (playing && !gapTimer && audio.currentTime >= endTime - 0.035) {
-    audio.pause();
-    if (loop) {
-      status.textContent = "声に出してみましょう · 2秒後にリピート";
-      gapTimer = setTimeout(() => {
-        gapTimer = null;
-        start(current);
-      }, 2000);
+function tick(time) {
+  frame = null;
+  if (!playing || !visible || document.hidden) return;
+  if (lastTime !== null) elapsed += time - lastTime;
+  lastTime = time;
+  if (elapsed >= stages[stageIndex].duration) {
+    if (stageIndex === stages.length - 1 && current === sentences.length - 1) {
+      elapsed = stages[stageIndex].duration;
+      finished = true;
+      playing = false;
     } else {
-      stop();
-      status.textContent = "もう一度聞くか、次の文をタップ";
+      elapsed = 0;
+      stageIndex++;
+      if (stageIndex === stages.length) { stageIndex = 0; current++; }
     }
-  }
-  requestAnimationFrame(tick);
+    render();
+  } else updateProgress();
+  if (playing) frame = requestAnimationFrame(tick);
 }
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden && playing) {
-    stop();
-    status.textContent = "一時停止中";
-  }
+function selectSentence(index) {
+  current = index;
+  stageIndex = 0;
+  elapsed = 0;
+  finished = false;
+  hasStarted = true;
+  playing = !reducedMotion.matches;
+  render();
+  syncFrames();
+}
+sentences.forEach((button, index) => button.addEventListener("click", () => selectSentence(index)));
+stageButtons.forEach(button => button.addEventListener("click", () => {
+  stageIndex = stages.findIndex(stage => stage.id === button.dataset.stage);
+  elapsed = 0;
+  playing = false;
+  finished = false;
+  hasStarted = true;
+  render();
+  syncFrames();
+}));
+play.addEventListener("click", () => {
+  if (finished) { current = 0; stageIndex = 0; elapsed = 0; finished = false; }
+  playing = !playing;
+  hasStarted = true;
+  render();
+  syncFrames();
 });
-window.addEventListener("pagehide", stop);
-audio.addEventListener("error", () => {
-  stop();
-  status.textContent =
-    "音声を読み込めません。接続を確認して再度お試しください。";
+document.querySelector("#restart").addEventListener("click", () => selectSentence(0));
+document.querySelector("#previous").addEventListener("click", () => selectSentence((current + sentences.length - 1) % sentences.length));
+document.querySelector("#next").addEventListener("click", () => selectSentence((current + 1) % sentences.length));
+if ("IntersectionObserver" in window) {
+  new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    if (visible && !hasStarted && !reducedMotion.matches) {
+      hasStarted = true;
+      playing = true;
+      render();
+    }
+    syncFrames();
+  }, { threshold: 0.25 }).observe(device);
+} else visible = true;
+document.addEventListener("visibilitychange", syncFrames);
+window.addEventListener("pagehide", () => { playing = false; syncFrames(); });
+reducedMotion.addEventListener("change", () => {
+  if (reducedMotion.matches) { playing = false; render(); syncFrames(); }
 });
-display();
-requestAnimationFrame(tick);
+render();
 
 // スマホの固定ボタンは、最初の画面のボタンが見えなくなってから出す（最初の画面を隠さないため）。
 const mobileCta = document.querySelector(".mobile-cta");
