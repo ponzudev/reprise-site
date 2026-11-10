@@ -2341,3 +2341,71 @@ img {
     font-size: 15px;
   }
 }
+
+/* LP: one promise, immediate demo, and a clear free starting point. */
+.hero { min-height: 660px; padding-block: 24px 52px; grid-template-columns: 1.25fr 1fr; }
+.hero h1 { font-size: clamp(38px, 4.4vw, 60px); line-height: 1.5; letter-spacing: -.035em; }
+.hero-description { line-height: 1.9; }
+.hero-kicker { letter-spacing: .04em; color: #375777; }
+.hero-visual { min-height: 580px; }
+.section { padding-block: 88px; }
+.section-heading { margin-bottom: 42px; }
+.section h2 { letter-spacing: -.025em; }
+.intro-strip { background: #eaf3ff; color: #244f80; }
+.demo-section { background: #102b4c; color: #fff; }
+.demo-section .section-heading > p, .demo-guide > p, .demo-guide li p { color: #c1d4e9; }
+.demo-section .eyebrow, .demo-guide .section-number { color: #93c8ff; }
+.demo-guide h3 { font-size: 30px; }
+.demo-guide li > span { background: #24496f; color: #fff; }
+.demo-player { color: var(--ink); box-shadow: 0 24px 70px #0003; }
+.demo-section .demo-note { color: #c1d4e9; }
+.feature { background: #f4f8fc; border: 1px solid #e1e9f3; }
+.feature h3 { font-size: 25px; }
+.practice-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; font-size: 14px; margin: 32px 0; }
+.practice-links a { color: #0759c6; text-decoration: underline; text-underline-offset: 4px; }
+.materials-section { background: #f3f7fc; }
+.materials-photo { height: 560px; }
+.material-list article { padding-block: 20px; }
+.language-note { margin-top: 32px; }
+.how-section .step { border: 0; border-top: 2px solid #8bb8eb; border-radius: 0; padding-inline: 0; }
+.pricing-section { background: #edf4fc; }
+.free-plan { border: 2px solid #0863d1; box-shadow: 0 12px 40px #164f9514; }
+.price-card.premium { background: #fff; color: var(--ink); box-shadow: none; border: 1px solid #c7d8eb; }
+.price-card.premium .plan-name, .price-card.premium .price, .price-card.premium li { color: var(--ink); }
+.price-card.premium .price-sub, .price-card.premium .plan-name > span, .price-card.premium .trial-note { color: #52647a; }
+.price-card.premium .button { background: #e6f1ff; color: #0759c6; }
+.price-card.premium li::before { color: #0759c6; }
+.price-card.premium ul { border-color: #dce7f5; }
+.closing { padding-block: 80px; }
+@media (max-width: 1000px) and (min-width: 701px) {
+  .header nav { gap: 12px; }
+  .brand-ja { display: none; }
+}
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-block: 24px 28px; gap: 12px; }
+  .hero h1 { font-size: clamp(30px, 8.8vw, 46px); }
+  .hero-kicker { font-size: 12px; }
+  .hero-description { max-width: 30em; margin-inline: auto; font-size: 15px; }
+  .hero-visual { min-height: 490px; margin-top: 0; }
+  .hero-actions { flex-wrap: wrap; gap: 18px; }
+  .hero-points { gap: 6px 12px; }
+  .section { padding-block: 56px; }
+  .section-heading { margin-bottom: 28px; }
+  .section h2 { font-size: 27px; }
+  .intro-strip { gap: 10px; font-size: 11px; flex-wrap: wrap; }
+  .intro-strip span::before { margin-right: 5px; }
+  .practice-links { justify-content: flex-start; gap: 10px 16px; }
+  .materials-photo { height: 410px; }
+  .material-list article { padding-block: 16px; }
+  .material-list p, .step p, .price-card li { font-size: 14px; }
+  .material-list h3 { font-size: 19px; }
+  .pricing-note { font-size: 12px; }
+  .closing { padding-block: 56px; }
+}
+.hero-visual { min-width: 0; }
+.orbit { max-width: 100%; }
+.free-plan .button { background: #0863d1; color: #fff; }
+.free-plan .button:hover { background: #074fc5; }
+@media (min-width: 701px) and (max-width: 1000px) {
+  .orbit-two { width: 100%; height: auto; aspect-ratio: 1; }
+}
