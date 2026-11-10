@@ -1,11 +1,11 @@
 # iPhone の枠（モック）にスクリーンショットをはめ込んで WebP にする。
-# 使い方: python3 scripts/frame.py 枠.png 画面.webp 出力.webp
+# 使い方: python3 scripts/frame.py 枠.png 画面.png 出力.webp [出力の幅（既定 720）]
 import sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 frame_path, shot_path, out_path = sys.argv[1:4]
-OUT_WIDTH = 720
+OUT_WIDTH = int(sys.argv[4]) if len(sys.argv) > 4 else 720
 
 frame = Image.open(frame_path).convert('RGBA')
 a = np.asarray(frame).astype(np.float32)
@@ -44,5 +44,5 @@ ia = island_alpha[..., None]
 rgb = rgb * (1 - ia) + a[..., :3] * ia
 out = np.dstack([rgb, a[..., 3]]).clip(0, 255).astype(np.uint8)
 img = Image.fromarray(out, 'RGBA').resize((OUT_WIDTH, round(h * OUT_WIDTH / w)), Image.LANCZOS)
-img.save(out_path, 'WEBP', quality=86, method=6)
+img.save(out_path, 'WEBP', quality=90, method=6)
 print(out_path, img.size, 'screen', (left, top, right, bottom))

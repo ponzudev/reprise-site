@@ -46,4 +46,11 @@ python3 scripts/frame.py scripts/iphone-frame.png public/assets/04-player-playin
 App Store と同じ紹介画像（文字入り）は `public/assets/store-1-split.webp`・`store-2-podcast.webp`・`store-3-check.webp`（幅 660 × 高さ 1434）。
 ストアの画像を変えたら、同じ名前で置き換える。`src/pages/index.astro` の `gallery` に、画像の中の文字を代替テキストとして書いている。
 
+画素密度の高い画面向けに、どの画像にも高精細版（`◯◯@2x.webp`）を置いている。枠つきは末尾に幅 `1260` を付けて作り、
+紹介画像は原寸（幅 1320）のまま WebP にする。差し替えるときは両方を作り直す。
+
+```sh
+python3 scripts/frame.py scripts/iphone-frame.png 画面.png public/assets/phone-04-player-playing@2x.webp 1260
+```
+
 最初の画面の画像を変えたら、SNS 共有用の画像（`public/assets/og.png`）も作り直す。
