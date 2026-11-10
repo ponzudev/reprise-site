@@ -6,9 +6,9 @@ import { site } from '../data/site';
 import { faq } from '../data/faq';
 import '../styles/lp.css';
 
-const title = 'Reprise（リプライズ）｜音声を文ごとに自動分割する、シャドーイング・リピーティング用の語学プレーヤー';
+const title = 'Reprise（リプライズ）｜好きな音声でリピーティング。一文ごとに聞いて、声に出す語学プレーヤー';
 const description =
-  'Podcast やレッスンの録音、手持ちの音声ファイルを iPhone の中で 1 文ずつに自動分割。聞き取れなかった一文にタップで戻り、リピーティングやシャドーイングを練習できる語学プレーヤーです。基本機能は無料、アカウント登録は不要。';
+  'Podcast やレッスンの録音を一文ずつに自動分割。聞いた文のあとに声に出す間が入る、リピーティング用の語学プレーヤーです。毎回停止ボタンを押さずに、聞いて、まねる練習を続けられます。基本機能は無料、アカウント登録は不要。';
 const store = site.appStoreUrl;
 
 const jsonLd = [
@@ -66,7 +66,7 @@ const steps = [
   },
   {
     title: '一文ずつ、聞いて声に出す',
-    text: '文をタップして聞き直し、ポーズの間にまねる。速度もリピートも、指ひとつで。',
+    text: '「文ごとに区切る」を選んで再生。音声のあとの間にまねると、次の文へ自動で進みます。',
   },
 ];
 
@@ -74,7 +74,7 @@ const steps = [
 <!doctype html>
 <html lang="ja">
 <head>
-<Head title={title} description={description} ogTitle="Reprise（リプライズ）— 聞きたい一文を、何度でも。" jsonLd={jsonLd} />
+<Head title={title} description={description} ogTitle="Reprise（リプライズ）— 一文聞いて、声に出す。" jsonLd={jsonLd} />
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" as="image" href="/assets/phone-04-player-playing.webp" imagesrcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" imagesizes="(max-width: 700px) 228px, 300px" fetchpriority="high">
 </head>
@@ -99,11 +99,11 @@ const steps = [
 <section class="hero wrap">
   <div class="hero-copy">
     <h1>
-      <span class="hero-kicker"><span class="dot"></span>iPhone で、好きな音声を練習教材に</span>
-      聞きたい一文を、<br><span class="mark">何度でも。</span>
+      <span class="hero-kicker"><span class="dot"></span>好きな音声で、リピーティング。</span>
+      一文聞いて、<br><span class="mark">声に出す。</span>
     </h1>
     <p class="hero-description">
-      Podcast やレッスンの録音を<strong>自動で一文ずつに分割。</strong><br>聞く、まねる、繰り返す。シャドーイングも復習も、再生位置を探さずに。
+      一文を聞いて、同じ文をまねる「リピーティング」に。<br>Podcast や録音を自動で区切り、<strong>声に出す間まで用意。</strong>毎回、停止ボタンを押す必要はありません。
     </p>
     <div class="hero-actions">
       <a class="button" href={store}>
@@ -123,20 +123,20 @@ const steps = [
   <div class="hero-visual">
     <div class="orbit orbit-one"></div>
     <div class="orbit orbit-two"></div>
-    <span class="visual-label label-top">文をタップ。そこから再生。</span>
+    <span class="visual-label label-top">一文のあとに、まねる時間。</span>
     <div class="phone framed hero-phone">
       <img src="/assets/phone-04-player-playing.webp" srcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" sizes="(max-width: 700px) 228px, 300px" width="720" height="1472" alt="英会話の音声が 1 文ずつに分かれて並ぶ、Reprise の再生画面" fetchpriority="high">
     </div>
     <div class="float-card">
       <span class="mini-wave"><i></i><i></i><i></i><i></i><i></i></span>
-      <span>聞く。まねる。もう一度。<small>自分のペースで、ひとつずつ。</small></span>
+      <span>聞く。まねる。もう一度。<small>聞いた文に合わせて、間が入る。</small></span>
       <span class="loop-symbol">↻</span>
     </div>
-    <span class="visual-label label-bottom">音声を自動分割 → 一文ずつ練習</span>
+    <span class="visual-label label-bottom">聞く → 間にまねる → 次の一文へ</span>
   </div>
 </section>
 
-<div class="intro-strip"><span>台本の用意は不要</span><span>文ごとにリピート</span><span>声に出す間も自動</span></div>
+<div class="intro-strip"><span>音声を一文ずつに分割</span><span>声に出す間も自動</span><span>リピーティングの基本は無料</span></div>
 
 
 
@@ -146,20 +146,20 @@ const steps = [
   <div class="wrap">
     <div class="section-heading">
       <p class="eyebrow">TRY REPRISE</p>
-      <h2>説明より、まず一文。</h2>
-      <p>下の文をタップして、聞き直しの手軽さを試してください。</p>
+      <h2>一文聞いて、まねしてみよう。</h2>
+      <p>「リピート」を ON にして文をタップ。音声のあとの間に、声に出してみてください。</p>
     </div>
     <div class="demo-layout">
       <div class="demo-guide">
         <span class="section-number">INTERACTIVE DEMO</span>
-        <h3>戻したいのは、<br>「あの一文」。</h3>
-        <p>再生位置を探す手間を減らして、<br>聞くこと、話すことに集中。</p>
+        <h3>聞く時間と、<br>まねる時間を交互に。</h3>
+        <p>聞いた文を、自分の声でもう一度。<br>これがリピーティングです。</p>
         <ol>
-          <li><span>1</span><div><strong>聞きたい文をタップ</strong><p>文の頭から、ぴったり再生。</p></div></li>
-          <li><span>2</span><div><strong>リピートで、もう一度</strong><p>このデモでは、2 秒の間を挟んで繰り返し。</p></div></li>
-          <li><span>3</span><div><strong>慣れたら、本文を隠す</strong><p>耳で聞いた音を頼りに、声に出して。</p></div></li>
+          <li><span>1</span><div><strong>リピートを ON にして、文をタップ</strong><p>まずは一文、最後まで聞きます。</p></div></li>
+          <li><span>2</span><div><strong>音声が止まったら、まねる</strong><p>デモの間は 2 秒。まずは短い 1 文目でお試しください。</p></div></li>
+          <li><span>3</span><div><strong>もう一度聞いて、繰り返す</strong><p>慣れたら本文を隠して、耳を頼りに。</p></div></li>
         </ol>
-        <p class="demo-note">音が出ます。日本語の案内音声による操作デモです。アプリでは、自分の教材で練習できます。</p>
+        <p class="demo-note">音が出ます。日本語の案内音声を繰り返すデモです。アプリでは「文ごとに区切る」を選ぶと、聞いた文の長さに合わせた間が入り、次の文へ進みます。</p>
       </div>
       <div class="demo-player" aria-label="操作できる音声プレーヤー">
         <div class="demo-top">
@@ -205,21 +205,21 @@ const steps = [
 <section class="section wrap features-section" id="features">
   <div class="section-heading">
     <p class="eyebrow">MAKE IT YOURS</p>
-    <h2>探す操作を減らして、<br>声に出す時間を増やす。</h2>
-    <p>練習に必要な操作を、一文のまわりに。</p>
+    <h2>止める操作は、アプリに。<br>あなたは、聞いてまねるだけ。</h2>
+    <p>リピーティングを続けやすくする、3 つの機能。</p>
   </div>
   <div class="feature-grid">
     <article class="feature">
-      <span class="feature-icon">≋</span><span class="card-index">01</span>
+      <span class="feature-icon">↻</span><span class="card-index">01</span>
+      <h3>声に出すための、<br>ちょうどいい間。</h3>
+      <p>「文ごとに区切る」で、聞いた文の長さに合わせた間が自動で入ります。合図音を聞いたら、自分の声でまねてみましょう。</p>
+      <div class="sound-flow"><span>聞く <b>▂▅▇▃▆▂</b></span><i>→</i><span>声に出す <b>▂▃▆▇▅▂</b></span></div>
+    </article>
+    <article class="feature">
+      <span class="feature-icon">≋</span><span class="card-index">02</span>
       <h3>長い音声も、<br>一文ずつ。</h3>
       <p>文字起こしをもとに自動で分割。聞き直すときは文をタップするだけ。区切りはあとから直せます。</p>
       <div class="mini-sentences"><span>It's finally getting warmer, isn't it?</span><span class="selected">Have you been to this cafe before? <b>↻</b></span><span>Their lemon cake is worth trying.</span></div>
-    </article>
-    <article class="feature">
-      <span class="feature-icon">↻</span><span class="card-index">02</span>
-      <h3>声に出すための、<br>ちょうどいい間。</h3>
-      <p>聞いた文に合わせて、声に出す間を自動で確保。難しければ、音程を変えずに 0.5 倍までゆっくり再生。</p>
-      <div class="sound-flow"><span>聞く <b>▂▅▇▃▆▂</b></span><i>→</i><span>声に出す <b>▂▃▆▇▅▂</b></span></div>
     </article>
     <article class="feature">
       <span class="feature-icon">Aa</span><span class="card-index">03</span>
@@ -228,7 +228,7 @@ const steps = [
       <div class="blur-sample"><span>I'll keep that in mind.</span><small>文字を隠してリスニング</small></div>
     </article>
   </div>
-  <p class="practice-links">練習方法を見る：<a href="/guides/repeating">聞いてからまねる</a><a href="/guides/shadowing">音声を追いかける</a><a href="/guides">すべてのガイド →</a></p>
+  <p class="practice-links">練習方法を見る：<a href="/guides/repeating">リピーティングのやり方</a><a href="/guides/shadowing">音声を追いかける</a><a href="/guides">すべてのガイド →</a></p>
   <div class="privacy-note">
     <span>◈</span>
     <p><strong>あなたの教材は、あなたの端末に。</strong>文字起こしも文の分割も iPhone の中で行います。音声と学習記録をサーバーへ送ることはなく、アカウント登録もいりません。</p>
@@ -287,7 +287,7 @@ const steps = [
   <div class="wrap">
     <div class="section-heading">
       <p class="eyebrow">START SMALL. KEEP GOING.</p>
-      <h2>一文ずつの練習は、無料。</h2>
+      <h2>リピーティングを、無料で。</h2>
       <p>まずは Free で、自分の教材を使ってみてください。</p>
     </div>
     <div class="pricing-grid">
@@ -343,7 +343,7 @@ const steps = [
 <section class="closing wrap">
   <span class="brand-icon large"><img src="/assets/app-icon-120.png" width="58" height="58" alt="Reprise のアプリアイコン"></span>
   <p class="eyebrow">今日の一文から。</p>
-  <h2>次に聞く音声を、<br>練習する一文に。</h2>
+  <h2>好きな音声で、<br>リピーティングを。</h2>
   <a class="button" href={store}>App Store で無料ダウンロード <span><Arrow /></span></a>
   <p class="micro">{site.requirement} · アカウント登録なし</p>
   <div class="qr">
@@ -365,7 +365,7 @@ const steps = [
 </footer>
 
 <div class="mobile-cta">
-  <span>いつもの音声を、教材に。</span>
+  <span>リピーティングを、無料で。</span>
   <a class="button small" href={store}>無料ではじめる <Arrow /></a>
 </div>
 
