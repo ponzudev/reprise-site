@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- SNS 共有用の画像（public/assets/og.png、1200×630）の元。作り直し方は README を参照。 -->
+<html lang="ja">
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; width: 1200px; height: 630px; overflow: hidden; position: relative;
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+    color: #162944; background: linear-gradient(135deg, #ffffff 0%, #f1f7ff 55%, #dcecff 100%); }
+  .copy { position: absolute; left: 80px; top: 70px; width: 700px; }
+  .brand { display: flex; align-items: center; gap: 18px; font-size: 40px; font-weight: 800; letter-spacing: -1px; }
+  .brand img { width: 68px; height: 68px; border-radius: 16px; }
+  .brand small { font-size: 20px; font-weight: 500; letter-spacing: 2px; margin-top: 12px; }
+  h1 { font-size: 78px; line-height: 1.32; margin: 46px 0 28px; font-weight: 800; letter-spacing: 2px; }
+  h1 span { color: #074bc4; }
+  p { font-size: 29px; line-height: 1.6; margin: 0; color: #3d5170; font-weight: 600; }
+  .circle { position: absolute; right: -60px; top: 40px; width: 560px; height: 560px; border-radius: 50%; background: #cfe4ff; }
+  .phone { position: absolute; right: 120px; top: 60px; width: 330px; transform: rotate(5deg);
+    filter: drop-shadow(0 30px 40px #1759a540); }
+  .phone img { display: block; width: 100%; }
+</style>
+<div class="circle"></div>
+<div class="phone"><img src="../public/assets/phone-04-player-playing.webp"></div>
+<div class="copy">
+  <div class="brand"><img src="../public/assets/app-icon.png">Reprise<small>リプライズ</small></div>
+  <h1>聞いて、声に出して、<br><span>身につける。</span></h1>
+  <p>音声を文ごとに自動で区切る、<br>シャドーイングのための語学プレーヤー</p>
+</div>
+</html>

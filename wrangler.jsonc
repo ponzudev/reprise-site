@@ -11,5 +11,7 @@
   // デプロイ時に reprise.ponzudev.app の DNS レコードと証明書が自動で作られる。
   "routes": [
     { "pattern": "reprise.ponzudev.app", "custom_domain": true }
-  ]
+  ],
+  // PR ごとのプレビュー（Workers Builds が `wrangler preview` で作る）に必要。中身は空でよい。
+  "previews": {}
 }

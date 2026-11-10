@@ -1,0 +1,19 @@
+---
+import DocLayout from '../../layouts/DocLayout.astro';
+import AppCard from '../../components/AppCard.astro';
+import { getGuides } from '../../data/guides';
+const guides = await getGuides();
+---
+<DocLayout
+  title="練習ガイド — シャドーイング・リピーティングのやり方"
+  description="シャドーイング、リピーティング、オーバーラッピング、ディクテーションのやり方と、Podcast やレッスンの録音など手持ちの音声で練習する方法をまとめています。"
+>
+  <h1>練習ガイド</h1>
+  <p>声に出す練習のやり方と、手持ちの音声を Reprise で教材にする方法をまとめています。</p>
+  <ul class="guide-list">
+    {guides.map((guide) => (
+      <li><a href={guide.href}><strong>{guide.title}</strong><span>{guide.description}</span></a></li>
+    ))}
+  </ul>
+  <AppCard />
+</DocLayout>

@@ -1,0 +1,42 @@
+---
+// すべてのページの <head> に入れる共通のタグ（検索・SNS 共有・アイコン・Smart App Banner）。
+import { site, canonical } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** SNS で共有したときの見出し。省くと title を使う。 */
+  ogTitle?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  /** 構造化データ（JSON-LD）。複数あるときは配列で渡す。 */
+  jsonLd?: object | object[];
+}
+
+const { title, description, ogTitle = title, ogType = 'website', noindex = false, jsonLd } = Astro.props;
+const url = canonical(Astro.url.pathname);
+const image = site.url + site.ogImage;
+const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+---
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content={description}>
+{noindex ? <meta name="robots" content="noindex"> : <link rel="canonical" href={url}>}
+<meta name="apple-itunes-app" content={`app-id=${site.appId}`}>
+<meta property="og:site_name" content={`${site.name}（${site.nameJa}）`}>
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content={ogType}>
+<meta property="og:title" content={ogTitle}>
+<meta property="og:description" content={description}>
+<meta property="og:url" content={url}>
+<meta property="og:image" content={image}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="sitemap" href="/sitemap.xml">
+{schemas.map((schema) => (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}
