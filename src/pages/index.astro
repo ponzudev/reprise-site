@@ -156,10 +156,10 @@ const steps = [
     <p class="story-byline">Reprise を作った理由</p>
   </div>
   <div class="story-copy">
-    <p>きっかけは、NHK出版の英語教材でした。質の高い英語や豊かな表現に触れる一方で、それを自分の気持ちや、伝えたいことを表す言葉にする難しさを感じていました。</p>
+    <p>きっかけは NHK出版の英語教材でした。質の高い英語や豊かな表現に触れる一方で、それを自分の気持ちや、伝えたいことを表す言葉にする難しさを感じていました。</p>
     <p>会話の流れや、話し手が伝えようとしていること。<strong>その文脈の中で、一つの表現を自分に取り込みたい。</strong>そのために、一文を何度も口に出して練習したいと思ったのです。</p>
-    <p>そこで、まとまった音声を iPhone の音声認識で文ごとに分け、一つずつ練習できるアプリを作りました。<strong>文脈ごと聞いて、一文ずつ自分の言葉にしていく。</strong>それが、Reprise の出発点です。</p>
-    <a class="detail-link" href="#demo">その練習の流れを、音なしで見る <Arrow /></a>
+    <p>そこで、まとまった音声を iPhone の音声認識で文ごとに分け、一つずつ練習できるアプリを作りました。<strong>文脈ごと聞いて、一文ずつ自分の言葉にしていく。</strong>それが Reprise の出発点です。</p>
+    <a class="detail-link" href="#demo">その練習の流れを音なしで見る <Arrow /></a>
   </div>
 </section>
 
@@ -177,7 +177,7 @@ const steps = [
         <p>画面を見続けなくても、合図音で自分の番が分かります。<br>停止ボタンの操作は、アプリにおまかせ。</p>
         <ol class="demo-stages" aria-label="練習の流れを選ぶ">
           <li><button type="button" data-stage="listen" aria-pressed="true"><span>1</span><span><strong>一文、お手本を聞く</strong><small>音声を文の区切りまで再生。</small></span></button></li>
-          <li><button type="button" data-stage="cue" aria-pressed="false"><span>2</span><span><strong>「ピッ」と、話す合図</strong><small>短いビープ音が、聞く・話すを切り替えます。</small></span></button></li>
+          <li><button type="button" data-stage="cue" aria-pressed="false"><span>2</span><span><strong>「ピッ」と、話す合図</strong><small>短いビープ音が、聞くから話すへの切り替えを知らせます。</small></span></button></li>
           <li><button type="button" data-stage="speak" aria-pressed="false"><span>3</span><span><strong>空いた間に、声に出す</strong><small>聞いた文の長さに合わせた間のあと、次の文へ。</small></span></button></li>
         </ol>
         <p class="demo-note">音の出ない説明用モックです。合図音は「ピッ」の文字で表現しています。実際のアプリでは合図音をオフにすることもできます。</p>
@@ -300,7 +300,7 @@ const steps = [
       <div class="detail-copy">
         <span class="feature-plan">Premium · 復習モード</span>
         <h3 id="review-title">気になる一文だけ、<br>まとめて復習。</h3>
-        <p class="detail-lead">ブックマークした文が、教材をまたいで一か所に。<br>聞き直す場所を、毎回探す必要はありません。</p>
+        <p class="detail-lead">ブックマークした文が、教材をまたいで一か所に。<br>聞き直す場所を毎回探す必要はありません。</p>
         <ul class="detail-list">
           <li>再生画面で文を右へスワイプしてブックマーク</li>
           <li>集めた文を、ポーズを挟んで一文ずつ練習</li>
@@ -327,7 +327,7 @@ const steps = [
         <span class="material-sticker">いつもの「好き」を<br>学びに変えよう。</span>
       </div>
       <div class="material-list">
-        <article><span>01 / PODCAST</span><h3>いつも聞いている、あの番組。</h3><p>番組を検索して、気になるエピソードを取り込み。生きた言葉を、一文ずつ聞き直せます。<a href="/guides/podcast">Podcast で練習する方法</a></p></article>
+        <article><span>01 / PODCAST</span><h3>いつも聞いている、あの番組。</h3><p>番組を検索して、気になるエピソードを取り込み。生きた言葉を一文ずつ聞き直せます。<a href="/guides/podcast">Podcast で練習する方法</a></p></article>
         <article><span>02 / RECORDING</span><h3>レッスンの録音を、復習に。</h3><p>先生の言い回しや、会話のフレーズ。その場で録音するか、ボイスメモから送って、繰り返し練習。<a href="/guides/lesson-recording">レッスンの録音を復習する方法</a></p></article>
         <article><span>03 / TEXT</span><h3>読みかけの記事も、耳から。</h3><p>練習したい文章を貼り付けて音声に。好きな言語と声を選んで、自分だけの教材を作れます。</p></article>
         <article><span>04 / FILES</span><h3>手持ちの教材を、そのまま。</h3><p>教材に付いてきた音声や、動画ファイル、DRM のない音楽も。使い慣れた教材を、練習しやすい形に。</p></article>
@@ -371,7 +371,7 @@ const steps = [
     <div class="log-layout">
       <div class="log-copy">
         <dl class="log-metrics">
-          <div><dt>今日の学習時間</dt><dd>再生中と、声に出すためのポーズを記録。</dd></div>
+          <div><dt>今日の学習時間</dt><dd>音声を再生している時間と、声に出すためのポーズの時間を記録。</dd></div>
           <div><dt>再生した文の数</dt><dd>一文を聞き終えるごとに加算。繰り返しも1回ずつ。</dd></div>
           <div><dt>習得した文</dt><dd>自分で「習得済み」にした文の数を確認。</dd></div>
           <div><dt>連続学習日数</dt><dd>1分以上練習した日が、何日続いたか。</dd></div>
@@ -381,7 +381,7 @@ const steps = [
           <p><strong>Free</strong><span>直近 7 日のグラフ・教材別の時間</span></p>
           <p><strong>Premium</strong><span>14 日・1 か月・3 か月・半年・1 年・全期間に切り替え</span></p>
         </div>
-        <p class="detail-note">日ごとの詳細は直近 7 日分を表示。長い期間は、グラフや教材別の時間で振り返ります。</p>
+        <p class="detail-note">日ごとの詳細は直近 7 日分を表示。長い期間はグラフや教材別の時間で振り返ります。</p>
       </div>
       <div class="log-screens">
         <FeatureScreenshot screen={featureScreens.today} />
