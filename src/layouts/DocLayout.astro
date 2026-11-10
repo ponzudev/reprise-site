@@ -79,6 +79,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
     header.site .brand:hover { text-decoration: none; }
     header.site .brand, header.site nav a { white-space: nowrap; }
     @media (max-width: 520px) {
+      header.site .wrap { flex-wrap: wrap; height: auto; min-height: 60px; padding-block: 10px; gap: 6px 12px; }
       header.site .brand small { display: none; }
       header.site nav a { padding: 6px 9px; font-size: 13px; }
     }
@@ -144,15 +145,10 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
       background: var(--accent-soft); border-radius: 16px;
       padding: 20px 22px; margin: 2.6em 0 0;
     }
-    .app-card img { width: 56px; height: 56px; border-radius: 13px; }
+    .app-card > img { width: 56px; height: 56px; border-radius: 13px; }
     .app-card div { flex: 1 1 240px; }
     .app-card strong { display: block; font-size: 1rem; }
     .app-card span { display: block; font-size: .88rem; color: var(--muted); line-height: 1.6; }
-    .app-card a.store {
-      background: #0966d3; color: #fff; font-weight: 700; font-size: .95rem;
-      padding: 11px 20px; border-radius: 10px; white-space: nowrap;
-    }
-    .app-card a.store:hover { text-decoration: none; background: #0754b5; }
     .guide-list { list-style: none; padding: 0; margin: 1.4em 0 0; }
     .guide-list li { border-top: 1px solid var(--line); margin: 0; }
     .guide-list a { display: block; padding: 16px 2px; color: var(--text); }

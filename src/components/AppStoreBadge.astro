@@ -1,0 +1,24 @@
+---
+import { site } from '../data/site';
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+<a class:list={['app-store-badge', { compact }]} href={site.appStoreUrl} aria-label="App Store で Reprise をダウンロード">
+  <img src="/assets/app-store-badge-ja.svg" width="109" height="40" alt="App Store からダウンロード" />
+</a>
+<style>
+  .app-store-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 13px;
+    line-height: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .app-store-badge img { display: block; width: auto; height: 52px; border-radius: 0; }
+  .app-store-badge.compact { padding: 10px; }
+  .app-store-badge.compact img { height: 40px; }
+  .app-store-badge:focus-visible { outline: 3px solid #087ff5; outline-offset: 2px; }
+</style>

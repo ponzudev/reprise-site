@@ -2409,3 +2409,66 @@ img {
 @media (min-width: 701px) and (max-width: 1000px) {
   .orbit-two { width: 100%; height: auto; aspect-ratio: 1; }
 }
+
+/* The interactive demo follows the app's sentence list and floating controls. */
+.demo-device {
+  width: min(100%, 390px);
+  justify-self: center;
+  position: relative;
+  border: 8px solid #17191c;
+  border-radius: 52px;
+  background: #17191c;
+  box-shadow: 0 0 0 2px #6a7078, 0 32px 70px #0005;
+  color: #16181b;
+  margin-bottom: 42px;
+}
+.device-screen { border-radius: 43px; background: #fff; overflow: hidden; }
+.device-statusbar { height: 53px; padding: 12px 25px 0; display: flex; justify-content: space-between; align-items: center; position: relative; font-size: 14px; font-weight: 700; }
+.device-statusbar svg { width: 56px; height: 16px; }
+.device-island { position: absolute; left: 50%; top: 12px; transform: translateX(-50%); width: 100px; height: 28px; border-radius: 20px; background: #090a0b; }
+.demo-device .demo-player { display: flex; flex-direction: column; min-height: 610px; padding: 12px 12px 8px; border: 0; border-radius: 0; box-shadow: none; color: #16181b; }
+.demo-device .demo-top { gap: 12px; padding: 0 4px 16px; border: 0; }
+.mock-back { font-size: 36px; line-height: 1; padding-inline: 4px; }
+.demo-device .demo-top strong { font-size: 16px; letter-spacing: -.04em; }
+.demo-device .demo-top small { color: #777; font-size: 11px; }
+.demo-device .demo-badge { font-size: 9px; padding: 3px 5px; color: #647084; }
+.mock-track-info { display: flex; justify-content: space-between; padding: 0 8px 12px; margin-bottom: 8px; border-bottom: 1px solid #eceef1; color: #757a80; font-size: 11px; }
+.demo-device .sentence { padding: 14px 10px; gap: 9px; border-radius: 17px; margin-bottom: 3px; }
+.demo-device .sentence-text { font-size: 15px; line-height: 1.65; color: #33383d; }
+.demo-device .sentence.active { background: #e2f2ff; }
+.demo-device .sentence.active .sentence-text { font-weight: 600; color: #294658; }
+.demo-device .sentence-number { font-size: 11px; color: #92979d; }
+.demo-device .sentence small { font-size: 11px; color: #747e86; margin-top: 4px; }
+.demo-device .sentence-play { font-size: 10px; padding-top: 5px; }
+.demo-device .demo-status { margin-top: auto; padding: 18px 8px 12px; min-height: 66px; font-size: 12px; line-height: 1.6; }
+.demo-device .demo-controls { margin: 0; padding: 12px 8px 8px; border: 1px solid #edf0f3; border-radius: 30px; box-shadow: 0 6px 24px #172b4410; background: #fafbfc; }
+.demo-device .progress-track { background: #dfe2e5; height: 4px; margin: 2px 10px 4px; }
+.demo-device .progress-track span { background: #25282b; }
+.mock-settings { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding-inline: 8px; }
+.mock-settings button { border: 0; background: none; color: #087ff5; font: inherit; font-weight: 600; min-height: 44px; padding: 4px 8px; }
+.mock-settings .loop-button { margin: 0; font-size: 12px; border-radius: 16px; }
+.mock-settings .loop-button[aria-pressed="true"] { background: #e2f2ff; color: #0067d5; }
+.demo-device .player-buttons { background: #fff; border-radius: 28px; padding: 4px; gap: 2px; box-shadow: 0 3px 12px #172b4408; }
+.demo-device .player-buttons button { color: #17191c; min-width: 44px; }
+.demo-device .player-buttons #hide-text { font-size: 11px; padding: 6px; }
+.demo-device .player-buttons .play-button { background: none; width: 52px; height: 52px; padding: 10px; }
+.demo-device button:focus-visible { outline-offset: -2px; }
+.device-home { width: 112px; height: 5px; margin: 8px auto 10px; border-radius: 5px; background: #17191c; }
+.device-caption { position: absolute; top: 100%; left: 0; width: 100%; margin: 20px 0 0; color: #c1d4e9; font-size: 12px; text-align: center; }
+.price-card .app-store-badge { margin-top: auto; align-self: flex-start; }
+.closing .app-store-badge { vertical-align: middle; }
+@media (max-width: 700px) {
+  .demo-device { grid-row: 1; border-width: 7px; border-radius: 44px; }
+  .device-screen { border-radius: 37px; }
+  .demo-device .demo-player { width: 100%; min-height: 600px; margin: 0; }
+  .device-statusbar { padding-inline: 20px; }
+  .device-island { width: 86px; }
+  .demo-device .demo-top strong { font-size: 14px; }
+  .demo-device .sentence-text { font-size: 14px; }
+  .demo-device .demo-top { gap: 7px; }
+  .demo-layout { gap: 32px; }
+  .header { gap: 6px; }
+  .header .brand { gap: 7px; }
+  .mobile-cta { gap: 0; padding: 2px 10px calc(2px + env(safe-area-inset-bottom)); }
+  .mobile-cta > span { font-size: 11px; }
+}
