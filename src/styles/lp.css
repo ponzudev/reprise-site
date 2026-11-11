@@ -2543,10 +2543,8 @@ img {
 .detail-link { display: inline-flex; gap: 12px; align-items: center; color: #0759c6; font-size: 14px; margin-top: 16px; text-decoration: underline; text-underline-offset: 4px; }
 .learning-log { background: #f5f9fc; }
 .log-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); align-items: center; gap: 48px; }
-.log-metrics { margin: 0; }
-.log-metrics > div { border-bottom: 1px solid #dce5ef; padding: 16px 0; }
-.log-metrics dt { font-size: 16px; font-weight: 650; }
-.log-metrics dd { margin: 4px 0 0; color: #52647a; font-size: 13px; }
+.log-metrics { margin: 0; padding: 0; list-style: none; }
+.log-metrics li { border-bottom: 1px solid #dce5ef; padding: 14px 0; font-size: 16px; font-weight: 650; }
 .log-periods { margin-top: 28px; padding: 16px 20px; background: #e9f1fc; border-radius: 16px; }
 .log-periods p { display: flex; gap: 16px; margin: 6px 0 12px; font-size: 13px; }
 .log-periods strong { min-width: 64px; color: #0759c6; }
