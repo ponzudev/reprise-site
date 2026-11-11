@@ -2853,7 +2853,7 @@ img {
 
 /* 練習のしかた（リピーティングとシャドーイング）を、再生スタイルと対で並べる。 */
 .practice-modes {
-  max-width: 900px;
+  max-width: 1080px;
   margin: 56px auto 0;
   text-align: center;
 }
@@ -2863,10 +2863,15 @@ img {
   margin: 0 0 22px;
 }
 .practice-mode-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   text-align: left;
+}
+.practice-mode-grid article {
+  flex: 1 1 300px;
+  max-width: 346px;
 }
 .practice-mode-grid article {
   padding: 26px 26px 24px;
@@ -2901,8 +2906,11 @@ img {
     font-size: 19px;
   }
   .practice-mode-grid {
-    grid-template-columns: 1fr;
     gap: 14px;
+  }
+  .practice-mode-grid article {
+    flex-basis: 100%;
+    max-width: none;
   }
   .practice-mode-grid article {
     padding: 22px;
