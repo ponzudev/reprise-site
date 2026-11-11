@@ -73,6 +73,35 @@ const waveform = [
   [32, 60, 85, 48, 72, 92, 66, 38, 58, 80, 50, 64, 26],
 ];
 
+// 練習のしかたと、そのときに使うアプリの設定。
+const practiceModes = [
+  {
+    name: 'リスニング',
+    setting: '通しで再生',
+    text: 'まず通して聞きます。聞き取れなかった文は、タップするとその頭から聞き直せます。本文を隠して聞くこともできます。',
+  },
+  {
+    name: 'リピーティング',
+    setting: '文ごとに区切る',
+    text: '一文聞いたら合図音。聞いた文と同じ長さの間に、まねて声に出します。',
+  },
+  {
+    name: 'シャドーイング',
+    setting: '通しで再生',
+    text: '音声を止めずに、少し遅れて追いかけます。速度は音程を保ったまま 0.5 倍まで落とせます。難しい文は「1 文をループ」で繰り返せます。',
+  },
+  {
+    name: 'オーバーラッピング',
+    setting: '本文を表示',
+    text: '本文を見ながら、音声と同時に声に出します。いま鳴っている文が明るく表示されるので、目で追えます。',
+  },
+  {
+    name: 'ディクテーション',
+    setting: '本文を隠す・1 文をループ',
+    text: '本文を隠して一文を繰り返し、聞こえたとおりに紙やメモアプリへ書き取ります。ボタンを長押しすると本文が出て、答え合わせができます。',
+  },
+];
+
 const steps = [
   {
     title: '音声を取り込む',
@@ -253,21 +282,18 @@ const steps = [
     </article>
   </div>
   <div class="practice-modes">
-    <h3>練習のしかたは、再生スタイルで切り替え。</h3>
+    <h3>同じ音声で、5 つの練習。</h3>
     <div class="practice-mode-grid">
-      <article>
-        <span>文ごとに区切る</span>
-        <h4>リピーティング</h4>
-        <p>一文聞いたら合図音。聞いた文と同じ長さの間に、まねて声に出します。</p>
-      </article>
-      <article>
-        <span>通しで再生</span>
-        <h4>シャドーイング</h4>
-        <p>音声を止めずに、少し遅れて追いかけます。速度は音程を保ったまま 0.5 倍まで落とせます。難しい文は「1 文をループ」で繰り返せます。</p>
-      </article>
+      {practiceModes.map((mode) => (
+        <article>
+          <span>{mode.setting}</span>
+          <h4>{mode.name}</h4>
+          <p>{mode.text}</p>
+        </article>
+      ))}
     </div>
   </div>
-  <p class="practice-links">練習方法を見る：<a href="/guides/repeating">リピーティングのやり方</a><a href="/guides/shadowing">シャドーイングのやり方</a><a href="/guides">すべてのガイド →</a></p>
+  <p class="practice-links">練習方法を見る：<a href="/guides/repeating">リピーティング</a><a href="/guides/shadowing">シャドーイング</a><a href="/guides/overlapping">オーバーラッピング</a><a href="/guides/dictation">ディクテーション</a><a href="/guides">すべてのガイド →</a></p>
   <div class="privacy-note">
     <span>◈</span>
     <p><strong>あなたの教材は、あなたの端末に。</strong>文字起こしも文の分割も iPhone の中で行います。音声と学習記録をサーバーへ送ることはなく、アカウント登録もいりません。</p>
