@@ -2642,3 +2642,153 @@ img {
     right: 8px;
   }
 }
+
+/* ---------- デモ: 解析 → 分割 → お手本 → 合図 → 声に出す ---------- */
+
+/* 波形。解析中はひと続き、分割のあとは文ごとに離れ、練習中はいまの文に色が付く。 */
+.mock-wave {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  height: 46px;
+  margin: 0 6px 10px;
+  padding: 6px 8px;
+  border-radius: 14px;
+  background: #f1f4f7;
+  overflow: hidden;
+  transition: gap 0.5s ease;
+}
+.wave-segment {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+.wave-segment i {
+  flex: 1;
+  min-width: 2px;
+  border-radius: 2px;
+  background: #b4bec9;
+  transition: background 0.4s;
+}
+/* 解析中: 左から右へ読み取っていく帯 */
+.mock-wave::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--scan, 0%);
+  background: linear-gradient(90deg, #087ff51f, #087ff53d);
+  border-right: 2px solid #087ff5;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.demo-device[data-phase="analyze"] .mock-wave::after {
+  opacity: 1;
+}
+.demo-device:not([data-phase="analyze"]) .mock-wave {
+  gap: 9px;
+}
+.demo-device:not([data-phase="analyze"]) .wave-segment i {
+  background: #a9cdf3;
+}
+.demo-device[data-phase="listen"][data-active="0"] .wave-segment:nth-child(1) i,
+.demo-device[data-phase="listen"][data-active="1"] .wave-segment:nth-child(2) i,
+.demo-device[data-phase="listen"][data-active="2"] .wave-segment:nth-child(3) i,
+.demo-device[data-phase="cue"][data-active="0"] .wave-segment:nth-child(1) i,
+.demo-device[data-phase="cue"][data-active="1"] .wave-segment:nth-child(2) i,
+.demo-device[data-phase="cue"][data-active="2"] .wave-segment:nth-child(3) i {
+  background: #087ff5;
+}
+.demo-device[data-phase="speak"][data-active="0"] .wave-segment:nth-child(1) i,
+.demo-device[data-phase="speak"][data-active="1"] .wave-segment:nth-child(2) i,
+.demo-device[data-phase="speak"][data-active="2"] .wave-segment:nth-child(3) i {
+  background: #1a8060;
+}
+
+/* 文の一覧。解析中は隠して「文字起こし中」を出し、分割で 1 文ずつ現れる。 */
+.demo-device .sentences {
+  position: relative;
+}
+.demo-device .sentence {
+  transition: opacity 0.45s, transform 0.45s, background 0.2s;
+}
+.demo-device[data-phase="analyze"] .sentence {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+.demo-device[data-phase="split"] .sentence:nth-of-type(2) {
+  transition-delay: 0.35s;
+}
+.demo-device[data-phase="split"] .sentence:nth-of-type(3) {
+  transition-delay: 0.7s;
+}
+.analyzing {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  padding: 0 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.demo-device[data-phase="analyze"] .analyzing {
+  opacity: 1;
+}
+.analyzing span {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e6ebf0 25%, #f4f7fa 50%, #e6ebf0 75%);
+  background-size: 200% 100%;
+  animation: analyzing-shimmer 1.4s linear infinite;
+}
+.analyzing span:nth-child(2) {
+  width: 62%;
+}
+.analyzing span:nth-child(3) {
+  width: 84%;
+}
+.analyzing small {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #647084;
+}
+@keyframes analyzing-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* 段階ごとの色（画面の下のカードと、左の一覧）。 */
+.silent-phase {
+  min-height: 138px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+.demo-device[data-phase="analyze"] .silent-phase {
+  background: #f1f4f7;
+}
+.demo-device[data-phase="analyze"] .phase-symbol {
+  color: #52647a;
+}
+.demo-device[data-phase="split"] .phase-symbol {
+  font-size: 24px;
+}
+.demo-guide .demo-stages li {
+  margin-bottom: 8px;
+}
+.demo-stages button {
+  padding: 12px 14px;
+}
+@media (max-width: 700px) {
+  .silent-phase {
+    min-height: 128px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .analyzing span {
+    animation: none;
+  }
+}

@@ -1,4 +1,4 @@
-// 無音の説明用モック。音声・マイクは使わず、3 段階を視覚化する。
+// 無音の説明用モック。音声・マイクは使わず、解析から声に出すまでの 5 段階を視覚化する。
 const device = document.querySelector(".demo-device");
 const sentences = [...document.querySelectorAll(".sentence")];
 const stageButtons = [...document.querySelectorAll("[data-stage]")];
@@ -6,11 +6,15 @@ const play = document.querySelector("#play");
 const status = document.querySelector("#status");
 const progress = document.querySelector("#progress");
 const progressBar = document.querySelector(".progress-track");
+// 最初の 2 段階（解析・分割）はトラック全体で 1 回だけ、残りの 3 段階は文ごとに繰り返す。
 const stages = [
-  { id: "listen", title: "お手本を聞く", symbol: "♪", description: "まずは、一文を最後まで。", duration: 3000 },
-  { id: "cue", title: "ここから、あなたの番", symbol: "ピッ", description: "アプリでは短い合図音が鳴ります。", duration: 1400 },
-  { id: "speak", title: "聞いた文を、声に出す", symbol: "あなたの番", description: "まねる時間のあと、次の一文へ。", duration: 3600 },
+  { id: "analyze", title: "音声を解析中", symbol: "≋", description: "文字起こしは、この iPhone の中で。", duration: 2800, meta: "0:09 · 解析中" },
+  { id: "split", title: "文ごとに分かれました", symbol: "3 文", description: "文の切れ目で区切り、本文が付きます。", duration: 2800, meta: "0:09 · 3 文" },
+  { id: "listen", title: "お手本を聞く", symbol: "♪", description: "まずは、一文を最後まで。", duration: 3000, meta: "0:09 · 3 文" },
+  { id: "cue", title: "ここから、あなたの番", symbol: "ピッ", description: "アプリでは短い合図音が鳴ります。", duration: 1400, meta: "0:09 · 3 文" },
+  { id: "speak", title: "聞いた文を、声に出す", symbol: "あなたの番", description: "まねる時間のあと、次の一文へ。", duration: 3600, meta: "0:09 · 3 文" },
 ];
+const firstSentenceStage = stages.findIndex(stage => stage.id === "listen");
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 let current = 0;
 let stageIndex = 0;
@@ -25,10 +29,14 @@ let lastTime = null;
 function render() {
   const stage = stages[stageIndex];
   device.dataset.phase = stage.id;
+  device.dataset.active = String(current);
+  device.style.setProperty("--scan", "0%");
+  document.querySelector("#track-meta").textContent = stage.meta;
   device.dataset.playing = String(playing);
   sentences.forEach((button, index) => {
-    button.classList.toggle("active", index === current);
-    button.setAttribute("aria-current", String(index === current));
+    const active = stageIndex >= firstSentenceStage && index === current;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-current", String(active));
   });
   stageButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.stage === stage.id)));
   document.querySelector("#phase-symbol").textContent = stage.symbol;
@@ -36,12 +44,14 @@ function render() {
   document.querySelector("#phase-description").textContent = stage.description;
   play.textContent = finished ? "もう一度" : playing ? "一時停止" : "流れを見る";
   play.setAttribute("aria-label", finished ? "デモをもう一度見る" : playing ? "デモを一時停止" : "デモを開始");
-  status.textContent = finished ? "練習の流れを見終わりました · 音は出ません" : `${current + 1} 文目 · ${stage.title}${playing ? "" : "（停止中）"}`;
+  const where = stageIndex >= firstSentenceStage ? `${current + 1} 文目 · ` : "";
+  status.textContent = finished ? "流れを見終わりました · 音は出ません" : `${where}${stage.title}${playing ? "" : "（停止中）"}`;
   updateProgress();
 }
 function updateProgress() {
   const percent = Math.min(100, elapsed / stages[stageIndex].duration * 100);
   progress.style.width = `${percent}%`;
+  device.style.setProperty("--scan", `${percent}%`);
   progressBar.setAttribute("aria-valuenow", String(Math.round(percent)));
   progressBar.setAttribute("aria-valuetext", `${stages[stageIndex].title} ${Math.round(percent)}%`);
 }
@@ -64,15 +74,15 @@ function tick(time) {
     } else {
       elapsed = 0;
       stageIndex++;
-      if (stageIndex === stages.length) { stageIndex = 0; current++; }
+      if (stageIndex === stages.length) { stageIndex = firstSentenceStage; current++; }
     }
     render();
   } else updateProgress();
   if (playing) frame = requestAnimationFrame(tick);
 }
-function selectSentence(index) {
+function selectSentence(index, fromAnalysis = false) {
   current = index;
-  stageIndex = 0;
+  stageIndex = fromAnalysis ? 0 : firstSentenceStage;
   elapsed = 0;
   finished = false;
   hasStarted = true;
@@ -83,6 +93,7 @@ function selectSentence(index) {
 sentences.forEach((button, index) => button.addEventListener("click", () => selectSentence(index)));
 stageButtons.forEach(button => button.addEventListener("click", () => {
   stageIndex = stages.findIndex(stage => stage.id === button.dataset.stage);
+  if (stageIndex < firstSentenceStage) current = 0;
   elapsed = 0;
   playing = false;
   finished = false;
@@ -97,7 +108,7 @@ play.addEventListener("click", () => {
   render();
   syncFrames();
 });
-document.querySelector("#restart").addEventListener("click", () => selectSentence(0));
+document.querySelector("#restart").addEventListener("click", () => selectSentence(0, true));
 document.querySelector("#previous").addEventListener("click", () => selectSentence((current + sentences.length - 1) % sentences.length));
 document.querySelector("#next").addEventListener("click", () => selectSentence((current + 1) % sentences.length));
 if ("IntersectionObserver" in window) {
