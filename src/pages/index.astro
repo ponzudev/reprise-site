@@ -58,6 +58,13 @@ const jsonLd = [
   },
 ];
 
+// デモの波形。3 文ぶんの棒の高さ（%）で、見た目だけのもの。
+const waveform = [
+  [30, 55, 80, 62, 90, 70, 45, 75, 95, 60, 40, 68, 52, 28],
+  [35, 70, 88, 58, 76, 44, 30],
+  [32, 60, 85, 48, 72, 92, 66, 38, 58, 80, 50, 26],
+];
+
 const steps = [
   {
     title: '音声を取り込む',
@@ -165,23 +172,25 @@ const steps = [
 <section class="section demo-section" id="demo">
   <div class="wrap">
     <div class="section-heading">
-      <p class="eyebrow">TRY REPRISE</p>
-      <h2>「ピッ」が鳴ったら、<br>あなたの番。</h2>
-      <p>お手本を聞く。合図でまねる。次の一文へ。<br>音を出さずに、練習の流れを見てみましょう。</p>
+      <p class="eyebrow">FROM AUDIO TO YOUR VOICE</p>
+      <h2>取り込んだ音声が、<br>練習に変わるまで。</h2>
+      <p>音声を解析して、文に分けて、お手本のあとに声に出す。<br>画面の変化で、流れを追ってみましょう。</p>
     </div>
     <div class="demo-layout">
       <div class="demo-guide">
-        <h3>話し始めるタイミングに、<br>もう迷わない。</h3>
+        <h3>画面は、<br>こう変わります。</h3>
         <p>お手本が読まれたあと合図音で自分の番が分かります。</p>
         <ol class="demo-stages" aria-label="練習の流れを選ぶ">
-          <li><button type="button" data-stage="listen" aria-pressed="true"><span>1</span><span><strong>一文、お手本を聞く</strong><small>音声を文の区切りまで再生。</small></span></button></li>
-          <li><button type="button" data-stage="cue" aria-pressed="false"><span>2</span><span><strong>「ピッ」と、話す合図</strong><small>短いビープ音が、聞くから話すへの切り替えを知らせます。</small></span></button></li>
-          <li><button type="button" data-stage="speak" aria-pressed="false"><span>3</span><span><strong>空いた間に、声に出す</strong><small>聞いた文の長さに合わせた間のあと、次の文へ。</small></span></button></li>
+          <li><button type="button" data-stage="analyze" aria-pressed="true"><span>1</span><span><strong>音声を解析する</strong><small>iPhone の中で文字起こし。音声は外に送りません。</small></span></button></li>
+          <li><button type="button" data-stage="split" aria-pressed="false"><span>2</span><span><strong>文ごとに分かれる</strong><small>文の切れ目で区切り、一文ずつ本文が付きます。</small></span></button></li>
+          <li><button type="button" data-stage="listen" aria-pressed="false"><span>3</span><span><strong>一文、お手本を聞く</strong><small>音声を文の区切りまで再生。</small></span></button></li>
+          <li><button type="button" data-stage="cue" aria-pressed="false"><span>4</span><span><strong>「ピッ」と、話す合図</strong><small>短いビープ音が、聞くから話すへの切り替えを知らせます。</small></span></button></li>
+          <li><button type="button" data-stage="speak" aria-pressed="false"><span>5</span><span><strong>空いた間に、声に出す</strong><small>聞いた文の長さに合わせた間のあと、次の文へ。</small></span></button></li>
         </ol>
         <p class="demo-note">説明用のモック画面です。実際のアプリの画面とは異なります。実際のアプリでは合図音をオフにすることもできます。</p>
-        <noscript><p class="demo-note">一文を聞く → 合図音 → まねる時間 → 次の一文。この流れがアプリで自動で続きます。</p></noscript>
+        <noscript><p class="demo-note">音声を解析 → 文ごとに分割 → 一文を聞く → 合図音 → まねる時間 → 次の一文。聞くところから先は、アプリで自動で続きます。</p></noscript>
       </div>
-      <div class="demo-device" data-phase="listen">
+      <div class="demo-device" data-phase="analyze" data-active="0">
         <div class="device-screen">
           <div class="device-statusbar" aria-hidden="true">
             <span>9:41</span><span class="device-island"></span>
@@ -190,11 +199,18 @@ const steps = [
       <div class="demo-player" aria-label="Reprise の音の出ない説明用モック">
         <div class="demo-top">
           <span class="mock-back" aria-hidden="true">‹</span>
-          <div><strong>カフェでのひとこと</strong><small>3 文 · 練習の流れ</small></div>
+          <div><strong>カフェでのひとこと</strong><small id="track-meta">0:09 · 解析中</small></div>
           <span class="demo-badge">DEMO</span>
         </div>
-        <div class="mock-track-info"><span>一文ずつ、聞いてまねる</span><span>全 3 文</span></div>
+        <div class="mock-wave" aria-hidden="true">
+          {waveform.map((segment) => (
+            <span class="wave-segment" style={`flex:${segment.length}`}>
+              {segment.map((height) => <i style={`height:${height}%`}></i>)}
+            </span>
+          ))}
+        </div>
         <div class="sentences" id="sentences">
+          <div class="analyzing" aria-hidden="true"><span></span><span></span><span></span><small>音声認識で文字起こし中…</small></div>
           {[
             ['Could I have a coffee, please?', 'コーヒーをいただけますか？'],
             ['I’ll have it here.', 'ここで飲みます。'],
@@ -208,11 +224,11 @@ const steps = [
           ))}
         </div>
         <div class="silent-phase" aria-hidden="true">
-          <span class="phase-symbol" id="phase-symbol">♪</span>
-          <strong id="phase-title">お手本を聞く</strong>
-          <span id="phase-description">まずは、一文を最後まで。</span>
+          <span class="phase-symbol" id="phase-symbol">≋</span>
+          <strong id="phase-title">音声を解析中</strong>
+          <span id="phase-description">文字起こしは、この iPhone の中で。</span>
         </div>
-        <div class="demo-status"><span class="status-dot"></span><span id="status" role="status" aria-live="polite">音なしで練習の流れを表示します</span></div>
+        <div class="demo-status"><span class="status-dot"></span><span id="status" role="status" aria-live="polite">音声の解析から、流れを表示します</span></div>
         <div class="demo-controls">
           <div class="progress-track" role="progressbar" aria-label="説明の進み具合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress"></span></div>
           <div class="mock-settings"><span>文ごとに区切る</span><span>音なしデモ</span></div>
