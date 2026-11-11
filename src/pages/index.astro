@@ -9,9 +9,9 @@ import { site } from '../data/site';
 import { faq } from '../data/faq';
 import '../styles/lp.css';
 
-const title = 'Reprise（リプライズ）｜好きな音声でリピーティング。一文ごとに聞いて、声に出す語学プレーヤー';
+const title = 'Reprise（リプライズ）｜好きな音声でリピーティング・シャドーイング。一文ごとに聞いて、声に出す語学プレーヤー';
 const description =
-  '文脈のある英語を聞き、一文ずつ声に出す。教材や Podcast の音声を自動で分割し、話すための間まで用意するリピーティング用の語学プレーヤーです。気に入った表現を何度も練習できます。基本機能は無料、アカウント登録は不要。';
+  '文脈のある英語を聞き、一文ずつ声に出す。教材や Podcast の音声を自動で分割する語学プレーヤーです。間を挟んでまねるリピーティングにも、止めずに追いかけるシャドーイングにも使えます。気に入った表現を何度も練習できます。基本機能は無料、アカウント登録は不要。';
 const store = site.appStoreUrl;
 
 const jsonLd = [
@@ -41,6 +41,7 @@ const jsonLd = [
     featureList: [
       '音声を端末内で文ごとに自動分割',
       '文ごとのリピート再生とリピーティング用のポーズ',
+      'シャドーイング向けの通し再生',
       '0.5〜2.0 倍の速度調整',
       '本文を伏せて聞く',
       'Podcast・録音・音声や動画のファイル・貼り付けた文章を教材にする',
@@ -83,7 +84,7 @@ const steps = [
   },
   {
     title: '一文ずつ、聞いて声に出す',
-    text: '「文ごとに区切る」を選んで再生。音声のあとの間にまねると、次の文へ自動で進みます。',
+    text: '「文ごとに区切る」を選んで再生。音声のあとの間にまねると、次の文へ自動で進みます。止めずに追いかけるシャドーイングは「通しで再生」で。',
   },
 ];
 
@@ -116,11 +117,11 @@ const steps = [
 <section class="hero wrap">
   <div class="hero-copy">
     <h1>
-      <span class="hero-kicker"><span class="dot"></span>文脈のある音声で、リピーティング。</span>
+      <span class="hero-kicker"><span class="dot"></span>文脈のある音声で、リピーティングとシャドーイング。</span>
       聞いた英語を、<br><span class="mark">自分の言葉に。</span>
     </h1>
     <p class="hero-description">
-      まとまった会話を聞き、一文ずつ声に出す。<br>教材や Podcast の音声を<strong>自動で分割し、話す間まで用意。</strong>気に入った表現を何度も口にできる、リピーティング用のアプリです。
+      まとまった会話を聞き、一文ずつ声に出す。<br>教材や Podcast の音声を<strong>自動で分割し、話す間まで用意。</strong>気に入った表現を何度も口にできる、リピーティングとシャドーイングのためのアプリです。
     </p>
     <div class="hero-actions">
       <AppStoreBadge />
@@ -225,7 +226,7 @@ const steps = [
   <div class="section-heading">
     <p class="eyebrow">MAKE IT YOURS</p>
     <h2>止める操作は、アプリに。<br>あなたは、聞いてまねるだけ。</h2>
-    <p>リピーティングを続けやすくする、3 つの機能。</p>
+    <p>リピーティングとシャドーイングを続けやすくする機能。</p>
   </div>
   <div class="feature-grid">
     <article class="feature">
@@ -251,7 +252,22 @@ const steps = [
       <div class="blur-sample"><span>I'll keep that in mind.</span><small>文字を隠してリスニング</small></div>
     </article>
   </div>
-  <p class="practice-links">練習方法を見る：<a href="/guides/repeating">リピーティングのやり方</a><a href="/guides/shadowing">音声を追いかける</a><a href="/guides">すべてのガイド →</a></p>
+  <div class="practice-modes">
+    <h3>練習のしかたは、再生スタイルで切り替え。</h3>
+    <div class="practice-mode-grid">
+      <article>
+        <span>文ごとに区切る</span>
+        <h4>リピーティング</h4>
+        <p>一文聞いたら合図音。聞いた文と同じ長さの間に、まねて声に出します。</p>
+      </article>
+      <article>
+        <span>通しで再生</span>
+        <h4>シャドーイング</h4>
+        <p>音声を止めずに、少し遅れて追いかけます。速度は音程を保ったまま 0.5 倍まで落とせます。難しい文は「1 文をループ」で繰り返せます。</p>
+      </article>
+    </div>
+  </div>
+  <p class="practice-links">練習方法を見る：<a href="/guides/repeating">リピーティングのやり方</a><a href="/guides/shadowing">シャドーイングのやり方</a><a href="/guides">すべてのガイド →</a></p>
   <div class="privacy-note">
     <span>◈</span>
     <p><strong>あなたの教材は、あなたの端末に。</strong>文字起こしも文の分割も iPhone の中で行います。音声と学習記録をサーバーへ送ることはなく、アカウント登録もいりません。</p>
@@ -361,7 +377,7 @@ const steps = [
   <div class="wrap">
     <div class="section-heading">
       <p class="eyebrow">START SMALL. KEEP GOING.</p>
-      <h2>リピーティングを、無料で。</h2>
+      <h2>リピーティングもシャドーイングも、<br>無料で。</h2>
       <p>まずは Free で、自分の教材を使ってみてください。</p>
     </div>
     <div class="pricing-grid">
@@ -438,7 +454,7 @@ const steps = [
 </footer>
 
 <div class="mobile-cta">
-  <span>リピーティングを、無料で。</span>
+  <span>声に出す練習を、無料で。</span>
   <AppStoreBadge compact />
 </div>
 
