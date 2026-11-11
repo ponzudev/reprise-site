@@ -2643,152 +2643,180 @@ img {
   }
 }
 
-/* ---------- デモ: 解析 → 分割 → お手本 → 合図 → 声に出す ---------- */
-
-/* 波形。解析中はひと続き、分割のあとは文ごとに離れ、練習中はいまの文に色が付く。 */
-.mock-wave {
-  position: relative;
-  display: flex;
-  gap: 2px;
-  height: 46px;
-  margin: 0 6px 10px;
-  padding: 6px 8px;
-  border-radius: 14px;
-  background: #f1f4f7;
-  overflow: hidden;
-  transition: gap 0.5s ease;
+/* ---------- 自動分割の図（動きなし）: ひと続きの音声 → 一文ずつ ---------- */
+.split-figure {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  max-width: 1040px;
+  margin: 0 auto;
 }
-.wave-segment {
+.split-panel {
+  margin: 0;
+  padding: 24px 22px 20px;
+  border-radius: 24px;
+  background: #fff;
+  color: #16181b;
+  box-shadow: 0 24px 60px #0003;
+}
+.split-panel figcaption {
   display: flex;
   align-items: center;
-  gap: 2px;
-  min-width: 0;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
-.wave-segment i {
+.split-panel figcaption span {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #eceff3;
+  color: #52647a;
+}
+.split-panel.after figcaption span {
+  background: #dcecff;
+  color: #0759c6;
+}
+.split-wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 52px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: #f1f4f7;
+}
+.split-wave i {
   flex: 1;
   min-width: 2px;
   border-radius: 2px;
-  background: #b4bec9;
-  transition: background 0.4s;
+  background: #aab4c0;
 }
-/* 解析中: 左から右へ読み取っていく帯 */
-.mock-wave::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: var(--scan, 0%);
-  background: linear-gradient(90deg, #087ff51f, #087ff53d);
-  border-right: 2px solid #087ff5;
-  opacity: 0;
-  transition: opacity 0.3s;
+.split-wave.segmented {
+  gap: 10px;
+  padding: 0;
+  background: none;
 }
-.demo-device[data-phase="analyze"] .mock-wave::after {
-  opacity: 1;
+.split-wave.segmented span {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 100%;
+  min-width: 0;
+  padding: 8px 6px;
+  border-radius: 12px;
+  background: #e8f2ff;
 }
-.demo-device:not([data-phase="analyze"]) .mock-wave {
-  gap: 9px;
+.split-wave.segmented i {
+  background: #2b86ec;
 }
-.demo-device:not([data-phase="analyze"]) .wave-segment i {
-  background: #a9cdf3;
+.split-block {
+  margin: 18px 2px 0;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #33383d;
 }
-.demo-device[data-phase="listen"][data-active="0"] .wave-segment:nth-child(1) i,
-.demo-device[data-phase="listen"][data-active="1"] .wave-segment:nth-child(2) i,
-.demo-device[data-phase="listen"][data-active="2"] .wave-segment:nth-child(3) i,
-.demo-device[data-phase="cue"][data-active="0"] .wave-segment:nth-child(1) i,
-.demo-device[data-phase="cue"][data-active="1"] .wave-segment:nth-child(2) i,
-.demo-device[data-phase="cue"][data-active="2"] .wave-segment:nth-child(3) i {
-  background: #087ff5;
+.split-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
 }
-.demo-device[data-phase="speak"][data-active="0"] .wave-segment:nth-child(1) i,
-.demo-device[data-phase="speak"][data-active="1"] .wave-segment:nth-child(2) i,
-.demo-device[data-phase="speak"][data-active="2"] .wave-segment:nth-child(3) i {
-  background: #1a8060;
-}
-
-/* 文の一覧。解析中は隠して「文字起こし中」を出し、分割で 1 文ずつ現れる。 */
-.demo-device .sentences {
-  position: relative;
-}
-.demo-device .sentence {
-  transition: opacity 0.45s, transform 0.45s, background 0.2s;
-}
-.demo-device[data-phase="analyze"] .sentence {
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-}
-.demo-device[data-phase="split"] .sentence:nth-of-type(2) {
-  transition-delay: 0.35s;
-}
-.demo-device[data-phase="split"] .sentence:nth-of-type(3) {
-  transition-delay: 0.7s;
-}
-.analyzing {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  align-content: center;
+.split-list li {
+  display: flex;
   gap: 12px;
-  padding: 0 14px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
+  padding: 11px 12px;
+  border-radius: 14px;
+  margin-bottom: 6px;
+  background: #f4f8fd;
 }
-.demo-device[data-phase="analyze"] .analyzing {
-  opacity: 1;
+.split-list li > span {
+  font-size: 11px;
+  color: #0759c6;
+  font-weight: 700;
+  padding-top: 4px;
 }
-.analyzing span {
-  height: 12px;
-  border-radius: 6px;
-  background: linear-gradient(90deg, #e6ebf0 25%, #f4f7fa 50%, #e6ebf0 75%);
-  background-size: 200% 100%;
-  animation: analyzing-shimmer 1.4s linear infinite;
+.split-list p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #23303d;
+  font-weight: 600;
 }
-.analyzing span:nth-child(2) {
-  width: 62%;
+.split-list small {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: #6b7785;
+  margin-top: 2px;
 }
-.analyzing span:nth-child(3) {
-  width: 84%;
-}
-.analyzing small {
-  margin-top: 6px;
+.split-meta {
+  margin: 16px 2px 0;
   font-size: 12px;
-  color: #647084;
+  color: #6b7785;
 }
-@keyframes analyzing-shimmer {
-  to {
-    background-position: -200% 0;
-  }
+.split-arrow {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+  color: #fff;
+  max-width: 190px;
 }
-
-/* 段階ごとの色（画面の下のカードと、左の一覧）。 */
-.silent-phase {
-  min-height: 138px;
-  margin-top: 10px;
-  transition: background 0.3s;
-}
-.demo-device[data-phase="analyze"] .silent-phase {
-  background: #f1f4f7;
-}
-.demo-device[data-phase="analyze"] .phase-symbol {
-  color: #52647a;
-}
-.demo-device[data-phase="split"] .phase-symbol {
+.split-arrow > span {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #087ff5;
   font-size: 24px;
+  line-height: 1;
 }
-.demo-guide .demo-stages li {
-  margin-bottom: 8px;
+.split-arrow strong {
+  font-size: 14px;
+  line-height: 1.6;
 }
-.demo-stages button {
-  padding: 12px 14px;
+.split-arrow small {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #c1d4e9;
 }
-@media (max-width: 700px) {
-  .silent-phase {
-    min-height: 128px;
+.split-note {
+  max-width: 1040px;
+  margin: 28px auto 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+}
+@media (max-width: 900px) {
+  .split-figure {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 480px;
   }
-}
-@media (prefers-reduced-motion: reduce) {
-  .analyzing span {
-    animation: none;
+  .split-arrow {
+    max-width: none;
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    text-align: left;
+    column-gap: 14px;
+    padding: 0 6px;
+  }
+  .split-arrow > span {
+    grid-row: span 2;
+    transform: rotate(90deg);
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+  .split-arrow small br {
+    display: none;
+  }
+  .split-note {
+    text-align: left;
   }
 }
