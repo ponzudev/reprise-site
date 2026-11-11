@@ -195,7 +195,6 @@ const steps = [
       <div class="split-arrow">
         <span aria-hidden="true">→</span>
         <strong>iPhone の中で自動解析</strong>
-        <small>音声認識で文字起こしをして、<br>文の切れ目を見つけます</small>
       </div>
       <figure class="split-panel after">
         <figcaption><span>AFTER</span>一文ずつに分割</figcaption>
@@ -213,6 +212,15 @@ const steps = [
       </figure>
     </div>
     <p class="demo-note split-note">説明用のイメージです。実際のアプリの画面とは異なります。書き起こしや区切りが合わないときは、文を長押しして手直しできます。</p>
+    <ol class="step-grid split-steps" id="how">
+      {steps.map((step, i) => (
+        <li class="step">
+          <span class="step-number">STEP {i + 1}</span>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+        </li>
+      ))}
+    </ol>
   </div>
 </section>
 
@@ -325,23 +333,6 @@ const steps = [
 
 
 
-
-<section class="section wrap how-section" id="how">
-  <div class="section-heading">
-    <p class="eyebrow">HOW IT WORKS</p>
-    <h2>音声を選んだら、練習へ。</h2>
-    <p>台本を作ったり、リピート区間を指定したりする手間を減らします。</p>
-  </div>
-  <ol class="step-grid">
-    {steps.map((step, i) => (
-      <li class="step">
-        <span class="step-number">STEP {i + 1}</span>
-        <h3>{step.title}</h3>
-        <p>{step.text}</p>
-      </li>
-    ))}
-  </ol>
-</section>
 
 <section class="section learning-log" id="learning-log" aria-labelledby="log-title">
   <div class="wrap">

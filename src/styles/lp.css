@@ -2820,3 +2820,35 @@ img {
     text-align: left;
   }
 }
+
+/* 使い方の 3 ステップを、自動分割の図の下にまとめる（濃い背景用）。 */
+.split-steps {
+  max-width: 1040px;
+  margin: 44px auto 0;
+}
+.demo-section .step {
+  border: 0;
+  border-top: 2px solid #4f7bab;
+  border-radius: 0;
+  padding: 22px 0 0;
+}
+.demo-section .step:after {
+  display: none;
+}
+.demo-section .step-number {
+  color: #93c8ff;
+}
+.demo-section .step h3 {
+  color: #fff;
+}
+.demo-section .step p {
+  color: #c1d4e9;
+}
+@media (max-width: 900px) {
+  .split-steps {
+    max-width: 480px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 32px;
+  }
+}
