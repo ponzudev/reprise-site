@@ -60,7 +60,7 @@ Podcast から作った教材については、番組の RSS フィードの URL
 |---|---|---|
 | Apple の検索サービス（iTunes Search API） | 入力した番組名、または Apple Podcasts のリンクに含まれる番組 ID と、端末の地域設定の国コード。「Podcast から追加」を開いたときは、アプリに書いてあるおすすめの番組名（利用者の入力ではありません） | 番組を検索したとき、Apple Podcasts のリンクを貼り付けたとき、「Podcast から追加」を開いたとき（おすすめの番組の画像と配信元を調べるため） |
 | Apple の画像配信サーバー | 番組のアートワーク画像の要求 | 検索結果とおすすめを表示したとき |
-| 番組の配信元（RSS フィード・音声ファイル・番組の画像を置いているサーバー） | 利用者が指定した、または検索で選んだ RSS フィード、エピソードの音声ファイル、番組の画像の要求 | エピソードの一覧を開いたとき、エピソードを取り込むとき、Podcast から作った教材を開いて新しいエピソードを確かめるとき、「新しいエピソードを自動で取り込む」をオンにした教材について、アプリを開いたとき・アプリに戻ったとき（30 分に 1 回まで。エピソードの取り込みは Wi‑Fi のときだけ）。番組の画像は教材のアイコンにするため、教材 1 冊につき 1 回だけ取得して端末に保存します |
+| 番組の配信元（RSS フィード・音声ファイル・番組やエピソードの画像を置いているサーバー） | 利用者が指定した、または検索で選んだ RSS フィード、エピソードの音声ファイル、番組とエピソードの画像の要求 | エピソードの一覧を開いたとき（一覧に出すエピソードの画像を含みます）、エピソードを試聴するとき（音声を受け取りながら再生し、端末には保存しません）、エピソードを取り込むとき、Podcast から作った教材を開いて新しいエピソードを確かめるとき、「新しいエピソードを自動で取り込む」をオンにした教材について、アプリを開いたとき・アプリに戻ったとき（30 分に 1 回まで。エピソードの取り込みは Wi‑Fi のときだけ）。番組の画像は教材のアイコンにするため、教材 1 冊につき 1 回だけ取得して端末に保存します |
 
 - 通信には、他の通信と同じく端末の IP アドレスなどの通常の接続情報が含まれます。通信先での扱いは、Apple（<https://www.apple.com/legal/privacy/>）と各配信元のプライバシーポリシーに従います
 - アカウント・ログイン・Cookie は使いません。通信の履歴や Cookie を端末に残さない設定で通信します
@@ -162,7 +162,7 @@ Only when you use "Add from Podcast", or open study material created from a podc
 |---|---|---|
 | Apple's search service (iTunes Search API) | The show name you typed, or the show ID contained in an Apple Podcasts link, plus the country code of your region setting. When you open "Add from Podcast", the names of the recommended shows built into the app (not anything you typed) | When you search, paste an Apple Podcasts link, or open "Add from Podcast" (to look up artwork and publishers of the recommended shows) |
 | Apple's image servers | Requests for show artwork | When search results and recommendations are shown |
-| The podcast's publisher (the servers hosting the RSS feed, audio, and show artwork) | Requests for the RSS feed, episode audio, and show artwork you chose | When you open an episode list, import episodes, open podcast material to check for new episodes, or open or return to the app for podcast material with automatic import turned on (at most once every 30 minutes; episodes are downloaded only over Wi‑Fi). Show artwork is fetched once per study material and stored on the device as its icon |
+| The podcast's publisher (the servers hosting the RSS feed, audio, and show or episode artwork) | Requests for the RSS feed, episode audio, and show and episode artwork you chose | When you open an episode list (including the episode artwork shown in the list), preview an episode (the audio is streamed and not stored on the device), import episodes, open podcast material to check for new episodes, or open or return to the app for podcast material with automatic import turned on (at most once every 30 minutes; episodes are downloaded only over Wi‑Fi). Show artwork is fetched once per study material and stored on the device as its icon |
 
 - Like any network request, these include ordinary connection information such as your IP address. Their handling is governed by the privacy policies of Apple (<https://www.apple.com/legal/privacy/>) and of each publisher
 - No account, sign-in, or cookies are used. Requests are made without keeping cookies or a cache on the device
