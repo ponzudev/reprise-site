@@ -117,6 +117,12 @@ const steps = [
   },
 ];
 
+// トップに置く紹介動画（public/videos）。縦長 9:16、表紙は public/assets/video-poster-*.jpg。
+const videos = [
+  { id: 'video-intro', src: '/videos/reprise-30s.mp4', poster: '/assets/video-poster-30s.jpg', title: '30 秒で見る', length: '30 秒', label: 'Reprise の紹介動画（30 秒）', text: '文をタップして再生し、1 文をくり返し、本文を伏せて聞き取るまで。' },
+  { id: 'video-check', src: '/videos/reprise-premium.mp4', poster: '/assets/video-poster-premium.jpg', title: '伝わるかチェック', length: '46 秒', label: '伝わるかチェックの紹介動画（46 秒）', text: 'お手本のあとに録音し、聞き取られた語をお手本と比べる流れ。' },
+  { id: 'video-howto', src: '/videos/reprise-howto.mp4', poster: '/assets/video-poster-howto.jpg', title: '使い方', length: '2 分 28 秒', label: 'Reprise の使い方の動画（2 分 28 秒）', text: '取り込みから、再生スタイル、ポーズ、倍速、区切りの細かさ、復習、学習記録まで。' },
+];
 ---
 <!doctype html>
 <html lang="ja">
@@ -336,6 +342,26 @@ const steps = [
       <FeatureScreenshot screen={featureScreens.review} />
     </section>
   </div>
+</section>
+
+<section class="section wrap videos-section" id="videos" aria-labelledby="videos-title">
+  <div class="section-heading">
+    <p class="eyebrow">WATCH</p>
+    <h2 id="videos-title">動画で見る、Reprise。</h2>
+    <p>実際の画面の動きと音を、短い動画にまとめました。再生すると音が出ます。</p>
+  </div>
+  <ul class="video-grid">
+    {videos.map((video) => (
+      <li class="video-card" id={video.id}>
+        <video controls playsinline preload="none" poster={video.poster} width="1080" height="1920" aria-label={video.label}>
+          <source src={video.src} type="video/mp4" />
+        </video>
+        <h3>{video.title}<small>{video.length}</small></h3>
+        <p>{video.text}</p>
+      </li>
+    ))}
+  </ul>
+  <p class="video-note">動画の教材音声は VOA Learning English のものです。「伝わるかチェック」で録音している声は、撮影用の合成音声です。</p>
 </section>
 
 <section class="section materials-section" id="materials">
