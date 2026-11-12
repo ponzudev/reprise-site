@@ -9,6 +9,8 @@ description: Reprise（リプライズ）のサポートページ。音声の取
 Reprise は、音声教材を文ごとに区切って繰り返し聞ける語学プレーヤーです。
 すべて端末内で動作し、アカウント登録は不要です。
 
+操作の流れは、[使い方の動画（2 分 28 秒）](/#video-howto)でも見られます。
+
 ## お問い合わせ
 
 reprise.app.support@gmail.com
