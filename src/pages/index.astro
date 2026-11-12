@@ -64,6 +64,18 @@ const sentences = [
 
     <section class="wrap feature">
       <div>
+        <h2>30 秒で見る Reprise</h2>
+        <p>文をタップして再生し、1 文をくり返し、本文を伏せて聞き取る。ひととおりの流れを動画にまとめました。</p>
+        <p class="note">再生すると音が出ます。</p>
+      </div>
+      <video controls playsinline preload="none" poster="/images/poster-30s.jpg" width="1080" height="1920"
+             aria-label="Reprise の紹介動画（30 秒）">
+        <source src="/videos/reprise-30s.mp4" type="video/mp4" />
+      </video>
+    </section>
+
+    <section class="wrap feature flip">
+      <div>
         <h2>区切りがずれても、その場で直せる</h2>
         <p>自動の分割が合わないときは、文の長押しから結合や分け直しができます。チャンク、フレーズ、文と、練習に合う細かさを選べます。</p>
         <ul>
@@ -72,15 +84,45 @@ const sentences = [
           <li>本文を伏せて、長押しで答え合わせ</li>
         </ul>
       </div>
-      <img src="/images/screen-1.jpg" alt="文を長押しして、分け直しや結合を選ぶ画面" width="800" height="1734" loading="lazy" />
+      <img src="/images/screen-1.jpg" alt="文を長押しして、分け直しや結合を選ぶ画面" width="800" height="1738" loading="lazy" />
     </section>
 
-    <section class="wrap feature flip">
+    <section class="wrap feature">
       <div>
         <h2>続けた分が、記録に残る</h2>
         <p>1 日ごとの学習時間、再生した文の数、習得した文を記録します。目標時間と連続学習日数で、毎日の練習を続けやすくします。</p>
       </div>
-      <img src="/images/screen-3.jpg" alt="今日の学習時間、連続学習日数、直近 14 日のグラフを表示した学習記録の画面" width="800" height="1734" loading="lazy" />
+      <img src="/images/screen-3.jpg" alt="今日の学習時間、連続学習日数、学習した日のカレンダーを表示した学習記録の画面" width="800" height="1738" loading="lazy" />
+    </section>
+
+    <section class="wrap feature flip" id="premium">
+      <div>
+        <p class="eyebrow">Reprise Premium</p>
+        <h2>その発音、伝わる？「伝わるかチェック」</h2>
+        <p>お手本のあとに自分の声を録音すると、端末内の音声認識で書き起こし、お手本の本文と比べます。聞き取られなかった語は赤で示され、お手本どおりに伝われば「完璧！」が付きます。</p>
+        <ul>
+          <li>無料でも、各トラックの最初の 3 文まで使えます</li>
+          <li>Premium なら、すべての文で使えます</li>
+          <li>録音も書き起こしも、端末の外へ送りません</li>
+        </ul>
+        <p class="note">再生すると音が出ます。</p>
+      </div>
+      <video controls playsinline preload="none" poster="/images/poster-premium.jpg" width="1080" height="1920"
+             aria-label="伝わるかチェックの紹介動画（46 秒）">
+        <source src="/videos/reprise-premium.mp4" type="video/mp4" />
+      </video>
+    </section>
+
+    <section class="wrap feature" id="howto">
+      <div>
+        <h2>使い方を動画で見る</h2>
+        <p>取り込みから、再生スタイル、ポーズ、倍速、区切りの細かさ、伝わるかチェック、復習、学習記録まで。画面の操作を 2 分半で順に紹介します。</p>
+        <p class="note">再生すると音が出ます。</p>
+      </div>
+      <video controls playsinline preload="none" poster="/images/poster-howto.jpg" width="1080" height="1920"
+             aria-label="Reprise の使い方の動画（2 分 28 秒）">
+        <source src="/videos/reprise-howto.mp4" type="video/mp4" />
+      </video>
     </section>
 
     <section class="band">
