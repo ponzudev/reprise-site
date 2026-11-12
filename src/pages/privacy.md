@@ -6,7 +6,7 @@ description: Reprise（リプライズ）のプライバシーポリシー。音
 
 # Reprise（リプライズ）プライバシーポリシー
 
-最終更新日: 2026-11-09
+最終更新日: 2026-11-12
 
 ## 要約
 
@@ -108,7 +108,7 @@ reprise.app.support@gmail.com
 
 # Reprise Privacy Policy
 
-Last updated: 2026-11-09
+Last updated: 2026-11-12
 
 ## Summary
 
