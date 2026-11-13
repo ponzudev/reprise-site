@@ -9,9 +9,9 @@ import { site } from '../data/site';
 import { faq } from '../data/faq';
 import '../styles/lp.css';
 
-const title = 'Reprise（リプライズ）｜好きな音声でリピーティング・シャドーイング。一文ごとに聞いて、声に出す語学プレーヤー';
+const title = 'Reprise（リプライズ）｜1 文ずつ徹底してリピーティングする、ストイックな語学練習アプリ';
 const description =
-  '文脈のある英語を聞き、一文ずつ声に出す。教材や Podcast の音声を自動で分割する語学プレーヤーです。間を挟んでまねるリピーティングにも、止めずに追いかけるシャドーイングにも使えます。気に入った表現を何度も練習できます。基本機能は無料、アカウント登録は不要。';
+  '一文を聞く。合図が鳴ったら、同じ文を声に出す。言えるまで、その一文を繰り返す。Reprise は、教材や Podcast の音声を一文ずつに分け、聞いた文と同じ長さの間を用意する、ストイックな練習アプリです。文ごとの再生回数と習得した文が残ります。基本機能は無料、アカウント登録は不要。';
 const store = site.appStoreUrl;
 
 const jsonLd = [
@@ -102,6 +102,35 @@ const practiceModes = [
   },
 ];
 
+// 一文への向き合い方。数字はアプリの既定値や表示に合わせている。
+const drill = [
+  {
+    title: '一文だけ聞く',
+    text: '「文ごとに区切る」にすると、再生は一文の終わりで止まります。',
+    detail: '速度は 0.5〜2.0 倍。音程はそのまま',
+  },
+  {
+    title: '合図のあとに、まねる',
+    text: '「ピッ」が鳴ったら声に出します。間の長さは、聞いた文と同じです。',
+    detail: '2.4 秒の文なら 2.4 秒。話し始めの余裕（既定 0.6 秒）が加わる',
+  },
+  {
+    title: '言えるまで、繰り返す',
+    text: '「1 文をループ」にすると、その一文だけが続きます。',
+    detail: '何回再生したかは、文ごとに残る',
+  },
+  {
+    title: '伝わるか、確かめる',
+    text: '自分の声を録音して、時間内に言えたか、正しく伝わったかを見ます。',
+    detail: '伝わるかチェック。無料では各トラック 3 文まで',
+  },
+  {
+    title: '言えた文に、印を付ける',
+    text: '言えるようになった文を「習得済み」にして、次の一文へ進みます。',
+    detail: '習得・再生済み・未再生の数が、トラックごとに見える',
+  },
+];
+
 const steps = [
   {
     title: '音声を取り込む',
@@ -126,7 +155,7 @@ const videos = [
 <!doctype html>
 <html lang="ja">
 <head>
-<Head title={title} description={description} ogTitle="Reprise（リプライズ）— 聞いた英語を、自分の言葉に。" jsonLd={jsonLd} />
+<Head title={title} description={description} ogTitle="Reprise（リプライズ）— 一文を、言えるまで。" jsonLd={jsonLd} />
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" as="image" href="/assets/phone-04-player-playing.webp" imagesrcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" imagesizes="(max-width: 700px) 228px, 300px" fetchpriority="high">
 </head>
@@ -151,11 +180,11 @@ const videos = [
 <section class="hero wrap">
   <div class="hero-copy">
     <h1>
-      <span class="hero-kicker"><span class="dot"></span>文脈のある音声で、リピーティングとシャドーイング。</span>
-      聞いた英語を、<br><span class="mark">自分の言葉に。</span>
+      <span class="hero-kicker"><span class="dot"></span>1 文ずつ徹底してリピーティングする、ストイックな練習アプリ</span>
+      一文を、<br><span class="mark">言えるまで。</span>
     </h1>
     <p class="hero-description">
-      まとまった会話を聞き、一文ずつ声に出す。<br>教材や Podcast の音声を<strong>自動で分割し、話す間まで用意。</strong>気に入った表現を何度も口にできる、リピーティングとシャドーイングのためのアプリです。
+      一文を聞く。合図が鳴ったら、同じ文を声に出す。言えるまで、その一文を繰り返す。<br>教材や Podcast の音声を<strong>一文ずつに分け、聞いた文と同じ長さの間を用意します。</strong>
     </p>
     <div class="hero-actions">
       <AppStoreBadge />
@@ -186,6 +215,32 @@ const videos = [
     <div><dt>取り込み元</dt><dd class="spec-sources"><span>Podcast／ファイル／</span><span>録音／文章</span></dd><dd class="spec-note">いつもの素材で練習</dd></div>
   </dl>
 </aside>
+
+<section class="section wrap drill-section" id="drill">
+  <div class="section-heading">
+    <p class="eyebrow">ONE SENTENCE AT A TIME</p>
+    <h2>一文に、ここまで付き合う。</h2>
+    <p>Reprise がするのは、一文を言えるまで繰り返すための段取りです。</p>
+  </div>
+  <ol class="drill-steps">
+    {drill.map((item, i) => (
+      <li>
+        <span class="drill-number">{i + 1}</span>
+        <h3>{item.title}</h3>
+        <p>{item.text}</p>
+        <small>{item.detail}</small>
+      </li>
+    ))}
+  </ol>
+  <div class="drill-not">
+    <h3>先にお伝えしておくこと</h3>
+    <ul>
+      <li><strong>教材は入っていません。</strong>練習したい音声を、自分で選んで取り込みます。</li>
+      <li><strong>聞き流すだけのアプリではありません。</strong>「文ごとに区切る」では一文ごとに音声が止まり、声に出す番が来ます。</li>
+      <li><strong>発音の採点はしません。</strong>読んだ文が音声認識にどう聞き取られたかを、語ごとに確かめます。</li>
+    </ul>
+  </div>
+</section>
 
 
 
@@ -260,7 +315,7 @@ const videos = [
   <div class="section-heading">
     <p class="eyebrow">MAKE IT YOURS</p>
     <h2>一時停止も巻き戻しも、<br>もういらない。</h2>
-    <p>リピーティングとシャドーイングを続けやすくする機能。</p>
+    <p>一文に集中するための機能。</p>
   </div>
   <div class="feature-grid">
     <article class="feature">
@@ -428,7 +483,7 @@ const videos = [
   <div class="wrap">
     <div class="section-heading">
       <p class="eyebrow">START SMALL. KEEP GOING.</p>
-      <h2>リピーティングもシャドーイングも、<br>無料で。</h2>
+      <h2>一文ずつの練習は、<br>無料で。</h2>
       <p>まずは Free で、自分の教材を使ってみてください。</p>
     </div>
     <div class="pricing-grid">
@@ -483,7 +538,7 @@ const videos = [
 <section class="closing wrap">
   <span class="brand-icon large"><img src="/assets/app-icon-120.png" width="58" height="58" alt="Reprise のアプリアイコン"></span>
   <p class="eyebrow">今日の一文から。</p>
-  <h2>使ってみたい表現を、<br>自分の言葉に。</h2>
+  <h2>一文を、<br>言えるまで。</h2>
   <AppStoreBadge />
   <p class="micro">{site.requirement} · アカウント登録なし</p>
   <div class="qr">
