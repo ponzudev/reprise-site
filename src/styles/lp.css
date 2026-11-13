@@ -2928,3 +2928,111 @@ img {
 @media (max-width: 860px) {
   .video-grid { grid-template-columns: 1fr; gap: 40px; max-width: 320px; margin-inline: auto; }
 }
+
+/* ---------- 一文への向き合い方（ストイックな練習の段取り） ---------- */
+.drill-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  border-top: 2px solid var(--ink);
+}
+.drill-steps li {
+  padding: 26px 20px 4px 0;
+  border-right: 1px solid var(--line);
+  margin-right: 20px;
+}
+.drill-steps li:last-child {
+  border-right: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+.drill-number {
+  font-size: 13px;
+  font-weight: 750;
+  color: #0759c6;
+  letter-spacing: 0.08em;
+}
+.drill-steps h3 {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 8px 0 10px;
+}
+.drill-steps p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #485b78;
+  margin: 0;
+}
+.drill-steps small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #0759c6;
+  margin-top: 12px;
+}
+.drill-not {
+  margin-top: 56px;
+  padding: 28px 32px;
+  border-radius: var(--radius);
+  background: #f4f6f9;
+}
+.drill-not h3 {
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+.drill-not ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.drill-not li {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #485b78;
+}
+.drill-not strong {
+  display: block;
+  color: var(--ink);
+}
+@media (max-width: 1000px) {
+  .drill-steps {
+    grid-template-columns: 1fr;
+    border-top: 0;
+  }
+  .drill-steps li {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    column-gap: 6px;
+    padding: 20px 0;
+    margin: 0;
+    border-right: 0;
+    border-top: 1px solid var(--line);
+  }
+  .drill-steps li:first-child {
+    border-top: 2px solid var(--ink);
+  }
+  .drill-number {
+    grid-row: span 3;
+    padding-top: 6px;
+  }
+  .drill-steps h3 {
+    margin: 0 0 6px;
+  }
+  .drill-steps small {
+    margin-top: 8px;
+  }
+  .drill-not {
+    margin-top: 36px;
+    padding: 24px 22px;
+  }
+  .drill-not ul {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
