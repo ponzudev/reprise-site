@@ -574,46 +574,6 @@ img {
   background: #dfedff;
   color: #0868d4;
 }
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-.feature {
-  padding: 30px 25px;
-  background: #fff;
-  border: 1px solid #e2eaf4;
-  border-radius: var(--radius);
-  position: relative;
-  overflow: hidden;
-}
-.feature-icon {
-  display: inline-flex;
-  width: 44px;
-  height: 44px;
-  justify-content: center;
-  align-items: center;
-  background: #edf5ff;
-  border-radius: 13px;
-  font-size: 26px;
-  font-family: Georgia, serif;
-}
-.card-index {
-  float: right;
-  color: #95a6bc;
-  font-size: 10px;
-  margin-top: 12px;
-}
-.feature h3 {
-  font-size: 22px;
-  line-height: 1.7;
-  margin: 25px 0 15px;
-}
-.feature p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 2;
-}
 .mini-sentences {
   margin-top: 25px;
   font-size: 9px;
@@ -658,21 +618,6 @@ img {
 .sound-flow i {
   color: #a4b8d0;
   font-style: normal;
-}
-.blur-sample {
-  margin-top: 45px;
-  text-align: center;
-}
-.blur-sample > span {
-  filter: blur(4px);
-  font-family: Georgia;
-  font-size: 20px;
-}
-.blur-sample small {
-  display: block;
-  font-size: 9px;
-  color: var(--muted);
-  margin-top: 13px;
 }
 .privacy-note {
   display: flex;
@@ -1079,12 +1024,6 @@ img {
   .materials-layout {
     gap: 55px;
   }
-  .feature {
-    padding: 25px 20px;
-  }
-  .feature h3 {
-    font-size: 20px;
-  }
   .header nav {
     gap: 20px;
   }
@@ -1289,20 +1228,6 @@ img {
   .demo-top strong {
     font-size: 13px;
   }
-  .feature-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .feature {
-    padding: 27px;
-  }
-  .feature h3 {
-    font-size: 23px;
-    margin: 20px 0 12px;
-  }
-  .feature p {
-    font-size: 13px;
-  }
   .mini-sentences {
     font-size: 11px;
     margin-top: 20px;
@@ -1313,9 +1238,6 @@ img {
   }
   .sound-flow b {
     font-size: 30px;
-  }
-  .blur-sample {
-    margin: 30px 0 8px;
   }
   .privacy-note {
     padding: 20px;
@@ -1575,9 +1497,6 @@ img {
 .orbit-one {
   background: radial-gradient(circle at 45% 30%, #f3f9ff, #dcecff);
 }
-.feature-icon {
-  color: #0877e8;
-}
 .demo-app-icon {
   overflow: hidden;
   background: none;
@@ -1697,7 +1616,6 @@ img {
 .loop-button {
   font-size: 13px;
 }
-.feature p,
 .material-list p,
 .habit p,
 .price-card li {
@@ -1706,8 +1624,7 @@ img {
 .mini-sentences {
   font-size: 11px;
 }
-.sound-flow,
-.blur-sample small {
+.sound-flow {
   font-size: 12px;
 }
 .privacy-note p {
@@ -1778,8 +1695,7 @@ img {
 }
 
 /* 悩み */
-.problem-grid,
-.step-grid {
+.problem-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
@@ -1813,44 +1729,6 @@ img {
 }
 
 /* 3 ステップ */
-.step-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  counter-reset: step;
-}
-.step {
-  position: relative;
-  border: 1px solid #e2eaf4;
-  border-radius: var(--radius);
-  padding: 30px 26px;
-}
-.step:not(:last-child):after {
-  content: "→";
-  position: absolute;
-  right: -19px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #9db4d1;
-  font-size: 16px;
-}
-.step-number {
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: #1672db;
-  font-weight: 650;
-}
-.step h3 {
-  font-size: 19px;
-  margin: 10px 0;
-  line-height: 1.6;
-}
-.step p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 2;
-  margin: 0;
-}
 
 /* 練習法 */
 .practice-section {
@@ -2070,9 +1948,6 @@ img {
     gap: 16px;
     font-size: 13px;
   }
-  .step:not(:last-child):after {
-    display: none;
-  }
 }
 
 @media (max-width: 700px) {
@@ -2109,13 +1984,11 @@ img {
     font-size: 14px;
   }
   .problem-grid,
-  .step-grid,
   .practice-grid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
   .problem,
-  .step,
   .practice {
     padding: 24px 22px;
   }
@@ -2359,15 +2232,12 @@ img {
 .demo-guide li > span { background: #24496f; color: #fff; }
 .demo-player { color: var(--ink); box-shadow: 0 24px 70px #0003; }
 .demo-section .demo-note { color: #c1d4e9; }
-.feature { background: #f4f8fc; border: 1px solid #e1e9f3; }
-.feature h3 { font-size: 25px; }
 .practice-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; font-size: 14px; margin: 32px 0; }
 .practice-links a { color: #0759c6; text-decoration: underline; text-underline-offset: 4px; }
 .materials-section { background: #f3f7fc; }
 .materials-photo { height: 560px; }
 .material-list article { padding-block: 20px; }
 .language-note { margin-top: 32px; }
-.how-section .step { border: 0; border-top: 2px solid #8bb8eb; border-radius: 0; padding-inline: 0; }
 .pricing-section { background: #edf4fc; }
 .free-plan { border: 2px solid #0863d1; box-shadow: 0 12px 40px #164f9514; }
 .price-card.premium { background: #fff; color: var(--ink); box-shadow: none; border: 1px solid #c7d8eb; }
@@ -2397,7 +2267,7 @@ img {
   .practice-links { justify-content: flex-start; gap: 10px 16px; }
   .materials-photo { height: 410px; }
   .material-list article { padding-block: 16px; }
-  .material-list p, .step p, .price-card li { font-size: 14px; }
+  .material-list p, .price-card li { font-size: 14px; }
   .material-list h3 { font-size: 19px; }
   .pricing-note { font-size: 12px; }
   .closing { padding-block: 56px; }
@@ -2497,8 +2367,6 @@ img {
 .demo-device .mock-settings { font-size: 11px; color: #647084; min-height: 34px; }
 .demo-device .player-buttons .silent-play { font-size: 12px; min-width: 86px; border-radius: 24px; color: #0863d1; background: #edf5ff; }
 .demo-device .player-buttons #restart { font-size: 11px; padding-inline: 6px; }
-.cue-flow { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 28px; font-size: 14px; }
-.cue-flow b { padding: 12px; border-radius: 50%; color: #805600; background: #fff1ce; font-size: 20px; }
 @media (max-width: 700px) {
   .demo-guide .demo-stages { margin: 0; gap: 0; }
   .silent-phase { min-height: 154px; }
@@ -2820,47 +2688,12 @@ img {
 }
 
 /* 使い方の 3 ステップを、自動分割の図の下にまとめる（濃い背景用）。 */
-.split-steps {
-  max-width: 1040px;
-  margin: 44px auto 0;
-}
-.demo-section .step {
-  border: 0;
-  border-top: 2px solid #4f7bab;
-  border-radius: 0;
-  padding: 22px 0 0;
-}
-.demo-section .step:after {
-  display: none;
-}
-.demo-section .step-number {
-  color: #93c8ff;
-}
-.demo-section .step h3 {
-  color: #fff;
-}
-.demo-section .step p {
-  color: #c1d4e9;
-}
-@media (max-width: 900px) {
-  .split-steps {
-    max-width: 480px;
-    grid-template-columns: 1fr;
-    gap: 22px;
-    margin-top: 32px;
-  }
-}
 
 /* 練習のしかた（リピーティングとシャドーイング）を、再生スタイルと対で並べる。 */
 .practice-modes {
   max-width: 1080px;
   margin: 56px auto 0;
   text-align: center;
-}
-.practice-modes h3 {
-  font-size: 22px;
-  line-height: 1.7;
-  margin: 0 0 22px;
 }
 .practice-mode-grid {
   display: flex;
@@ -2901,9 +2734,6 @@ img {
   .practice-modes {
     margin-top: 40px;
     text-align: left;
-  }
-  .practice-modes h3 {
-    font-size: 19px;
   }
   .practice-mode-grid {
     gap: 14px;
@@ -3000,4 +2830,52 @@ img {
   .drill-steps small {
     margin-top: 8px;
   }
+}
+
+/* ---------- 自動分割: 無音ではなく意味の切れ目で（比較図） ---------- */
+/* #demo は濃紺の背景なので、白いカードの中の文字色を明示する。PC は 2 列。 */
+.demo-split-why {
+  max-width: 760px;
+  margin: 48px auto 0;
+  text-align: center;
+}
+.demo-split-lead {
+  margin: 0 0 20px;
+  line-height: 1.9;
+}
+.demo-split-lead strong {
+  display: block;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+.demo-split-example {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  text-align: left;
+}
+.demo-split-example > p {
+  margin: 0;
+  color: var(--ink);
+}
+.demo-split-example > p strong,
+.demo-split-example > p small,
+.demo-split-example > p span {
+  color: var(--ink);
+}
+.demo-split-example > small {
+  grid-column: 1 / -1;
+  text-align: center;
+  /* 濃紺の背景の上の補足。#demo のほかの注記と同じ色にする。 */
+  color: #c1d4e9;
+}
+@media (max-width: 700px) {
+  .demo-split-example {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 「5 つの練習」の見出しを節の見出しにしたので、カードの上の余白を詰める。 */
+#features .practice-modes {
+  margin-top: 0;
 }

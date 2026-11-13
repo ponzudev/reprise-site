@@ -11,7 +11,7 @@ import '../styles/lp.css';
 
 const title = 'Reprise（リプライズ）｜1 文ずつ徹底してリピーティングする、ストイックな語学練習アプリ';
 const description =
-  '一文を聞く。合図が鳴ったら、同じ文を声に出す。言えるまで、その一文を繰り返す。Reprise は、教材や Podcast の音声を一文ずつに分け、聞いた文と同じ長さの間を用意する、ストイックな練習アプリです。文ごとの再生回数と習得した文が残ります。基本機能は無料、アカウント登録は不要。';
+  '一文を聞く。合図が鳴ったら、同じ文を声に出す。言えるまで、その一文を繰り返す。Reprise は、教材や Podcast の音声を音声解析で自動的に一文ずつに分け、聞いた文の長さに合わせた間を用意する、ストイックな練習アプリです。文ごとの再生回数と習得した文が残ります。基本機能は無料、アカウント登録は不要。';
 const store = site.appStoreUrl;
 
 const jsonLd = [
@@ -40,10 +40,10 @@ const jsonLd = [
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
     featureList: [
       '音声を端末内で文ごとに自動分割',
-      '文ごとのリピート再生とリピーティング用のポーズ',
+      '文ごとのリピート再生と、声に出すための間',
       'シャドーイング向けの通し再生',
       '0.5〜2.0 倍の速度調整',
-      '本文を伏せて聞く',
+      '本文を隠して聞く',
       'Podcast・録音・音声や動画のファイル・貼り付けた文章を教材にする',
       '学習時間の記録',
     ],
@@ -83,7 +83,7 @@ const practiceModes = [
   {
     name: 'リピーティング',
     setting: '文ごとに区切る',
-    text: '一文聞いたら合図音。聞いた文と同じ長さの間に、まねて声に出します。',
+    text: '一文聞いたら合図音。聞いた文の長さに合わせた間に、まねて声に出します。',
   },
   {
     name: 'シャドーイング',
@@ -107,12 +107,12 @@ const drill = [
   {
     title: '一文だけ聞く',
     text: '「文ごとに区切る」にすると、再生は一文の終わりで止まります。',
-    detail: '速度は 0.5〜2.0 倍。音程はそのまま',
+    detail: '聞きたい文をタップすると、その頭から再生',
   },
   {
     title: '合図のあとに、まねる',
-    text: '「ピッ」が鳴ったら声に出します。間の長さは、聞いた文と同じです。',
-    detail: '2.4 秒の文なら 2.4 秒。話し始めの余裕（既定 0.6 秒）が加わる',
+    text: '「ピッ」が鳴ったら声に出します。間は、聞いた文の長さに合わせて自動で入ります。',
+    detail: '秒数を指定して、間を固定することもできます',
   },
   {
     title: '言えるまで、繰り返す',
@@ -121,7 +121,7 @@ const drill = [
   },
   {
     title: '伝わるか、確かめる',
-    text: '自分の声を録音して、時間内に言えたか、正しく伝わったかを見ます。',
+    text: '自分の声を録音して、時間内に言えたか、音声認識にどう聞き取られたかを見ます。',
     detail: '伝わるかチェック。無料では各トラック 3 文まで',
   },
   {
@@ -131,31 +131,16 @@ const drill = [
   },
 ];
 
-const steps = [
-  {
-    title: '音声を取り込む',
-    text: 'Podcast を検索するか、ファイル・録音・貼り付けた文章から。共有メニューからも送れます。',
-  },
-  {
-    title: '自動で、文ごとに分かれる',
-    text: 'iPhone の中で文字起こしをして、文の切れ目で区切ります。スクリプトの用意はいりません。',
-  },
-  {
-    title: '一文ずつ、聞いて声に出す',
-    text: '「文ごとに区切る」を選んで再生。音声のあとの間にまねると、次の文へ自動で進みます。止めずに追いかけるシャドーイングは「通しで再生」で。',
-  },
-];
-
 // トップに置く紹介動画（public/videos）。縦長 9:16、表紙は public/assets/video-poster-*.jpg。
 const videos = [
-  { id: 'video-intro', src: '/videos/reprise-30s.mp4', poster: '/assets/video-poster-30s.jpg', title: '使い方', length: '30 秒', label: 'Reprise の使い方の動画（30 秒）', text: '文をタップして再生し、1 文をくり返し、本文を伏せて聞き取るまで。' },
+  { id: 'video-intro', src: '/videos/reprise-30s.mp4', poster: '/assets/video-poster-30s.jpg', title: '使い方', length: '30 秒', label: 'Reprise の使い方の動画（30 秒）', text: '文をタップして再生し、1 文を繰り返し、本文を隠して聞き取るまで。' },
   { id: 'video-check', src: '/videos/reprise-premium.mp4', poster: '/assets/video-poster-premium.jpg', title: '伝わるかチェック', length: '46 秒', label: '伝わるかチェックの紹介動画（46 秒）', text: 'お手本のあとに録音し、聞き取られた語をお手本と比べる流れ。' },
 ];
 ---
 <!doctype html>
 <html lang="ja">
 <head>
-<Head title={title} description={description} ogTitle="Reprise（リプライズ）— 一文を、言えるまで。" jsonLd={jsonLd} />
+<Head title={title} description={description} ogTitle="Reprise（リプライズ）— その一文を、言えるまで。" jsonLd={jsonLd} />
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" as="image" href="/assets/phone-04-player-playing.webp" imagesrcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" imagesizes="(max-width: 700px) 228px, 300px" fetchpriority="high">
 </head>
@@ -168,9 +153,9 @@ const videos = [
   </a>
   <nav aria-label="メインナビゲーション">
     <a href="#story">作った理由</a>
+    <a href="#demo">自動分割</a>
     <a href="#materials">使える教材</a>
     <a href="#pricing">料金</a>
-    <a href="#demo">自動分割</a>
   </nav>
   <AppStoreBadge compact />
 </header>
@@ -181,10 +166,10 @@ const videos = [
   <div class="hero-copy">
     <h1>
       <span class="hero-kicker"><span class="dot"></span>1 文ずつ徹底してリピーティングする、ストイックな練習アプリ</span>
-      一文を、<br><span class="mark">言えるまで。</span>
+      その一文を、<br><span class="mark">言えるまで。</span>
     </h1>
     <p class="hero-description">
-      一文を聞く。合図が鳴ったら、同じ文を声に出す。言えるまで、その一文を繰り返す。<br>教材や Podcast の音声を<strong>一文ずつに分け、聞いた文と同じ長さの間を用意します。</strong>
+      一文を聞く。合図が鳴ったら、同じ文を声に出す。言えるまで、その一文を繰り返す。<br>教材や Podcast の音声を<strong>音声解析で自動的に一文ずつに分け、聞いた文の長さに合わせた間を用意します。</strong>
     </p>
     <div class="hero-actions">
       <AppStoreBadge />
@@ -209,9 +194,9 @@ const videos = [
 <aside class="specs-strip" aria-label="Reprise の基本仕様">
   <dl class="wrap specs-grid">
     <div><dt>再生速度</dt><dd><strong>0.5〜2.0</strong> 倍</dd><dd class="spec-note">音程を保って調整</dd></div>
-    <div><dt>声に出すポーズ</dt><dd><strong>文の長さに連動</strong></dd><dd class="spec-note">合図音で、自分の番へ</dd></div>
+    <div><dt>声に出すポーズ</dt><dd><strong>文の長さに連動</strong></dd><dd class="spec-note">合図音で、自分の番へ<br>秒数の指定にも変更可</dd></div>
     <div><dt>無料で保存</dt><dd><strong>教材 5 冊</strong>まで</dd><dd class="spec-note">文ごとの練習も無料</dd></div>
-    <div><dt>文字起こし</dt><dd><strong>{site.languages.length} 言語</strong></dd><dd class="spec-note">英語は米・英・豪に対応</dd></div>
+    <div><dt>文字起こし</dt><dd><strong>{site.languages.length} 言語</strong></dd><dd class="spec-note">英語（米・英・豪）<br>日・中・韓・仏・独・西</dd></div>
     <div><dt>取り込み元</dt><dd class="spec-sources"><span>Podcast／ファイル／</span><span>録音／文章</span></dd><dd class="spec-note">いつもの素材で練習</dd></div>
   </dl>
 </aside>
@@ -256,7 +241,7 @@ const videos = [
     <div class="section-heading">
       <p class="eyebrow">AUTOMATIC SENTENCE SPLIT</p>
       <h2>まとまった音声を、<br>一文ずつに。</h2>
-      <p>取り込んだ音声を iPhone の中で解析して、文の切れ目で自動で分けます。</p>
+      <p>取り込んだ音声を iPhone の中で解析して、文の切れ目で自動で分けます。一時停止も巻き戻しも、もういりません。</p>
     </div>
     <div class="split-figure">
       <figure class="split-panel">
@@ -286,16 +271,15 @@ const videos = [
         <p class="split-meta">{splitSentences.length} 文 · 文をタップすると、その頭から再生</p>
       </figure>
     </div>
-    <p class="demo-note split-note">説明用のイメージです。実際のアプリの画面とは異なります。書き起こしや区切りが合わないときは、文を長押しして手直しできます。</p>
-    <ol class="step-grid split-steps" id="how">
-      {steps.map((step, i) => (
-        <li class="step">
-          <span class="step-number">STEP {i + 1}</span>
-          <h3>{step.title}</h3>
-          <p>{step.text}</p>
-        </li>
-      ))}
-    </ol>
+    <p class="demo-note split-note">説明用のイメージです。実際のアプリの画面とは異なります。文字起こしや区切りが合わないときは、文を長押しして手直しできます。</p>
+    <div class="demo-split-why">
+      <p class="demo-split-lead"><strong>無音ではなく、意味の切れ目で。</strong>文字起こしの句読点などを手がかりに、文の切れ目を見つけます。</p>
+      <div class="split-example demo-split-example" aria-label="区切り方の比較例">
+        <p><strong>無音を境に切ると</strong><small>文の途中で切れることも</small><span lang="en">I’d like <b class="split-cut" aria-label="ここで分割">／</b> a coffee.</span></p>
+        <p><strong>Reprise は文の切れ目で</strong><span class="whole-sentence" lang="en">I’d like a coffee.</span></p>
+        <small>区切り方のイメージです。音声認識できない場合は、無音の位置で分割します。</small>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -305,36 +289,11 @@ const videos = [
 
 <section class="section wrap features-section" id="features">
   <div class="section-heading">
-    <p class="eyebrow">MAKE IT YOURS</p>
-    <h2>一時停止も巻き戻しも、<br>もういらない。</h2>
-    <p>一文に集中するための機能。</p>
-  </div>
-  <div class="feature-grid">
-    <article class="feature">
-      <span class="feature-icon" aria-hidden="true">↻</span>
-      <h3>合図が鳴ったら、<br>声に出す。</h3>
-      <p>一文のあとに「ピッ」と合図。聞いた文と同じ長さの間が入るので、そのあいだにまねるだけ。間は秒数の指定にも変えられます。</p>
-      <div class="cue-flow"><span>聞く</span><b>ピッ</b><span>声に出す</span></div>
-    </article>
-    <article class="feature">
-      <span class="feature-icon" aria-hidden="true">≋</span>
-      <h3>長い音声も、<br>一文ずつ。</h3>
-      <p>端末内の音声認識で文字起こしをし、句読点などから「意味の切れ目」を見つけて分割します。</p>
-      <div class="split-example" aria-label="区切り方の比較例">
-        <p><strong>無音を境に切ると</strong><small>文の途中で切れることも</small><span lang="en">I’d like <b class="split-cut" aria-label="ここで分割">／</b> a coffee.</span></p>
-        <p><strong>Reprise は文の切れ目で</strong><span class="whole-sentence" lang="en">I’d like a coffee.</span></p>
-        <small>区切り方のイメージです。音声認識できない場合は無音で分割。本文や区切りは手直しできます。</small>
-      </div>
-    </article>
-    <article class="feature">
-      <span class="feature-icon" aria-hidden="true">Aa</span>
-      <h3>文字を離れて、<br>耳と口で。</h3>
-      <p>本文を隠して、音だけを頼りに練習。長押しで本文を表示して、すぐ答え合わせ。</p>
-      <div class="blur-sample"><span>I'll keep that in mind.</span><small>文字を隠してリスニング</small></div>
-    </article>
+    <p class="eyebrow">ONE AUDIO, FIVE DRILLS</p>
+    <h2>同じ音声で、<br>5 つの練習。</h2>
+    <p>聞く、まねる、追いかける、重ねる、書き取る。その日の目的に合わせて選べます。</p>
   </div>
   <div class="practice-modes">
-    <h3>同じ音声で、5 つの練習。</h3>
     <div class="practice-mode-grid">
       {practiceModes.map((mode) => (
         <article>
@@ -365,11 +324,11 @@ const videos = [
         <h3 id="check-title">その発音、伝わった？</h3>
         <p class="detail-lead">自分では言えたつもりの一文。<br>音声認識にどう聞こえたか、語ごとに確かめられます。</p>
         <ol class="check-steps">
-          <li><span>01</span><div><strong>文を長押しして、録音する</strong><p>「伝わるかチェック」を開き、お手本のあとに自分の声で。言い終えると自動で止まり、くり返し練習できます。</p></div></li>
-          <li><span>02</span><div><strong>端末内で、書き起こす</strong><p>録音を iPhone の中で音声認識。音声は端末の外へ送りません。</p></div></li>
+          <li><span>01</span><div><strong>文を長押しして、録音する</strong><p>「伝わるかチェック」を開き、お手本のあとに自分の声で。言い終えると自動で止まり、繰り返し練習できます。</p></div></li>
+          <li><span>02</span><div><strong>端末内で、文字に起こす</strong><p>録音を iPhone の中で音声認識。音声は端末の外へ送りません。</p></div></li>
           <li><span>03</span><div><strong>お手本と、単語ごとに照合</strong><p>同じ語として聞き取られた箇所、別の語になった箇所、聞き取られなかった箇所を色などで表示します。</p></div></li>
         </ol>
-        <p class="detail-note"><strong>発音の採点ではありません。</strong>お手本の語が音声認識にどう聞き取られたかを示します。無料ユーザーは各トラックの3文まで行えます。</p>
+        <p class="detail-note"><strong>発音の採点ではありません。</strong>お手本の語が音声認識にどう聞き取られたかを示します。無料ユーザーは各トラックの 3 文まで行えます。</p>
       </div>
       <FeatureScreenshot screen={featureScreens.check} />
     </section>
@@ -380,7 +339,7 @@ const videos = [
         <p class="detail-lead">ブックマークした文が、教材をまたいで一か所に。<br>聞き直す場所を毎回探す必要はありません。</p>
         <ul class="detail-list">
           <li>再生画面で文を右へスワイプしてブックマーク</li>
-          <li>集めた文を、ポーズを挟んで一文ずつ練習</li>
+          <li>集めた文を、間を挟んで一文ずつ練習</li>
           <li>難しい文は「1 文をループ」で繰り返す</li>
         </ul>
         <a class="detail-link" href="#pricing">Premium の料金を見る <Arrow /></a>
@@ -485,11 +444,11 @@ const videos = [
         <p class="price-sub">自分の教材で、練習をはじめる。</p>
         <ul>
           <li>文ごとの再生・リピート・速度調整</li>
-          <li>教材を5冊まで保存</li>
-          <li>文章から音声作成：月3本まで</li>
-          <li>直近7日間の学習記録</li>
+          <li>教材を 5 冊まで保存</li>
+          <li>文章から音声作成：月 3 本まで</li>
+          <li>直近 7 日間の学習記録</li>
           <li>Podcast の手動取り込み</li>
-          <li>伝わるかチェック：各トラックの3文まで</li>
+          <li>伝わるかチェック：各トラックの 3 文まで</li>
         </ul>
       </article>
       <article class="price-card premium">
@@ -504,7 +463,7 @@ const videos = [
           <li>ブックマークした文の復習・伝わるかチェック（すべての文）</li>
           <li>Podcast の新着を自動で取り込み</li>
         </ul>
-        <p class="trial-note">初めての方は7日間の無料体験</p>
+        <p class="trial-note">初めての方は 7 日間の無料体験</p>
       </article>
     </div>
     <p class="pricing-note">価格は日本の App Store のものです。無料体験の適用条件はアプリ内の購入画面をご確認ください。<br>Premium は自動更新の定期購読です。解約は App Store のサブスクリプション設定から行えます。購読をやめても、作った教材はすべて再生できます。</p>
@@ -530,7 +489,7 @@ const videos = [
 <section class="closing wrap">
   <span class="brand-icon large"><img src="/assets/app-icon-120.png" width="58" height="58" alt="Reprise のアプリアイコン"></span>
   <p class="eyebrow">今日の一文から。</p>
-  <h2>一文を、<br>言えるまで。</h2>
+  <h2>その一文を、<br>言えるまで。</h2>
   <AppStoreBadge />
   <p class="micro">{site.requirement} · アカウント登録なし</p>
   <div class="qr">
