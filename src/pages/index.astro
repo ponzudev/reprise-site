@@ -9,9 +9,9 @@ import { site } from '../data/site';
 import { faq } from '../data/faq';
 import '../styles/lp.css';
 
-const title = 'Reprise（リプライズ）｜1 文ずつ徹底してリピーティングする、ストイックな語学練習アプリ';
+const title = 'Reprise（リプライズ）｜話した英語が通じたか、その場で確かめられる練習アプリ';
 const description =
-  '一文を聞く。合図が鳴ったら、同じ文を声に出す。言えるまで、その一文を繰り返す。Reprise は、教材や Podcast の音声を音声解析で自動的に一文ずつに分け、聞いた文の長さに合わせた間を用意する、ストイックな練習アプリです。文ごとの再生回数と習得した文が残ります。基本機能は無料、アカウント登録は不要。';
+  'あなたの英語、通じてる？ Reprise は、お手本をまねて話した英語を iPhone がその場で文字にして、通じたかどうかを語ごとに確かめられる練習アプリです。違って聞き取られた所だけ、お手本を聞き直して、通じるまで言い直せます。お手本は Podcast や教材など好きな音声で。長い音声も一文ずつに自動で区切ります。基本機能は無料、アカウント登録は不要。';
 const store = site.appStoreUrl;
 
 const jsonLd = [
@@ -31,7 +31,7 @@ const jsonLd = [
     description,
     url: site.url + '/',
     image: site.url + '/assets/app-icon.png',
-    screenshot: site.url + '/assets/04-player-playing.webp',
+    screenshot: site.url + '/assets/IMG_7581.JPG',
     operatingSystem: 'iOS 26.0 以降',
     applicationCategory: 'EducationalApplication',
     inLanguage: 'ja',
@@ -39,6 +39,7 @@ const jsonLd = [
     downloadUrl: store,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
     featureList: [
+      '話した声を端末内で文字にして、お手本と語ごとに比べる「伝わるかチェック」',
       '音声を端末内で文ごとに自動分割',
       '文ごとのリピート再生と、声に出すための間',
       'シャドーイング向けの通し再生',
@@ -102,47 +103,45 @@ const practiceModes = [
   },
 ];
 
-// 一文への向き合い方。数字はアプリの既定値や表示に合わせている。
+// 通じるまでの段取り。数字はアプリの既定値や表示に合わせている。
 const drill = [
   {
-    title: '一文だけ聞く',
+    title: 'お手本を一文、聞く',
     text: '「文ごとに区切る」にすると、再生は一文の終わりで止まります。',
     detail: '聞きたい文をタップすると、その頭から再生',
   },
   {
-    title: '合図のあとに、まねる',
+    title: 'まねて、話す',
     text: '「ピッ」が鳴ったら声に出します。間は、聞いた文の長さに合わせて自動で入ります。',
     detail: '秒数を指定して、間を固定することもできます',
   },
   {
-    title: '言えるまで、繰り返す',
-    text: '「1 文をループ」にすると、その一文だけが続きます。',
-    detail: '何回再生したかは、文ごとに残る',
-  },
-  {
-    title: '伝わるか、確かめる',
-    text: '自分の声を録音して、音声認識にどう聞き取られたかを語ごとに見ます。',
+    title: '通じたか、確かめる',
+    text: '自分の声を録音すると、音声認識にどう聞き取られたかが語ごとに出ます。',
     detail: '伝わるかチェック。無料では各トラックで好きな 3 文まで',
   },
   {
-    title: '完璧を、積み上げる',
-    text: '伝わるかチェックで「完璧！」になった文が、トラックの進み具合に積み上がります。',
+    title: '違った所を、言い直す',
+    text: '別の語に聞き取られた所は、お手本を聞き直してもう一度。「くり返す」で続けて練習できます。',
+    detail: '「1 文をループ」で、その一文だけを繰り返し聞くこともできます',
+  },
+  {
+    title: '通じた文が、積み上がる',
+    text: '本文どおりに伝わると「完璧！」。その文が、トラックの進み具合に積み上がります。',
     detail: '完璧・再生済み・未再生の数と、今日の再生回数・学習時間が、トラックごとに見える',
   },
 ];
 
-// トップに置く紹介動画（public/videos）。縦長 9:16、表紙は public/assets/video-poster-*.jpg。
-const videos = [
-  { id: 'video-intro', src: '/videos/reprise-30s.mp4', poster: '/assets/video-poster-30s.jpg', title: '使い方', length: '30 秒', label: 'Reprise の使い方の動画（30 秒）', text: '文をタップして再生し、1 文を繰り返し、本文を隠して聞き取るまで。' },
-  { id: 'video-check', src: '/videos/reprise-premium.mp4', poster: '/assets/video-poster-premium.jpg', title: '伝わるかチェック', length: '46 秒', label: '伝わるかチェックの紹介動画（46 秒）', text: 'お手本のあとに録音し、聞き取られた語をお手本と比べる流れ。' },
-];
+// 紹介動画（public/videos）。縦長 9:16、表紙は public/assets/video-poster-*.jpg。使い方は「動画で見る」、チェックは 2 番目の節に置く。
+const introVideo = { id: 'video-intro', src: '/videos/reprise-30s.mp4', poster: '/assets/video-poster-30s.jpg', title: '使い方', length: '30 秒', label: 'Reprise の使い方の動画（30 秒）', text: '文をタップして再生し、1 文を繰り返し、本文を隠して聞き取るまで。' };
+const checkVideo = { id: 'video-check', src: '/videos/reprise-premium.mp4', poster: '/assets/video-poster-premium.jpg', title: '伝わるかチェック', length: '46 秒', label: '伝わるかチェックの紹介動画（46 秒）', text: 'お手本のあとに録音し、聞き取られた語をお手本と比べる流れ。' };
 ---
 <!doctype html>
 <html lang="ja">
 <head>
-<Head title={title} description={description} ogTitle="Reprise（リプライズ）— その一文を、言えるまで。" jsonLd={jsonLd} />
+<Head title={title} description={description} ogTitle="Reprise（リプライズ）— あなたの英語、通じてる？" jsonLd={jsonLd} />
 <meta name="theme-color" content="#ffffff">
-<link rel="preload" as="image" href="/assets/phone-04-player-playing.webp" imagesrcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" imagesizes="(max-width: 700px) 228px, 300px" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/phone-check-result.webp" imagesrcset="/assets/phone-check-result.webp 720w, /assets/phone-check-result@2x.webp 1260w" imagesizes="(max-width: 700px) 228px, 300px" fetchpriority="high">
 </head>
 <body>
 <a class="skip" href="#main">本文へスキップ</a>
@@ -152,9 +151,9 @@ const videos = [
     <span class="brand-icon"><img src="/assets/app-icon-120.png" width="36" height="36" alt=""></span>Reprise<span class="brand-ja">リプライズ</span>
   </a>
   <nav aria-label="メインナビゲーション">
-    <a href="#story">作った理由</a>
-    <a href="#demo">自動分割</a>
+    <a href="#check">通じるか確かめる</a>
     <a href="#materials">使える教材</a>
+    <a href="#story">作った理由</a>
     <a href="#pricing">料金</a>
   </nav>
   <AppStoreBadge compact />
@@ -165,11 +164,11 @@ const videos = [
 <section class="hero wrap">
   <div class="hero-copy">
     <h1>
-      <span class="hero-kicker"><span class="dot"></span>1 文ずつ徹底してリピーティングする、ストイックな練習アプリ</span>
-      その一文を、<br><span class="mark">言えるまで。</span>
+      <span class="hero-kicker"><span class="dot"></span>話した英語が通じたか、その場で確かめられる練習アプリ</span>
+      あなたの英語、<br><span class="mark">通じてる？</span>
     </h1>
     <p class="hero-description">
-      一文を聞く。合図が鳴ったら、同じ文を声に出す。言えるまで、その一文を繰り返す。<br>教材や Podcast の音声を<strong>音声解析で自動的に一文ずつに分け、聞いた文の長さに合わせた間を用意します。</strong>
+      お手本をまねて話すと、iPhone がその場で文字にします。<br><strong>違って聞き取られた所だけ、お手本を聞き直して、もう一度。</strong>
     </p>
     <div class="hero-actions">
       <AppStoreBadge />
@@ -179,13 +178,13 @@ const videos = [
   <div class="hero-visual">
     <div class="orbit orbit-one"></div>
     <div class="orbit orbit-two"></div>
-    <span class="visual-label label-top">「ピッ」が、話し始める合図。</span>
+    <span class="visual-label label-top">赤い語が、通じなかった所。</span>
     <div class="phone framed hero-phone">
-      <img src="/assets/phone-04-player-playing.webp" srcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" sizes="(max-width: 700px) 228px, 300px" width="720" height="1472" alt="英会話の音声が 1 文ずつに分かれて並ぶ、Reprise の再生画面" fetchpriority="high">
+      <img src="/assets/phone-check-result.webp" srcset="/assets/phone-check-result.webp 720w, /assets/phone-check-result@2x.webp 1260w" sizes="(max-width: 700px) 228px, 300px" width="720" height="1472" alt="お手本の英文と、自分の声が聞き取られた結果を語ごとに色分けして比べる、Reprise の「伝わるかチェック」の画面" fetchpriority="high">
     </div>
     <div class="float-card">
       <span class="mini-wave"><i></i><i></i><i></i><i></i><i></i></span>
-      <span>聞く。まねる。もう一度。<small>聞いた文に合わせて、間が入る。</small></span>
+      <span>聞く。話す。確かめる。<small>違った所だけ、もう一度。</small></span>
       <span class="loop-symbol">↻</span>
     </div>
   </div>
@@ -201,11 +200,41 @@ const videos = [
   </dl>
 </aside>
 
+<section class="section check-section" id="check" aria-labelledby="check-title">
+  <div class="wrap">
+    <div class="section-heading">
+      <p class="eyebrow">DID IT GET THROUGH?</p>
+      <h2 id="check-title">通じなかった所だけ、<br>通じるまで。</h2>
+      <p>話した英語はその場で文字になります。違って聞き取られた所は、お手本を聞き直して、もう一度。</p>
+    </div>
+    <div class="feature-detail check-detail" id="speech-check">
+      <div class="detail-copy">
+        <span class="feature-plan">伝わるかチェック · 無料では各トラック 3 文まで</span>
+        <h3>言えたつもりを、<br>語ごとに確かめる。</h3>
+        <ol class="check-steps">
+          <li><span>01</span><div><strong>お手本のあとに、話す</strong><p>文を長押しして「伝わるかチェック」へ。お手本が流れたあと、自分の声で。言い終えると録音は自動で止まります。</p></div></li>
+          <li><span>02</span><div><strong>その場で、文字になる</strong><p>録音を iPhone の中で音声認識します。音声は端末の外へ送りません。</p></div></li>
+          <li><span>03</span><div><strong>違った所が、色で分かる</strong><p>お手本どおりに聞き取られた語は緑、別の語になった語は赤。聞き取られなかった語も分かります。</p></div></li>
+          <li><span>04</span><div><strong>通じるまで、もう一度</strong><p>「くり返す」をオンにすると、お手本と録音が続けて回ります。本文どおりに伝わると「完璧！」。</p></div></li>
+        </ol>
+        <p class="detail-note"><strong>発音の採点ではありません。</strong>お手本の語が音声認識にどう聞き取られたかを示す目安です。固有名詞や数字は、正しく言えていても別の語として出ることがあります。</p>
+      </div>
+      <div class="video-card check-video" id={checkVideo.id}>
+        <video controls playsinline preload="none" poster={checkVideo.poster} width="1080" height="1920" aria-label={checkVideo.label}>
+          <source src={checkVideo.src} type="video/mp4" />
+        </video>
+        <h3>{checkVideo.title}<small>{checkVideo.length}</small></h3>
+        <p>{checkVideo.text}再生すると音が出ます。録音している声は、撮影用の合成音声です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section wrap drill-section" id="drill">
   <div class="section-heading">
     <p class="eyebrow">ONE SENTENCE AT A TIME</p>
-    <h2>一文に、ここまで付き合う。</h2>
-    <p>Reprise がするのは、一文を言えるまで繰り返すための段取りです。</p>
+    <h2>一文ずつ、通じるまで。</h2>
+    <p>聞いて、話して、確かめる。Reprise がするのは、その一文が通じるまでの段取りです。</p>
   </div>
   <ol class="drill-steps">
     {drill.map((item, i) => (
@@ -219,20 +248,30 @@ const videos = [
   </ol>
 </section>
 
-
-
-
-
-<section class="section wrap origin-story" id="story" aria-labelledby="story-title">
-  <div class="story-heading">
-    <p class="eyebrow">WHY I MADE REPRISE</p>
-    <h2 id="story-title">いい英語に出会った。<br>自分でも、<br>そう話したかった。</h2>
-    <p class="story-byline">Reprise を作った理由</p>
-  </div>
-  <div class="story-copy">
-    <p>きっかけは NHK出版の英語教材でした。質の高い英語や豊かな表現に触れる一方で、それを自分の気持ちや、伝えたいことを表す言葉にする難しさを感じていました。</p>
-    <p>会話の流れや、話し手が伝えようとしていること。<strong>その文脈の中で、一つの表現を自分に取り込みたい。</strong>そのために、一文を何度も口に出して練習したいと思ったのです。</p>
-    <p>そこで、まとまった音声を iPhone の音声認識で文ごとに分け、一つずつ練習できるアプリを作りました。<strong>文脈ごと聞いて、一文ずつ自分の言葉にしていく。</strong>それが Reprise の出発点です。</p>
+<section class="section materials-section" id="materials">
+  <div class="wrap">
+    <div class="section-heading">
+      <p class="eyebrow">LEARN FROM YOUR EVERYDAY</p>
+      <h2>お手本は、<br>あなたの好きな英語で。</h2>
+      <p>Podcast・レッスン録音・手持ちのファイル。話せるようになりたい英語を、そのままお手本に。<br>長い音声も、練習しやすい一文ずつに自動で区切ります。</p>
+    </div>
+    <div class="materials-layout">
+      <div class="materials-photo">
+        <span class="image-caption">お気に入りの番組で、毎日少しずつ。</span>
+        <div class="phone framed material-phone"><img src="/assets/phone-13-podcast-picker.webp" srcset="/assets/phone-13-podcast-picker.webp 720w, /assets/phone-13-podcast-picker@2x.webp 1260w" sizes="(max-width: 700px) 245px, 280px" alt="Podcast の番組を探して教材に取り込む画面" loading="lazy" width="720" height="1472"></div>
+        <span class="material-sticker">いつもの「好き」を<br>学びに変えよう。</span>
+      </div>
+      <div class="material-list">
+        <article><span>PODCAST</span><h3>いつも聞いている、あの番組。</h3><p>番組を検索して、気になるエピソードを取り込み。生きた言葉を一文ずつ聞き直せます。<a href="/guides/podcast">Podcast で練習する方法</a></p></article>
+        <article><span>RECORDING</span><h3>レッスンの録音を、復習に。</h3><p>先生の言い回しや、会話のフレーズ。その場で録音するか、ボイスメモから送って、繰り返し練習。<a href="/guides/lesson-recording">レッスンの録音を復習する方法</a></p></article>
+        <article><span>TEXT</span><h3>読みかけの記事も、耳から。</h3><p>練習したい文章を貼り付けて音声に。好きな言語と声を選んで、自分だけの教材を作れます。</p></article>
+        <article><span>FILES</span><h3>手持ちの教材を、そのまま。</h3><p>教材に付いてきた音声や、動画ファイル、DRM のない音楽も。使い慣れた教材を、練習しやすい形に。<a href="/guides/textbook-audio">参考書の付属音声で練習する方法</a></p></article>
+      </div>
+    </div>
+    <div class="language-note">
+      <strong>対応している言語</strong>
+      <ul>{site.languages.map((language) => <li>{language}</li>)}</ul>
+    </div>
   </div>
 </section>
 
@@ -240,7 +279,7 @@ const videos = [
   <div class="wrap">
     <div class="section-heading">
       <p class="eyebrow">AUTOMATIC SENTENCE SPLIT</p>
-      <h2>まとまった音声を、<br>一文ずつに。</h2>
+      <h2>長い音声も、<br>一文ずつのお手本に。</h2>
       <p>取り込んだ音声を iPhone の中で解析して、文の切れ目で自動で分けます。一時停止も巻き戻しも、もういりません。</p>
     </div>
     <div class="split-figure">
@@ -283,10 +322,6 @@ const videos = [
   </div>
 </section>
 
-
-
-
-
 <section class="section wrap features-section" id="features">
   <div class="section-heading">
     <p class="eyebrow">ONE AUDIO, FIVE DRILLS</p>
@@ -311,27 +346,26 @@ const videos = [
   </div>
 </section>
 
+<section class="section wrap origin-story" id="story" aria-labelledby="story-title">
+  <div class="story-heading">
+    <p class="eyebrow">WHY I MADE REPRISE</p>
+    <h2 id="story-title">いい英語に出会った。<br>自分でも、<br>そう話したかった。</h2>
+    <p class="story-byline">Reprise を作った理由</p>
+  </div>
+  <div class="story-copy">
+    <p>きっかけは NHK出版の英語教材でした。質の高い英語や豊かな表現に触れる一方で、それを自分の気持ちや、伝えたいことを表す言葉にする難しさを感じていました。</p>
+    <p>会話の流れや、話し手が伝えようとしていること。<strong>その文脈の中で、一つの表現を自分に取り込みたい。</strong>そのために、一文を何度も口に出して練習したいと思ったのです。</p>
+    <p>そこで、まとまった音声を iPhone の音声認識で文ごとに分け、一つずつ練習できるアプリを作りました。<strong>文脈ごと聞いて、一文ずつ自分の言葉にしていく。</strong>それが Reprise の出発点です。</p>
+  </div>
+</section>
+
 <section class="section premium-features" id="premium-features" aria-labelledby="premium-features-title">
   <div class="wrap">
     <div class="section-heading">
       <p class="eyebrow">REPRISE PREMIUM</p>
       <h2 id="premium-features-title">Premium で深まる練習。</h2>
-      <p>自分の声を確かめる。気になる一文を、もう一度。</p>
+      <p>通じなかった一文を集めて、もう一度。伝わるかチェックは、すべての文で使えます。</p>
     </div>
-    <section class="feature-detail check-detail" id="speech-check" aria-labelledby="check-title">
-      <div class="detail-copy">
-        <span class="feature-plan">Premium · 伝わるかチェック</span>
-        <h3 id="check-title">その発音、伝わった？</h3>
-        <p class="detail-lead">自分では言えたつもりの一文。<br>音声認識にどう聞こえたか、語ごとに確かめられます。</p>
-        <ol class="check-steps">
-          <li><span>01</span><div><strong>文を長押しして、録音する</strong><p>「伝わるかチェック」を開き、お手本のあとに自分の声で。言い終えると自動で止まり、繰り返し練習できます。</p></div></li>
-          <li><span>02</span><div><strong>端末内で、文字に起こす</strong><p>録音を iPhone の中で音声認識。音声は端末の外へ送りません。</p></div></li>
-          <li><span>03</span><div><strong>お手本と、単語ごとに照合</strong><p>同じ語として聞き取られた箇所、別の語になった箇所、聞き取られなかった箇所を色などで表示します。</p></div></li>
-        </ol>
-        <p class="detail-note"><strong>発音の採点ではありません。</strong>お手本の語が音声認識にどう聞き取られたかを示します。無料ユーザーは各トラックの 3 文まで行えます。</p>
-      </div>
-      <FeatureScreenshot screen={featureScreens.check} />
-    </section>
     <section class="feature-detail review-detail" id="review" aria-labelledby="review-title">
       <div class="detail-copy">
         <span class="feature-plan">Premium · 復習モード</span>
@@ -349,56 +383,24 @@ const videos = [
   </div>
 </section>
 
+
 <section class="section wrap videos-section" id="videos" aria-labelledby="videos-title">
   <div class="section-heading">
     <p class="eyebrow">WATCH</p>
-    <h2 id="videos-title">動画で見る、Reprise。</h2>
+    <h2 id="videos-title">動画で見る、使い方。</h2>
     <p>実際の画面の動きと音を、短い動画にまとめました。再生すると音が出ます。</p>
   </div>
-  <ul class="video-grid">
-    {videos.map((video) => (
-      <li class="video-card" id={video.id}>
-        <video controls playsinline preload="none" poster={video.poster} width="1080" height="1920" aria-label={video.label}>
-          <source src={video.src} type="video/mp4" />
-        </video>
-        <h3>{video.title}<small>{video.length}</small></h3>
-        <p>{video.text}</p>
-      </li>
-    ))}
+  <ul class="video-grid single">
+    <li class="video-card" id={introVideo.id}>
+      <video controls playsinline preload="none" poster={introVideo.poster} width="1080" height="1920" aria-label={introVideo.label}>
+        <source src={introVideo.src} type="video/mp4" />
+      </video>
+      <h3>{introVideo.title}<small>{introVideo.length}</small></h3>
+      <p>{introVideo.text}</p>
+    </li>
   </ul>
-  <p class="video-note">動画の教材音声は VOA Learning English のものです。「伝わるかチェック」で録音している声は、撮影用の合成音声です。</p>
+  <p class="video-note">動画の教材音声は VOA Learning English のものです。</p>
 </section>
-
-<section class="section materials-section" id="materials">
-  <div class="wrap">
-    <div class="section-heading">
-      <p class="eyebrow">LEARN FROM YOUR EVERYDAY</p>
-      <h2>練習したいのは、<br>いつもの音声。</h2>
-      <p>Podcast・レッスン録音・手持ちのファイル。好きな素材で始められます。</p>
-    </div>
-    <div class="materials-layout">
-      <div class="materials-photo">
-        <span class="image-caption">お気に入りの番組で、毎日少しずつ。</span>
-        <div class="phone framed material-phone"><img src="/assets/phone-13-podcast-picker.webp" srcset="/assets/phone-13-podcast-picker.webp 720w, /assets/phone-13-podcast-picker@2x.webp 1260w" sizes="(max-width: 700px) 245px, 280px" alt="Podcast の番組を探して教材に取り込む画面" loading="lazy" width="720" height="1472"></div>
-        <span class="material-sticker">いつもの「好き」を<br>学びに変えよう。</span>
-      </div>
-      <div class="material-list">
-        <article><span>PODCAST</span><h3>いつも聞いている、あの番組。</h3><p>番組を検索して、気になるエピソードを取り込み。生きた言葉を一文ずつ聞き直せます。<a href="/guides/podcast">Podcast で練習する方法</a></p></article>
-        <article><span>RECORDING</span><h3>レッスンの録音を、復習に。</h3><p>先生の言い回しや、会話のフレーズ。その場で録音するか、ボイスメモから送って、繰り返し練習。<a href="/guides/lesson-recording">レッスンの録音を復習する方法</a></p></article>
-        <article><span>TEXT</span><h3>読みかけの記事も、耳から。</h3><p>練習したい文章を貼り付けて音声に。好きな言語と声を選んで、自分だけの教材を作れます。</p></article>
-        <article><span>FILES</span><h3>手持ちの教材を、そのまま。</h3><p>教材に付いてきた音声や、動画ファイル、DRM のない音楽も。使い慣れた教材を、練習しやすい形に。<a href="/guides/textbook-audio">参考書の付属音声で練習する方法</a></p></article>
-      </div>
-    </div>
-    <div class="language-note">
-      <strong>対応している言語</strong>
-      <ul>{site.languages.map((language) => <li>{language}</li>)}</ul>
-    </div>
-  </div>
-</section>
-
-
-
-
 
 <section class="section learning-log" id="learning-log" aria-labelledby="log-title">
   <div class="wrap">
@@ -488,7 +490,7 @@ const videos = [
 <section class="closing wrap">
   <span class="brand-icon large"><img src="/assets/app-icon-120.png" width="58" height="58" alt="Reprise のアプリアイコン"></span>
   <p class="eyebrow">今日の一文から。</p>
-  <h2>その一文を、<br>言えるまで。</h2>
+  <h2>通じなかった所だけ、<br>通じるまで。</h2>
   <AppStoreBadge />
   <p class="micro">{site.requirement} · アカウント登録なし</p>
   <div class="qr">
@@ -510,7 +512,7 @@ const videos = [
 </footer>
 
 <div class="mobile-cta">
-  <span>声に出す練習を、無料で。</span>
+  <span>通じるか、無料で試す。</span>
   <AppStoreBadge compact />
 </div>
 

@@ -38,7 +38,7 @@ python3 scripts/frame.py scripts/iphone-frame.png public/assets/04-player-playin
 
 | 枠つきの画像 | 使っている場所 |
 |---|---|
-| `public/assets/phone-04-player-playing.webp` | 最初の画面、SNS 共有用の画像 |
+| `public/assets/phone-check-result.webp` | 最初の画面、SNS 共有用の画像（元は `public/assets/IMG_7581.JPG`） |
 | `public/assets/phone-13-podcast-picker.webp` | 「使える教材」 |
 | `public/assets/phone-07-study-log.webp` | 学習記録 |
 | `public/assets/phone-11-player-text-hidden.webp`・`phone-06-sentence-editor.webp`・`phone-14-podcast-episodes.webp`・`phone-08-study-log-graph.webp` | 「特徴」の下に並べた 4 枚（`src/pages/index.astro` の `screens`） |

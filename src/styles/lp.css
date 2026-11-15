@@ -2879,3 +2879,11 @@ img {
 #features .practice-modes {
   margin-top: 0;
 }
+
+/* ---------- 2 番目の節：通じたかを確かめる（伝わるかチェック） ---------- */
+.check-section { background: #f0f5fc; }
+.check-video { width: min(100%, 300px); margin: 0 auto; }
+.check-video h3 { font-size: 1rem; }
+.check-video p { font-size: .8rem; }
+/* 動画が 1 本のときは中央に 1 列で置く。 */
+.video-grid.single { grid-template-columns: minmax(0, 352px); }
