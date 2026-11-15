@@ -42,7 +42,7 @@ Reprise（リプライズ）は、利用者が自分で送るフィードバッ�
 
 これらはアプリを削除すると端末から消去されます。
 
-学習記録の「共有」を利用者が自分で使ったときに限り、今日の学習（学習時間・再生回数・伝わるかチェックで完璧になった文の数）・連続日数・これまでの累計を載せた画像と、同じ内容の短い投稿文を、利用者が共有シートで選んだ共有先（他のアプリ）へ渡します。画像は端末内で作り、教材やトラックの名前、音声、文字起こしは含みません。アプリが自動で共有したり、当方へ送信したりすることはありません。共有先での扱いは、その共有先のプライバシーポリシーに従います。
+学習記録の「共有」を利用者が自分で使ったときに限り、今日の学習（学習時間・再生回数・伝わるかチェックで完璧になった文の数）・連続日数・これまでの累計を載せた画像と、同じ内容の短い投稿文を、利用者が共有シートで選んだ共有先（他のアプリ）へ渡します。画像は端末内で作り、教材やトラックの名前、音声、文字起こしは含みません。アプリが自動で共有したり、当方へ送信したりすることはありません。「写真に保存」を使ったときは、その画像を端末の写真に追加します。このために写真への「追加のみ」の許可を求めますが、アプリが写真を読み取ることはありません。共有先での扱いは、その共有先のプライバシーポリシーに従います。
 
 Podcast から作った教材については、番組の RSS フィードの URL、取り込んだエピソードの識別子、教材のアイコンにする番組の画像も端末内に保存します。どの番組を登録しているかの一覧が外部へ送られることはありませんが、各番組の RSS フィードの URL は、その番組の配信元へエピソードの一覧を取りに行く要求に使われます（下記「Podcast 機能の通信」）。
 
@@ -78,6 +78,7 @@ Podcast から作った教材については、番組の RSS フィードの URL
 | ミュージックライブラリ | 利用者のライブラリにある DRM のない曲を教材として取り込むため |
 | ファイル | 利用者が選んだ、または他のアプリから共有された音声・動画ファイルを取り込むため（動画は音声だけを取り出して保存します） |
 | マイク | 利用者が「録音する」で録音した音声を教材として保存するため、および「伝わるかチェック」で自分の声を録音し、読んだ本文が正しく認識されるかを確かめるため。録音は利用者が始めたときだけ行い、端末内に保存します |
+| 写真（追加のみ） | 学習記録の共有で「写真に保存」を押したときに、作った画像を写真に追加するため。写真を読み取ることはありません |
 | ネットワーク | Podcast の番組を検索し、RSS フィードとエピソードをダウンロードするため（上記「Podcast 機能の通信」） |
 
 いずれも、取り込みと解析のためにのみ使用します。端末から読み取った内容を外部へ送信することはありません。
@@ -146,7 +147,7 @@ The following is stored only on your device and never leaves it:
 
 All of this is removed when you delete the app.
 
-Only when you choose to use Share in the study log, an image showing today's study (time, plays and sentences that became perfect), your streak and your lifetime totals (total study time, total plays and the number of perfect sentences), together with a short post text containing the same figures, is handed to the destination (another app) you pick in the share sheet. The image is created on your device and contains no material or track names, audio or transcripts. The app never shares anything automatically and never sends it to us. Handling by the destination follows that destination's privacy policy.
+Only when you choose to use Share in the study log, an image showing today's study (time, plays and sentences that became perfect), your streak and your lifetime totals (total study time, total plays and the number of perfect sentences), together with a short post text containing the same figures, is handed to the destination (another app) you pick in the share sheet. The image is created on your device and contains no material or track names, audio or transcripts. The app never shares anything automatically and never sends it to us. When you use Save to Photos, the image is added to your photo library; this asks for add-only access, and the app never reads your photos. Handling by the destination follows that destination's privacy policy.
 
 For study material created from a podcast, the app also stores the show's RSS feed URL, the identifiers of the episodes you imported, and the show artwork used as the material's icon. Your list of shows is never sent anywhere, but each show's RSS feed URL is used in the request that fetches its episode list from that show's publisher (see "Network use by the podcast feature").
 
@@ -182,6 +183,7 @@ Only when you use "Add from Podcast", or open study material created from a podc
 | Music library | To import DRM-free songs from your library as study material |
 | Files | To import audio or video files you select or share from other apps (only the audio of a video is kept) |
 | Microphone | To save audio you record with "Record" as study material, and to record your own voice with "Record your voice and compare" so you can compare it with the original. Recording happens only when you start it, and recordings stay on the device |
+| Photos (add only) | To add the study-log image to your photo library when you tap Save to Photos. The app never reads your photos |
 | Network | To search for podcasts and download their RSS feeds and episodes (see "Network use by the podcast feature") |
 
 Used only for importing and analysis. Nothing read from your device is transmitted anywhere.
