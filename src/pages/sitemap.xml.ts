@@ -1,4 +1,4 @@
-// サイトマップ。ページを足したら自動で入る（404 は除く）。外部パッケージを増やさないため手書きにしている。
+// サイトマップ。ページを足したら自動で入る（404 と、共有のリンクの行き先 /s は除く）。外部パッケージを増やさないため手書きにしている。
 import { canonical } from '../data/site';
 
 const pages = import.meta.glob('./**/*.{astro,md}');
@@ -6,7 +6,7 @@ const pages = import.meta.glob('./**/*.{astro,md}');
 export function GET() {
   const urls = Object.keys(pages)
     .map((file) => file.slice(1).replace(/\.(astro|md)$/, '').replace(/\/index$/, '/'))
-    .filter((path) => path !== '/404')
+    .filter((path) => path !== '/404' && path !== '/s')
     .map((path) => canonical(path))
     .sort();
   const body =

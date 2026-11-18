@@ -1,0 +1,30 @@
+---
+// 学習記録の共有の投稿文に入るリンク（https://reprise.ponzudev.app/s）の行き先。
+// iPhone で開いたら App Store へ、それ以外（パソコン・Android など）はトップへ送る。
+// 自動で移らなかったときのために、同じ行き先のボタンとリンクを出しておく。
+import DocLayout from '../layouts/DocLayout.astro';
+import { site, appStoreCampaignUrl } from '../data/site';
+
+const store = appStoreCampaignUrl('share');
+const description =
+  'Reprise（リプライズ）は、音声を一文ずつに区切り、言えるまで繰り返す語学練習アプリです。学習時間と連続日数が残るので、毎日の習慣にできます。基本機能は無料、アカウント登録は不要。';
+---
+<DocLayout title="Reprise をダウンロード" fullTitle="Reprise（リプライズ）｜英語を、日々の習慣に。" description={description} noindex>
+  <script is:inline define:vars={{ store }}>
+    // 戻るボタンでこのページに戻って、また送られることがないよう、履歴を置き換える
+    location.replace(/iPhone|iPod/.test(navigator.userAgent) ? store : '/');
+  </script>
+  <h1>Reprise（リプライズ）</h1>
+  <p>音声を一文ずつに区切り、言えるまで繰り返す語学練習アプリです。</p>
+  <p>
+    <a class="store" href={store} aria-label="App Store で Reprise をダウンロード">
+      <img src="/assets/app-store-badge-ja.svg" width="142" height="52" alt="App Store からダウンロード" />
+    </a>
+  </p>
+  <p>{site.requirement}</p>
+  <p><a href="/">Reprise について詳しく見る</a></p>
+</DocLayout>
+<style>
+  .store { display: inline-block; line-height: 0; }
+  .store img { display: block; height: 52px; width: auto; }
+</style>

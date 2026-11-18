@@ -24,6 +24,7 @@ Reprise（リプライズ）のサイト。Astro でビルドし、Cloudflare Wo
 - App Store の URL・料金・対応言語は `src/data/site.ts`、トップの「よくある質問」は `src/data/faq.ts`（画面と構造化データの両方に使う）。料金や機能が変わったら、この 2 つとトップの料金表を直す
 - 練習ガイドを足すときは、`src/pages/guides/` に Markdown を置く。先頭に `layout`・`title`・`description`・`order`（並び順）・`published`（公開日）を書くと、一覧・サイトマップ・ほかのガイドからのリンクに自動で入る
 - SNS 共有用の画像は `public/assets/og.png`（1200×630）。元は `scripts/og.html` で、`npx -p playwright node scripts/og.mjs` で作り直す
+- `/s`（`src/pages/s.astro`）は、アプリの学習記録の共有で投稿文に入るリンクの行き先。iPhone なら App Store へ、それ以外はトップへ送る（検索には出さない）。アプリが投稿文に入れる URL なので、パスを変えない。`src/data/site.ts` の `appStoreProviderId` に App Store Connect のプロバイダ ID を入れると、共有から来た人のダウンロード数を App Store Connect で見られる
 - 最後の案内に出す QR コード（`public/assets/appstore-qr.svg`）は App Store の URL から作ったもの。URL を変えたら作り直す
 
 ## スクリーンショットを差し替えるとき
