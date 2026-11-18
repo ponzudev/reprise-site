@@ -27,6 +27,16 @@ reprise.app.support@gmail.com
 
 ## よくある質問
 
+### はじめから入っている教材「Reprise の使い方」とは何ですか
+
+はじめてアプリを開いたときに入るチュートリアルです。3 つのトラック（合わせて 4 分ほど）が、機能を声で案内します。聞きながら、その場で同じ操作を試せます。声は機械音声（合成音声）です。
+
+- **文ごとに聞いて、くり返す** — 文のタップ、文のあとに入る無音（ポーズ）と「ポーズの長さ」、再生のしかた（通しで再生／文ごとに区切る／1 文をループ）、再生の速さ、本文を伏せる、ブックマーク
+- **区切りと本文を直す** — 途中で切れた文の結合と取り消し、フレーズごと・チャンクごとの分割、「この文を調整」、トラック全体の分け直し。1 文をわざと途中で切ってあるので、結合を実際に試せます
+- **声に出して、続ける** — シャドーイングとリピーティング、伝わるかチェック、ブックマークした文の復習、学習記録、教材の追加
+
+チュートリアルは無料で持てる教材の数に数えません。チュートリアルの本文は書き直せません（区切りの手直しは試せます）。不要になったら、ほかの教材と同じように削除できます。削除したチュートリアルは入れ直されません。
+
 ### 音声はどこから取り込めますか
 
 「+」から次の 2 つの方法で取り込めます。
@@ -117,6 +127,9 @@ When reporting a problem, please include your iPhone model, iOS version, what yo
 - iPhone running iOS 26 or later
 
 ## FAQ
+
+**What is the built-in "Reprise の使い方" material?**
+It is a short tutorial added the first time you open the app. Three tracks (about 4 minutes in total, in Japanese, spoken by a synthetic voice) walk through the app while you try each step: listening sentence by sentence (pauses, playback styles, speed, hiding the text, bookmarks), fixing boundaries (merge, split, "この文を調整"), and speaking practice (shadowing, the speech check, reviewing bookmarks, study records, adding materials). It does not count toward the free material limit, and you can delete it; it is not added again.
 
 **Where can I import audio from?**
 Tap "+" and choose Files (mp3, m4a, wav, etc.) or Music (songs in your library). DRM-protected songs, including Apple Music streaming and downloads, cannot be imported. The app ships with no content; please use your own material.
