@@ -1,12 +1,15 @@
 // サイトマップ。ページを足したら自動で入る（404 と、共有のリンクの行き先 /s は除く）。外部パッケージを増やさないため手書きにしている。
 import { canonical } from '../data/site';
+import { languages, langs } from '../data/i18n';
 
 const pages = import.meta.glob('./**/*.{astro,md}');
 
 export function GET() {
   const urls = Object.keys(pages)
     .map((file) => file.slice(1).replace(/\.(astro|md)$/, '').replace(/\/index$/, '/'))
-    .filter((path) => path !== '/404' && path !== '/s')
+    .filter((path) => path !== '/404' && path !== '/s' && path !== '/[lang]')
+    // 言語ごとのトップページ（[lang].astro が作る /en など）
+    .concat(langs.map((lang) => languages[lang].path))
     .map((path) => canonical(path))
     .sort();
   const body =

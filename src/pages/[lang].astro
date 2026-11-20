@@ -1,0 +1,186 @@
+---
+// 日本語以外のトップページ（/en・/ko・/zh-hans・/zh-hant）。
+// 紹介文は App Store の文面（src/data/store-text.json。scripts/store-text.mjs で取り込む）、
+// 画面は App Store と同じ紹介画像（public/assets/store/）を使う。枠の言葉は src/data/i18n.ts。
+import Head from '../components/Head.astro';
+import AppStoreBadge from '../components/AppStoreBadge.astro';
+import { site, canonical, appStoreUrl } from '../data/site';
+import { languages, langs, strings, storeText, type Lang } from '../data/i18n';
+import '../styles/intl.css';
+
+export function getStaticPaths() {
+  return langs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = strings[lang];
+const text = storeText[lang];
+const language = languages[lang];
+const store = appStoreUrl(lang);
+const alternates = Object.fromEntries(Object.entries(languages).map(([code, item]) => [code, item.path]));
+// サポートとプライバシーポリシーは、日本語のほかは英語だけ。
+const supportUrl = '/en/support';
+const privacyUrl = '/privacy#reprise-privacy-policy';
+const english = lang === 'en' ? '' : `（${t.footer.englishOnly}）`;
+const requirement = `${t.device} · ${text.requirement}`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'Reprise: Repeating Player',
+    alternateName: 'Reprise',
+    description: text.promotionalText,
+    url: canonical(language.path),
+    image: site.url + '/assets/app-icon.png',
+    screenshot: `${site.url}/assets/store/${lang}-1-split.webp`,
+    operatingSystem: 'iOS 26.0',
+    applicationCategory: 'EducationalApplication',
+    inLanguage: language.tag,
+    installUrl: store,
+    downloadUrl: store,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    featureList: text.slides.map((slide) => slide.title),
+  },
+];
+const shot = (id: string) => `/assets/store/${lang}-${id}.webp`;
+const shot2x = (id: string) => `/assets/store/${lang}-${id}@2x.webp`;
+const order = ['split', 'speed', 'check', 'podcast', 'log', 'languages', 'privacy'];
+const file = (id: string) => `${order.indexOf(id) + 1}-${id}`;
+---
+<!doctype html>
+<html lang={language.tag}>
+<head>
+<Head title={t.title} description={text.promotionalText} ogTitle={`Reprise — ${text.subtitle}`} jsonLd={jsonLd} lang={lang} alternates={alternates} />
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<a class="skip" href="#main">{t.skip}</a>
+
+<header class="header wrap">
+  <a class="brand" href={language.path} aria-label="Reprise">
+    <img src="/assets/app-icon-120.png" width="36" height="36" alt="">Reprise
+  </a>
+  <nav aria-label={t.footer.language === 'Language' ? 'Main' : t.nav.features}>
+    <a href="#screens">{t.nav.screens}</a>
+    <a href="#features">{t.nav.features}</a>
+    <a href="#pricing">{t.nav.pricing}</a>
+  </nav>
+  <AppStoreBadge compact lang={lang} />
+</header>
+
+<main id="main">
+
+<section class="hero wrap">
+  <div class="hero-copy">
+    <p class="kicker">{text.subtitle}</p>
+    <h1>{t.headline[0]}<br><span class="mark">{t.headline[1]}</span></h1>
+    <p class="lead">{text.intro}</p>
+    <div class="hero-actions">
+      <AppStoreBadge lang={lang} />
+    </div>
+    <p class="micro">{requirement}</p>
+  </div>
+  <div class="hero-visual">
+    <img src={shot(file('split'))} srcset={`${shot(file('split'))} 660w, ${shot2x(file('split'))} 1320w`} sizes="(max-width: 700px) 260px, 330px"
+         width="660" height="1434" alt={`${text.slides[0].title} — ${text.slides[0].text}`} fetchpriority="high">
+  </div>
+</section>
+
+<section class="section screens" id="screens" aria-labelledby="screens-title">
+  <div class="wrap section-heading">
+    <p class="eyebrow">{t.screens.eyebrow}</p>
+    <h2 id="screens-title">{t.screens.title}</h2>
+    <p>{t.screens.text}</p>
+  </div>
+  <ul class="screen-list" tabindex="0" aria-labelledby="screens-title">
+    {text.slides.slice(1).map((slide) => (
+      <li>
+        <img src={shot(file(slide.id))} srcset={`${shot(file(slide.id))} 660w, ${shot2x(file(slide.id))} 1320w`} sizes="260px"
+             width="660" height="1434" alt={`${slide.title} — ${slide.text}`} loading="lazy">
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="section wrap" id="features" aria-labelledby="features-title">
+  <div class="section-heading">
+    <p class="eyebrow">{t.features.eyebrow}</p>
+    <h2 id="features-title">{t.features.title}</h2>
+    <p>{text.premiumLegend}</p>
+  </div>
+  <div class="feature-grid">
+    {text.features.map((feature) => (
+      <article>
+        <h3>{feature.title}</h3>
+        <ul>
+          {feature.items.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <div class="section-heading">
+      <p class="eyebrow">{t.pricing.eyebrow}</p>
+      <h2 id="pricing-title">{t.pricing.title}</h2>
+    </div>
+    <div class="pricing-grid">
+      <article class="price-card">
+        <h3>{t.pricing.free}</h3>
+        <p>{text.premiumLegend}</p>
+        <p>{t.pricing.freeText}</p>
+      </article>
+      <article class="price-card premium">
+        <h3>{t.pricing.premium}</h3>
+        <ul>
+          {text.premium.items.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="closing wrap">
+  <img class="closing-icon" src="/assets/app-icon-120.png" width="58" height="58" alt="">
+  <p class="eyebrow">{t.closing.eyebrow}</p>
+  <h2>{t.headline[0]}<br>{t.headline[1]}</h2>
+  <AppStoreBadge lang={lang} />
+  <p class="micro">{requirement} · {t.closing.noAccount}</p>
+  <div class="qr">
+    <img src={`/assets/appstore-qr-${lang}.svg`} width="96" height="96" alt={t.closing.qrAlt} loading="lazy">
+    <p>{t.closing.qr}</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer wrap">
+  <a class="brand" href={language.path}>Reprise</a>
+  <nav class="footer-links" aria-label={t.footer.support}>
+    <a href={supportUrl} hreflang="en">{t.footer.support}{english}</a>
+    <a href={privacyUrl} hreflang="en">{t.footer.privacy}{english}</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">{t.footer.terms}{english}</a>
+  </nav>
+  <nav class="footer-languages" aria-label={t.footer.language}>
+    {Object.entries(languages).map(([code, item]) => (
+      code === lang
+        ? <span aria-current="page" lang={item.tag}>{item.label}</span>
+        : <a href={item.path} lang={item.tag} hreflang={item.tag}>{item.label}</a>
+    ))}
+  </nav>
+  <small>© Reprise</small>
+</footer>
+
+<div class="mobile-cta">
+  <span>{t.mobileCta}</span>
+  <AppStoreBadge compact lang={lang} />
+</div>
+
+<script>
+  import '../scripts/demo.js';
+</script>
+</body>
+</html>

@@ -1,26 +1,55 @@
 ---
 // プライバシーポリシー・サポート・練習ガイドなど、Markdown で書く文書ページの共通レイアウト。
 import Head from '../components/Head.astro';
-import { site } from '../data/site';
+import { site, appStoreCampaignUrl } from '../data/site';
+import { languages } from '../data/i18n';
 
-const { frontmatter = {}, title: titleProp, description: descriptionProp, fullTitle, ogType, noindex, jsonLd } = Astro.props;
+const { frontmatter = {}, title: titleProp, description: descriptionProp, fullTitle, ogType, noindex, jsonLd, lang: langProp, alternates: alternatesProp } = Astro.props;
 const title = titleProp ?? frontmatter.title;
+// 英語の文書ページ（/en/support など）は、先頭に lang: en を書く。枠（ナビゲーション・フッター）も英語にする。
+const lang: 'ja' | 'en' = (langProp ?? frontmatter.lang) === 'en' ? 'en' : 'ja';
+const alternates = alternatesProp ?? frontmatter.alternates;
+const en = lang === 'en';
 const description =
   descriptionProp ??
   frontmatter.description ??
-  'Reprise（リプライズ）は、音声を文ごとに区切って繰り返し聞ける、シャドーイング・リピーティング用の語学プレーヤーです。';
+  (en
+    ? 'Reprise is an audio player for shadowing and repeating that splits audio into sentences so you can replay one sentence at a time.'
+    : 'Reprise（リプライズ）は、音声を文ごとに区切って繰り返し聞ける、シャドーイング・リピーティング用の語学プレーヤーです。');
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '');
-const nav = [
-  { href: '/guides', label: '練習ガイド' },
-  { href: '/support', label: 'サポート' },
-  { href: '/privacy', label: 'プライバシー' },
-];
+const home = languages[lang].path;
+const privacyEn = '/privacy#reprise-privacy-policy';
+const nav = en
+  ? [
+      { href: '/en/support', label: 'Support' },
+      { href: privacyEn, label: 'Privacy' },
+    ]
+  : [
+      { href: '/guides', label: '練習ガイド' },
+      { href: '/support', label: 'サポート' },
+      { href: '/privacy', label: 'プライバシー' },
+    ];
+const footer = en
+  ? [
+      { href: home, label: 'Home' },
+      { href: '/en/support', label: 'Support' },
+      { href: privacyEn, label: 'Privacy Policy' },
+      { href: appStoreCampaignUrl('site-en', 'en'), label: 'App Store' },
+    ]
+  : [
+      { href: '/', label: 'トップ' },
+      { href: '/guides', label: '練習ガイド' },
+      { href: '/support', label: 'サポート' },
+      { href: '/privacy', label: 'プライバシーポリシー' },
+      { href: appStoreCampaignUrl('site-ja'), label: 'App Store' },
+    ];
+const suffix = en ? ' | Reprise' : '｜Reprise（リプライズ）';
 const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
 ---
 <!doctype html>
-<html lang="ja">
+<html lang={lang}>
 <head>
-  <Head title={fullTitle ?? `${title}｜Reprise（リプライズ）`} description={description} ogType={ogType} noindex={noindex} jsonLd={jsonLd} />
+  <Head title={fullTitle ?? `${title}${suffix}`} description={description} ogType={ogType} noindex={noindex} jsonLd={jsonLd} lang={lang} alternates={alternates} />
   <style is:global>
     :root {
       --bg: #f7f7f9;
@@ -163,8 +192,8 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
 <body>
   <header class="site">
     <div class="wrap">
-      <a class="brand" href="/"><img src="/assets/app-icon-120.png" width="32" height="32" alt=""><span>Reprise<small>リプライズ</small></span></a>
-      <nav aria-label="メインナビゲーション">
+      <a class="brand" href={home}><img src="/assets/app-icon-120.png" width="32" height="32" alt=""><span>Reprise{!en && <small>リプライズ</small>}</span></a>
+      <nav aria-label={en ? 'Main' : 'メインナビゲーション'}>
         {nav.map((item) => (
           <a href={item.href} class={isCurrent(item.href) ? 'current' : undefined} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a>
         ))}
@@ -181,8 +210,8 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
   </div>
 
   <footer class="site">
-    Reprise — 文ごとに区切れる語学プレーヤー<br>
-    <a href="/">トップ</a><a href="/guides">練習ガイド</a><a href="/support">サポート</a><a href="/privacy">プライバシーポリシー</a><a href={site.appStoreUrl}>App Store</a><br>
+    {en ? 'Reprise — the language player that splits audio into sentences' : 'Reprise — 文ごとに区切れる語学プレーヤー'}<br>
+    {footer.map((item) => <a href={item.href}>{item.label}</a>)}<br>
     <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>
   </footer>
 </body>

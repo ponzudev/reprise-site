@@ -4,6 +4,8 @@
 
 Apple配布ページへのネットワーク接続が制限されているため、公式バッジを再配布する `@rewilok/app-store-badges@0.1.3` の `assets/app_store_badge/black/ja.svg` をそのまま取得した。パッケージのコードは導入していない。
 
+英語・韓国語・中国語（簡体字・繁体字）のページ用に、同じパッケージの `en-US.svg`・`ko.svg`・`zh-CN.svg`・`zh-TW.svg` を `app-store-badge-en.svg`・`-ko.svg`・`-zh-hans.svg`・`-zh-hant.svg` として置いた（こちらも変更していない。横幅は言語で違うので、`src/components/AppStoreBadge.astro` に幅を書いている）。
+
 - 配布パッケージ: https://www.npmjs.com/package/@rewilok/app-store-badges
 - 配布元: https://github.com/rewilok/app-store-badges
 - npm integrity: `sha512-86r24xmhIeFSeyL/0+gXks+8qq4Q1OLo1gW4NkdSSJ3zC3NHdExoadbLjX1KlwBxyqYRoCM3FukeesRpuMXlxQ==`
