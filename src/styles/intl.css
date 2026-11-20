@@ -125,6 +125,18 @@ ul { padding: 0; list-style: none; }
 .closing { padding-block: 96px; text-align: center; }
 .closing-icon { width: 58px; height: 58px; border-radius: 14px; margin: 0 auto 22px; box-shadow: 0 8px 20px #164f9526; }
 .closing h2 { margin-bottom: 20px; }
+/* パソコンで見ている人向けの QR コード。スマホでは出さない（その場で App Store を開けるため）。 */
+.qr {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 30px;
+  padding: 14px 22px 14px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  text-align: left;
+}
+.qr p { max-width: 15em; font-size: 13px; color: var(--muted); line-height: 1.7; }
 
 .footer {
   display: flex;
@@ -166,6 +178,7 @@ ul { padding: 0; list-style: none; }
   .screen-list li { flex-basis: 220px; }
   .feature-grid article, .price-card { padding: 24px 22px; }
   .closing { padding-block: 64px; }
+  .qr { display: none; }
   .footer { padding-bottom: 104px; }
   .footer-links { margin-left: 0; flex-basis: 100%; }
   .mobile-cta {

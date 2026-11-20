@@ -40,7 +40,7 @@ Reprise（リプライズ）のサイト。Astro でビルドし、Cloudflare Wo
 - 練習ガイドを足すときは、`src/pages/guides/` に Markdown を置く。先頭に `layout`・`title`・`description`・`order`（並び順）・`published`（公開日）を書くと、一覧・サイトマップ・ほかのガイドからのリンクに自動で入る
 - SNS 共有用の画像は `public/assets/og.png`（1200×630）。元は `scripts/og.html` で、`npx -p playwright node scripts/og.mjs` で作り直す
 - `/s`（`src/pages/s.astro`）は、アプリの学習記録の共有で投稿文に入るリンクの行き先。iPhone なら App Store へ、それ以外はブラウザーの言語に合うトップページへ送る（検索には出さない）。アプリが投稿文に入れる URL なので、パスを変えない。`src/data/site.ts` の `appStoreProviderId` に App Store Connect のプロバイダ ID を入れると、サイトの App Store へのリンクすべてにキャンペーンの印が付き、どこから来た人がダウンロードしたかを App Store Connect の「App アナリティクス」で見られる（言語ごとのページは `site-ja`・`site-en`・`site-ko`・`site-zh-hans`・`site-zh-hant`、学習記録の共有は `share`）
-- 最後の案内に出す QR コード（`public/assets/appstore-qr.svg`）は App Store の URL から作ったもの。URL を変えたら作り直す
+- 最後の案内に出す QR コード（日本語は `public/assets/appstore-qr.svg`、ほかの言語は `appstore-qr-<言語>.svg`）は App Store の URL から作ったもの。URL を変えたら `swift scripts/qr.swift <URL> <出力する .svg>` で作り直す（Mac の Core Image で作り、読み取れることを確かめてから書き出す。キャンペーンの印は付けていない）
 
 ## スクリーンショットを差し替えるとき
 

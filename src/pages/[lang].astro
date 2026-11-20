@@ -149,6 +149,10 @@ const file = (id: string) => `${order.indexOf(id) + 1}-${id}`;
   <h2>{t.headline[0]}<br>{t.headline[1]}</h2>
   <AppStoreBadge lang={lang} />
   <p class="micro">{requirement} · {t.closing.noAccount}</p>
+  <div class="qr">
+    <img src={`/assets/appstore-qr-${lang}.svg`} width="96" height="96" alt={t.closing.qrAlt} loading="lazy">
+    <p>{t.closing.qr}</p>
+  </div>
 </section>
 
 </main>

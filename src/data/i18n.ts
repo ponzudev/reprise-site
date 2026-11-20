@@ -43,7 +43,7 @@ interface Strings {
   screens: { eyebrow: string; title: string; text: string };
   features: { eyebrow: string; title: string };
   pricing: { eyebrow: string; title: string; free: string; freeText: string; premium: string };
-  closing: { eyebrow: string; noAccount: string };
+  closing: { eyebrow: string; noAccount: string; qr: string; qrAlt: string };
   footer: { support: string; privacy: string; terms: string; language: string; englishOnly: string };
   mobileCta: string;
 }
@@ -60,7 +60,7 @@ export const strings: Record<Lang, Strings> = {
     screens: { eyebrow: 'A LOOK INSIDE', title: 'See how it works.', text: 'Bring your own audio. Reprise turns it into sentences you can drill.' },
     features: { eyebrow: 'FEATURES', title: 'Everything Reprise does.' },
     pricing: { eyebrow: 'PRICING', title: 'Free to start.', free: 'Free', freeText: 'No account needed.', premium: 'Reprise Premium' },
-    closing: { eyebrow: 'START WITH ONE SENTENCE', noAccount: 'No account needed' },
+    closing: { eyebrow: 'START WITH ONE SENTENCE', noAccount: 'No account needed', qr: 'On a computer? Scan this with your iPhone camera.', qrAlt: 'QR code that opens Reprise on the App Store' },
     footer: { support: 'Support', privacy: 'Privacy Policy', terms: 'Terms of Use', language: 'Language', englishOnly: '' },
     mobileCta: 'Speaking practice, free.',
   },
@@ -75,7 +75,7 @@ export const strings: Record<Lang, Strings> = {
     screens: { eyebrow: 'A LOOK INSIDE', title: '화면으로 살펴보기', text: '가지고 있는 음성을 가져오면, 한 문장씩 연습할 수 있는 교재가 돼요.' },
     features: { eyebrow: 'FEATURES', title: 'Reprise의 기능' },
     pricing: { eyebrow: 'PRICING', title: '무료로 시작하세요.', free: '무료', freeText: '계정 등록이 필요 없어요.', premium: 'Reprise Premium' },
-    closing: { eyebrow: '오늘의 한 문장부터', noAccount: '계정 등록 없음' },
+    closing: { eyebrow: '오늘의 한 문장부터', noAccount: '계정 등록 없음', qr: '컴퓨터로 보고 있다면 iPhone 카메라로 스캔하세요.', qrAlt: 'App Store의 Reprise 페이지를 여는 QR 코드' },
     footer: { support: '지원', privacy: '개인정보 처리방침', terms: '이용 약관', language: '언어', englishOnly: '영어' },
     mobileCta: '소리 내어 연습하기, 무료로.',
   },
@@ -90,7 +90,7 @@ export const strings: Record<Lang, Strings> = {
     screens: { eyebrow: 'A LOOK INSIDE', title: '看看怎么用', text: '导入你手头的音频，它就变成可以逐句练习的教材。' },
     features: { eyebrow: 'FEATURES', title: 'Reprise 的功能' },
     pricing: { eyebrow: 'PRICING', title: '免费开始。', free: '免费', freeText: '无需注册账户。', premium: 'Reprise Premium' },
-    closing: { eyebrow: '从今天的一句开始', noAccount: '无需注册账户' },
+    closing: { eyebrow: '从今天的一句开始', noAccount: '无需注册账户', qr: '正在用电脑浏览？请用 iPhone 相机扫描。', qrAlt: '打开 App Store 中 Reprise 页面的二维码' },
     footer: { support: '支持', privacy: '隐私政策', terms: '使用条款', language: '语言', englishOnly: '英文' },
     mobileCta: '开口练习，免费。',
   },
@@ -105,7 +105,7 @@ export const strings: Record<Lang, Strings> = {
     screens: { eyebrow: 'A LOOK INSIDE', title: '看看怎麼用', text: '匯入你手邊的音訊，它就變成可以逐句練習的教材。' },
     features: { eyebrow: 'FEATURES', title: 'Reprise 的功能' },
     pricing: { eyebrow: 'PRICING', title: '免費開始。', free: '免費', freeText: '不需註冊帳號。', premium: 'Reprise Premium' },
-    closing: { eyebrow: '從今天的一句開始', noAccount: '不需註冊帳號' },
+    closing: { eyebrow: '從今天的一句開始', noAccount: '不需註冊帳號', qr: '正在用電腦瀏覽？請用 iPhone 相機掃描。', qrAlt: '開啟 App Store 中 Reprise 頁面的 QR 碼' },
     footer: { support: '支援', privacy: '隱私權政策', terms: '使用條款', language: '語言', englishOnly: '英文' },
     mobileCta: '開口練習，免費。',
   },
