@@ -12,7 +12,7 @@ export const site = {
   // 入れると、サイトの各言語のページや学習記録の共有から来た人のダウンロード数を、App Store Connect の「App アナリティクス」で
   // キャンペーン別（site-ja・site-en・site-ko・site-zh-hans・site-zh-hant・share）に見られる。
   // 空のうちは、キャンペーンの印を付けずに App Store へ送る
-  appStoreProviderId: '',
+  appStoreProviderId: '129358834',
   supportEmail: 'reprise.app.support@gmail.com',
   ogImage: '/assets/og.png',
   requirement: 'iPhone 対応 · iOS 26 以降',
