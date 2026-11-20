@@ -12,7 +12,7 @@ description: Reprise（リプライズ）のプライバシーポリシー。音
 
 Reprise（リプライズ）は、利用者が自分で送るフィードバックを除き、利用者の情報を収集しません。サーバーを持たず、音声の解析や学習記録はすべて端末内で処理します。フィードバックにもメールアドレスや名前は含まれません。
 
-通信するのは、利用者が「Podcast から追加」を使うときと、Podcast から作った教材を開いて新しいエピソードを確かめるとき、利用者が「新しいエピソードを自動で取り込む」をオンにした教材の新しい回をアプリを開いたときに取り込むときだけです。その通信は Apple の検索サービスと番組の配信元へ直接行われ、開発者が内容を受け取ることはありません。
+通信するのは、利用者が「Podcast から追加」を使うときと、Podcast から作った教材を開いて新しいエピソードを確かめるとき、利用者が「新しいエピソードを自動で取り込む」をオンにした教材の新しい回をアプリを開いたときに取り込むとき、利用者がフィードバックを送ったり返信を見たりするときだけです。Podcast の通信は Apple の検索サービスと番組の配信元へ直接行われ、開発者が内容を受け取ることはありません。フィードバックは Apple の CloudKit を通して届きます（下記「フィードバック」）。
 
 ## 収集する情報
 
@@ -79,7 +79,7 @@ Podcast から作った教材については、番組の RSS フィードの URL
 | ファイル | 利用者が選んだ、または他のアプリから共有された音声・動画ファイルを取り込むため（動画は音声だけを取り出して保存します） |
 | マイク | 利用者が「録音する」で録音した音声を教材として保存するため、および「伝わるかチェック」で自分の声を録音し、読んだ本文が正しく認識されるかを確かめるため。録音は利用者が始めたときだけ行い、端末内に保存します |
 | 写真（追加のみ） | 学習記録の共有で「写真に保存」を押したときに、作った画像を写真に追加するため。写真を読み取ることはありません |
-| ネットワーク | Podcast の番組を検索し、RSS フィードとエピソードをダウンロードするため（上記「Podcast 機能の通信」） |
+| ネットワーク | Podcast の番組を検索し、RSS フィードとエピソードをダウンロードするため（上記「Podcast 機能の通信」）、およびフィードバックを送り、返信を受け取るため（上記「フィードバック」） |
 
 いずれも、取り込みと解析のためにのみ使用します。端末から読み取った内容を外部へ送信することはありません。
 
@@ -117,7 +117,7 @@ Last updated: 2026-11-20
 
 Apart from feedback you choose to send, Reprise collects no information. It has no server; audio analysis and study records are processed entirely on the device. Feedback never includes your email address or name.
 
-The app communicates over the network only when you use "Add from Podcast", open study material created from a podcast to check for new episodes, or, for podcast material where you turned on automatic import of new episodes, when you open or return to the app. That traffic goes directly to Apple's search service and to the podcast's publisher, and we never receive any of it.
+The app communicates over the network only when you use "Add from Podcasts", open study material created from a podcast to check for new episodes, or, for podcast material where you turned on automatic import of new episodes, when you open or return to the app, and when you send feedback or read replies. Podcast traffic goes directly to Apple's search service and to the podcast's publisher, and we never receive any of it. Feedback reaches us through Apple's CloudKit (see "Feedback").
 
 ## Information we collect
 
@@ -140,14 +140,14 @@ The following is stored only on your device and never leaves it:
 
 - Audio files you import (including podcast episodes you download, audio you record in the app, and audio created by reading text aloud)
 - The text of study material created by reading text aloud
-- Your own voice recorded in the Speech Check (the latest take for each sentence) and its transcriptions (one for each take)
+- Your own voice recorded in Clarity Check (the latest take for each sentence) and its transcriptions (one for each take)
 - Transcripts and per-sentence timings produced by speech recognition
 - Study records (listening time and sentences played, recorded per track and per day)
 - Playback settings
 
 All of this is removed when you delete the app.
 
-Only when you choose to use Share in the study log, an image showing today's study (time, plays and sentences that became perfect), your streak and your lifetime totals (total study time, total plays and the number of perfect sentences), together with a short post text containing the same figures, is handed to the destination (another app) you pick in the share sheet. The image is created on your device and contains no material or track names, audio or transcripts. The app never shares anything automatically and never sends it to us. When you use Save to Photos, the image is added to your photo library; this asks for add-only access, and the app never reads your photos. Handling by the destination follows that destination's privacy policy.
+Only when you choose to use Share in the study log, an image showing today's study (time, plays and sentences that became perfect in Clarity Check), your streak, your daily study time for the last 7 days and your lifetime totals (you choose which items appear), together with a short post text containing the same figures, is handed to the destination (another app) you pick in the share sheet. The image is created on your device and contains no material or track names, audio or transcripts. The app never shares anything automatically and never sends it to us. When you use Save to Photos, the image is added to your photo library; this asks for add-only access, and the app never reads your photos. Handling by the destination follows that destination's privacy policy.
 
 For study material created from a podcast, the app also stores the show's RSS feed URL, the identifiers of the episodes you imported, and the show artwork used as the material's icon. Your list of shows is never sent anywhere, but each show's RSS feed URL is used in the request that fetches its episode list from that show's publisher (see "Network use by the podcast feature").
 
@@ -161,11 +161,11 @@ If the language model required for recognition is not yet installed, iOS may dow
 
 ## Network use by the podcast feature
 
-Only when you use "Add from Podcast", or open study material created from a podcast, the app makes the following requests. None of them go through our servers.
+Only when you use "Add from Podcasts", or open study material created from a podcast, the app makes the following requests. None of them go through our servers.
 
 | Destination | What is sent | When |
 |---|---|---|
-| Apple's search service (iTunes Search API) | The show name you typed, or the show ID contained in an Apple Podcasts link, plus the country code of your region setting. When you open "Add from Podcast", the IDs of the recommended shows built into the app and a country code (US for shows not in your country's store); not anything you typed | When you search, paste an Apple Podcasts link, or open "Add from Podcast" (to look up artwork and publishers of the recommended shows) |
+| Apple's search service (iTunes Search API) | The show name you typed, or the show ID contained in an Apple Podcasts link, plus the country code of your region setting. When you open "Add from Podcasts", the IDs of the recommended shows built into the app and a country code (US for shows not in your country's store); not anything you typed | When you search, paste an Apple Podcasts link, or open "Add from Podcasts" (to look up artwork and publishers of the recommended shows) |
 | Apple's image servers | Requests for show artwork | When search results and recommendations are shown |
 | The podcast's publisher (the servers hosting the RSS feed, audio, and show or episode artwork) | Requests for the RSS feed, episode audio, and show and episode artwork you chose | When you open an episode list (including the episode artwork shown in the list), preview an episode (the audio is streamed and not stored on the device), import episodes, open podcast material to check for new episodes, or open or return to the app for podcast material with automatic import turned on (at most once every 30 minutes; episodes are downloaded only over Wi‑Fi). Show artwork is fetched once per study material and stored on the device as its icon |
 
@@ -182,9 +182,9 @@ Only when you use "Add from Podcast", or open study material created from a podc
 | Speech recognition | To split imported audio into sentences, and to transcribe your own recorded voice to compare it with the original (processed on the device) |
 | Music library | To import DRM-free songs from your library as study material |
 | Files | To import audio or video files you select or share from other apps (only the audio of a video is kept) |
-| Microphone | To save audio you record with "Record" as study material, and to record your own voice with "Record your voice and compare" so you can compare it with the original. Recording happens only when you start it, and recordings stay on the device |
+| Microphone | To save audio you record with "Record" as study material, and to record your own voice in "Clarity Check" so you can see whether the sentence you read is recognized correctly. Recording happens only when you start it, and recordings stay on the device |
 | Photos (add only) | To add the study-log image to your photo library when you tap Save to Photos. The app never reads your photos |
-| Network | To search for podcasts and download their RSS feeds and episodes (see "Network use by the podcast feature") |
+| Network | To search for podcasts and download their RSS feeds and episodes (see "Network use by the podcast feature"), and to send feedback and receive replies (see "Feedback") |
 
 Used only for importing and analysis. Nothing read from your device is transmitted anywhere.
 
