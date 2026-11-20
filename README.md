@@ -39,8 +39,8 @@ Reprise（リプライズ）のサイト。Astro でビルドし、Cloudflare Wo
 - App Store の URL・料金・対応言語は `src/data/site.ts`、トップの「よくある質問」は `src/data/faq.ts`（画面と構造化データの両方に使う）。料金や機能が変わったら、この 2 つとトップの料金表を直す
 - 練習ガイドを足すときは、`src/pages/guides/` に Markdown を置く。先頭に `layout`・`title`・`description`・`order`（並び順）・`published`（公開日）を書くと、一覧・サイトマップ・ほかのガイドからのリンクに自動で入る
 - SNS 共有用の画像は `public/assets/og.png`（1200×630）。元は `scripts/og.html` で、`npx -p playwright node scripts/og.mjs` で作り直す
-- `/s`（`src/pages/s.astro`）は、アプリの学習記録の共有で投稿文に入るリンクの行き先。iPhone なら App Store へ、それ以外はブラウザーの言語に合うトップページへ送る（検索には出さない）。アプリが投稿文に入れる URL なので、パスを変えない。`src/data/site.ts` の `appStoreProviderId` に App Store Connect のプロバイダ ID を入れると、サイトの App Store へのリンクすべてにキャンペーンの印が付き、どこから来た人がダウンロードしたかを App Store Connect の「App アナリティクス」で見られる（言語ごとのページは `site-ja`・`site-en`・`site-ko`・`site-zh-hans`・`site-zh-hant`、学習記録の共有は `share`）
-- 最後の案内に出す QR コード（日本語は `public/assets/appstore-qr.svg`、ほかの言語は `appstore-qr-<言語>.svg`）は App Store の URL から作ったもの。URL を変えたら `swift scripts/qr.swift <URL> <出力する .svg>` で作り直す（Mac の Core Image で作り、読み取れることを確かめてから書き出す。キャンペーンの印は付けていない）
+- `/s`（`src/pages/s.astro`）は、アプリの学習記録の共有で投稿文に入るリンクの行き先。iPhone なら App Store へ、それ以外はブラウザーの言語に合うトップページへ送る（検索には出さない）。アプリが投稿文に入れる URL なので、パスを変えない。`src/data/site.ts` の `appStoreProviderId` に App Store Connect のプロバイダ ID を入れると、サイトの App Store へのリンクすべてにキャンペーンの印が付き、どこから来た人がダウンロードしたかを App Store Connect の「App アナリティクス」で見られる（言語ごとのページは `site-ja`・`site-en`・`site-ko`・`site-zh-hans`・`site-zh-hant`、QR コードは `qr-<言語>`、学習記録の共有は `share`）
+- 最後の案内に出す QR コード（日本語は `public/assets/appstore-qr.svg`、ほかの言語は `appstore-qr-<言語>.svg`）は App Store の URL から作ったもの。URL を変えたら `swift scripts/qr.swift <URL> <出力する .svg>` で作り直す（Mac の Core Image で作り、読み取れることを確かめてから書き出す）。URL は、その言語のストアの短い URL にキャンペーンの印を付けたもの（例: `https://apps.apple.com/kr/app/id6825080777?pt=<プロバイダ ID>&ct=qr-ko&mt=8`。`ct` は `qr-ja`・`qr-en`・`qr-ko`・`qr-zh-hans`・`qr-zh-hant`）。QR コードは画像なので、プロバイダ ID を変えたら作り直す
 
 ## スクリーンショットを差し替えるとき
 
