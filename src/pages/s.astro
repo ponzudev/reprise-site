@@ -1,18 +1,26 @@
 ---
 // 学習記録の共有の投稿文に入るリンク（https://reprise.ponzudev.app/s）の行き先。
-// iPhone で開いたら App Store へ、それ以外（パソコン・Android など）はトップへ送る。
+// iPhone で開いたら App Store へ、それ以外（パソコン・Android など）はブラウザーの言語に合うトップページへ送る。
 // 自動で移らなかったときのために、同じ行き先のボタンとリンクを出しておく。
 import DocLayout from '../layouts/DocLayout.astro';
 import { site, appStoreCampaignUrl } from '../data/site';
 
-const store = appStoreCampaignUrl('share');
+// 共有した人の国はさまざまなので、見る人の国のストアが開く URL（国コードなし）にする。
+const store = appStoreCampaignUrl('share', 'en');
 const description =
   'Reprise（リプライズ）は、音声を一文ずつに区切り、言えるまで繰り返す語学練習アプリです。学習時間と連続日数が残るので、毎日の習慣にできます。基本機能は無料、アカウント登録は不要。';
 ---
 <DocLayout title="Reprise をダウンロード" fullTitle="Reprise（リプライズ）｜英語を、日々の習慣に。" description={description} noindex>
   <script is:inline define:vars={{ store }}>
     // 戻るボタンでこのページに戻って、また送られることがないよう、履歴を置き換える
-    location.replace(/iPhone|iPod/.test(navigator.userAgent) ? store : '/');
+    // iPhone 以外は、ブラウザーの言語に合うトップページへ（日本語・韓国語・中国語のほかは英語）
+    const language = (navigator.language || '').toLowerCase();
+    const top = language.startsWith('ja') ? '/'
+      : language.startsWith('ko') ? '/ko'
+      : /^zh\b.*(hant|tw|hk|mo)/.test(language) ? '/zh-hant'
+      : language.startsWith('zh') ? '/zh-hans'
+      : '/en';
+    location.replace(/iPhone|iPod/.test(navigator.userAgent) ? store : top);
   </script>
   <h1>Reprise（リプライズ）</h1>
   <p>音声を一文ずつに区切り、言えるまで繰り返す語学練習アプリです。</p>
@@ -22,7 +30,7 @@ const description =
     </a>
   </p>
   <p>{site.requirement}</p>
-  <p><a href="/">Reprise について詳しく見る</a></p>
+  <p><a href="/">Reprise について詳しく見る</a> · <a href="/en" lang="en" hreflang="en">About Reprise (English)</a></p>
 </DocLayout>
 <style>
   .store { display: inline-block; line-height: 0; }

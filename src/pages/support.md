@@ -1,6 +1,9 @@
 ---
 layout: ../layouts/DocLayout.astro
 title: サポート・よくある質問
+alternates:
+  ja: /support
+  en: /en/support
 description: Reprise（リプライズ）のサポートページ。音声の取り込み方、文の分割がうまくいかないときの確認、リピーティング用のポーズ、Reprise Premium の購読・解約・復元などをまとめています。
 ---
 
@@ -112,39 +115,4 @@ reprise.app.support@gmail.com
 
 ---
 
-# Reprise Support
-
-Reprise is a language-learning audio player that splits recordings into sentences so you can repeat one sentence at a time. Everything runs on the device; no account is required.
-
-## Contact
-
-reprise.app.support@gmail.com
-
-When reporting a problem, please include your iPhone model, iOS version, what you did, what happened, and the format and length of the audio you imported.
-
-## Requirements
-
-- iPhone running iOS 26 or later
-
-## FAQ
-
-**What is the built-in "Reprise の使い方" material?**
-It is a short tutorial added the first time you open the app. Three tracks (about 4 minutes in total, in Japanese, spoken by a synthetic voice) walk through the app while you try each step: listening sentence by sentence (pauses, playback styles, speed, hiding the text, bookmarks), fixing boundaries (merge, split, "この文を調整"), and speaking practice (shadowing, the speech check, reviewing bookmarks, study records, adding materials). It does not count toward the free material limit, and you can delete it; it is not added again.
-
-**Where can I import audio from?**
-Tap "+" and choose Files (mp3, m4a, wav, etc.) or Music (songs in your library). DRM-protected songs, including Apple Music streaming and downloads, cannot be imported. The app ships with no content; please use your own material.
-
-**Splitting takes a long time.**
-Speech recognition runs on the device and takes seconds to minutes depending on length. Progress is shown on screen.
-
-**Sentences are not detected / text shows "本文なし".**
-Check that Speech Recognition is allowed for Reprise in Settings, and that "認識する言語" (recognition language) matches the audio. Music-heavy or noisy audio may not be recognized; in that case the app splits at silences and plays without text.
-
-**The boundaries are wrong.**
-Long-press a sentence to re-split it (chunk / phrase / sentence) or merge it with the previous or next sentence. Merges can be undone. You can also choose "この文を調整" (Adjust this sentence) to fix the transcribed text or drag the start and end of the sentence on a waveform; the audio is not changed (except for material created from text, whose audio is regenerated). To re-split the whole track, use "⋯" → "文分割をやり直す" (Split again) and pick a granularity; merges and re-splits are reset, but boundaries you adjusted on the waveform are kept.
-
-**What is the "same length as the phrase" pause?**
-After a phrase ends, a cue tone plays and the app pauses for as long as the phrase lasted, so you can repeat it aloud. Adjust the extra reaction margin in playback settings.
-
-**Where is my data stored?**
-Audio, transcripts, study records, and settings stay on your iPhone only. Deleting the app removes them. See the [privacy policy](/privacy) for details.
+English: [Reprise Support](/en/support)

@@ -7,12 +7,15 @@ import FeatureScreenshot from '../components/FeatureScreenshot.astro';
 import { featureScreens } from '../data/featureScreens';
 import { site } from '../data/site';
 import { faq } from '../data/faq';
+import { languages } from '../data/i18n';
 import '../styles/lp.css';
 
 const title = 'Reprise（リプライズ）｜1 文ずつ徹底してリピーティングする、ストイックな語学練習アプリ';
 const description =
   '一文を聞く。合図が鳴ったら、同じ文を声に出す。言えるまで、その一文を繰り返す。Reprise は、教材や Podcast の音声を音声解析で自動的に一文ずつに分け、聞いた文の長さに合わせた間を用意する、ストイックな練習アプリです。文ごとの再生回数と習得した文が残ります。基本機能は無料、アカウント登録は不要。';
 const store = site.appStoreUrl;
+// ほかの言語のトップページ（検索エンジン向けの hreflang と、フッターの言語の切り替えに使う）。
+const alternates = Object.fromEntries(Object.entries(languages).map(([code, item]) => [code, item.path]));
 
 const jsonLd = [
   {
@@ -140,7 +143,7 @@ const videos = [
 <!doctype html>
 <html lang="ja">
 <head>
-<Head title={title} description={description} ogTitle="Reprise（リプライズ）— その一文を、言えるまで。" jsonLd={jsonLd} />
+<Head title={title} description={description} ogTitle="Reprise（リプライズ）— その一文を、言えるまで。" jsonLd={jsonLd} alternates={alternates} />
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" as="image" href="/assets/phone-04-player-playing.webp" imagesrcset="/assets/phone-04-player-playing.webp 720w, /assets/phone-04-player-playing@2x.webp 1260w" imagesizes="(max-width: 700px) 228px, 300px" fetchpriority="high">
 </head>
@@ -508,6 +511,13 @@ const videos = [
     <a href="/privacy">プライバシーポリシー</a>
   </div>
   <small>© Reprise</small>
+  <nav class="footer-languages" aria-label="言語">
+    {Object.entries(languages).map(([code, item]) => (
+      code === 'ja'
+        ? <span aria-current="page">{item.label}</span>
+        : <a href={item.path} lang={item.tag} hreflang={item.tag}>{item.label}</a>
+    ))}
+  </nav>
 </footer>
 
 <div class="mobile-cta">

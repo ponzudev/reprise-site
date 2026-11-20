@@ -1,6 +1,7 @@
 ---
 // すべてのページの <head> に入れる共通のタグ（検索・SNS 共有・アイコン・Smart App Banner）。
 import { site, canonical } from '../data/site';
+import { languages } from '../data/i18n';
 
 interface Props {
   title: string;
@@ -11,21 +12,39 @@ interface Props {
   noindex?: boolean;
   /** 構造化データ（JSON-LD）。複数あるときは配列で渡す。 */
   jsonLd?: object | object[];
+  /** ページの言語。省くと日本語。 */
+  lang?: keyof typeof languages;
+  /**
+   * 同じ内容のページがほかの言語にもあるとき、言語 → パス（例: { ja: '/support', en: '/en/support' }）。
+   * 検索エンジンが、見る人の言語に合うページを出せるようにする（hreflang）。
+   */
+  alternates?: Partial<Record<keyof typeof languages, string>>;
 }
 
-const { title, description, ogTitle = title, ogType = 'website', noindex = false, jsonLd } = Astro.props;
+const { title, description, ogTitle = title, ogType = 'website', noindex = false, jsonLd, lang = 'ja', alternates } = Astro.props;
 const url = canonical(Astro.url.pathname);
 const image = site.url + site.ogImage;
 const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const siteName = lang === 'ja' ? `${site.name}（${site.nameJa}）` : site.name;
+const alternateLinks = alternates && !noindex ? Object.entries(alternates) : [];
+// どの言語にも当てはまらない人には英語のページを出す。
+const fallback = alternates?.en;
 ---
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content={description}>
 {noindex ? <meta name="robots" content="noindex"> : <link rel="canonical" href={url}>}
+{alternateLinks.map(([code, path]) => (
+  <link rel="alternate" hreflang={languages[code].tag} href={canonical(path)}>
+))}
+{alternateLinks.length > 0 && fallback && <link rel="alternate" hreflang="x-default" href={canonical(fallback)}>}
 <meta name="apple-itunes-app" content={`app-id=${site.appId}`}>
-<meta property="og:site_name" content={`${site.name}（${site.nameJa}）`}>
-<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content={siteName}>
+<meta property="og:locale" content={languages[lang].ogLocale}>
+{alternateLinks.filter(([code]) => code !== lang).map(([code]) => (
+  <meta property="og:locale:alternate" content={languages[code].ogLocale}>
+))}
 <meta property="og:type" content={ogType}>
 <meta property="og:title" content={ogTitle}>
 <meta property="og:description" content={description}>

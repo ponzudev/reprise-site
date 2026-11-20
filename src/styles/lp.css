@@ -2879,3 +2879,23 @@ img {
 #features .practice-modes {
   margin-top: 0;
 }
+
+/* フッターの言語の切り替え。ほかのリンクの下に 1 行で並べる。 */
+.footer {
+  flex-wrap: wrap;
+}
+.footer-languages {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer-languages [aria-current] {
+  color: var(--ink);
+  font-weight: 650;
+}
+.footer-languages a:hover {
+  color: var(--accent);
+}

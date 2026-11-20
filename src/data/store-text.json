@@ -1,0 +1,434 @@
+{
+  "en": {
+    "subtitle": "Shadowing Sentence by Sentence",
+    "promotionalText": "Tap to replay the sentence you missed. Reprise splits audio into sentences on your device, with speed control, loops and pauses for shadowing. No account needed.",
+    "intro": "Reprise is an audio player for shadowing and repeating. It uses on-device speech recognition to split foreign-language audio into sentences, so you can tap the one you missed and replay just that sentence, as often as you like.",
+    "premiumLegend": "Features marked ◆ require Reprise Premium (subscription, see below). Everything else is free.",
+    "features": [
+      {
+        "title": "Automatic sentence splitting",
+        "items": [
+          "Splits audio into sentences, phrases or chunks",
+          "Analyzes the waveform so words aren't clipped at the start or end",
+          "If a split is off, touch and hold a sentence to merge it or split it again"
+        ]
+      },
+      {
+        "title": "Playback made for language practice",
+        "items": [
+          "0.5x to 2.0x speed without changing pitch",
+          "Pause After Each Sentence, Loop 1 Sentence or Play Through",
+          "Pauses between repeats as long as the phrase you just heard, with a cue tone, so you can say it back",
+          "Skip back or forward 3 seconds (adjustable), jump to the previous or next sentence",
+          "Hide Text button: touch and hold to peek, so checking your answer is quick",
+          "◆Review Bookmarked Sentences, collected from all your materials",
+          "◆Clarity Check: record your voice and see, in color, whether on-device speech analysis hears the sentence as written. Recording stops when you finish speaking. Free users can use it on any 3 sentences per track"
+        ]
+      },
+      {
+        "title": "Study log",
+        "items": [
+          "Daily study time and number of sentences played",
+          "Daily goal, streak, a 7-day chart, time per material and your all-time totals",
+          "Share your study as one image or save it to Photos (Post 4:5 / Story 9:16). ◆More themes: Dark, Forest, Sunset and Mono",
+          "◆Look back over 14 days, 1 month, 3 months, 6 months, 1 year or all time"
+        ]
+      },
+      {
+        "title": "Available in 14 languages",
+        "items": [
+          "Use the app in English, Japanese, Korean, Chinese (Simplified and Traditional), Spanish, Portuguese (Brazil and Portugal), French, German, Italian, Dutch, Swedish or Russian",
+          "The built-in tutorial walks you through the features with audio in your display language"
+        ]
+      },
+      {
+        "title": "Everything stays on your device",
+        "items": [
+          "Audio, transcripts and study records are stored only on your device and never sent to a server. No account required"
+        ]
+      },
+      {
+        "title": "Importing",
+        "items": [
+          "Free: up to 5 materials (the tutorial doesn't count) and 100 tracks per material. ◆More with Reprise Premium",
+          "From the Files app (audio, or the audio track of a video) or your music library (DRM-free songs only)",
+          "Share voice memos, email attachments and more straight to Reprise from the share sheet",
+          "Create from Text: paste text and have an on-device voice read it, already split into sentences. 3 per month for free, ◆unlimited with Reprise Premium",
+          "Record on the spot, such as a teacher's model reading",
+          "From Podcasts: search by show name, or paste an RSS feed or Apple Podcasts link, then pick episodes. Each show becomes one material, and new episodes are shown when you open it",
+          "◆Import new episodes automatically (per material, on Wi‑Fi only)",
+          "Shows without a public RSS feed (such as subscriber-only shows) can't be imported"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (auto-renewable subscription)",
+      "items": [
+        "Monthly or yearly. Prices are shown in the app before you buy and vary by country or region",
+        "New subscribers get a 7-day free trial. Cancel during the trial and you won't be charged"
+      ]
+    },
+    "requirement": "iOS 26 or later",
+    "slides": [
+      {
+        "id": "split",
+        "title": "Every sentence, split automatically",
+        "text": "Tap the one you missed to hear it again"
+      },
+      {
+        "id": "speed",
+        "title": "One sentence, as often as you like",
+        "text": "0.5x–2.0x speed, loops and pauses to repeat"
+      },
+      {
+        "id": "check",
+        "title": "Check if you said it right",
+        "text": "On-device speech recognition shows it in color"
+      },
+      {
+        "id": "podcast",
+        "title": "Podcasts become practice material",
+        "text": "Search a show and pick the episodes"
+      },
+      {
+        "id": "log",
+        "title": "Track your study every day",
+        "text": "Streaks, a calendar and all-time totals"
+      },
+      {
+        "id": "languages",
+        "title": "Available in 14 languages",
+        "text": "The app and its tutorial, in your language"
+      },
+      {
+        "id": "privacy",
+        "title": "No account. All on your device",
+        "text": "Audio and study logs never go to a server"
+      }
+    ]
+  },
+  "ko": {
+    "subtitle": "쉐도잉·리피팅 문장 반복 플레이어",
+    "promotionalText": "놓친 문장도 탭 한 번이면 다시 들을 수 있어요. 기기 안에서 음성을 문장 단위로 자동 분할하고, 속도 조절·반복·쉐도잉용 포즈까지 어학 연습에 필요한 기능을 모두 갖췄어요. 계정 등록도 필요 없어요.",
+    "intro": "Reprise는 쉐도잉과 리피팅을 위한 오디오 플레이어예요. 기기 내 음성 인식으로 외국어 음성을 문장 단위로 나눠 주기 때문에, 놓친 문장을 탭하면 그 문장만 원하는 만큼 다시 들을 수 있어요.",
+    "premiumLegend": "◆ 표시가 있는 기능은 Reprise Premium(구독, 아래 참고)에서 사용할 수 있어요. 그 밖의 기능은 모두 무료예요.",
+    "features": [
+      {
+        "title": "문장 자동 분할",
+        "items": [
+          "음성을 문장, 구, 청크 단위로 나눠요",
+          "파형을 분석해 단어의 처음이나 끝이 잘리지 않는 위치에서 나눠요",
+          "분할이 맞지 않으면 문장을 길게 눌러 합치거나 다시 나눌 수 있어요"
+        ]
+      },
+      {
+        "title": "어학 연습을 위한 재생",
+        "items": [
+          "0.5~2.0배속(음정은 그대로)",
+          "문장마다 멈추기 / 1문장 반복 / 연속 재생",
+          "반복 사이 포즈: 방금 들은 구와 같은 길이의 무음을 신호음과 함께 넣어 주니, 그대로 따라 말해 보세요",
+          "3초 뒤로·앞으로(초 수 변경 가능), 이전·다음 문장으로 이동",
+          "본문 가리기 버튼: 길게 누르는 동안만 보여서 정답을 바로 확인할 수 있어요",
+          "◆북마크한 문장만 복습: 모든 교재에서 북마크한 문장을 모아 이어서 복습",
+          "◆전달력 체크: 내 목소리를 녹음하면 기기 내 음성 분석이 문장을 쓰인 그대로 알아듣는지 색으로 보여 줘요. 말을 마치면 녹음이 자동으로 멈춰요. 무료로도 트랙마다 원하는 문장 3개까지 사용할 수 있어요"
+        ]
+      },
+      {
+        "title": "학습 기록",
+        "items": [
+          "하루 학습 시간과 재생한 문장 수를 기록",
+          "하루 목표, 연속 학습일, 최근 7일 그래프, 교재별 학습 시간, 지금까지의 누적 기록",
+          "학습 기록을 한 장의 이미지로 공유하거나 사진에 저장(게시물 4:5 / 스토리 9:16). ◆다크, 포레스트, 선셋, 모노 테마도 선택 가능",
+          "◆14일, 1개월, 3개월, 6개월, 1년, 전체 기간의 학습 시간 돌아보기"
+        ]
+      },
+      {
+        "title": "14개 언어 지원",
+        "items": [
+          "한국어, 영어, 일본어, 중국어(간체·번체), 스페인어, 포르투갈어(브라질·포르투갈), 프랑스어, 독일어, 이탈리아어, 네덜란드어, 스웨덴어, 러시아어 중에서 표시 언어를 고를 수 있어요",
+          "내장 튜토리얼도 표시 언어의 음성으로 기능을 안내해요"
+        ]
+      },
+      {
+        "title": "모든 데이터는 기기 안에",
+        "items": [
+          "음성, 받아쓴 텍스트, 학습 기록은 기기에만 저장되고 서버로 보내지 않아요. 계정도 필요 없어요"
+        ]
+      },
+      {
+        "title": "가져오기",
+        "items": [
+          "교재는 무료로 5개(튜토리얼 제외), 교재 1개의 트랙은 100개까지. ◆그 이상은 Reprise Premium",
+          "파일 앱(음성 파일, 또는 동영상의 음성만)이나 음악 보관함(DRM이 없는 곡만)에서 가져오기",
+          "음성 메모나 이메일 첨부 파일 등을 공유 시트에서 바로 Reprise로 가져오기",
+          "텍스트로 만들기: 글을 붙여 넣으면 기기 내 음성이 읽어 주는 교재를 문장 단위로 나눈 상태로 만들어요. 무료는 한 달에 3개까지, ◆Reprise Premium은 무제한",
+          "선생님의 모범 낭독 등을 그 자리에서 녹음해 교재로",
+          "팟캐스트에서: 프로그램 이름으로 검색하거나 RSS 피드, Apple Podcasts 링크를 붙여 넣은 뒤 에피소드를 골라 가져와요. 프로그램마다 하나의 교재로 묶이고, 교재를 열면 새 에피소드를 알려 줘요",
+          "◆새 에피소드 자동 가져오기(교재별, Wi‑Fi 연결 시에만)",
+          "공개 RSS 피드가 없는 프로그램(구독자 전용 등)은 가져올 수 없어요"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium(자동 갱신 구독)",
+      "items": [
+        "월간 또는 연간. 가격은 구매 전에 앱에서 표시되며, 국가 또는 지역에 따라 달라요",
+        "처음 구독하는 분은 7일 무료 체험을 이용할 수 있어요. 체험 기간 중에 해지하면 요금이 청구되지 않아요"
+      ]
+    },
+    "requirement": "iOS 26 이상",
+    "slides": [
+      {
+        "id": "split",
+        "title": "외국어 음성을 문장별로 자동 분할",
+        "text": "놓친 문장은 탭 한 번으로 다시 듣기"
+      },
+      {
+        "id": "speed",
+        "title": "한 문장만, 몇 번이든",
+        "text": "0.5~2.0배속 · 반복 · 따라 말하기용 멈춤"
+      },
+      {
+        "id": "check",
+        "title": "제대로 말했는지 음성 인식으로 체크",
+        "text": "모범 음성대로 말했는지 색으로 표시"
+      },
+      {
+        "id": "podcast",
+        "title": "팟캐스트를 그대로 학습 자료로",
+        "text": "프로그램을 검색해 원하는 에피소드를 가져오기"
+      },
+      {
+        "id": "log",
+        "title": "매일의 학습 시간을 기록",
+        "text": "연속 학습일 · 캘린더 · 누적 기록"
+      },
+      {
+        "id": "languages",
+        "title": "14개 언어로 사용 가능",
+        "text": "화면도 튜토리얼도 내 언어로"
+      },
+      {
+        "id": "privacy",
+        "title": "계정 없이, 기기 안에서 완결",
+        "text": "음성도 기록도 서버로 보내지 않습니다"
+      }
+    ]
+  },
+  "zh-hans": {
+    "subtitle": "影子跟读·复述练习逐句播放器",
+    "promotionalText": "没听清的句子，轻点一下就能重听。Reprise 在设备上将音频自动切分成句子和短语，倍速、循环、影子跟读用的停顿一应俱全。无需注册账户。",
+    "intro": "Reprise 是一款专为影子跟读和复述练习打造的音频播放器。它通过设备端语音识别把外语音频切分成一句一句，没听清哪句，轻点即可只重播那一句，想听几遍就听几遍。",
+    "premiumLegend": "带 ◆ 的功能需要 Reprise Premium（订阅，详见下文），其他功能全部免费。",
+    "features": [
+      {
+        "title": "自动分句",
+        "items": [
+          "可按句子、短语或意群切分音频",
+          "分析波形，避免句首或句尾的单词被截断",
+          "切分不准时，长按句子即可合并或重新分句"
+        ]
+      },
+      {
+        "title": "为语言练习而设计的播放",
+        "items": [
+          "0.5 至 2.0 倍速，音调保持不变",
+          "逐句停顿、单句循环、连续播放",
+          "重复之间的停顿：插入与刚听到的短语等长的静音，并以提示音提醒，方便你开口复述",
+          "后退或前进 3 秒（秒数可调），跳到上一句或下一句",
+          "“隐藏文本”按钮：按住时才显示，核对答案又快又方便",
+          "◆仅复习书签句子：汇集所有教材中加了书签的句子，连续复习",
+          "◆清晰度检测：录下自己的声音，用颜色显示设备端语音分析能否按原文听懂这句话。说完后自动停止录音。免费用户每条音轨可任选 3 句使用"
+        ]
+      },
+      {
+        "title": "学习记录",
+        "items": [
+          "记录每天的学习时长和播放的句子数",
+          "每日目标、连续天数、近 7 天图表、各教材的学习时长以及累计记录",
+          "将学习记录生成一张图片分享或存储到照片（帖子 4:5／快拍 9:16）。◆还可选择深色、森林、日落、黑白配色",
+          "◆回顾 14 天、1 个月、3 个月、6 个月、1 年或全部时间的学习时长"
+        ]
+      },
+      {
+        "title": "支持 14 种语言",
+        "items": [
+          "界面可选简体中文、繁体中文、英语、日语、韩语、西班牙语、葡萄牙语（巴西、葡萄牙）、法语、德语、意大利语、荷兰语、瑞典语、俄语",
+          "内置教程也会用你所选显示语言的语音介绍各项功能"
+        ]
+      },
+      {
+        "title": "数据只保存在设备上",
+        "items": [
+          "音频、转写文本和学习记录只保存在你的设备上，绝不发送到服务器。无需注册账户"
+        ]
+      },
+      {
+        "title": "导入",
+        "items": [
+          "免费最多 5 个教材（教程不计入），每个教材最多 100 条音轨。◆更多需 Reprise Premium",
+          "从“文件”App（音频，或视频中的音轨）或音乐资料库（仅限无 DRM 的歌曲）导入",
+          "语音备忘录、邮件附件等可通过共享菜单直接导入 Reprise",
+          "从文本创建：粘贴文字，由设备端语音朗读，并且已分好句子。免费每月 3 个，◆Reprise Premium 无限制",
+          "当场录音制作教材，例如老师的示范朗读",
+          "从播客：按节目名称搜索，或粘贴 RSS 订阅源、Apple Podcasts 链接，再选择单集导入。每个节目合为一个教材，打开教材时会提示新单集",
+          "◆自动导入新单集（按教材设置，仅限 Wi‑Fi）",
+          "没有公开 RSS 订阅源的节目（如订阅者专享节目）无法导入"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium（自动续期订阅）",
+      "items": [
+        "按月或按年订阅。价格会在购买前于 App 内显示，并因国家或地区而异",
+        "新订阅用户可享 7 天免费试用。在试用期内取消则不会扣费"
+      ]
+    },
+    "requirement": "iOS 26 或更高版本",
+    "slides": [
+      {
+        "id": "split",
+        "title": "外语音频 自动逐句切分",
+        "text": "没听清的那句，点一下就能重听"
+      },
+      {
+        "id": "speed",
+        "title": "一句话， 想听几遍就几遍",
+        "text": "0.5–2.0 倍速 · 单句循环 · 跟读停顿"
+      },
+      {
+        "id": "check",
+        "title": "说得对不对， 语音识别来检查",
+        "text": "用颜色显示是否说得和示范一样"
+      },
+      {
+        "id": "podcast",
+        "title": "播客 直接变成学习材料",
+        "text": "搜索节目，挑选想要的单集导入"
+      },
+      {
+        "id": "log",
+        "title": "记录每天的 学习时间",
+        "text": "连续天数 · 日历 · 累计数据"
+      },
+      {
+        "id": "languages",
+        "title": "支持 14 种语言",
+        "text": "界面和教程都用你的语言"
+      },
+      {
+        "id": "privacy",
+        "title": "无需账号， 全部在设备上完成",
+        "text": "音频和学习记录都不会上传到服务器"
+      }
+    ]
+  },
+  "zh-hant": {
+    "subtitle": "影子跟讀・複述練習逐句播放器",
+    "promotionalText": "沒聽清楚的句子，點一下就能重聽。Reprise 在裝置上將音訊自動切分成句子和片語，倍速、循環、影子跟讀用的停頓一應俱全。不需註冊帳號。",
+    "intro": "Reprise 是一款專為影子跟讀與複述練習打造的音訊播放器。透過裝置上的語音辨識，將外語音訊切分成一句一句；哪句沒聽清楚，點一下就能只重播那一句，想聽幾次都可以。",
+    "premiumLegend": "標有 ◆ 的功能需要 Reprise Premium（訂閱，詳見下方），其他功能皆可免費使用。",
+    "features": [
+      {
+        "title": "自動分句",
+        "items": [
+          "可依句子、片語或意群切分音訊",
+          "分析波形，避免句首或句尾的單字被切掉",
+          "切分不準時，按住句子即可合併或重新分句"
+        ]
+      },
+      {
+        "title": "為語言練習設計的播放",
+        "items": [
+          "0.5 至 2.0 倍速，音調維持不變",
+          "逐句停頓、單句循環、連續播放",
+          "重複之間的停頓：插入與剛聽到的片語等長的靜音，並以提示音提醒，方便你開口複述",
+          "倒轉或快轉 3 秒（秒數可調整），跳到上一句或下一句",
+          "「隱藏文字」按鈕：按住時才會顯示，對答案快速又方便",
+          "◆只複習書籤句子：集合所有教材中加上書籤的句子，連續複習",
+          "◆清晰度檢測：錄下自己的聲音，以顏色顯示裝置上的語音分析能否照原文聽懂這句話。說完後會自動停止錄音。免費使用者每個音軌可任選 3 句使用"
+        ]
+      },
+      {
+        "title": "學習紀錄",
+        "items": [
+          "記錄每天的學習時間與播放的句子數",
+          "每日目標、連續天數、近 7 天圖表、各教材的學習時間，以及累計紀錄",
+          "將學習紀錄製成一張圖片分享或儲存到照片（貼文 4:5／限動 9:16）。◆還可選擇深色、森林、日落、黑白配色",
+          "◆回顧 14 天、1 個月、3 個月、6 個月、1 年或全部期間的學習時間"
+        ]
+      },
+      {
+        "title": "支援 14 種語言",
+        "items": [
+          "介面可選擇繁體中文、簡體中文、英文、日文、韓文、西班牙文、葡萄牙文（巴西、葡萄牙）、法文、德文、義大利文、荷蘭文、瑞典文、俄文",
+          "內建教學也會以你選擇的顯示語言語音介紹各項功能"
+        ]
+      },
+      {
+        "title": "資料只保存在裝置上",
+        "items": [
+          "音訊、轉錄文字與學習紀錄只會儲存在你的裝置上，絕不會傳送到伺服器。不需註冊帳號"
+        ]
+      },
+      {
+        "title": "匯入",
+        "items": [
+          "免費最多 5 個教材（不含教學），每個教材最多 100 個音軌。◆更多需要 Reprise Premium",
+          "從「檔案」App（音訊，或影片中的音軌）或音樂資料庫（僅限無 DRM 的歌曲）匯入",
+          "語音備忘錄、郵件附件等可透過分享選單直接匯入 Reprise",
+          "從文字建立：貼上文字，由裝置上的語音朗讀，而且已經分好句子。免費每月 3 個，◆Reprise Premium 不限數量",
+          "當場錄音製作教材，例如老師的示範朗讀",
+          "從 Podcast：依節目名稱搜尋，或貼上 RSS 訂閱源、Apple Podcasts 連結，再選擇單集匯入。每個節目整合為一個教材，打開教材時會提示新單集",
+          "◆自動匯入新單集（依教材設定，僅限 Wi‑Fi）",
+          "沒有公開 RSS 訂閱源的節目（例如訂閱者限定節目）無法匯入"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium（自動續訂訂閱）",
+      "items": [
+        "按月或按年訂閱。價格會在購買前於 App 內顯示，並依國家或地區而有所不同",
+        "首次訂閱可享 7 天免費試用。在試用期間取消就不會收費"
+      ]
+    },
+    "requirement": "iOS 26 或以上版本",
+    "slides": [
+      {
+        "id": "split",
+        "title": "外語音訊 自動逐句切分",
+        "text": "沒聽清楚的那句，點一下就能重聽"
+      },
+      {
+        "id": "speed",
+        "title": "一句話， 想聽幾遍就幾遍",
+        "text": "0.5–2.0 倍速 · 單句循環 · 跟讀停頓"
+      },
+      {
+        "id": "check",
+        "title": "說得對不對， 語音辨識來檢查",
+        "text": "用顏色顯示是否說得和示範一樣"
+      },
+      {
+        "id": "podcast",
+        "title": "Podcast 直接變成學習教材",
+        "text": "搜尋節目，挑選想要的單集匯入"
+      },
+      {
+        "id": "log",
+        "title": "記錄每天的 學習時間",
+        "text": "連續天數 · 日曆 · 累計數據"
+      },
+      {
+        "id": "languages",
+        "title": "支援 14 種語言",
+        "text": "介面和教學都用你的語言"
+      },
+      {
+        "id": "privacy",
+        "title": "不需帳號， 全部在裝置上完成",
+        "text": "音訊和學習紀錄都不會上傳到伺服器"
+      }
+    ]
+  }
+}
