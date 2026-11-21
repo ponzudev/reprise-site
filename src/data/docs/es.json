@@ -1,0 +1,16 @@
+{
+  "home": "Inicio",
+  "guides": "Guías",
+  "support": "Ayuda",
+  "privacy": "Privacidad",
+  "privacyPolicy": "Política de privacidad",
+  "navLabel": "Navegación principal",
+  "tagline": "Reprise — el reproductor de idiomas que divide el audio en frases",
+  "titleSuffix": " | Reprise",
+  "defaultDescription": "Reprise es un reproductor de idiomas para shadowing y repetición que divide el audio en frases para que puedas escucharlas una y otra vez.",
+  "appCard": "Una app sin distracciones para repetir frase a frase, hasta que te salga. La práctica básica es gratis y no necesitas cuenta. Para iPhone · iOS 26 o posterior",
+  "otherGuides": "Más guías de práctica",
+  "guidesTitle": "Guías de práctica — cómo hacer shadowing y repetición",
+  "guidesDescription": "Cómo hacer shadowing, repetición, overlapping y dictado, y cómo practicar con tu propio audio: podcasts, grabaciones de clases y el audio que acompaña a los libros de texto.",
+  "guidesLead": "Cómo practicar en voz alta y cómo convertir tu propio audio en material de estudio con Reprise."
+}

@@ -1,0 +1,16 @@
+{
+  "home": "Accueil",
+  "guides": "Guides",
+  "support": "Assistance",
+  "privacy": "Confidentialité",
+  "privacyPolicy": "Politique de confidentialité",
+  "navLabel": "Navigation principale",
+  "tagline": "Reprise — le lecteur de langues qui découpe l'audio en phrases",
+  "titleSuffix": " | Reprise",
+  "defaultDescription": "Reprise est un lecteur audio pour le shadowing et la répétition qui découpe l'audio en phrases, pour les réécouter une à une.",
+  "appCard": "Une app exigeante pour répéter une phrase à la fois, encore et encore. L'entraînement de base est gratuit, sans création de compte. Pour iPhone · iOS 26 ou version ultérieure",
+  "otherGuides": "Autres guides d'entraînement",
+  "guidesTitle": "Guides d'entraînement — comment pratiquer le shadowing et la répétition",
+  "guidesDescription": "Comment pratiquer le shadowing, la répétition, l'overlapping et la dictée, et comment s'entraîner avec vos propres audios : podcasts, enregistrements de cours ou audio fourni avec vos manuels.",
+  "guidesLead": "Comment s'entraîner à parler à voix haute, et comment transformer vos propres audios en supports d'étude dans Reprise."
+}

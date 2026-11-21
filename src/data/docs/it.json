@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "guides": "Guide",
+  "support": "Assistenza",
+  "privacy": "Privacy",
+  "privacyPolicy": "Informativa sulla privacy",
+  "navLabel": "Navigazione principale",
+  "tagline": "Reprise — il lettore per le lingue che divide l'audio in frasi",
+  "titleSuffix": " | Reprise",
+  "defaultDescription": "Reprise è un lettore audio per lo shadowing e il repeating che divide l'audio in frasi, così puoi riascoltarle una alla volta.",
+  "appCard": "Un'app essenziale per ripetere una frase alla volta, fino in fondo. Gli esercizi di base sono gratuiti e non serve un account. Per iPhone · iOS 26 o successivo",
+  "otherGuides": "Altre guide all'esercizio",
+  "guidesTitle": "Guide all'esercizio — come fare shadowing e repeating",
+  "guidesDescription": "Come fare shadowing, repeating, overlapping e dettato, e come esercitarti con l'audio che hai già: podcast, registrazioni delle lezioni e audio allegati ai libri di testo.",
+  "guidesLead": "Come esercitarti a parlare ad alta voce e come trasformare il tuo audio in materiale di studio con Reprise."
+}

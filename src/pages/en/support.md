@@ -3,9 +3,6 @@ layout: ../../layouts/DocLayout.astro
 lang: en
 title: Support and FAQ
 description: Support for Reprise. How to import audio, what to check when sentence splitting goes wrong, pauses for repeating, Clarity Check, sharing your study log, and how to subscribe to, cancel or restore Reprise Premium.
-alternates:
-  ja: /support
-  en: /en/support
 ---
 
 # Reprise Support
@@ -129,4 +126,4 @@ Study time is the total of the time audio was actually playing plus the pauses b
 
 The audio you import, transcripts, study records and settings are stored **only on your iPhone**. They are not sent to a server. Deleting the app deletes them all. If iCloud Backup is on, they are included in your iPhone backup.
 
-See the [Privacy Policy](/privacy#reprise-privacy-policy) for details.
+See the [Privacy Policy](/en/privacy) for details.

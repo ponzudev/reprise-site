@@ -7,7 +7,7 @@ Reprise（リプライズ）のサイト。Astro でビルドし、Cloudflare Wo
 |---|---|---|
 | `/` | `src/pages/index.astro` | ランディングページ（スタイルは `src/styles/lp.css`、体験版の動きは `src/scripts/demo.js`） |
 | `/en`・`/ko`・`/zh-hans`・`/zh-hant`・`/es`・`/pt-br`・`/pt-pt`・`/fr`・`/de`・`/it`・`/nl`・`/sv`・`/ru` | `src/pages/[lang].astro` | 日本語以外の 13 言語のトップページ（スタイルは `src/styles/intl.css`）。下の「ほかの言語のページ」 |
-| `/en/support` | `src/pages/en/support.md` | 英語のサポート・よくある質問 |
+| `/<言語>/guides`・`/<言語>/guides/◯◯`・`/<言語>/support`・`/<言語>/privacy` | `src/pages/<言語>/` | 日本語のほかの 13 言語の練習ガイド・サポート・プライバシーポリシー（`/en/support`、`/fr/privacy` など） |
 | `/guides` | `src/pages/guides/index.astro` | 練習ガイドの一覧 |
 | `/guides/◯◯` | `src/pages/guides/*.md` | 練習ガイド（シャドーイング・リピーティングなど。検索から来る人向けの記事） |
 | `/support` | `src/pages/support.md` | サポート・よくある質問（ストアの「サポート URL」） |
@@ -29,15 +29,16 @@ Reprise（リプライズ）のサイト。Astro でビルドし、Cloudflare Wo
 - **枠の言葉**（見出し・ボタン・案内）と、言語ごとの URL・App Store の国は `src/data/i18n.ts`。App Store のバッジは `public/assets/app-store-badge-<言語>.svg`（出どころは `docs/app-store-badge.md`）
 - **言語を足すとき**: `scripts/store-text.mjs` の `languages` と `src/data/i18n.ts` の `Lang`・`languages`・`strings` に足し、バッジ・紹介画像・QR コードを置く。`/s`（`src/pages/s.astro`）の言語の振り分けにも足す。ページ・サイトマップ・言語の切り替え・hreflang には自動で入る
 - App Store のリンクは、英語は国コードなし（見る人の国のストアが開く）、日本語は日本のストア、ほかはその言語でページが出る国のストア（韓国・中国・台湾・スペイン・ブラジル・ポルトガル・フランス・ドイツ・イタリア・オランダ・スウェーデン・ロシア）。スペイン語のページはスペイン向けの文面を使う（メキシコ向けのストアの文面との違いは言い回しだけ）
-- サポートとプライバシーポリシーは日本語と英語だけ。ほかの言語のページからは英語のページへ送り、リンクにその言語で「（英語）」と添えている
-- 英語のサポート（`src/pages/en/support.md`）は日本語のサポートの訳。画面の言葉は、アプリの英語の表示（String Catalog）と同じにする。日本語を直したら英語も直す
-- App Store Connect の各ロケールの「マーケティング URL」「サポート URL」は、アプリ側リポジトリの `store/metadata/<ロケール>/marketing_url.txt`・`support_url.txt` で、その言語のページへ向ける
+- 練習ガイド・サポート・プライバシーポリシーは 14 言語すべてにある。ほかの言語の文書は `src/pages/<言語>/` に置き、先頭に `lang: <言語>` を書く。ナビゲーション・フッター・アプリの案内などの枠の言葉は `src/data/docs/<言語>.json`。同じ文書のほかの言語版は自動で hreflang とフッターの言語の切り替えに出る（`src/data/docs.ts`）
+- `/privacy` の後半には英語版も残している（アプリの購読画面と、ストアの説明文の「プライバシーポリシー」が `/privacy` を指しているため）
+- ほかの言語の文書は日本語の文書の訳。画面の言葉（ボタン・メニュー名）は、アプリのその言語の表示（String Catalog）と同じにする。日本語を直したら、ほかの言語も直す
+- App Store Connect の各ロケールの「マーケティング URL」「サポート URL」「プライバシーポリシー URL」は、アプリ側リポジトリの `store/metadata/<ロケール>/marketing_url.txt`・`support_url.txt` で、その言語のページへ向ける
 
 ## 検索・共有のための設定
 
 - 各ページの `<head>`（タイトル・説明・正規 URL・OGP・Smart App Banner・構造化データ）は `src/components/Head.astro` にまとめている
 - App Store の URL・料金・対応言語は `src/data/site.ts`、トップの「よくある質問」は `src/data/faq.ts`（画面と構造化データの両方に使う）。料金や機能が変わったら、この 2 つとトップの料金表を直す
-- 練習ガイドを足すときは、`src/pages/guides/` に Markdown を置く。先頭に `layout`・`title`・`description`・`order`（並び順）・`published`（公開日）を書くと、一覧・サイトマップ・ほかのガイドからのリンクに自動で入る
+- 練習ガイドを足すときは、`src/pages/guides/`（ほかの言語は `src/pages/<言語>/guides/`）に Markdown を置く。先頭に `layout`・`title`・`description`・`order`（並び順）・`published`（公開日）を書くと、一覧・サイトマップ・ほかのガイドからのリンクに自動で入る
 - SNS 共有用の画像は `public/assets/og.png`（1200×630）。元は `scripts/og.html` で、`npx -p playwright node scripts/og.mjs` で作り直す
 - `/s`（`src/pages/s.astro`）は、アプリの学習記録の共有で投稿文に入るリンクの行き先。iPhone なら App Store へ、それ以外はブラウザーの言語に合うトップページへ送る（検索には出さない）。アプリが投稿文に入れる URL なので、パスを変えない。`src/data/site.ts` の `appStoreProviderId` に App Store Connect のプロバイダ ID を入れると、サイトの App Store へのリンクすべてにキャンペーンの印が付き、どこから来た人がダウンロードしたかを App Store Connect の「App アナリティクス」で見られる（言語ごとのページは `site-<言語>`（`site-ja`・`site-en`・`site-de` など。言語は URL のパスと同じ）、QR コードは `qr-<言語>`、学習記録の共有は `share`）
 - 最後の案内に出す QR コード（日本語は `public/assets/appstore-qr.svg`、ほかの言語は `appstore-qr-<言語>.svg`）は App Store の URL から作ったもの。URL を変えたら `swift scripts/qr.swift <URL> <出力する .svg>` で作り直す（Mac の Core Image で作り、読み取れることを確かめてから書き出す）。URL は、その言語のストアの短い URL にキャンペーンの印を付けたもの（例: `https://apps.apple.com/kr/app/id6825080777?pt=<プロバイダ ID>&ct=qr-ko&mt=8`。`ct` は `qr-<言語>`。`qr-ja`・`qr-en`・`qr-pt-br` など）。QR コードは画像なので、プロバイダ ID を変えたら作り直す

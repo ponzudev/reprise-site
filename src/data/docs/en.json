@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "guides": "Guides",
+  "support": "Support",
+  "privacy": "Privacy",
+  "privacyPolicy": "Privacy Policy",
+  "navLabel": "Main",
+  "tagline": "Reprise — the language player that splits audio into sentences",
+  "titleSuffix": " | Reprise",
+  "defaultDescription": "Reprise is an audio player for shadowing and repeating that splits audio into sentences so you can replay one sentence at a time.",
+  "appCard": "A focused app for repeating one sentence at a time. Core practice is free, with no account needed. For iPhone · iOS 26 or later",
+  "otherGuides": "More practice guides",
+  "guidesTitle": "Practice guides — how to do shadowing and repeating",
+  "guidesDescription": "How to do shadowing, repeating, overlapping and dictation, and how to practice with your own audio: podcasts, lesson recordings and the audio that comes with textbooks.",
+  "guidesLead": "How to practice speaking out loud, and how to turn your own audio into study material in Reprise."
+}

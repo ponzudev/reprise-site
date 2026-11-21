@@ -1,0 +1,16 @@
+{
+  "home": "Start",
+  "guides": "Övningsguider",
+  "support": "Support",
+  "privacy": "Integritet",
+  "privacyPolicy": "Integritetspolicy",
+  "navLabel": "Huvudmeny",
+  "tagline": "Reprise — språkspelaren som delar upp ljud i meningar",
+  "titleSuffix": " | Reprise",
+  "defaultDescription": "Reprise är en ljudspelare för shadowing och repeating som delar upp ljud i meningar, så att du kan lyssna på en mening i taget om och om igen.",
+  "appCard": "En fokuserad app för att upprepa en mening i taget. Grundövningarna är gratis och kräver inget konto. För iPhone · iOS 26 eller senare",
+  "otherGuides": "Fler övningsguider",
+  "guidesTitle": "Övningsguider – så gör du shadowing och repeating",
+  "guidesDescription": "Så gör du shadowing, repeating, overlapping och diktamen, och så övar du med ljud du redan har: podcaster, inspelningar av lektioner och ljudet till läroböcker.",
+  "guidesLead": "Så övar du på att tala högt, och så gör du ditt eget ljud till studiematerial i Reprise."
+}

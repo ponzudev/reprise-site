@@ -1,55 +1,42 @@
 ---
 // プライバシーポリシー・サポート・練習ガイドなど、Markdown で書く文書ページの共通レイアウト。
+// 日本語のほかの言語の文書は src/pages/<言語>/ に置き、先頭に lang: <言語> を書く。枠の言葉は src/data/docs/<言語>.json。
 import Head from '../components/Head.astro';
 import { site, appStoreCampaignUrl } from '../data/site';
 import { languages } from '../data/i18n';
+import { docStrings, docPath, splitDocPath, docAlternates, type DocLang } from '../data/docs';
 
-const { frontmatter = {}, title: titleProp, description: descriptionProp, fullTitle, ogType, noindex, jsonLd, lang: langProp, alternates: alternatesProp } = Astro.props;
+const { frontmatter = {}, title: titleProp, description: descriptionProp, fullTitle, ogType, noindex, jsonLd, lang: langProp } = Astro.props;
 const title = titleProp ?? frontmatter.title;
-// 英語の文書ページ（/en/support など）は、先頭に lang: en を書く。枠（ナビゲーション・フッター）も英語にする。
-const lang: 'ja' | 'en' = (langProp ?? frontmatter.lang) === 'en' ? 'en' : 'ja';
-const alternates = alternatesProp ?? frontmatter.alternates;
-const en = lang === 'en';
-const description =
-  descriptionProp ??
-  frontmatter.description ??
-  (en
-    ? 'Reprise is an audio player for shadowing and repeating that splits audio into sentences so you can replay one sentence at a time.'
-    : 'Reprise（リプライズ）は、音声を文ごとに区切って繰り返し聞ける、シャドーイング・リピーティング用の語学プレーヤーです。');
+const requested = langProp ?? frontmatter.lang ?? 'ja';
+const lang: DocLang = requested in docStrings ? requested : 'ja';
+const t = docStrings[lang];
+const ja = lang === 'ja';
+const description = descriptionProp ?? frontmatter.description ?? t.defaultDescription;
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+const { rest } = splitDocPath(path);
+// 同じ文書のほかの言語版（hreflang と、フッターの言語の切り替え）。
+const alternates = noindex ? undefined : docAlternates(rest);
 const home = languages[lang].path;
-const privacyEn = '/privacy#reprise-privacy-policy';
-const nav = en
-  ? [
-      { href: '/en/support', label: 'Support' },
-      { href: privacyEn, label: 'Privacy' },
-    ]
-  : [
-      { href: '/guides', label: '練習ガイド' },
-      { href: '/support', label: 'サポート' },
-      { href: '/privacy', label: 'プライバシー' },
-    ];
-const footer = en
-  ? [
-      { href: home, label: 'Home' },
-      { href: '/en/support', label: 'Support' },
-      { href: privacyEn, label: 'Privacy Policy' },
-      { href: appStoreCampaignUrl('site-en', 'en'), label: 'App Store' },
-    ]
-  : [
-      { href: '/', label: 'トップ' },
-      { href: '/guides', label: '練習ガイド' },
-      { href: '/support', label: 'サポート' },
-      { href: '/privacy', label: 'プライバシーポリシー' },
-      { href: appStoreCampaignUrl('site-ja'), label: 'App Store' },
-    ];
-const suffix = en ? ' | Reprise' : '｜Reprise（リプライズ）';
+const nav = [
+  { href: docPath(lang, 'guides'), label: t.guides },
+  { href: docPath(lang, 'support'), label: t.support },
+  { href: docPath(lang, 'privacy'), label: t.privacy },
+];
+const footer = [
+  { href: home, label: t.home },
+  { href: docPath(lang, 'guides'), label: t.guides },
+  { href: docPath(lang, 'support'), label: t.support },
+  { href: docPath(lang, 'privacy'), label: t.privacyPolicy },
+  { href: appStoreCampaignUrl(`site-${lang}`, lang), label: 'App Store' },
+];
 const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
+const switcher = alternates ? (Object.entries(alternates) as [DocLang, string][]) : [];
 ---
 <!doctype html>
-<html lang={lang}>
+<html lang={languages[lang].tag}>
 <head>
-  <Head title={fullTitle ?? `${title}${suffix}`} description={description} ogType={ogType} noindex={noindex} jsonLd={jsonLd} lang={lang} alternates={alternates} />
+  <Head title={fullTitle ?? `${title}${t.titleSuffix}`} description={description} ogType={ogType} noindex={noindex} jsonLd={jsonLd} lang={lang} alternates={alternates} />
   <style is:global>
     :root {
       --bg: #f7f7f9;
@@ -111,6 +98,8 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
       header.site .wrap { flex-wrap: wrap; height: auto; min-height: 60px; padding-block: 10px; gap: 6px 12px; }
       header.site .brand small { display: none; }
       header.site nav a { padding: 6px 9px; font-size: 13px; }
+      /* 言語によってはナビゲーションの言葉が長いので、狭い画面では折り返す。 */
+      header.site .wrap nav { margin-left: -9px; flex-wrap: wrap; width: calc(100% + 9px); }
     }
     header.site .brand small {
       font-weight: 500; color: var(--muted); margin-left: 6px; font-size: 13px;
@@ -148,9 +137,13 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
     main hr {
       border: 0; height: 1px; background: var(--line); margin: 3em 0;
     }
+    main { overflow-wrap: break-word; }
+    /* 狭い画面では、表は横にスクロールさせる（ページ全体をはみ出させない）。 */
     main table {
+      display: block; overflow-x: auto; max-width: 100%;
       width: 100%; border-collapse: collapse; font-size: .95rem; margin: 1em 0;
     }
+    main th, main td { min-width: 7em; }
     main th, main td {
       text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line);
       vertical-align: top;
@@ -186,14 +179,17 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
     .guide-list strong { display: block; }
     .guide-list span { display: block; font-size: .9rem; color: var(--muted); line-height: 1.7; }
 
-    footer.site a { margin: 0 6px; }
+    footer.site a { margin: 0 6px; display: inline-block; }
+    footer.site .languages { display: inline-block; max-width: 640px; }
+    footer.site .languages > * { display: inline-block; margin: 0 6px; white-space: nowrap; }
+    footer.site .languages [aria-current] { color: var(--text); font-weight: 600; }
   </style>
 </head>
 <body>
   <header class="site">
     <div class="wrap">
-      <a class="brand" href={home}><img src="/assets/app-icon-120.png" width="32" height="32" alt=""><span>Reprise{!en && <small>リプライズ</small>}</span></a>
-      <nav aria-label={en ? 'Main' : 'メインナビゲーション'}>
+      <a class="brand" href={home}><img src="/assets/app-icon-120.png" width="32" height="32" alt=""><span>Reprise{ja && <small>リプライズ</small>}</span></a>
+      <nav aria-label={t.navLabel}>
         {nav.map((item) => (
           <a href={item.href} class={isCurrent(item.href) ? 'current' : undefined} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a>
         ))}
@@ -210,8 +206,18 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
   </div>
 
   <footer class="site">
-    {en ? 'Reprise — the language player that splits audio into sentences' : 'Reprise — 文ごとに区切れる語学プレーヤー'}<br>
+    {t.tagline}<br>
     {footer.map((item) => <a href={item.href}>{item.label}</a>)}<br>
+    {switcher.length > 1 && (
+      <span class="languages">
+        {switcher.map(([code, href]) => (
+          code === lang
+            ? <span aria-current="page" lang={languages[code].tag}>{languages[code].label}</span>
+            : <a href={href} lang={languages[code].tag} hreflang={languages[code].tag}>{languages[code].label}</a>
+        ))}
+      </span>
+    )}
+    {switcher.length > 1 && <br>}
     <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>
   </footer>
 </body>
