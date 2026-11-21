@@ -1,0 +1,21 @@
+---
+// 練習ガイドの一覧のページ（/guides と /<言語>/guides）。
+import DocLayout from '../layouts/DocLayout.astro';
+import AppCard from './AppCard.astro';
+import { getGuides } from '../data/guides';
+import { docStrings, type DocLang } from '../data/docs';
+interface Props { lang: DocLang }
+const { lang } = Astro.props;
+const t = docStrings[lang];
+const guides = await getGuides(lang);
+---
+<DocLayout title={t.guidesTitle} description={t.guidesDescription} lang={lang}>
+  <h1>{t.guides}</h1>
+  <p>{t.guidesLead}</p>
+  <ul class="guide-list">
+    {guides.map((guide) => (
+      <li><a href={guide.href}><strong>{guide.title}</strong><span>{guide.description}</span></a></li>
+    ))}
+  </ul>
+  <AppCard lang={lang} />
+</DocLayout>

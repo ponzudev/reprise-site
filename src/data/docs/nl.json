@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "guides": "Oefengidsen",
+  "support": "Ondersteuning",
+  "privacy": "Privacy",
+  "privacyPolicy": "Privacybeleid",
+  "navLabel": "Hoofdnavigatie",
+  "tagline": "Reprise — de taalspeler die audio in zinnen opdeelt",
+  "titleSuffix": " | Reprise",
+  "defaultDescription": "Reprise is een taalspeler voor shadowing en nazeggen die audio in zinnen opdeelt, zodat je elke zin zo vaak kunt herhalen als je wilt.",
+  "appCard": "Een no-nonsense app om zin voor zin te oefenen met nazeggen. Het basisoefenen is gratis, zonder account. Voor iPhone · iOS 26 of later",
+  "otherGuides": "Meer oefengidsen",
+  "guidesTitle": "Oefengidsen — zo doe je shadowing en nazeggen",
+  "guidesDescription": "Zo doe je shadowing, nazeggen (repeating), overlapping en dictee, en zo oefen je met je eigen audio: podcasts, opnames van lessen en de audio bij lesboeken.",
+  "guidesLead": "Zo oefen je hardop spreken, en zo maak je van je eigen audio lesmateriaal in Reprise."
+}

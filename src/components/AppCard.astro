@@ -1,13 +1,15 @@
 ---
 // 文書ページの終わりに置く、アプリの案内。
-import { site } from '../data/site';
 import AppStoreBadge from './AppStoreBadge.astro';
+import { docStrings, type DocLang } from '../data/docs';
+interface Props { lang?: DocLang }
+const { lang = 'ja' } = Astro.props;
 ---
 <aside class="app-card">
   <img src="/assets/app-icon-120.png" width="56" height="56" alt="">
   <div>
-    <strong>Reprise（リプライズ）</strong>
-    <span>1 文ずつ徹底してリピーティングする、ストイックな練習アプリ。基本の練習は無料、アカウント登録なし。{site.requirement}</span>
+    <strong>{lang === 'ja' ? 'Reprise（リプライズ）' : 'Reprise'}</strong>
+    <span>{docStrings[lang].appCard}</span>
   </div>
-  <AppStoreBadge />
+  <AppStoreBadge lang={lang} />
 </aside>

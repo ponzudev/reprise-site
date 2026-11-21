@@ -6,6 +6,7 @@ import Head from '../components/Head.astro';
 import AppStoreBadge from '../components/AppStoreBadge.astro';
 import { site, canonical, appStoreUrl } from '../data/site';
 import { languages, langs, strings, storeText, type Lang } from '../data/i18n';
+import { docStrings } from '../data/docs';
 import '../styles/intl.css';
 
 export function getStaticPaths() {
@@ -18,10 +19,11 @@ const text = storeText[lang];
 const language = languages[lang];
 const store = appStoreUrl(lang);
 const alternates = Object.fromEntries(Object.entries(languages).map(([code, item]) => [code, item.path]));
-// サポートとプライバシーポリシーは、日本語のほかは英語だけ。
-const supportUrl = '/en/support';
-const privacyUrl = '/privacy#reprise-privacy-policy';
-// 添える「（英語）」のかっこは、韓国語・中国語は全角、ほかは半角。
+// 練習ガイド・サポート・プライバシーポリシーは、その言語のページ（src/pages/<言語>/）。
+const guidesUrl = `${language.path}/guides`;
+const supportUrl = `${language.path}/support`;
+const privacyUrl = `${language.path}/privacy`;
+// 利用規約（Apple の標準 EULA）は英語だけ。添える「（英語）」のかっこは、韓国語・中国語は全角、ほかは半角。
 const english = lang === 'en' ? '' : ['ko', 'zh-hans', 'zh-hant'].includes(lang) ? `（${t.footer.englishOnly}）` : ` (${t.footer.englishOnly})`;
 const requirement = `${t.device} · ${text.requirement}`;
 
@@ -161,8 +163,9 @@ const file = (id: string) => `${order.indexOf(id) + 1}-${id}`;
 <footer class="footer wrap">
   <a class="brand" href={language.path}>Reprise</a>
   <nav class="footer-links" aria-label={t.footer.support}>
-    <a href={supportUrl} hreflang="en">{t.footer.support}{english}</a>
-    <a href={privacyUrl} hreflang="en">{t.footer.privacy}{english}</a>
+    <a href={guidesUrl}>{docStrings[lang].guides}</a>
+    <a href={supportUrl}>{t.footer.support}</a>
+    <a href={privacyUrl}>{t.footer.privacy}</a>
     <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">{t.footer.terms}{english}</a>
   </nav>
   <nav class="footer-languages" aria-label={t.footer.language}>
