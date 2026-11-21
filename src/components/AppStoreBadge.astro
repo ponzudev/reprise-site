@@ -6,8 +6,8 @@ import { strings, type Lang } from '../data/i18n';
 interface Props { compact?: boolean; lang?: 'ja' | Lang; campaign?: string }
 const { compact = false, lang = 'ja', campaign = `site-${lang}` } = Astro.props;
 const label = lang === 'ja' ? 'App Store で Reprise をダウンロード' : strings[lang].badgeLabel;
-// バッジの横幅は言語で違う（高さ 40 のときの幅。縦横比を変えない）。
-const width = { ja: 109, en: 120, ko: 130, 'zh-hans': 109, 'zh-hant': 109 }[lang];
+// バッジの横幅は言語で違う（高さ 40 のときの幅。縦横比を変えない。日本語のほかは src/data/i18n.ts）。
+const width = lang === 'ja' ? 109 : strings[lang].badgeWidth;
 const alt = lang === 'ja' ? 'App Store からダウンロード' : strings[lang].badgeAlt;
 ---
 <a class:list={['app-store-badge', { compact }]} href={appStoreCampaignUrl(campaign, lang)} aria-label={label}>

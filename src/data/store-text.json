@@ -288,37 +288,37 @@
     "slides": [
       {
         "id": "split",
-        "title": "外语音频 自动逐句切分",
+        "title": "外语音频自动逐句切分",
         "text": "没听清的那句，点一下就能重听"
       },
       {
         "id": "speed",
-        "title": "一句话， 想听几遍就几遍",
+        "title": "一句话，想听几遍就几遍",
         "text": "0.5–2.0 倍速 · 单句循环 · 跟读停顿"
       },
       {
         "id": "check",
-        "title": "说得对不对， 语音识别来检查",
+        "title": "说得对不对，语音识别来检查",
         "text": "用颜色显示是否说得和示范一样"
       },
       {
         "id": "podcast",
-        "title": "播客 直接变成学习材料",
+        "title": "播客直接变成学习材料",
         "text": "搜索节目，挑选想要的单集导入"
       },
       {
         "id": "log",
-        "title": "记录每天的 学习时间",
+        "title": "记录每天的学习时间",
         "text": "连续天数 · 日历 · 累计数据"
       },
       {
         "id": "languages",
-        "title": "支持 14 种语言",
+        "title": "支持14 种语言",
         "text": "界面和教程都用你的语言"
       },
       {
         "id": "privacy",
-        "title": "无需账号， 全部在设备上完成",
+        "title": "无需账号，全部在设备上完成",
         "text": "音频和学习记录都不会上传到服务器"
       }
     ]
@@ -396,38 +396,1010 @@
     "slides": [
       {
         "id": "split",
-        "title": "外語音訊 自動逐句切分",
+        "title": "外語音訊自動逐句切分",
         "text": "沒聽清楚的那句，點一下就能重聽"
       },
       {
         "id": "speed",
-        "title": "一句話， 想聽幾遍就幾遍",
+        "title": "一句話，想聽幾遍就幾遍",
         "text": "0.5–2.0 倍速 · 單句循環 · 跟讀停頓"
       },
       {
         "id": "check",
-        "title": "說得對不對， 語音辨識來檢查",
+        "title": "說得對不對，語音辨識來檢查",
         "text": "用顏色顯示是否說得和示範一樣"
       },
       {
         "id": "podcast",
-        "title": "Podcast 直接變成學習教材",
+        "title": "Podcast直接變成學習教材",
         "text": "搜尋節目，挑選想要的單集匯入"
       },
       {
         "id": "log",
-        "title": "記錄每天的 學習時間",
+        "title": "記錄每天的學習時間",
         "text": "連續天數 · 日曆 · 累計數據"
       },
       {
         "id": "languages",
-        "title": "支援 14 種語言",
+        "title": "支援14 種語言",
         "text": "介面和教學都用你的語言"
       },
       {
         "id": "privacy",
-        "title": "不需帳號， 全部在裝置上完成",
+        "title": "不需帳號，全部在裝置上完成",
         "text": "音訊和學習紀錄都不會上傳到伺服器"
+      }
+    ]
+  },
+  "es": {
+    "subtitle": "Escucha y repite: shadowing",
+    "promotionalText": "Toca para volver a escuchar la frase que se te escapó. Reprise divide el audio en frases en tu dispositivo, con velocidad, bucles y pausas para shadowing. Sin cuenta.",
+    "intro": "Reprise es un reproductor de audio para shadowing y repetición. Con el reconocimiento de voz de tu dispositivo, divide el audio en otro idioma en frases: toca la que no entendiste y repítela cuantas veces quieras.",
+    "premiumLegend": "Las funciones marcadas con ◆ requieren Reprise Premium (suscripción, ver más abajo). Todo lo demás es gratis.",
+    "features": [
+      {
+        "title": "División automática en frases",
+        "items": [
+          "Divide el audio en frases, fragmentos o bloques",
+          "Analiza la forma de onda para no cortar el principio ni el final de las palabras",
+          "Si una división no encaja, mantén pulsado una frase para unirla o volver a dividirla"
+        ]
+      },
+      {
+        "title": "Reproducción pensada para practicar idiomas",
+        "items": [
+          "Velocidad de 0,5x a 2,0x sin cambiar el tono",
+          "«Pausa tras cada frase», «Repetir 1 frase» o «Todo seguido»",
+          "Entre repeticiones, una pausa tan larga como la frase que acabas de oír, con un aviso sonoro, para que la repitas",
+          "Retrocede o avanza 3 segundos (ajustable) y salta a la frase anterior o siguiente",
+          "Botón «Ocultar texto»: mantén pulsado para verlo y comprobar tu respuesta al momento",
+          "◆«Repasar frases marcadas»: reúne las frases marcadas de todos tus materiales",
+          "◆«Prueba de claridad»: graba tu voz y comprueba, con colores, si el análisis de voz del dispositivo entiende la frase tal como está escrita. La grabación se detiene sola cuando terminas de hablar. Gratis en 3 frases a tu elección por pista"
+        ]
+      },
+      {
+        "title": "Registro de estudio",
+        "items": [
+          "Tiempo de estudio diario y número de frases reproducidas",
+          "Objetivo diario, racha, gráfico de 7 días, tiempo por material y tus totales acumulados",
+          "Comparte tu estudio en una sola imagen o guárdala en Fotos («Post 4:5» / «Historia 9:16»). ◆Más temas: Oscuro, Bosque, Atardecer y Mono",
+          "◆Repasa tus últimos 14 días, 1 mes, 3 meses, 6 meses, 1 año o todo el historial"
+        ]
+      },
+      {
+        "title": "Disponible en 14 idiomas",
+        "items": [
+          "Usa la app en inglés, japonés, coreano, chino (simplificado y tradicional), español, portugués (Brasil y Portugal), francés, alemán, italiano, neerlandés, sueco o ruso",
+          "El tutorial integrado te presenta las funciones con audio en el idioma de la app"
+        ]
+      },
+      {
+        "title": "Todo se queda en tu dispositivo",
+        "items": [
+          "El audio, las transcripciones y los registros de estudio se guardan solo en tu dispositivo y nunca se envían a un servidor. No necesitas cuenta"
+        ]
+      },
+      {
+        "title": "Importación",
+        "items": [
+          "Gratis: hasta 5 materiales (el tutorial no cuenta) y 100 pistas por material. ◆Más, con Reprise Premium",
+          "Desde la app Archivos (audio o la pista de audio de un vídeo) o desde tu biblioteca musical (solo canciones sin DRM)",
+          "Envía notas de voz, adjuntos de correo y más directamente a Reprise desde el menú Compartir",
+          "«Crear desde texto»: pega un texto y una voz del dispositivo lo lee, ya dividido en frases. 3 al mes gratis, ◆ilimitado con Reprise Premium",
+          "Graba en el momento, por ejemplo la lectura modelo de tu profesor",
+          "«Desde Podcasts»: busca por nombre del programa o pega un feed RSS o un enlace de Apple Podcasts y elige episodios. Cada programa se convierte en un material y, al abrirlo, verás los episodios nuevos",
+          "◆Importa los episodios nuevos automáticamente (por material, solo con Wi‑Fi)",
+          "No se pueden importar programas sin feed RSS público (como los exclusivos para suscriptores)"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (suscripción con renovación automática)",
+      "items": [
+        "Mensual o anual. Los precios se muestran en la app antes de comprar y varían según el país o la región",
+        "Los nuevos suscriptores tienen una prueba gratuita de 7 días. Si cancelas durante la prueba, no se te cobrará nada"
+      ]
+    },
+    "requirement": "iOS 26 o posterior",
+    "slides": [
+      {
+        "id": "split",
+        "title": "El audio, dividido en frases",
+        "text": "Toca la frase que se te escapó y escúchala otra vez"
+      },
+      {
+        "id": "speed",
+        "title": "Una frase, las veces que quieras",
+        "text": "Velocidad de 0,5x a 2,0x, bucles y pausas para repetir"
+      },
+      {
+        "id": "check",
+        "title": "Comprueba si lo dijiste bien",
+        "text": "El reconocimiento de voz del dispositivo lo marca en color"
+      },
+      {
+        "id": "podcast",
+        "title": "Tus podcasts, material de estudio",
+        "text": "Busca un programa y elige los episodios"
+      },
+      {
+        "id": "log",
+        "title": "Registra tu estudio cada día",
+        "text": "Racha, calendario y totales acumulados"
+      },
+      {
+        "id": "languages",
+        "title": "Disponible en 14 idiomas",
+        "text": "La app y el tutorial, en tu idioma"
+      },
+      {
+        "id": "privacy",
+        "title": "Sin cuenta. Todo en tu dispositivo",
+        "text": "El audio y tu registro nunca van a un servidor"
+      }
+    ]
+  },
+  "pt-br": {
+    "subtitle": "Shadowing: ouça e repita",
+    "promotionalText": "Toque para ouvir de novo a frase que você perdeu. O Reprise divide o áudio em frases no seu aparelho, com velocidade, loop e pausas para shadowing. Sem precisar de conta.",
+    "intro": "O Reprise é um player de áudio para shadowing e repetição. Com o reconhecimento de fala do próprio aparelho, ele divide o áudio em outro idioma em frases: toque na que você não entendeu e repita só essa frase quantas vezes quiser.",
+    "premiumLegend": "Os recursos marcados com ◆ exigem o Reprise Premium (assinatura, veja abaixo). Todo o resto é grátis.",
+    "features": [
+      {
+        "title": "Divisão automática em frases",
+        "items": [
+          "Divide o áudio em frases, trechos ou blocos",
+          "Analisa a forma de onda para não cortar o início nem o fim das palavras",
+          "Se uma divisão não ficar boa, toque e segure a frase para juntá-la ou dividi-la novamente"
+        ]
+      },
+      {
+        "title": "Reprodução feita para praticar idiomas",
+        "items": [
+          "Velocidade de 0,5x a 2,0x sem alterar o tom",
+          "“Pausa após cada frase”, “Repetir 1 frase” ou “Tudo seguido”",
+          "Entre as repetições, uma pausa do mesmo tamanho da frase que você acabou de ouvir, com sinal sonoro, para você repetir",
+          "Volte ou avance 3 segundos (ajustável) e pule para a frase anterior ou seguinte",
+          "Botão “Ocultar texto”: toque e segure para espiar e conferir sua resposta na hora",
+          "◆“Revisar frases marcadas”: reúne as frases marcadas de todos os seus materiais",
+          "◆“Teste de clareza”: grave sua voz e veja, em cores, se a análise de fala do aparelho entende a frase como está escrita. A gravação para sozinha quando você termina de falar. Grátis em até 3 frases à sua escolha por faixa"
+        ]
+      },
+      {
+        "title": "Registro de estudo",
+        "items": [
+          "Tempo de estudo diário e número de frases reproduzidas",
+          "Meta diária, sequência, gráfico de 7 dias, tempo por material e seus totais acumulados",
+          "Compartilhe seu estudo em uma única imagem ou salve em Fotos (“Post 4:5” / “Story 9:16”). ◆Mais temas: Escuro, Floresta, Pôr do sol e Mono",
+          "◆Veja seu histórico de 14 dias, 1 mês, 3 meses, 6 meses, 1 ano ou de todo o período"
+        ]
+      },
+      {
+        "title": "Disponível em 14 idiomas",
+        "items": [
+          "Use o app em inglês, japonês, coreano, chinês (simplificado e tradicional), espanhol, português (Brasil e Portugal), francês, alemão, italiano, holandês, sueco ou russo",
+          "O tutorial integrado apresenta os recursos com áudio no idioma do app"
+        ]
+      },
+      {
+        "title": "Tudo fica no seu aparelho",
+        "items": [
+          "Áudios, transcrições e registros de estudo ficam salvos só no seu aparelho e nunca são enviados a um servidor. Não precisa de conta"
+        ]
+      },
+      {
+        "title": "Importação",
+        "items": [
+          "Grátis: até 5 materiais (o tutorial não conta) e 100 faixas por material. ◆Mais com o Reprise Premium",
+          "Do app Arquivos (áudio ou a faixa de áudio de um vídeo) ou da sua biblioteca de música (só músicas sem DRM)",
+          "Envie gravações do app Gravador, anexos de e-mail e mais direto para o Reprise pelo menu Compartilhar",
+          "“Criar a partir de texto”: cole um texto e uma voz do aparelho faz a leitura, já dividida em frases. 3 por mês grátis, ◆ilimitado com o Reprise Premium",
+          "Grave na hora, como a leitura modelo do seu professor",
+          "“De Podcasts”: busque pelo nome do programa ou cole um feed RSS ou um link do Apple Podcasts e escolha os episódios. Cada programa vira um material, e os episódios novos aparecem quando você o abre",
+          "◆Importe episódios novos automaticamente (por material, só com Wi‑Fi)",
+          "Programas sem feed RSS público (como os exclusivos para assinantes) não podem ser importados"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (assinatura com renovação automática)",
+      "items": [
+        "Mensal ou anual. Os preços aparecem no app antes da compra e variam conforme o país ou a região",
+        "Novos assinantes têm 7 dias de teste grátis. Se você cancelar durante o teste, não será cobrado"
+      ]
+    },
+    "requirement": "iOS 26 ou posterior",
+    "slides": [
+      {
+        "id": "split",
+        "title": "O áudio dividido em frases",
+        "text": "Toque na frase que você perdeu e ouça de novo"
+      },
+      {
+        "id": "speed",
+        "title": "Uma frase, quantas vezes quiser",
+        "text": "Velocidade de 0,5x a 2,0x, loop e pausas para repetir"
+      },
+      {
+        "id": "check",
+        "title": "Veja se você falou certo",
+        "text": "O reconhecimento de voz no aparelho mostra em cores"
+      },
+      {
+        "id": "podcast",
+        "title": "Seus podcasts viram material de estudo",
+        "text": "Busque um programa e escolha os episódios"
+      },
+      {
+        "id": "log",
+        "title": "Registre seus estudos todos os dias",
+        "text": "Sequência, calendário e totais acumulados"
+      },
+      {
+        "id": "languages",
+        "title": "Disponível em 14 idiomas",
+        "text": "O app e o tutorial no seu idioma"
+      },
+      {
+        "id": "privacy",
+        "title": "Sem conta. Tudo no seu aparelho",
+        "text": "Áudio e registros nunca vão para um servidor"
+      }
+    ]
+  },
+  "pt-pt": {
+    "subtitle": "Shadowing e repetição de áudio",
+    "promotionalText": "Toque para voltar a ouvir a frase que não percebeu. O Reprise divide o áudio em frases no seu dispositivo, com velocidade, ciclos e pausas para shadowing. Sem conta.",
+    "intro": "O Reprise é um leitor de áudio para shadowing e repetição. Com o reconhecimento de voz do dispositivo, divide o áudio numa língua estrangeira em frases: toque na que não percebeu e repita só essa frase quantas vezes quiser.",
+    "premiumLegend": "As funcionalidades assinaladas com ◆ requerem o Reprise Premium (subscrição, ver abaixo). Tudo o resto é gratuito.",
+    "features": [
+      {
+        "title": "Divisão automática em frases",
+        "items": [
+          "Divide o áudio em frases, fragmentos ou blocos",
+          "Analisa a forma de onda para não cortar o início nem o fim das palavras",
+          "Se uma divisão não estiver certa, mantenha premida a frase para a juntar ou voltar a dividir"
+        ]
+      },
+      {
+        "title": "Reprodução pensada para praticar línguas",
+        "items": [
+          "Velocidade de 0,5x a 2,0x sem alterar o tom",
+          "“Pausa após cada frase”, “Repetir 1 frase” ou “Tudo seguido”",
+          "Entre repetições, uma pausa com a duração da frase que acabou de ouvir, com sinal sonoro, para a repetir",
+          "Recue ou avance 3 segundos (ajustável) e salte para a frase anterior ou seguinte",
+          "Botão “Ocultar texto”: mantenha premido para espreitar e confirmar a resposta",
+          "◆“Rever frases marcadas”: reúne as frases marcadas de todos os seus materiais",
+          "◆“Teste de clareza”: grave a sua voz e veja, por cores, se a análise de voz do dispositivo reconhece a frase tal como está escrita. A gravação para sozinha quando termina de falar. Gratuito em 3 frases à escolha por faixa"
+        ]
+      },
+      {
+        "title": "Registo de estudo",
+        "items": [
+          "Tempo de estudo diário e número de frases reproduzidas",
+          "Objetivo diário, sequência, gráfico de 7 dias, tempo por material e os seus totais acumulados",
+          "Partilhe o seu estudo numa única imagem ou guarde-a em Fotografias (“Post 4:5” / “Story 9:16”). ◆Mais temas: Escuro, Floresta, Pôr do sol e Mono",
+          "◆Reveja os últimos 14 dias, 1 mês, 3 meses, 6 meses, 1 ano ou todo o histórico"
+        ]
+      },
+      {
+        "title": "Disponível em 14 línguas",
+        "items": [
+          "Utilize a app em inglês, japonês, coreano, chinês (simplificado e tradicional), espanhol, português (Brasil e Portugal), francês, alemão, italiano, neerlandês, sueco ou russo",
+          "O tutorial integrado apresenta as funcionalidades com áudio no idioma da app"
+        ]
+      },
+      {
+        "title": "Tudo fica no seu dispositivo",
+        "items": [
+          "O áudio, as transcrições e os registos de estudo são guardados apenas no seu dispositivo e nunca são enviados para um servidor. Não precisa de conta"
+        ]
+      },
+      {
+        "title": "Importação",
+        "items": [
+          "Gratuito: até 5 materiais (o tutorial não conta) e 100 faixas por material. ◆Mais com o Reprise Premium",
+          "Da app Ficheiros (áudio ou a faixa de áudio de um vídeo) ou da sua biblioteca de música (só músicas sem DRM)",
+          "Envie memos de voz, anexos de e-mail e mais diretamente para o Reprise a partir do menu Partilhar",
+          "“Criar a partir de texto”: cole um texto e uma voz do dispositivo lê-o, já dividido em frases. 3 por mês gratuitamente, ◆ilimitado com o Reprise Premium",
+          "Grave no momento, por exemplo a leitura modelo do seu professor",
+          "“De Podcasts”: pesquise pelo nome do programa ou cole um feed RSS ou uma ligação do Apple Podcasts e escolha os episódios. Cada programa torna-se um material e os episódios novos são mostrados quando o abre",
+          "◆Importe episódios novos automaticamente (por material, apenas com Wi‑Fi)",
+          "Não é possível importar programas sem feed RSS público (como os exclusivos para subscritores)"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (subscrição com renovação automática)",
+      "items": [
+        "Mensal ou anual. Os preços são indicados na app antes da compra e variam consoante o país ou a região",
+        "Os novos subscritores têm um período experimental gratuito de 7 dias. Se cancelar durante esse período, não será cobrado"
+      ]
+    },
+    "requirement": "iOS 26 ou posterior",
+    "slides": [
+      {
+        "id": "split",
+        "title": "O áudio dividido em frases",
+        "text": "Toque na frase que não percebeu e volte a ouvi-la"
+      },
+      {
+        "id": "speed",
+        "title": "Uma frase, tantas vezes quantas quiser",
+        "text": "Velocidade de 0,5x a 2,0x, ciclos e pausas para repetir"
+      },
+      {
+        "id": "check",
+        "title": "Verifique se disse bem",
+        "text": "O reconhecimento de voz no dispositivo mostra-o a cores"
+      },
+      {
+        "id": "podcast",
+        "title": "Os seus podcasts como material de estudo",
+        "text": "Pesquise um programa e escolha os episódios"
+      },
+      {
+        "id": "log",
+        "title": "Registe o seu estudo todos os dias",
+        "text": "Sequência, calendário e totais acumulados"
+      },
+      {
+        "id": "languages",
+        "title": "Disponível em 14 idiomas",
+        "text": "A app e o tutorial no seu idioma"
+      },
+      {
+        "id": "privacy",
+        "title": "Sem conta. Tudo no seu dispositivo",
+        "text": "O áudio e os registos nunca vão para um servidor"
+      }
+    ]
+  },
+  "fr": {
+    "subtitle": "Shadowing et répétition audio",
+    "promotionalText": "Touchez la phrase manquée pour la réécouter. Reprise découpe l’audio en phrases sur votre appareil : vitesse, boucles et pauses pour le shadowing. Sans compte.",
+    "intro": "Reprise est un lecteur audio pour le shadowing et la répétition. Sa reconnaissance vocale sur l’appareil découpe l’audio en langue étrangère en phrases : touchez celle que vous avez manquée et réécoutez-la seule, à volonté.",
+    "premiumLegend": "Les fonctions ◆ nécessitent Reprise Premium (abonnement, voir ci-dessous). Tout le reste est gratuit.",
+    "features": [
+      {
+        "title": "Découpage automatique en phrases",
+        "items": [
+          "Découpe l’audio en phrases, en segments ou en blocs",
+          "Analyse la forme d’onde pour ne pas couper le début ni la fin des mots",
+          "Découpage imparfait ? Touchez longuement une phrase pour la fusionner ou la redécouper"
+        ]
+      },
+      {
+        "title": "Une lecture faite pour s’entraîner",
+        "items": [
+          "Vitesse de 0,5x à 2,0x sans modifier la hauteur du son",
+          "Pause après chaque phrase, Boucler 1 phrase ou Lecture continue",
+          "Entre les répétitions, une pause de la durée de la phrase entendue, avec signal sonore, pour la répéter",
+          "Recul ou avance de 3 s (réglable), phrase précédente ou suivante",
+          "Bouton Masquer le texte : touchez-le longuement pour jeter un œil et vérifier votre réponse",
+          "◆Réviser les signets : phrases avec signet de tous vos supports",
+          "◆Test de clarté : enregistrez-vous et voyez en couleur si l’analyse vocale sur l’appareil reconnaît la phrase telle qu’écrite. L’enregistrement s’arrête quand vous finissez de parler. Gratuit pour 3 phrases au choix par piste"
+        ]
+      },
+      {
+        "title": "Journal d’étude",
+        "items": [
+          "Temps d’étude par jour et nombre de phrases écoutées",
+          "Objectif quotidien, série, graphique sur 7 jours, temps par support et totaux cumulés",
+          "Partagez votre étude en une image ou enregistrez-la dans Photos (Post 4:5 / Story 9:16). ◆Thèmes supplémentaires : Sombre, Forêt, Couchant et Mono",
+          "◆Retour sur 14 jours, 1 mois, 3 mois, 6 mois, 1 an ou depuis le début"
+        ]
+      },
+      {
+        "title": "Disponible en 14 langues",
+        "items": [
+          "Utilisez l’app en anglais, japonais, coréen, chinois (simplifié et traditionnel), espagnol, portugais (Brésil et Portugal), français, allemand, italien, néerlandais, suédois ou russe",
+          "Le tutoriel intégré présente les fonctions, avec audio dans votre langue d’affichage"
+        ]
+      },
+      {
+        "title": "Tout reste sur votre appareil",
+        "items": [
+          "Audio, transcriptions et historique d’étude restent sur votre appareil, jamais envoyés à un serveur. Aucun compte requis"
+        ]
+      },
+      {
+        "title": "Importation",
+        "items": [
+          "Gratuit : 5 supports (hors tutoriel) et 100 pistes par support. ◆Plus avec Reprise Premium",
+          "Depuis l’app Fichiers (audio ou piste audio d’une vidéo) ou votre bibliothèque musicale (sans DRM uniquement)",
+          "Envoyez mémos vocaux, pièces jointes et plus à Reprise depuis la feuille de partage",
+          "Créer depuis un texte : collez un texte, lu par une voix sur l’appareil et déjà découpé en phrases. 3 par mois gratuitement, ◆illimité avec Reprise Premium",
+          "Enregistrez sur le moment, comme la lecture modèle d’un professeur",
+          "Depuis Podcasts : cherchez une émission par son nom ou collez un flux RSS ou un lien Apple Podcasts, puis choisissez des épisodes. Chaque émission devient un support ; ses nouveaux épisodes s’affichent à l’ouverture",
+          "◆Importez automatiquement les nouveaux épisodes (par support, en Wi‑Fi uniquement)",
+          "Impossible d’importer les émissions sans flux RSS public (réservées aux abonnés, par ex.)"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (abonnement à renouvellement automatique)",
+      "items": [
+        "Mensuel ou annuel. Les prix, affichés dans l’app avant l’achat, varient selon le pays ou la région",
+        "Essai gratuit de 7 jours pour les nouveaux abonnés. Résiliez pendant l’essai et rien ne vous sera facturé"
+      ]
+    },
+    "requirement": "iOS 26 ou version ultérieure",
+    "slides": [
+      {
+        "id": "split",
+        "title": "L’audio découpé en phrases",
+        "text": "Touchez la phrase manquée pour la réécouter"
+      },
+      {
+        "id": "speed",
+        "title": "Une phrase, autant de fois que voulu",
+        "text": "Vitesse de 0,5x à 2,0x, boucles et pauses pour répéter"
+      },
+      {
+        "id": "check",
+        "title": "Vérifiez si vous l’avez bien dit",
+        "text": "La reconnaissance vocale de l’appareil l’affiche en couleur"
+      },
+      {
+        "id": "podcast",
+        "title": "Vos podcasts deviennent des leçons",
+        "text": "Cherchez une émission et choisissez les épisodes"
+      },
+      {
+        "id": "log",
+        "title": "Suivez votre étude chaque jour",
+        "text": "Série, calendrier et totaux cumulés"
+      },
+      {
+        "id": "languages",
+        "title": "Disponible en 14 langues",
+        "text": "L’app et le tutoriel dans votre langue"
+      },
+      {
+        "id": "privacy",
+        "title": "Sans compte. Tout reste sur l’appareil",
+        "text": "L’audio et votre suivi ne vont jamais sur un serveur"
+      }
+    ]
+  },
+  "de": {
+    "subtitle": "Shadowing & Sätze wiederholen",
+    "promotionalText": "Tippe auf den verpassten Satz und hör ihn erneut. Reprise teilt Audio direkt auf dem Gerät in Sätze – mit Tempo, Schleifen und Pausen fürs Shadowing. Ohne Konto.",
+    "intro": "Reprise ist ein Audio-Player fürs Shadowing und Nachsprechen. Per Spracherkennung auf dem Gerät teilt er fremdsprachiges Audio in Sätze. Tippe auf den Satz, den du verpasst hast, und spiel nur diesen ab – so oft du willst.",
+    "premiumLegend": "Mit ◆ markierte Funktionen erfordern Reprise Premium (Abo, siehe unten). Alles andere ist kostenlos.",
+    "features": [
+      {
+        "title": "Automatische Satzteilung",
+        "items": [
+          "Teilt Audio in Sätze, Phrasen oder Chunks",
+          "Analysiert die Wellenform, damit Wortanfänge und -enden nicht abgeschnitten werden",
+          "Passt eine Teilung nicht, halte den Satz gedrückt, um ihn zu verbinden oder erneut zu teilen"
+        ]
+      },
+      {
+        "title": "Wiedergabe fürs Sprachtraining",
+        "items": [
+          "0,5- bis 2,0-faches Tempo ohne Änderung der Tonhöhe",
+          "Pause nach jedem Satz, 1 Satz in Schleife oder Durchgehend abspielen",
+          "Zwischen Wiederholungen eine Pause so lang wie die gehörte Phrase, mit Signalton, zum Nachsprechen",
+          "3 Sekunden zurück oder vor (einstellbar), zum vorherigen oder nächsten Satz springen",
+          "Taste „Text ausblenden“: gedrückt halten zum Spicken, um deine Antwort schnell zu prüfen",
+          "◆Lesezeichen wiederholen: Sätze mit Lesezeichen aus all deinen Materialien gesammelt",
+          "◆Klarheits-Check: Nimm deine Stimme auf und sieh farbig, ob die Sprachanalyse auf dem Gerät den Satz so erkennt, wie er geschrieben ist. Die Aufnahme stoppt, sobald du fertig gesprochen hast. Kostenlos für 3 beliebige Sätze pro Track"
+        ]
+      },
+      {
+        "title": "Lernprotokoll",
+        "items": [
+          "Tägliche Lernzeit und Anzahl der abgespielten Sätze",
+          "Tagesziel, Serie, 7-Tage-Diagramm, Zeit pro Material und deine Gesamtwerte",
+          "Teile dein Lernen als ein Bild oder sichere es in Fotos (Beitrag 4:5 / Story 9:16). ◆Weitere Designs: Dunkel, Wald, Sonnenuntergang und Mono",
+          "◆Rückblick über 14 Tage, 1 Monat, 3 Monate, 6 Monate, 1 Jahr oder den gesamten Zeitraum"
+        ]
+      },
+      {
+        "title": "In 14 Sprachen verfügbar",
+        "items": [
+          "Nutze die App auf Englisch, Japanisch, Koreanisch, Chinesisch (vereinfacht und traditionell), Spanisch, Portugiesisch (Brasilien und Portugal), Französisch, Deutsch, Italienisch, Niederländisch, Schwedisch oder Russisch",
+          "Das Tutorial führt dich mit Audio in deiner Anzeigesprache durch die Funktionen"
+        ]
+      },
+      {
+        "title": "Alles bleibt auf deinem Gerät",
+        "items": [
+          "Audio, Transkripte und Lerndaten bleiben nur auf deinem Gerät und werden nie an einen Server gesendet. Kein Konto nötig"
+        ]
+      },
+      {
+        "title": "Importieren",
+        "items": [
+          "Kostenlos: bis zu 5 Materialien (ohne Tutorial) und 100 Tracks pro Material. ◆Mehr mit Reprise Premium",
+          "Aus der Dateien-App (Audio oder Tonspur eines Videos) oder deiner Musikmediathek (nur ohne DRM)",
+          "Sprachmemos, E-Mail-Anhänge und mehr über das Teilen-Menü direkt an Reprise senden",
+          "Aus Text erstellen: Füge Text ein und lass ihn von einer Stimme auf dem Gerät vorlesen – bereits in Sätze geteilt. 3 pro Monat kostenlos, ◆unbegrenzt mit Reprise Premium",
+          "Direkt aufnehmen, etwa eine Vorlage deiner Lehrkraft",
+          "Aus Podcasts: Suche nach dem Namen der Sendung oder füge einen RSS-Feed oder Apple Podcasts-Link ein, dann wähle Folgen. Jede Sendung wird ein Material; neue Folgen siehst du beim Öffnen",
+          "◆Neue Folgen automatisch importieren (pro Material, nur über WLAN)",
+          "Sendungen ohne öffentlichen RSS-Feed (etwa nur für Abonnenten) lassen sich nicht importieren"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (automatisch verlängerndes Abo)",
+      "items": [
+        "Monatlich oder jährlich. Die Preise siehst du vor dem Kauf in der App; sie variieren je nach Land oder Region",
+        "Neue Abonnenten testen 7 Tage kostenlos. Kündigst du während des Testzeitraums, wird nichts berechnet"
+      ]
+    },
+    "requirement": "iOS 26 oder neuer",
+    "slides": [
+      {
+        "id": "split",
+        "title": "Audio automatisch in Sätze geteilt",
+        "text": "Verpassten Satz antippen und noch einmal hören"
+      },
+      {
+        "id": "speed",
+        "title": "Ein Satz, so oft du willst",
+        "text": "0,5- bis 2,0-faches Tempo, Schleifen und Pausen"
+      },
+      {
+        "id": "check",
+        "title": "Prüfe, ob du es richtig sagst",
+        "text": "Die Spracherkennung auf dem Gerät zeigt es farbig"
+      },
+      {
+        "id": "podcast",
+        "title": "Podcasts werden Lernmaterial",
+        "text": "Sendung suchen und Folgen auswählen"
+      },
+      {
+        "id": "log",
+        "title": "Deine Lernzeit jeden Tag im Blick",
+        "text": "Serie, Kalender und Gesamtwerte"
+      },
+      {
+        "id": "languages",
+        "title": "In 14 Sprachen verfügbar",
+        "text": "App und Tutorial in deiner Sprache"
+      },
+      {
+        "id": "privacy",
+        "title": "Kein Konto. Alles auf dem Gerät",
+        "text": "Audio und Lernprotokoll gehen nie an einen Server"
+      }
+    ]
+  },
+  "it": {
+    "subtitle": "Shadowing e ripetizione audio",
+    "promotionalText": "Tocca la frase che ti è sfuggita e riascoltala. Reprise divide l’audio in frasi sul dispositivo, con velocità, loop e pause per lo shadowing. Nessun account richiesto.",
+    "intro": "Reprise è un player audio per lo shadowing e la ripetizione. Con il riconoscimento vocale sul dispositivo divide l’audio in lingua straniera in frasi: tocca quella che ti è sfuggita e riascolta solo quella, tutte le volte che vuoi.",
+    "premiumLegend": "Le funzioni contrassegnate con ◆ richiedono Reprise Premium (abbonamento, vedi sotto). Tutto il resto è gratuito.",
+    "features": [
+      {
+        "title": "Divisione automatica in frasi",
+        "items": [
+          "Divide l’audio in frasi, segmenti o blocchi",
+          "Analizza la forma d’onda per non troncare l’inizio o la fine delle parole",
+          "Se una divisione non va bene, tieni premuta la frase per unirla o dividerla di nuovo"
+        ]
+      },
+      {
+        "title": "Riproduzione pensata per esercitarti",
+        "items": [
+          "Velocità da 0,5x a 2,0x senza alterare il tono",
+          "Pausa dopo ogni frase, Ripeti 1 frase o Tutto di seguito",
+          "Tra le ripetizioni, una pausa lunga quanto la frase ascoltata, con segnale acustico, per ripeterla a tua volta",
+          "Indietro o avanti di 3 secondi (regolabile), salto alla frase precedente o successiva",
+          "Pulsante Nascondi testo: tienilo premuto per sbirciare e verificare subito la risposta",
+          "◆Ripassa frasi contrassegnate, raccolte da tutti i tuoi materiali",
+          "◆Test di chiarezza: registra la tua voce e guarda, a colori, se l’analisi vocale sul dispositivo riconosce la frase così come è scritta. La registrazione si ferma quando finisci di parlare. Gratis su 3 frasi a scelta per traccia"
+        ]
+      },
+      {
+        "title": "Registro di studio",
+        "items": [
+          "Tempo di studio giornaliero e numero di frasi riprodotte",
+          "Obiettivo giornaliero, serie di giorni, grafico di 7 giorni, tempo per materiale e totali complessivi",
+          "Condividi il tuo studio in un’unica immagine o salvala in Foto (Post 4:5 / Storia 9:16). ◆Altri temi: Scuro, Foresta, Tramonto e Mono",
+          "◆Riepilogo di 14 giorni, 1 mese, 3 mesi, 6 mesi, 1 anno o di sempre"
+        ]
+      },
+      {
+        "title": "Disponibile in 14 lingue",
+        "items": [
+          "Usa l’app in inglese, giapponese, coreano, cinese (semplificato e tradizionale), spagnolo, portoghese (Brasile e Portogallo), francese, tedesco, italiano, olandese, svedese o russo",
+          "Il tutorial integrato ti guida tra le funzioni con audio nella lingua dell’app"
+        ]
+      },
+      {
+        "title": "Tutto resta sul tuo dispositivo",
+        "items": [
+          "Audio, trascrizioni e registri di studio restano solo sul tuo dispositivo e non vengono mai inviati a un server. Nessun account richiesto"
+        ]
+      },
+      {
+        "title": "Importazione",
+        "items": [
+          "Gratis: fino a 5 materiali (tutorial escluso) e 100 tracce per materiale. ◆Di più con Reprise Premium",
+          "Dall’app File (audio o traccia audio di un video) o dalla libreria musicale (solo brani senza DRM)",
+          "Invia memo vocali, allegati email e altro a Reprise dal menu di condivisione",
+          "Crea da testo: incolla un testo e fallo leggere da una voce sul dispositivo, già diviso in frasi. 3 al mese gratis, ◆illimitati con Reprise Premium",
+          "Registra al momento, ad esempio la lettura modello di un insegnante",
+          "Da Podcast: cerca per nome del programma o incolla un feed RSS o un link di Apple Podcasts, poi scegli gli episodi. Ogni programma diventa un materiale e, quando lo apri, vedi i nuovi episodi",
+          "◆Importa automaticamente i nuovi episodi (per materiale, solo con Wi‑Fi)",
+          "I programmi senza feed RSS pubblico (ad es. riservati agli abbonati) non si possono importare"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (abbonamento a rinnovo automatico)",
+      "items": [
+        "Mensile o annuale. I prezzi sono indicati nell’app prima dell’acquisto e variano in base al paese o alla regione",
+        "Prova gratuita di 7 giorni per i nuovi abbonati. Se annulli durante la prova, non paghi nulla"
+      ]
+    },
+    "requirement": "iOS 26 o versioni successive",
+    "slides": [
+      {
+        "id": "split",
+        "title": "L’audio diviso in frasi",
+        "text": "Tocca la frase che ti è sfuggita e riascoltala"
+      },
+      {
+        "id": "speed",
+        "title": "Una frase, tutte le volte che vuoi",
+        "text": "Velocità da 0,5x a 2,0x, loop e pause per ripetere"
+      },
+      {
+        "id": "check",
+        "title": "Verifica se l’hai detta bene",
+        "text": "Il riconoscimento vocale sul dispositivo lo mostra a colori"
+      },
+      {
+        "id": "podcast",
+        "title": "I podcast diventano materiale di studio",
+        "text": "Cerca un programma e scegli gli episodi"
+      },
+      {
+        "id": "log",
+        "title": "Registra il tuo studio ogni giorno",
+        "text": "Serie, calendario e totali complessivi"
+      },
+      {
+        "id": "languages",
+        "title": "Disponibile in 14 lingue",
+        "text": "L’app e il tutorial nella tua lingua"
+      },
+      {
+        "id": "privacy",
+        "title": "Nessun account. Tutto sul dispositivo",
+        "text": "Audio e registro di studio non vanno mai su un server"
+      }
+    ]
+  },
+  "nl": {
+    "subtitle": "Shadowing- en herhaalspeler",
+    "promotionalText": "Tik en hoor de zin die je miste opnieuw. Reprise deelt audio op je toestel op in zinnen, met snelheid, loops en pauzes voor shadowing. Geen account nodig.",
+    "intro": "Reprise is een audiospeler voor shadowing en nazeggen. Met spraakherkenning op je toestel deelt de app audio in een vreemde taal op in zinnen. Tik op de zin die je miste en luister alleen die zin opnieuw, zo vaak als je wilt.",
+    "premiumLegend": "Functies met een ◆ vereisen Reprise Premium (abonnement, zie hieronder). Al het andere is gratis.",
+    "features": [
+      {
+        "title": "Automatisch opdelen in zinnen",
+        "items": [
+          "Deelt audio op in zinnen, zinsdelen of woordgroepen",
+          "Analyseert de golfvorm, zodat woorden aan begin of eind niet worden afgekapt",
+          "Klopt een splitsing niet? Houd een zin ingedrukt om hem samen te voegen of opnieuw op te delen"
+        ]
+      },
+      {
+        "title": "Afspelen gemaakt voor taaloefening",
+        "items": [
+          "Snelheid van 0,5x tot 2,0x zonder dat de toonhoogte verandert",
+          "Pauze na elke zin, Herhaal 1 zin of Speel door",
+          "Tussen herhalingen een pauze zo lang als de zin die je net hoorde, met een signaaltoon, zodat je hem kunt nazeggen",
+          "3 seconden terug of vooruit (instelbaar), naar de vorige of volgende zin springen",
+          "Knop Verberg tekst: houd ingedrukt om even te kijken, zo controleer je je antwoord snel",
+          "◆Herhaal bladwijzers: zinnen met een bladwijzer uit al je materialen",
+          "◆Helderheidscheck: neem je stem op en zie in kleur of de spraakanalyse op je toestel de zin herkent zoals hij geschreven staat. De opname stopt als je klaar bent met praten. Gratis te gebruiken op 3 zinnen naar keuze per track"
+        ]
+      },
+      {
+        "title": "Leerlogboek",
+        "items": [
+          "Studietijd en aantal afgespeelde zinnen per dag",
+          "Dagdoel, reeks, een grafiek van 7 dagen, tijd per materiaal en je totalen tot nu toe",
+          "Deel je studie als één afbeelding of bewaar hem in Foto's (Post 4:5 / Story 9:16). ◆Meer thema's: Donker, Bos, Zonsondergang en Mono",
+          "◆Terugkijken over 14 dagen, 1 maand, 3 maanden, 6 maanden, 1 jaar of alles"
+        ]
+      },
+      {
+        "title": "Beschikbaar in 14 talen",
+        "items": [
+          "Gebruik de app in het Nederlands, Engels, Japans, Koreaans, Chinees (vereenvoudigd en traditioneel), Spaans, Portugees (Brazilië en Portugal), Frans, Duits, Italiaans, Zweeds of Russisch",
+          "De ingebouwde tutorial laat je de functies zien met audio in je weergavetaal"
+        ]
+      },
+      {
+        "title": "Alles blijft op je toestel",
+        "items": [
+          "Audio, transcripties en studiegegevens worden alleen op je toestel bewaard en nooit naar een server gestuurd. Geen account nodig"
+        ]
+      },
+      {
+        "title": "Importeren",
+        "items": [
+          "Gratis: tot 5 materialen (de tutorial telt niet mee) en 100 tracks per materiaal. ◆Meer met Reprise Premium",
+          "Vanuit de Bestanden-app (audio, of het audiospoor van een video) of je muziekbibliotheek (alleen nummers zonder DRM)",
+          "Deel spraakmemo's, e‑mailbijlagen en meer via het deelmenu direct naar Reprise",
+          "“Maak van tekst”: plak tekst en laat een stem op je toestel hem voorlezen, al opgedeeld in zinnen. Gratis 3 per maand, ◆onbeperkt met Reprise Premium",
+          "Neem ter plekke op, bijvoorbeeld een voorbeeld dat je docent voorleest",
+          "Uit Podcasts: zoek op programmanaam of plak een RSS-feed of Apple Podcasts-link en kies afleveringen. Elk programma wordt één materiaal en nieuwe afleveringen zie je zodra je het opent",
+          "◆Nieuwe afleveringen automatisch importeren (per materiaal, alleen via wifi)",
+          "Programma's zonder openbare RSS-feed (zoals alleen voor abonnees) kunnen niet worden geïmporteerd"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (automatisch verlengd abonnement)",
+      "items": [
+        "Per maand of per jaar. De prijzen zie je in de app voordat je koopt en verschillen per land of regio",
+        "Nieuwe abonnees krijgen een gratis proefperiode van 7 dagen. Zeg je op tijdens de proefperiode, dan betaal je niets"
+      ]
+    },
+    "requirement": "iOS 26 of later",
+    "slides": [
+      {
+        "id": "split",
+        "title": "Audio automatisch in zinnen verdeeld",
+        "text": "Tik op de zin die je miste en luister opnieuw"
+      },
+      {
+        "id": "speed",
+        "title": "Eén zin, zo vaak als je wilt",
+        "text": "Snelheid van 0,5x tot 2,0x, loops en pauzes"
+      },
+      {
+        "id": "check",
+        "title": "Controleer of je het goed zegt",
+        "text": "Spraakherkenning op je toestel toont het in kleur"
+      },
+      {
+        "id": "podcast",
+        "title": "Podcasts worden lesmateriaal",
+        "text": "Zoek een programma en kies afleveringen"
+      },
+      {
+        "id": "log",
+        "title": "Houd je studietijd elke dag bij",
+        "text": "Reeks, kalender en totalen"
+      },
+      {
+        "id": "languages",
+        "title": "Beschikbaar in 14 talen",
+        "text": "App en tutorial in jouw taal"
+      },
+      {
+        "id": "privacy",
+        "title": "Geen account. Alles op je toestel",
+        "text": "Audio en studielogboek gaan nooit naar een server"
+      }
+    ]
+  },
+  "sv": {
+    "subtitle": "Shadowing & repetera meningar",
+    "promotionalText": "Tryck och hör meningen du missade igen. Reprise delar upp ljud i meningar på din enhet, med hastighet, loopar och pauser för shadowing. Inget konto behövs.",
+    "intro": "Reprise är en ljudspelare för shadowing och upprepning. Med taligenkänning på enheten delar appen upp ljud på ett främmande språk i meningar. Tryck på meningen du missade och spela bara den igen, så många gånger du vill.",
+    "premiumLegend": "Funktioner märkta med ◆ kräver Reprise Premium (prenumeration, se nedan). Allt annat är gratis.",
+    "features": [
+      {
+        "title": "Automatisk uppdelning i meningar",
+        "items": [
+          "Delar upp ljud i meningar, fraser eller ordgrupper",
+          "Analyserar vågformen så att ord inte klipps av i början eller slutet",
+          "Blev en uppdelning fel? Håll ned en mening för att slå ihop den eller dela upp den igen"
+        ]
+      },
+      {
+        "title": "Uppspelning gjord för språkträning",
+        "items": [
+          "Hastighet från 0,5x till 2,0x utan att tonhöjden ändras",
+          "Paus efter varje mening, Loopa 1 mening eller Spela oavbrutet",
+          "Pauser mellan upprepningarna lika långa som frasen du just hörde, med en signalton, så att du kan säga den efter",
+          "Hoppa 3 sekunder bakåt eller framåt (justerbart), gå till föregående eller nästa mening",
+          "Knappen Dölj text: håll ned för att kika, så kontrollerar du ditt svar snabbt",
+          "◆Repetera bokmärken: meningar du bokmärkt, samlade från allt ditt material",
+          "◆Tydlighetskoll: spela in din röst och se i färg om talanalysen på enheten uppfattar meningen som den är skriven. Inspelningen stoppas när du har pratat klart. Gratisanvändare kan använda den på valfria 3 meningar per spår"
+        ]
+      },
+      {
+        "title": "Studielogg",
+        "items": [
+          "Studietid och antal spelade meningar per dag",
+          "Dagsmål, svit, ett diagram över 7 dagar, tid per material och dina totaler hittills",
+          "Dela dina studier som en bild eller spara i Bilder (Inlägg 4:5 / Story 9:16). ◆Fler teman: Mörkt, Skog, Solnedgång och Mono",
+          "◆Se tillbaka på 14 dagar, 1 månad, 3 månader, 6 månader, 1 år eller hela tiden"
+        ]
+      },
+      {
+        "title": "Finns på 14 språk",
+        "items": [
+          "Använd appen på svenska, engelska, japanska, koreanska, kinesiska (förenklad och traditionell), spanska, portugisiska (Brasilien och Portugal), franska, tyska, italienska, nederländska eller ryska",
+          "Den inbyggda guiden visar funktionerna med ljud på ditt visningsspråk"
+        ]
+      },
+      {
+        "title": "Allt stannar på din enhet",
+        "items": [
+          "Ljud, transkriptioner och studiedata sparas bara på din enhet och skickas aldrig till en server. Inget konto behövs"
+        ]
+      },
+      {
+        "title": "Importera",
+        "items": [
+          "Gratis: upp till 5 material (guiden räknas inte) och 100 spår per material. ◆Fler med Reprise Premium",
+          "Från appen Filer (ljud, eller ljudspåret i en video) eller ditt musikbibliotek (endast låtar utan DRM)",
+          "Dela röstmemon, e‑postbilagor med mera direkt till Reprise från delningsmenyn",
+          "”Skapa från text”: klistra in text och låt en röst på enheten läsa upp den, redan uppdelad i meningar. 3 per månad gratis, ◆obegränsat med Reprise Premium",
+          "Spela in på plats, till exempel när läraren läser en förlaga",
+          "Från Podcaster: sök på programnamn eller klistra in ett RSS-flöde eller en Apple Podcasts-länk och välj avsnitt. Varje podcast blir ett material och nya avsnitt visas när du öppnar det",
+          "◆Importera nya avsnitt automatiskt (per material, endast via wifi)",
+          "Podcaster utan offentligt RSS-flöde (till exempel sådana bara för prenumeranter) kan inte importeras"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (prenumeration som förnyas automatiskt)",
+      "items": [
+        "Per månad eller per år. Priserna visas i appen innan du köper och varierar mellan länder och regioner",
+        "Nya prenumeranter får 7 dagars gratis provperiod. Avslutar du under provperioden debiteras du inget"
+      ]
+    },
+    "requirement": "iOS 26 eller senare",
+    "slides": [
+      {
+        "id": "split",
+        "title": "Ljudet delas upp i meningar",
+        "text": "Tryck på meningen du missade och lyssna igen"
+      },
+      {
+        "id": "speed",
+        "title": "En mening, så många gånger du vill",
+        "text": "Hastighet 0,5x–2,0x, loopar och pauser"
+      },
+      {
+        "id": "check",
+        "title": "Kolla om du sa rätt",
+        "text": "Taligenkänning på enheten visar det i färg"
+      },
+      {
+        "id": "podcast",
+        "title": "Poddar blir studiematerial",
+        "text": "Sök efter en podd och välj avsnitt"
+      },
+      {
+        "id": "log",
+        "title": "Följ din studietid varje dag",
+        "text": "Svit, kalender och totalt"
+      },
+      {
+        "id": "languages",
+        "title": "Finns på 14 språk",
+        "text": "Appen och guiden på ditt språk"
+      },
+      {
+        "id": "privacy",
+        "title": "Inget konto. Allt stannar på enheten",
+        "text": "Ljud och studielogg skickas aldrig till en server"
+      }
+    ]
+  },
+  "ru": {
+    "subtitle": "Шэдоуинг и повтор фраз",
+    "promotionalText": "Коснитесь — и пропущенное предложение прозвучит снова. Reprise делит аудио на предложения прямо на устройстве: скорость, повтор и паузы для шэдоуинга. Без аккаунта.",
+    "intro": "Reprise — аудиоплеер для шэдоуинга и повторения. Распознавание речи на устройстве делит аудио на иностранном языке на предложения: коснитесь пропущенного и слушайте только его — сколько угодно раз.",
+    "premiumLegend": "Функции со значком ◆ доступны в Reprise Premium (подписка, см. ниже). Всё остальное бесплатно.",
+    "features": [
+      {
+        "title": "Автоматическое деление на предложения",
+        "items": [
+          "Делит аудио на предложения, фразы или блоки",
+          "Анализирует звуковую волну, чтобы не обрезать начало и конец слов",
+          "Если деление неточное, удерживайте предложение, чтобы объединить его или разделить снова"
+        ]
+      },
+      {
+        "title": "Воспроизведение для языковой практики",
+        "items": [
+          "Скорость от 0,5x до 2,0x без изменения высоты тона",
+          "Пауза после предложений, Повтор 1 предложения или Без остановок",
+          "Между повторами — пауза длиной с только что услышанную фразу и сигнал, чтобы вы успели её повторить",
+          "Перемотка на 3 секунды назад или вперёд (настраивается), переход к предыдущему или следующему предложению",
+          "Кнопка «Скрыть текст»: удерживайте, чтобы подсмотреть, — проверять себя быстро",
+          "◆Повтор закладок: предложения с закладками из всех материалов подряд",
+          "◆Ясность речи: запишите свой голос и увидите цветом, распознаёт ли анализ речи на устройстве предложение так, как оно написано. Запись останавливается, когда вы закончите говорить. Бесплатно — на любых 3 предложениях каждого трека"
+        ]
+      },
+      {
+        "title": "Журнал учёбы",
+        "items": [
+          "Время занятий и число прослушанных предложений за день",
+          "Дневная цель, серия дней, график за 7 дней, время по материалам и итоги за всё время",
+          "Поделитесь занятиями одним изображением или сохраните его в Фото (Пост 4:5 / История 9:16). ◆Больше тем: Тёмная, Лес, Закат и Монохром",
+          "◆Обзор за 14 дней, 1 месяц, 3 месяца, 6 месяцев, 1 год или всё время"
+        ]
+      },
+      {
+        "title": "14 языков интерфейса",
+        "items": [
+          "Русский, английский, японский, корейский, китайский (упрощённый и традиционный), испанский, португальский (Бразилия и Португалия), французский, немецкий, итальянский, нидерландский или шведский",
+          "Встроенное обучение знакомит с функциями с озвучкой на языке интерфейса"
+        ]
+      },
+      {
+        "title": "Всё остаётся на устройстве",
+        "items": [
+          "Аудио, расшифровки и журнал учёбы хранятся только на вашем устройстве и никогда не отправляются на сервер. Аккаунт не нужен"
+        ]
+      },
+      {
+        "title": "Импорт",
+        "items": [
+          "Бесплатно: до 5 материалов (обучение не считается) и 100 треков в материале. ◆Больше — с Reprise Premium",
+          "Из приложения «Файлы» (аудио или звуковая дорожка видео) или медиатеки (только песни без DRM)",
+          "Отправляйте в Reprise голосовые заметки, вложения из почты и не только через меню «Поделиться»",
+          "«Создать из текста»: вставьте текст, и голос на устройстве прочитает его, уже разделив на предложения. Бесплатно 3 в месяц, ◆без ограничений с Reprise Premium",
+          "Запись на месте, например образца чтения от преподавателя",
+          "Из Подкастов: найдите шоу по названию или вставьте RSS-ленту или ссылку Apple Podcasts и выберите выпуски. Каждое шоу — один материал, новые выпуски видны при его открытии",
+          "◆Автоимпорт новых выпусков (для каждого материала, только по Wi‑Fi)",
+          "Шоу без открытой RSS-ленты (например, только для подписчиков) импортировать нельзя"
+        ]
+      }
+    ],
+    "premium": {
+      "title": "Reprise Premium (автоматически продлеваемая подписка)",
+      "items": [
+        "На месяц или на год. Цены показаны в приложении до покупки и зависят от страны или региона",
+        "Новым подписчикам — 7 дней бесплатного пробного периода. Если отменить подписку во время пробного периода, оплата не спишется"
+      ]
+    },
+    "requirement": "iOS 26 или новее",
+    "slides": [
+      {
+        "id": "split",
+        "title": "Аудио делится на предложения",
+        "text": "Коснитесь пропущенного предложения и послушайте снова"
+      },
+      {
+        "id": "speed",
+        "title": "Одно предложение — сколько угодно раз",
+        "text": "Скорость от 0,5x до 2,0x, повтор и паузы"
+      },
+      {
+        "id": "check",
+        "title": "Проверьте, правильно ли сказали",
+        "text": "Распознавание речи на устройстве покажет это цветом"
+      },
+      {
+        "id": "podcast",
+        "title": "Подкасты — готовый материал",
+        "text": "Найдите передачу и выберите выпуски"
+      },
+      {
+        "id": "log",
+        "title": "Учёт занятий каждый день",
+        "text": "Серия дней, календарь и общие итоги"
+      },
+      {
+        "id": "languages",
+        "title": "Доступно на 14 языках",
+        "text": "Приложение и обучение на вашем языке"
+      },
+      {
+        "id": "privacy",
+        "title": "Без аккаунта. Всё на устройстве",
+        "text": "Аудио и журнал занятий не уходят на сервер"
       }
     ]
   }
