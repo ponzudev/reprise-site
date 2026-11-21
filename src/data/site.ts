@@ -10,7 +10,7 @@ export const site = {
     'https://apps.apple.com/jp/app/reprise-%E3%83%AA%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BA/id6825080777',
   // App Store Connect のキャンペーンリンクに付けるプロバイダ ID（pt）。
   // 入れると、サイトの各言語のページや学習記録の共有から来た人のダウンロード数を、App Store Connect の「App アナリティクス」で
-  // キャンペーン別（site-ja・site-en・site-ko・site-zh-hans・site-zh-hant・share。QR コードは qr-<言語>）に見られる。
+  // キャンペーン別（site-<言語>（site-ja・site-en・site-de など）・share。QR コードは qr-<言語>）に見られる。
   // QR コード（public/assets/appstore-qr*.svg）にもこの ID が入っているので、変えたら QR コードも作り直す（README）。
   // 空のうちは、キャンペーンの印を付けずに App Store へ送る
   appStoreProviderId: '129358834',

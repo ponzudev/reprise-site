@@ -13,12 +13,14 @@ const description =
 <DocLayout title="Reprise をダウンロード" fullTitle="Reprise（リプライズ）｜英語を、日々の習慣に。" description={description} noindex>
   <script is:inline define:vars={{ store }}>
     // 戻るボタンでこのページに戻って、また送られることがないよう、履歴を置き換える
-    // iPhone 以外は、ブラウザーの言語に合うトップページへ（日本語・韓国語・中国語のほかは英語）
+    // iPhone 以外は、ブラウザーの言語に合うトップページへ（サイトにない言語は英語。国の付かないポルトガル語はブラジル）
     const language = (navigator.language || '').toLowerCase();
-    const top = language.startsWith('ja') ? '/'
-      : language.startsWith('ko') ? '/ko'
+    const primary = language.split('-')[0];
+    const top = primary === 'ja' ? '/'
       : /^zh\b.*(hant|tw|hk|mo)/.test(language) ? '/zh-hant'
-      : language.startsWith('zh') ? '/zh-hans'
+      : primary === 'zh' ? '/zh-hans'
+      : primary === 'pt' ? (language === 'pt-br' ? '/pt-br' : language.startsWith('pt-') ? '/pt-pt' : '/pt-br')
+      : ['ko', 'es', 'fr', 'de', 'it', 'nl', 'sv', 'ru'].includes(primary) ? '/' + primary
       : '/en';
     location.replace(/iPhone|iPod/.test(navigator.userAgent) ? store : top);
   </script>

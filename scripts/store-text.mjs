@@ -20,6 +20,16 @@ const languages = {
   ko: { metadata: 'ko', captions: 'ko' },
   'zh-hans': { metadata: 'zh-Hans', captions: 'zh-Hans' },
   'zh-hant': { metadata: 'zh-Hant', captions: 'zh-Hant' },
+  // スペイン語はスペインの文面を使う（メキシコ向けとの違いは言い回しが 3 か所だけ）。
+  es: { metadata: 'es-ES', captions: 'es' },
+  'pt-br': { metadata: 'pt-BR', captions: 'pt-BR' },
+  'pt-pt': { metadata: 'pt-PT', captions: 'pt-PT' },
+  fr: { metadata: 'fr-FR', captions: 'fr' },
+  de: { metadata: 'de-DE', captions: 'de' },
+  it: { metadata: 'it', captions: 'it' },
+  nl: { metadata: 'nl-NL', captions: 'nl' },
+  sv: { metadata: 'sv', captions: 'sv' },
+  ru: { metadata: 'ru', captions: 'ru' },
 };
 
 const read = (...parts) => readFileSync(join(store, ...parts), 'utf8').trim();

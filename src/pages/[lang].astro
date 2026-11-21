@@ -1,5 +1,5 @@
 ---
-// 日本語以外のトップページ（/en・/ko・/zh-hans・/zh-hant）。
+// 日本語以外のトップページ（/en・/ko・/zh-hans・/zh-hant・/es・/pt-br・/pt-pt・/fr・/de・/it・/nl・/sv・/ru）。
 // 紹介文は App Store の文面（src/data/store-text.json。scripts/store-text.mjs で取り込む）、
 // 画面は App Store と同じ紹介画像（public/assets/store/）を使う。枠の言葉は src/data/i18n.ts。
 import Head from '../components/Head.astro';
@@ -21,7 +21,8 @@ const alternates = Object.fromEntries(Object.entries(languages).map(([code, item
 // サポートとプライバシーポリシーは、日本語のほかは英語だけ。
 const supportUrl = '/en/support';
 const privacyUrl = '/privacy#reprise-privacy-policy';
-const english = lang === 'en' ? '' : `（${t.footer.englishOnly}）`;
+// 添える「（英語）」のかっこは、韓国語・中国語は全角、ほかは半角。
+const english = lang === 'en' ? '' : ['ko', 'zh-hans', 'zh-hant'].includes(lang) ? `（${t.footer.englishOnly}）` : ` (${t.footer.englishOnly})`;
 const requirement = `${t.device} · ${text.requirement}`;
 
 const jsonLd = [
@@ -61,7 +62,7 @@ const file = (id: string) => `${order.indexOf(id) + 1}-${id}`;
   <a class="brand" href={language.path} aria-label="Reprise">
     <img src="/assets/app-icon-120.png" width="36" height="36" alt="">Reprise
   </a>
-  <nav aria-label={t.footer.language === 'Language' ? 'Main' : t.nav.features}>
+  <nav aria-label={`${t.nav.screens} · ${t.nav.features} · ${t.nav.pricing}`}>
     <a href="#screens">{t.nav.screens}</a>
     <a href="#features">{t.nav.features}</a>
     <a href="#pricing">{t.nav.pricing}</a>
