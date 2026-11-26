@@ -7,19 +7,19 @@ description: Politique de confidentialité de Reprise. Vos audios, transcription
 
 # Politique de confidentialité de Reprise
 
-Dernière mise à jour : 2026-11-20
+Dernière mise à jour : 2026-11-27
 
 ## Résumé
 
-En dehors des commentaires que vous choisissez d'envoyer vous-même, Reprise ne collecte aucune information sur ses utilisateurs. L'app ne dispose d'aucun serveur : l'analyse de l'audio et le journal d'étude sont entièrement traités sur l'appareil. Les commentaires ne contiennent ni votre adresse e-mail ni votre nom.
+Reprise ne reçoit que les commentaires que vous choisissez d'envoyer vous-même et des données d'utilisation qui aident à améliorer l'app (les fonctions que vous utilisez et à quelle fréquence ; vous pouvez désactiver cet envoi dans Réglages). L'app ne dispose d'aucun serveur : l'analyse de l'audio et le journal d'étude sont entièrement traités sur l'appareil. Ni les commentaires ni les données d'utilisation ne contiennent votre adresse e-mail ou votre nom.
 
-L'app ne communique sur le réseau que lorsque vous utilisez « Depuis Podcasts », lorsque vous ouvrez un support créé à partir d'un podcast pour vérifier s'il y a de nouveaux épisodes, lorsque, pour un support où vous avez activé « Importer les nouveaux épisodes », les nouveaux épisodes sont importés à l'ouverture de l'app, et lorsque vous envoyez un commentaire ou consultez les réponses. Les communications liées aux podcasts s'effectuent directement avec le service de recherche d'Apple et avec la source de diffusion de l'émission ; le développeur n'en reçoit jamais le contenu. Les commentaires nous parviennent via CloudKit d'Apple (voir « Commentaires » ci-dessous).
+L'app ne communique sur le réseau que lorsque vous utilisez « Depuis Podcasts », lorsque vous ouvrez un support créé à partir d'un podcast pour vérifier s'il y a de nouveaux épisodes, lorsque, pour un support où vous avez activé « Importer les nouveaux épisodes », les nouveaux épisodes sont importés à l'ouverture de l'app, lorsque vous envoyez un commentaire ou consultez les réponses, et lorsqu'elle envoie les données d'utilisation (au plus une fois par jour). Les communications liées aux podcasts s'effectuent directement avec le service de recherche d'Apple et avec la source de diffusion de l'émission ; le développeur n'en reçoit jamais le contenu. Les commentaires et les données d'utilisation nous parviennent via CloudKit d'Apple (voir « Commentaires » et « Données d'utilisation » ci-dessous).
 
 ## Informations collectées
 
-L'app ne collecte aucune information permettant de vous identifier, ni coordonnées, ni données de localisation, ni données d'utilisation. Elle n'intègre aucun outil d'analyse ni aucune publicité.
+L'app ne collecte aucune information permettant de vous identifier, ni coordonnées, ni données de localisation. Elle n'intègre aucune publicité ni aucun outil d'analyse tiers.
 
-Nous recevons **uniquement ce que vous envoyez vous-même** depuis Réglages → « Commentaires » (voir « Commentaires » ci-dessous).
+Nous recevons **uniquement ce que vous envoyez vous-même** depuis Réglages → « Commentaires » (voir « Commentaires » ci-dessous) et les données d'utilisation (voir « Données d'utilisation » ci-dessous).
 
 ## Commentaires
 
@@ -29,6 +29,16 @@ Depuis Réglages → « Commentaires », vous pouvez envoyer au développeur d
 - Les commentaires sont reçus via CloudKit d'Apple. L'envoi nécessite d'être connecté à iCloud sur l'appareil, mais le développeur ne reçoit qu'un identifiant d'utilisateur anonyme attribué par Apple ; votre identifiant Apple et votre adresse e-mail ne lui sont jamais communiqués
 - Seuls vous et le développeur pouvez lire ce que vous avez envoyé
 - Leur contenu sert uniquement à analyser les problèmes, à améliorer l'app et à vous répondre. Si vous souhaitez qu'il soit supprimé, faites-en la demande par un commentaire
+
+## Données d'utilisation
+
+Pour améliorer l'app, celle-ci envoie une fois par jour les fonctions que vous avez utilisées et à quelle fréquence. Vous pouvez désactiver cet envoi à tout moment dans Réglages → « Envoyer les données d'utilisation » ; la désactivation supprime aussi les données de l'appareil qui n'ont pas encore été envoyées.
+
+- **Ce qui est envoyé** : les types d'actions et leur nombre (par exemple : importation d'un support et sa provenance, découpage en phrases, changement de la vitesse de lecture, ouverture de l'écran d'abonnement, la fonction qui l'a ouvert et si vous avez acheté), les valeurs des réglages que vous choisissez, le nombre de supports et de signets, votre type de formule (gratuite, essai gratuit, mensuelle ou annuelle), les versions de l'app et d'iOS, la langue d'affichage et la langue d'apprentissage, le pays de l'App Store, le jour où vous avez installé l'app, et un identifiant aléatoire propre à chaque installation
+- **Ce qui n'est jamais envoyé** : les noms des supports ou des pistes, le texte des phrases, l'audio importé, votre voix enregistrée, les transcriptions, les noms des émissions de podcasts, les termes de recherche ou les URL, le journal d'étude (temps d'étude et phrases lues), votre adresse e-mail, votre nom ou votre identifiant Apple, et les informations de paiement
+- L'identifiant aléatoire propre à chaque installation sert uniquement à compter les appareils. Il n'est pas lié à votre identifiant Apple et change lorsque vous supprimez l'app
+- Les données d'utilisation sont stockées dans CloudKit d'Apple. Elles ne sont envoyées que lorsque vous êtes connecté à iCloud, et le développeur ne reçoit, avec les données ci-dessus, qu'un identifiant d'utilisateur anonyme attribué par Apple. Les données qui n'ont pas pu être envoyées sont conservées sur l'appareil pendant 14 jours au maximum, puis supprimées
+- Les données d'utilisation servent uniquement, sous forme agrégée, à améliorer l'app (pour savoir quelles fonctions sont utilisées et ce qui mène à un achat), jamais à des fins de publicité ou de suivi. Les enregistrements reçus sont supprimés au bout de 180 jours
 
 ## Informations stockées sur l'appareil
 
@@ -80,17 +90,17 @@ L'app effectue les communications suivantes uniquement lorsque vous utilisez «�
 | Fichiers | Importer les fichiers audio ou vidéo que vous sélectionnez ou qui sont partagés depuis d'autres apps (pour une vidéo, seul l'audio est extrait et conservé) |
 | Micro | Enregistrer comme support l'audio que vous enregistrez avec « Enregistrer », et enregistrer votre voix dans le « Test de clarté » pour vérifier si le texte lu est correctement reconnu. L'enregistrement n'a lieu que lorsque vous le lancez, et il est stocké sur l'appareil |
 | Photos (ajout uniquement) | Ajouter à vos photos l'image créée lorsque vous touchez « Enregistrer dans Photos » lors du partage du journal d'étude. L'app ne lit jamais vos photos |
-| Réseau | Rechercher des émissions de podcasts et télécharger leurs flux RSS et leurs épisodes (voir « Communications de la fonction Podcasts » ci-dessus), et envoyer des commentaires et en recevoir les réponses (voir « Commentaires » ci-dessus) |
+| Réseau | Rechercher des émissions de podcasts et télécharger leurs flux RSS et leurs épisodes (voir « Communications de la fonction Podcasts » ci-dessus), envoyer des commentaires et en recevoir les réponses (voir « Commentaires » ci-dessus), et envoyer les données d'utilisation (voir « Données d'utilisation » ci-dessus) |
 
-Ces accès servent uniquement à l'importation et à l'analyse. Aucun contenu lu sur l'appareil n'est envoyé à l'extérieur.
+Ces accès servent uniquement à l'importation et à l'analyse. Aucun contenu lu sur l'appareil (audio, morceaux, fichiers ou photos) n'est envoyé à l'extérieur.
 
 ## Reprise Premium (abonnement)
 
-L'achat, le renouvellement et la résiliation de Reprise Premium sont entièrement gérés par l'App Store d'Apple. L'app se contente de vérifier auprès d'Apple, sur l'appareil, si vous êtes abonné ; le développeur ne reçoit jamais vos informations de paiement ni votre historique d'achats.
+L'achat, le renouvellement et la résiliation de Reprise Premium sont entièrement gérés par l'App Store d'Apple. L'app se contente de vérifier auprès d'Apple, sur l'appareil, si vous êtes abonné ; le développeur ne reçoit jamais vos informations de paiement. Lorsque « Envoyer les données d'utilisation » est activé, les données d'utilisation incluent votre type de formule et le fait que vous ayez acheté ou non depuis l'écran d'abonnement (la fonction qui l'a ouvert et si vous avez commencé un essai gratuit) (voir « Données d'utilisation » ci-dessus).
 
 ## Communication à des tiers
 
-**Aucune.** L'app ne communique vos informations à aucun tiers. Comme décrit ci-dessus, la fonction Podcasts communique directement avec le service de recherche d'Apple et avec les sources de diffusion des émissions, uniquement pour récupérer les émissions que vous avez indiquées. Les commentaires sont stockés dans CloudKit d'Apple. Aucune communication n'est effectuée à des fins de publicité, d'analyse ou de suivi.
+**Aucune.** L'app ne communique vos informations à aucun tiers. Comme décrit ci-dessus, la fonction Podcasts communique directement avec le service de recherche d'Apple et avec les sources de diffusion des émissions, uniquement pour récupérer les émissions que vous avez indiquées. Les commentaires et les données d'utilisation sont stockés dans CloudKit d'Apple. Aucune communication n'est effectuée à des fins de publicité ou de suivi, et rien n'est envoyé à des services d'analyse tiers.
 
 ## Droits d'auteur
 
@@ -98,7 +108,7 @@ Les droits sur les fichiers audio et les épisodes de podcasts que vous importez
 
 ## Protection de la vie privée des enfants
 
-L'app ne collecte aucune information, quel que soit l'âge de l'utilisateur.
+L'app ne collecte aucune information permettant d'identifier l'utilisateur, quel que soit son âge. Les données d'utilisation (décrites ci-dessus) sont les mêmes pour tous les âges et peuvent être désactivées dans Réglages.
 
 ## Modifications de la présente politique
 

@@ -7,19 +7,19 @@ description: Integritetspolicy för Reprise. Ljud, transkriptioner och studielog
 
 # Integritetspolicy för Reprise
 
-Senast uppdaterad: 2026-11-20
+Senast uppdaterad: 2026-11-27
 
 ## Sammanfattning
 
-Reprise samlar inte in några uppgifter om användaren, förutom feedback som du själv väljer att skicka. Appen har ingen server, och analys av ljud och studieloggar sker helt på enheten. Feedback innehåller varken e-postadress eller namn.
+Reprise tar bara emot feedback som du själv väljer att skicka och användningsdata som hjälper oss att förbättra appen (vilka funktioner du använder och hur ofta; du kan stänga av detta i ”Inställningar”). Appen har ingen server, och analys av ljud och studieloggar sker helt på enheten. Varken feedback eller användningsdata innehåller e-postadress eller namn.
 
-Appen kommunicerar över nätverket bara när du använder ”Från Podcaster”, när du öppnar ett material som skapats från en podcast för att kontrollera om det finns nya avsnitt, när nya avsnitt hämtas då du öppnar appen för material där du har slagit på ”Importera nya avsnitt automatiskt”, och när du skickar feedback eller läser svar. Podcasttrafiken går direkt till Apples söktjänst och till programmets utgivare, och utvecklaren tar aldrig emot innehållet. Feedback når oss via Apples CloudKit (se ”Feedback” nedan).
+Appen kommunicerar över nätverket bara när du använder ”Från Podcaster”, när du öppnar ett material som skapats från en podcast för att kontrollera om det finns nya avsnitt, när nya avsnitt hämtas då du öppnar appen för material där du har slagit på ”Importera nya avsnitt automatiskt”, när du skickar feedback eller läser svar, och när appen skickar användningsdata (högst en gång per dag). Podcasttrafiken går direkt till Apples söktjänst och till programmets utgivare, och utvecklaren tar aldrig emot innehållet. Feedback och användningsdata når oss via Apples CloudKit (se ”Feedback” och ”Användningsdata” nedan).
 
 ## Uppgifter som samlas in
 
-Appen samlar inte in uppgifter som identifierar användaren, kontaktuppgifter, platsuppgifter eller användningsdata. Den innehåller inga analysverktyg och ingen reklam.
+Appen samlar inte in uppgifter som identifierar användaren, kontaktuppgifter eller platsuppgifter. Den innehåller ingen reklam och inga analysverktyg från tredje part.
 
-Det enda vi tar emot är det **du själv skickar** från ”Inställningar” → ”Feedback” (se ”Feedback” nedan).
+Vi tar bara emot det **du själv skickar** från ”Inställningar” → ”Feedback” (se ”Feedback” nedan) och användningsdata (se ”Användningsdata” nedan).
 
 ## Feedback
 
@@ -29,6 +29,16 @@ Från ”Inställningar” → ”Feedback” kan du skicka felrapporter och ön
 - Feedback tas emot via Apples CloudKit. För att skicka måste du vara inloggad på iCloud på enheten, men utvecklaren får bara ett anonymt användar-ID som Apple tilldelar, aldrig ditt Apple‑ID eller din e-postadress
 - Bara du som skickade och utvecklaren kan läsa det du har skickat
 - Innehållet används bara för att utreda fel, förbättra appen och svara dig. Om du vill att det raderas skickar du en begäran om det via Feedback
+
+## Användningsdata
+
+För att förbättra appen skickas en gång per dag vilka funktioner du har använt och hur ofta. Du kan när som helst stänga av detta i ”Inställningar” → ”Skicka användningsdata”; när du stänger av det raderas också data på enheten som ännu inte har skickats.
+
+- **Det som skickas**: typer av åtgärder och hur många gånger de har utförts (till exempel import av material och varifrån det kom, uppdelning i meningar, ändring av uppspelningshastigheten, öppning av prenumerationsskärmen, vilken funktion som öppnade den och om du köpte), värdena för inställningar som du väljer, antalet studiematerial och bokmärken, din plantyp (gratis, gratis provperiod, månadsvis eller årsvis), app- och iOS-versionen, visningsspråket och studiespråket, App Store-landet, dagen då du installerade appen och ett slumpmässigt ID per installation
+- **Det som aldrig skickas**: namn på studiematerial eller spår, meningarnas text, importerat ljud, din inspelade röst, transkriptioner, namn på podcastprogram, söktermer eller URL:er, studieloggar (studietid och antal uppspelade meningar), din e-postadress, ditt namn eller ditt Apple‑ID och betalningsuppgifter
+- Det slumpmässiga ID:t per installation används bara för att räkna enheter. Det är inte kopplat till ditt Apple‑ID och ändras när du raderar appen
+- Användningsdata lagras i Apples CloudKit. Den skickas bara när du är inloggad på iCloud, och utvecklaren får bara ett anonymt användar-ID som Apple tilldelar tillsammans med uppgifterna ovan. Data som inte kunde skickas sparas på enheten i högst 14 dagar och raderas sedan
+- Användningsdata används bara i sammanställd form för att förbättra appen (för att se vilka funktioner som används och vad som leder till köp), aldrig för reklam eller spårning. Poster som vi tar emot raderas efter 180 dagar
 
 ## Uppgifter som sparas på enheten
 
@@ -80,17 +90,17 @@ Endast när du använder ”Från Podcaster” och när du öppnar ett material 
 | Filer | För att importera ljud- eller videofiler som du väljer eller delar från andra appar (från video sparas bara ljudet) |
 | Mikrofon | För att spara ljud som du spelar in med ”Spela in” som studiematerial, och för att spela in din egen röst i ”Tydlighetskoll” och kontrollera om texten du läste känns igen korrekt. Inspelning sker bara när du själv startar den, och inspelningarna sparas på enheten |
 | Bilder (endast lägga till) | För att lägga till bilden i Bilder när du trycker på ”Spara i Bilder” vid delning av studieloggen. Appen läser aldrig dina bilder |
-| Nätverk | För att söka efter podcaster och hämta RSS-flöden och avsnitt (se ”Nätverkstrafik från podcastfunktionen” ovan) samt för att skicka feedback och ta emot svar (se ”Feedback” ovan) |
+| Nätverk | För att söka efter podcaster och hämta RSS-flöden och avsnitt (se ”Nätverkstrafik från podcastfunktionen” ovan), för att skicka feedback och ta emot svar (se ”Feedback” ovan) samt för att skicka användningsdata (se ”Användningsdata” ovan) |
 
-All åtkomst används bara för import och analys. Inget som läses från enheten skickas ut.
+All åtkomst används bara för import och analys. Inget som läses från enheten (ljud, låtar, filer eller bilder) skickas ut.
 
 ## Reprise Premium (prenumeration)
 
-Köp, förnyelser och uppsägningar av Reprise Premium hanteras helt av Apples App Store. Appen kontrollerar bara på enheten med Apple om du prenumererar, och utvecklaren tar aldrig emot betalningsuppgifter eller köphistorik.
+Köp, förnyelser och uppsägningar av Reprise Premium hanteras helt av Apples App Store. Appen kontrollerar bara på enheten med Apple om du prenumererar, och utvecklaren tar aldrig emot betalningsuppgifter. När ”Skicka användningsdata” är påslaget innehåller användningsdata din plantyp och om du köpte från prenumerationsskärmen (vilken funktion som öppnade den och om du startade en gratis provperiod) (se ”Användningsdata” ovan).
 
 ## Utlämnande till tredje part
 
-**Förekommer inte.** Appen lämnar inte ut användarens uppgifter till tredje part. Podcastfunktionen kommunicerar som beskrivs ovan direkt med Apples söktjänst och med programmens utgivare, men bara för att hämta de program du har valt. Feedback lagras i Apples CloudKit. Ingen trafik för reklam, analys eller spårning förekommer.
+**Förekommer inte.** Appen lämnar inte ut användarens uppgifter till tredje part. Podcastfunktionen kommunicerar som beskrivs ovan direkt med Apples söktjänst och med programmens utgivare, men bara för att hämta de program du har valt. Feedback och användningsdata lagras i Apples CloudKit. Ingen trafik för reklam eller spårning förekommer, och inget skickas till analystjänster från tredje part.
 
 ## Upphovsrätt
 
@@ -98,7 +108,7 @@ Rättigheterna till ljudfiler och podcastavsnitt som du importerar tillhör dig 
 
 ## Barns integritet
 
-Appen samlar inte in några uppgifter, oavsett användarens ålder.
+Appen samlar inte in några uppgifter som identifierar användaren, oavsett ålder. Användningsdata (se ovan) är densamma för alla åldrar och kan stängas av i ”Inställningar”.
 
 ## Ändringar i den här policyn
 

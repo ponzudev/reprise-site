@@ -7,19 +7,19 @@ description: Política de Privacidade do Reprise. O áudio, as transcrições e 
 
 # Política de Privacidade do Reprise
 
-Última atualização: 2026-11-20
+Última atualização: 2026-11-27
 
 ## Resumo
 
-Com exceção dos comentários que o utilizador decida enviar, o Reprise não recolhe qualquer informação do utilizador. Não tem servidor próprio: a análise do áudio e os registos de estudo são processados inteiramente no dispositivo. Os comentários também não incluem o seu endereço de e-mail nem o seu nome.
+O Reprise recebe apenas os comentários que o utilizador decida enviar e dados de utilização que ajudam a melhorar a app (que funcionalidades utiliza e com que frequência; pode desativar esta opção em “Definições”). Não tem servidor próprio: a análise do áudio e os registos de estudo são processados inteiramente no dispositivo. Nem os comentários nem os dados de utilização incluem o seu endereço de e-mail ou o seu nome.
 
-A app só comunica através da rede quando utiliza “De Podcasts”, quando abre um material criado a partir de um podcast para verificar se há episódios novos, quando, nos materiais em que ativou “Importar novos episódios automaticamente”, importa os episódios novos ao abrir a app, e quando envia comentários ou consulta respostas. As comunicações relativas a podcasts são feitas diretamente com o serviço de pesquisa da Apple e com a origem de distribuição do programa, e o programador nunca recebe o seu conteúdo. Os comentários chegam-nos através do CloudKit da Apple (ver “Comentários” abaixo).
+A app só comunica através da rede quando utiliza “De Podcasts”, quando abre um material criado a partir de um podcast para verificar se há episódios novos, quando, nos materiais em que ativou “Importar novos episódios automaticamente”, importa os episódios novos ao abrir a app, quando envia comentários ou consulta respostas e quando envia os dados de utilização (no máximo uma vez por dia). As comunicações relativas a podcasts são feitas diretamente com o serviço de pesquisa da Apple e com a origem de distribuição do programa, e o programador nunca recebe o seu conteúdo. Os comentários e os dados de utilização chegam-nos através do CloudKit da Apple (ver “Comentários” e “Dados de utilização” abaixo).
 
 ## Informações recolhidas
 
-A app não recolhe identificadores do utilizador, informações de contacto, localização nem dados de utilização. Não inclui ferramentas de análise nem publicidade.
+A app não recolhe identificadores do utilizador, informações de contacto nem localização. Não inclui publicidade nem ferramentas de análise de terceiros.
 
-A única coisa que recebemos é o que o utilizador **decide enviar** em “Definições” → “Comentários” (ver “Comentários” abaixo).
+Recebemos apenas o que o utilizador **decide enviar** em “Definições” → “Comentários” (ver “Comentários” abaixo) e os dados de utilização (ver “Dados de utilização” abaixo).
 
 ## Comentários
 
@@ -29,6 +29,16 @@ Em “Definições” → “Comentários”, pode enviar ao programador relatos
 - Os comentários são recebidos através do CloudKit da Apple. Para os enviar, é necessário ter sessão iniciada no iCloud no dispositivo, mas o programador recebe apenas um identificador de utilizador anónimo atribuído pela Apple; o seu ID Apple e o seu endereço de e-mail nunca são transmitidos ao programador
 - Só o próprio utilizador que os enviou e o programador podem ler o conteúdo enviado
 - O conteúdo é utilizado apenas para investigar problemas, melhorar a app e responder. Se quiser que seja apagado, envie um pedido nesse sentido através dos Comentários
+
+## Dados de utilização
+
+Para melhorar a app, esta envia uma vez por dia que funcionalidades utilizou e com que frequência. Pode desativar esta opção a qualquer momento em “Definições” → “Enviar dados de utilização”; ao desativá-la, os dados ainda não enviados que estão no dispositivo também são apagados.
+
+- **O que é enviado**: os tipos de ação e o respetivo número de vezes (por exemplo: importar um material e a sua origem, dividir frases, alterar a velocidade de reprodução, abrir o ecrã de subscrição, que funcionalidade o abriu e se houve compra), os valores das definições que escolhe, o número de materiais de estudo e de frases marcadas, o tipo de plano (gratuito, período experimental gratuito, mensal ou anual), as versões da app e do iOS, os idiomas de apresentação e de estudo, o país da App Store, o dia em que instalou a app e um identificador aleatório por instalação
+- **O que nunca é enviado**: os nomes dos materiais ou das faixas, o texto das frases, o áudio importado, a sua voz gravada, as transcrições, os nomes dos programas de podcasts, os termos de pesquisa ou URL, os registos de estudo (tempo de estudo e frases reproduzidas), o seu endereço de e-mail, nome ou ID Apple e as informações de pagamento
+- O identificador aleatório por instalação é utilizado apenas para contar dispositivos. Não está associado ao seu ID Apple e muda quando apaga a app
+- Os dados de utilização são guardados no CloudKit da Apple. Só são enviados enquanto tiver sessão iniciada no iCloud, e o programador recebe apenas um identificador de utilizador anónimo atribuído pela Apple, juntamente com os dados acima. Os dados que não puderam ser enviados ficam guardados no dispositivo durante, no máximo, 14 dias e são depois apagados
+- Os dados de utilização são utilizados apenas de forma agregada para melhorar a app (para saber que funcionalidades são utilizadas e o que leva a compras), nunca para publicidade ou rastreamento. Os registos recebidos são apagados ao fim de 180 dias
 
 ## Informações guardadas no dispositivo
 
@@ -80,17 +90,17 @@ Apenas quando utiliza “De Podcasts” ou abre um material criado a partir de u
 | Ficheiros | Importar ficheiros de áudio ou vídeo escolhidos pelo utilizador ou partilhados a partir de outras apps (dos vídeos, é extraído e guardado apenas o áudio) |
 | Microfone | Guardar como material de estudo o áudio que o utilizador grava com “Gravar” e gravar a sua própria voz no “Teste de clareza” para verificar se o texto que leu é reconhecido corretamente. A gravação só é feita quando o utilizador a inicia e fica guardada no dispositivo |
 | Fotografias (apenas adicionar) | Adicionar às fotografias a imagem criada quando toca em “Guardar em Fotografias” na partilha do registo de estudo. A app nunca lê as suas fotografias |
-| Rede | Pesquisar programas de podcasts e transferir os feeds RSS e os episódios (ver “Comunicações da funcionalidade de podcasts” acima), bem como enviar comentários e receber respostas (ver “Comentários” acima) |
+| Rede | Pesquisar programas de podcasts e transferir os feeds RSS e os episódios (ver “Comunicações da funcionalidade de podcasts” acima), enviar comentários e receber respostas (ver “Comentários” acima) e enviar os dados de utilização (ver “Dados de utilização” acima) |
 
-Estes acessos são utilizados apenas para importação e análise. Nada do que é lido no dispositivo é enviado para fora.
+Estes acessos são utilizados apenas para importação e análise. Nada do que é lido no dispositivo (áudio, músicas, ficheiros ou fotografias) é enviado para fora.
 
 ## Reprise Premium (subscrição)
 
-A compra, a renovação e o cancelamento do Reprise Premium são inteiramente processados pela App Store da Apple. A app limita-se a verificar junto da Apple, no dispositivo, se existe uma subscrição ativa; o programador nunca recebe os seus dados de pagamento nem o seu histórico de compras.
+A compra, a renovação e o cancelamento do Reprise Premium são inteiramente processados pela App Store da Apple. A app limita-se a verificar junto da Apple, no dispositivo, se existe uma subscrição ativa; o programador nunca recebe os seus dados de pagamento. Enquanto “Enviar dados de utilização” estiver ativado, os dados de utilização incluem o tipo de plano e se houve compra a partir do ecrã de subscrição (que funcionalidade o abriu e se iniciou um período experimental gratuito) (ver “Dados de utilização” acima).
 
 ## Partilha com terceiros
 
-**Nenhuma.** A app não partilha as informações do utilizador com terceiros. A funcionalidade de podcasts comunica diretamente com o serviço de pesquisa da Apple e com as origens de distribuição dos programas, conforme descrito acima, apenas para obter os programas indicados pelo utilizador. Os comentários são guardados no CloudKit da Apple. Não são feitas comunicações para fins de publicidade, análise ou rastreamento.
+**Nenhuma.** A app não partilha as informações do utilizador com terceiros. A funcionalidade de podcasts comunica diretamente com o serviço de pesquisa da Apple e com as origens de distribuição dos programas, conforme descrito acima, apenas para obter os programas indicados pelo utilizador. Os comentários e os dados de utilização são guardados no CloudKit da Apple. Não são feitas comunicações para fins de publicidade ou rastreamento, e nada é enviado para serviços de análise de terceiros.
 
 ## Direitos de autor
 
@@ -98,7 +108,7 @@ Os direitos sobre os ficheiros de áudio e os episódios de podcasts que importa
 
 ## Privacidade das crianças
 
-A app não recolhe informações de utilizadores de nenhuma idade.
+A app não recolhe informações identificativas de utilizadores de nenhuma idade. Os dados de utilização (acima) são os mesmos para todas as idades e podem ser desativados em “Definições”.
 
 ## Alterações a esta política
 

@@ -7,19 +7,19 @@ description: Informativa sulla privacy di Reprise. Audio, trascrizioni e registr
 
 # Informativa sulla privacy di Reprise
 
-Ultimo aggiornamento: 2026-11-20
+Ultimo aggiornamento: 2026-11-27
 
 ## In sintesi
 
-Reprise non raccoglie alcuna informazione sugli utenti, a eccezione del feedback che l'utente sceglie di inviare. Non ha un server: l'analisi dell'audio e il registro di studio vengono elaborati interamente sul dispositivo. Anche il feedback non contiene l'indirizzo email né il nome.
+Reprise riceve solo il feedback che l'utente sceglie di inviare e i dati di utilizzo che aiutano a migliorare l'app (quali funzioni vengono usate e con quale frequenza; si possono disattivare in “Impostazioni”). Non ha un server: l'analisi dell'audio e il registro di studio vengono elaborati interamente sul dispositivo. Né il feedback né i dati di utilizzo contengono l'indirizzo email o il nome.
 
-L'app comunica in rete solo quando l'utente usa “Da Podcast”, quando apre un materiale creato da un podcast per controllare se ci sono nuovi episodi, quando, per i materiali in cui l'utente ha attivato “Importa nuovi episodi automaticamente”, importa i nuovi episodi all'apertura dell'app, e quando l'utente invia un feedback o legge le risposte. Le comunicazioni per i podcast vanno direttamente al servizio di ricerca di Apple e all'editore del programma, e lo sviluppatore non ne riceve il contenuto. Il feedback ci arriva tramite CloudKit di Apple (vedi “Feedback” più avanti).
+L'app comunica in rete solo quando l'utente usa “Da Podcast”, quando apre un materiale creato da un podcast per controllare se ci sono nuovi episodi, quando, per i materiali in cui l'utente ha attivato “Importa nuovi episodi automaticamente”, importa i nuovi episodi all'apertura dell'app, quando l'utente invia un feedback o legge le risposte, e quando l'app invia i dati di utilizzo (al massimo una volta al giorno). Le comunicazioni per i podcast vanno direttamente al servizio di ricerca di Apple e all'editore del programma, e lo sviluppatore non ne riceve il contenuto. Il feedback e i dati di utilizzo ci arrivano tramite CloudKit di Apple (vedi “Feedback” e “Dati di utilizzo” più avanti).
 
 ## Informazioni raccolte
 
-L'app non raccoglie informazioni che identificano l'utente, dati di contatto, posizione né dati di utilizzo. Non contiene strumenti di analisi né pubblicità.
+L'app non raccoglie informazioni che identificano l'utente, dati di contatto né posizione. Non contiene pubblicità né strumenti di analisi di terze parti.
 
-Riceviamo **soltanto ciò che l'utente sceglie di inviare** da “Impostazioni” → “Feedback” (vedi “Feedback” più avanti).
+Riceviamo **soltanto ciò che l'utente sceglie di inviare** da “Impostazioni” → “Feedback” (vedi “Feedback” più avanti) e i dati di utilizzo (vedi “Dati di utilizzo” più avanti).
 
 ## Feedback
 
@@ -29,6 +29,16 @@ Da “Impostazioni” → “Feedback” puoi inviare allo sviluppatore segnalaz
 - Per la raccolta si usa CloudKit di Apple. Per inviare è necessario aver effettuato l'accesso a iCloud sul dispositivo, ma lo sviluppatore riceve solo un ID utente anonimo assegnato da Apple: il tuo ID Apple e il tuo indirizzo email non gli vengono comunicati
 - Ciò che hai inviato può essere letto solo da te e dallo sviluppatore
 - Il contenuto viene usato solo per indagare sui problemi, migliorare l'app e rispondere. Se desideri che venga eliminato, chiedilo tramite il feedback
+
+## Dati di utilizzo
+
+Per migliorare l'app, una volta al giorno vengono inviate le funzioni che hai usato e con quale frequenza. Puoi disattivare l'invio in qualsiasi momento da “Impostazioni” → “Invia dati di utilizzo”; disattivandolo vengono eliminati anche i dati sul dispositivo non ancora inviati.
+
+- **Cosa viene inviato**: i tipi di azioni e il loro numero (ad esempio: importazione di materiali e loro provenienza, divisione in frasi, modifica della velocità di riproduzione, apertura della schermata dell'abbonamento, la funzione da cui è stata aperta e se hai effettuato un acquisto), i valori delle impostazioni che scegli, il numero di materiali e di frasi contrassegnate, il tipo di piano (gratuito, prova gratuita, mensile o annuale), le versioni dell'app e di iOS, la lingua di visualizzazione e la lingua di studio, il paese dell'App Store, il giorno in cui hai installato l'app e un ID casuale per installazione
+- **Cosa non viene mai inviato**: i nomi di materiali o tracce, il testo delle frasi, l'audio importato, la tua voce registrata, le trascrizioni, i nomi dei programmi podcast, i termini di ricerca o gli URL, il registro di studio (tempo di studio e frasi riprodotte), il tuo indirizzo email, il nome o l'ID Apple, e i dati di pagamento
+- L'ID casuale per installazione serve solo a contare i dispositivi. Non è collegato al tuo ID Apple e cambia quando elimini l'app
+- I dati di utilizzo vengono salvati in CloudKit di Apple. Vengono inviati solo quando hai effettuato l'accesso a iCloud, e lo sviluppatore riceve, insieme ai dati sopra indicati, solo un ID utente anonimo assegnato da Apple. I dati che non è stato possibile inviare restano sul dispositivo per un massimo di 14 giorni e poi vengono eliminati
+- I dati di utilizzo vengono usati solo in forma aggregata per migliorare l'app (per capire quali funzioni vengono usate e cosa porta agli acquisti), mai per pubblicità o tracciamento. I record ricevuti vengono eliminati dopo 180 giorni
 
 ## Informazioni salvate sul dispositivo
 
@@ -80,17 +90,17 @@ Solo quando usi “Da Podcast” o apri un materiale creato da un podcast, l'app
 | File | Importare file audio o video scelti dall'utente o condivisi da altre app (dei video viene estratto e salvato solo l'audio) |
 | Microfono | Salvare come materiale di studio l'audio che registri con “Registra” e registrare la tua voce nel “Test di chiarezza” per verificare se il testo che hai letto viene riconosciuto correttamente. La registrazione avviene solo quando la avvii tu e resta sul dispositivo |
 | Foto (solo aggiunta) | Aggiungere alla libreria Foto l'immagine creata quando tocchi “Salva in Foto” nella condivisione del registro di studio. L'app non legge mai le tue foto |
-| Rete | Cercare i programmi podcast e scaricare i feed RSS e gli episodi (vedi “Comunicazioni della funzione Podcast” più sopra), e inviare feedback e ricevere le risposte (vedi “Feedback” più sopra) |
+| Rete | Cercare i programmi podcast e scaricare i feed RSS e gli episodi (vedi “Comunicazioni della funzione Podcast” più sopra), inviare feedback e ricevere le risposte (vedi “Feedback” più sopra) e inviare i dati di utilizzo (vedi “Dati di utilizzo” più sopra) |
 
-Tutte queste funzioni sono usate solo per l'importazione e l'analisi. Nulla di ciò che viene letto dal dispositivo viene inviato all'esterno.
+Tutte queste funzioni sono usate solo per l'importazione e l'analisi. Nulla di ciò che viene letto dal dispositivo (audio, brani, file o foto) viene inviato all'esterno.
 
 ## Reprise Premium (abbonamento)
 
-L'acquisto, il rinnovo e la disdetta di Reprise Premium sono gestiti interamente dall'App Store di Apple. L'app si limita a verificare con Apple, sul dispositivo, se sei abbonato; lo sviluppatore non riceve mai i dati di pagamento né la cronologia degli acquisti.
+L'acquisto, il rinnovo e la disdetta di Reprise Premium sono gestiti interamente dall'App Store di Apple. L'app si limita a verificare con Apple, sul dispositivo, se sei abbonato; lo sviluppatore non riceve mai i dati di pagamento. Quando “Invia dati di utilizzo” è attivo, i dati di utilizzo includono il tipo di piano e se hai effettuato un acquisto dalla schermata dell'abbonamento (la funzione da cui è stata aperta e se hai avviato una prova gratuita) (vedi “Dati di utilizzo” più sopra).
 
 ## Comunicazione a terzi
 
-**Nessuna.** L'app non fornisce a terzi le informazioni degli utenti. Come descritto sopra, la funzione Podcast comunica direttamente con il servizio di ricerca di Apple e con gli editori dei programmi, ma solo per ottenere i programmi indicati dall'utente. Il feedback viene salvato in CloudKit di Apple. Non avviene alcuna comunicazione a fini pubblicitari, di analisi o di tracciamento.
+**Nessuna.** L'app non fornisce a terzi le informazioni degli utenti. Come descritto sopra, la funzione Podcast comunica direttamente con il servizio di ricerca di Apple e con gli editori dei programmi, ma solo per ottenere i programmi indicati dall'utente. Il feedback e i dati di utilizzo vengono salvati in CloudKit di Apple. Non avviene alcuna comunicazione a fini pubblicitari o di tracciamento, e nulla viene inviato a servizi di analisi di terze parti.
 
 ## Diritto d'autore
 
@@ -98,7 +108,7 @@ I diritti sui file audio e sugli episodi dei podcast importati appartengono all'
 
 ## Privacy dei minori
 
-L'app non raccoglie informazioni da utenti di nessuna età.
+L'app non raccoglie informazioni che identificano gli utenti, di qualsiasi età. I dati di utilizzo (descritti sopra) sono gli stessi per tutte le età e si possono disattivare in “Impostazioni”.
 
 ## Modifiche a questa informativa
 
