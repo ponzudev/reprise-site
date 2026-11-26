@@ -4,22 +4,21 @@ lang: en
 title: Privacy Policy
 description: Privacy policy for Reprise. Your audio, transcripts and study log stay on your device and are never sent to a server.
 ---
-
 # Reprise Privacy Policy
 
-Last updated: 2026-11-20
+Last updated: 2026-11-27
 
 ## Summary
 
-Apart from feedback you choose to send, Reprise collects no information. It has no server; audio analysis and study records are processed entirely on the device. Feedback never includes your email address or name.
+Reprise receives only feedback you choose to send and usage data that helps improve the app (which features you use and how often; you can turn this off in Settings). It has no server; audio analysis and study records are processed entirely on the device. Neither feedback nor usage data includes your email address or name.
 
-The app communicates over the network only when you use "Add from Podcasts", open study material created from a podcast to check for new episodes, or, for podcast material where you turned on automatic import of new episodes, when you open or return to the app, and when you send feedback or read replies. Podcast traffic goes directly to Apple's search service and to the podcast's publisher, and we never receive any of it. Feedback reaches us through Apple's CloudKit (see "Feedback").
+The app communicates over the network only when you use "Add from Podcasts", open study material created from a podcast to check for new episodes, or, for podcast material where you turned on automatic import of new episodes, when you open or return to the app, when you send feedback or read replies, and when it sends usage data (at most once a day). Podcast traffic goes directly to Apple's search service and to the podcast's publisher, and we never receive any of it. Feedback and usage data reach us through Apple's CloudKit (see "Feedback" and "Usage data").
 
 ## Information we collect
 
-The app does not collect identifiers, contact information, location, or usage data. It contains no analytics and no advertising.
+The app does not collect identifiers, contact information, or location. It contains no advertising and no third-party analytics.
 
-The only thing we receive is what you choose to send from Settings → Feedback (see "Feedback").
+We receive only what you choose to send from Settings → Feedback (see "Feedback") and usage data (see "Usage data").
 
 ## Feedback
 
@@ -29,6 +28,16 @@ You can send bug reports and requests from Settings → Feedback, and read repli
 - Feedback is stored with Apple's CloudKit. Sending requires being signed in to iCloud, but the developer only receives an anonymous user ID assigned by Apple, never your Apple ID or email address
 - Only you and the developer can read what you sent
 - It is used only to investigate issues, improve the app, and reply. To have it deleted, send a request through Feedback
+
+## Usage data
+
+To improve the app, it sends once a day which features you used and how often. You can turn this off at any time in Settings → Share Usage Data; turning it off also deletes data on the device that hasn't been sent yet.
+
+- **What is sent**: types of actions and their counts (for example: importing material and where it came from, splitting sentences, changing the playback speed, opening the subscription screen, which feature opened it, and whether you purchased), the values of settings you choose, the number of study materials and bookmarks, your plan type (free, free trial, monthly or yearly), the app and iOS versions, the display and learning languages, the App Store country, the day you installed the app, and a random per-install ID
+- **What is never sent**: names of study materials or tracks, sentence text, imported audio, your recorded voice, transcripts, podcast show names, search terms or URLs, study records (study time and sentences played), your email address, name or Apple ID, and payment information
+- The random per-install ID is used only to count devices. It is not linked to your Apple ID and changes when you delete the app
+- Usage data is stored with Apple's CloudKit. It is sent only while you are signed in to iCloud, and the developer receives only an anonymous user ID assigned by Apple together with the data above. Data that could not be sent is kept on the device for up to 14 days and then deleted
+- Usage data is used only in aggregate to improve the app (to learn which features are used and what leads to purchases), never for advertising or tracking. Records we receive are deleted after 180 days
 
 ## Information stored on your device
 
@@ -80,17 +89,17 @@ Only when you use "Add from Podcasts", or open study material created from a pod
 | Files | To import audio or video files you select or share from other apps (only the audio of a video is kept) |
 | Microphone | To save audio you record with "Record" as study material, and to record your own voice in "Clarity Check" so you can see whether the sentence you read is recognized correctly. Recording happens only when you start it, and recordings stay on the device |
 | Photos (add only) | To add the study-log image to your photo library when you tap Save to Photos. The app never reads your photos |
-| Network | To search for podcasts and download their RSS feeds and episodes (see "Network use by the podcast feature"), and to send feedback and receive replies (see "Feedback") |
+| Network | To search for podcasts and download their RSS feeds and episodes (see "Network use by the podcast feature"), to send feedback and receive replies (see "Feedback"), and to send usage data (see "Usage data") |
 
-Used only for importing and analysis. Nothing read from your device is transmitted anywhere.
+Used only for importing and analysis. Nothing read from your device (audio, songs, files or photos) is transmitted anywhere.
 
 ## Reprise Premium (subscription)
 
-Purchases, renewals, and cancellations of Reprise Premium are handled entirely by Apple's App Store. The app only checks with Apple, on the device, whether you are subscribed; we never receive your payment details or purchase history.
+Purchases, renewals, and cancellations of Reprise Premium are handled entirely by Apple's App Store. The app only checks with Apple, on the device, whether you are subscribed; we never receive your payment details. While Share Usage Data is on, usage data includes your plan type and whether you purchased from the subscription screen (which feature opened it and whether you started a free trial) (see "Usage data").
 
 ## Third parties
 
-**None.** The app does not share your information with third parties. The podcast feature talks directly to Apple's search service and to publishers as described above, solely to fetch the shows you choose. Feedback is stored with Apple's CloudKit. There is no advertising, analytics, or tracking traffic.
+**None.** The app does not share your information with third parties. The podcast feature talks directly to Apple's search service and to publishers as described above, solely to fetch the shows you choose. Feedback and usage data are stored with Apple's CloudKit. There is no advertising or tracking traffic, and nothing is sent to third-party analytics services.
 
 ## Copyright
 
@@ -98,7 +107,7 @@ Rights to the audio and podcast episodes you import belong to you or the origina
 
 ## Children's privacy
 
-The app collects no information from users of any age.
+The app collects no identifying information from users of any age. Usage data (above) is the same for all ages and can be turned off in Settings.
 
 ## Changes
 

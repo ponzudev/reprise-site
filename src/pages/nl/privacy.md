@@ -7,19 +7,19 @@ description: Privacybeleid van Reprise. Je audio, transcripties en leerlogboek b
 
 # Privacybeleid van Reprise
 
-Laatst bijgewerkt: 2026-11-20
+Laatst bijgewerkt: 2026-11-27
 
 ## Samenvatting
 
-Reprise verzamelt geen gegevens over gebruikers, met uitzondering van feedback die je zelf verstuurt. De app heeft geen server: de analyse van audio en het leerlogboek worden volledig op het apparaat verwerkt. Ook feedback bevat geen e-mailadres of naam.
+Reprise ontvangt alleen feedback die je zelf verstuurt en gebruiksgegevens die helpen de app te verbeteren (welke functies je gebruikt en hoe vaak; je kunt dit uitzetten in “Instellingen”). De app heeft geen server: de analyse van audio en het leerlogboek worden volledig op het apparaat verwerkt. Feedback en gebruiksgegevens bevatten geen e-mailadres of naam.
 
-De app maakt alleen verbinding met het netwerk wanneer je “Uit Podcasts” gebruikt, wanneer je materiaal opent dat van een podcast is gemaakt en de app controleert of er nieuwe afleveringen zijn, wanneer bij materiaal waarvoor je “Importeer nieuwe afleveringen” hebt aangezet nieuwe afleveringen worden geïmporteerd als je de app opent, en wanneer je feedback verstuurt of antwoorden bekijkt. Het podcastverkeer gaat rechtstreeks naar de zoekdienst van Apple en naar de aanbieder van het programma; de ontwikkelaar ontvangt de inhoud daarvan niet. Feedback komt binnen via CloudKit van Apple (zie “Feedback” hieronder).
+De app maakt alleen verbinding met het netwerk wanneer je “Uit Podcasts” gebruikt, wanneer je materiaal opent dat van een podcast is gemaakt en de app controleert of er nieuwe afleveringen zijn, wanneer bij materiaal waarvoor je “Importeer nieuwe afleveringen” hebt aangezet nieuwe afleveringen worden geïmporteerd als je de app opent, wanneer je feedback verstuurt of antwoorden bekijkt, en wanneer de app gebruiksgegevens verstuurt (maximaal één keer per dag). Het podcastverkeer gaat rechtstreeks naar de zoekdienst van Apple en naar de aanbieder van het programma; de ontwikkelaar ontvangt de inhoud daarvan niet. Feedback en gebruiksgegevens komen binnen via CloudKit van Apple (zie “Feedback” en “Gebruiksgegevens” hieronder).
 
 ## Gegevens die we verzamelen
 
-De app verzamelt geen gegevens waarmee je kunt worden geïdentificeerd, geen contactgegevens, geen locatiegegevens en geen gebruiksgegevens. Er zijn geen analysetools of advertenties ingebouwd.
+De app verzamelt geen gegevens waarmee je kunt worden geïdentificeerd, geen contactgegevens en geen locatiegegevens. Er zijn geen advertenties en geen analysetools van derden ingebouwd.
 
-Het enige wat we ontvangen, is **wat je zelf verstuurt** via “Instellingen” → “Feedback” (zie “Feedback” hieronder).
+We ontvangen alleen **wat je zelf verstuurt** via “Instellingen” → “Feedback” (zie “Feedback” hieronder) en gebruiksgegevens (zie “Gebruiksgegevens” hieronder).
 
 ## Feedback
 
@@ -29,6 +29,16 @@ Via “Instellingen” → “Feedback” kun je fouten en wensen naar de ontwik
 - Feedback wordt ontvangen via CloudKit van Apple. Om te versturen moet je op het apparaat bij iCloud zijn ingelogd, maar de ontwikkelaar ontvangt alleen een anonieme gebruikers-ID die Apple toekent; je Apple ID en e-mailadres worden niet aan de ontwikkelaar doorgegeven
 - Wat je hebt verstuurd, kan alleen worden gelezen door jou en de ontwikkelaar
 - De inhoud wordt alleen gebruikt om problemen te onderzoeken, de app te verbeteren en je te antwoorden. Wil je dat je feedback wordt verwijderd, laat dat dan weten via Feedback
+
+## Gebruiksgegevens
+
+Om de app te verbeteren, verstuurt de app één keer per dag welke functies je hebt gebruikt en hoe vaak. Je kunt dit op elk moment uitzetten via “Instellingen” → “Gebruiksgegevens versturen”; als je het uitzet, worden ook de gegevens op het apparaat gewist die nog niet zijn verstuurd.
+
+- **Wat wordt verstuurd**: soorten handelingen en hoe vaak ze voorkomen (bijvoorbeeld: materiaal importeren en waar het vandaan komt, zinnen opdelen, de afspeelsnelheid wijzigen, het abonnementsscherm openen, via welke functie het werd geopend en of je iets hebt gekocht), de waarden van instellingen die je kiest, het aantal materialen en bladwijzers, je soort abonnement (gratis, gratis proefperiode, maandelijks of jaarlijks), de versie van de app en de iOS-versie, de weergavetaal en de taal die je leert, het land van de App Store, de dag waarop je de app hebt geïnstalleerd en een willekeurige ID per installatie
+- **Wat nooit wordt verstuurd**: namen van materialen of tracks, de tekst van zinnen, geïmporteerde audio, je opgenomen stem, transcripties, namen van podcastprogramma's, zoektermen of URL's, het leerlogboek (leertijd en aantal afgespeelde zinnen), je e-mailadres, naam of Apple ID, en betaalgegevens
+- De willekeurige ID per installatie wordt alleen gebruikt om apparaten te tellen. Deze is niet gekoppeld aan je Apple ID en verandert als je de app verwijdert
+- Gebruiksgegevens worden bewaard in CloudKit van Apple. Ze worden alleen verstuurd als je bij iCloud bent ingelogd, en de ontwikkelaar ontvangt naast de bovenstaande gegevens alleen een anonieme gebruikers-ID die Apple toekent. Gegevens die niet konden worden verstuurd, blijven maximaal 14 dagen op het apparaat en worden daarna gewist
+- Gebruiksgegevens worden alleen in geaggregeerde vorm gebruikt om de app te verbeteren (om te zien welke functies worden gebruikt en wat tot aankopen leidt), nooit voor advertenties of tracking. Gegevens die we ontvangen, worden na 180 dagen verwijderd
 
 ## Gegevens die op je apparaat worden bewaard
 
@@ -80,17 +90,17 @@ Alleen wanneer je “Uit Podcasts” gebruikt of materiaal opent dat van een pod
 | Bestanden | Om audio- of videobestanden te importeren die je selecteert of vanuit andere apps deelt (van video wordt alleen de audio bewaard) |
 | Microfoon | Om audio die je met “Neem op” opneemt als materiaal te bewaren, en om in de “Helderheidscheck” je eigen stem op te nemen en te controleren of de tekst die je voorleest correct wordt herkend. Er wordt alleen opgenomen als je zelf de opname start, en opnames worden op het apparaat bewaard |
 | Foto's (alleen toevoegen) | Om de gemaakte afbeelding aan Foto's toe te voegen wanneer je bij het delen van het leerlogboek op “Bewaar in Foto's” tikt. Je foto's worden nooit gelezen |
-| Netwerk | Om podcastprogramma's te zoeken en RSS-feeds en afleveringen te downloaden (zie “Netwerkverkeer van de podcastfunctie” hierboven), en om feedback te versturen en antwoorden te ontvangen (zie “Feedback” hierboven) |
+| Netwerk | Om podcastprogramma's te zoeken en RSS-feeds en afleveringen te downloaden (zie “Netwerkverkeer van de podcastfunctie” hierboven), om feedback te versturen en antwoorden te ontvangen (zie “Feedback” hierboven) en om gebruiksgegevens te versturen (zie “Gebruiksgegevens” hierboven) |
 
-Deze toegang wordt alleen gebruikt voor het importeren en analyseren. Wat van het apparaat wordt gelezen, wordt nooit naar buiten verstuurd.
+Deze toegang wordt alleen gebruikt voor het importeren en analyseren. Wat van het apparaat wordt gelezen (audio, nummers, bestanden of foto's), wordt nooit naar buiten verstuurd.
 
 ## Reprise Premium (abonnement)
 
-Het kopen, verlengen en opzeggen van Reprise Premium wordt volledig afgehandeld door de App Store van Apple. De app controleert alleen op het apparaat bij Apple of je een abonnement hebt; de ontwikkelaar ontvangt geen betaalgegevens en geen aankoopgeschiedenis.
+Het kopen, verlengen en opzeggen van Reprise Premium wordt volledig afgehandeld door de App Store van Apple. De app controleert alleen op het apparaat bij Apple of je een abonnement hebt; de ontwikkelaar ontvangt geen betaalgegevens. Zolang “Gebruiksgegevens versturen” aanstaat, bevatten de gebruiksgegevens je soort abonnement en of je via het abonnementsscherm iets hebt gekocht (via welke functie het scherm werd geopend en of je een gratis proefperiode bent gestart) (zie “Gebruiksgegevens” hierboven).
 
 ## Delen met derden
 
-**Geen.** De app deelt je gegevens niet met derden. De podcastfunctie maakt, zoals hierboven beschreven, rechtstreeks verbinding met de zoekdienst van Apple en met de aanbieders van programma's, maar alleen om de programma's op te halen die jij kiest. Feedback wordt bewaard in CloudKit van Apple. Er is geen netwerkverkeer voor advertenties, analyse of tracking.
+**Geen.** De app deelt je gegevens niet met derden. De podcastfunctie maakt, zoals hierboven beschreven, rechtstreeks verbinding met de zoekdienst van Apple en met de aanbieders van programma's, maar alleen om de programma's op te halen die jij kiest. Feedback en gebruiksgegevens worden bewaard in CloudKit van Apple. Er is geen netwerkverkeer voor advertenties of tracking, en er wordt niets naar analysediensten van derden gestuurd.
 
 ## Auteursrecht
 
@@ -98,7 +108,7 @@ De rechten op de audiobestanden en podcastafleveringen die je importeert, liggen
 
 ## Privacy van kinderen
 
-De app verzamelt van gebruikers van geen enkele leeftijd gegevens.
+De app verzamelt van gebruikers van geen enkele leeftijd gegevens waarmee ze kunnen worden geïdentificeerd. Gebruiksgegevens (zie hierboven) zijn voor alle leeftijden hetzelfde en kunnen worden uitgezet in “Instellingen”.
 
 ## Wijzigingen in dit beleid
 
